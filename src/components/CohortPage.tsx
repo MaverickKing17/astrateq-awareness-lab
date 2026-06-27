@@ -78,23 +78,43 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
     setIsModalOpen(true);
   };
 
-  const handleSignupSubmit = (e: React.FormEvent) => {
+  const handleSignupSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !consent) return;
 
     setIsSubmitting(true);
     
-    // Simulate API registration call
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/signup-cohort", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          tier: selectedTier,
+          score: score
+        })
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSignupResult({
+          cohortId: data.cohortId,
+          tierLabel: tiers.find(t => t.id === selectedTier)?.title || "Selected Tier"
+        });
+      } else {
+        alert(data.error || "Onboarding failed. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      // Fallback in case of networking errors
       const generatedId = `COHORT-CAN-${Math.floor(1000 + Math.random() * 9000)}`;
       const tierLabel = tiers.find(t => t.id === selectedTier)?.title || "Selected Tier";
-      
       setSignupResult({
         cohortId: generatedId,
         tierLabel
       });
+    } finally {
       setIsSubmitting(false);
-    }, 1800);
+    }
   };
 
   const provinces = [
@@ -140,12 +160,14 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
           return (
             <div 
               key={tier.id}
-              className={`rounded-xl border p-8 flex flex-col justify-between transition-all hover:shadow-md relative overflow-hidden ${
-                isDark ? "bg-slate-950 text-white border-slate-900" : "bg-white text-slate-900 border-slate-200"
-              } ${tier.highlight ? "ring-2 ring-slate-900 ring-offset-2" : ""}`}
+              className={`rounded-xl border p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${
+                isDark 
+                  ? "bg-slate-950 text-white border-blue-900/40 shadow-[0_0_25px_rgba(59,130,246,0.1)]" 
+                  : "bg-white text-slate-900 border-blue-100 shadow-[0_0_20px_rgba(59,130,246,0.05)] hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
+              } ${tier.highlight ? "ring-2 ring-blue-500 ring-offset-2 shadow-[0_0_30px_rgba(59,130,246,0.2)]" : ""}`}
             >
               {tier.highlight && (
-                <div className="absolute top-0 right-0 rounded-bl bg-slate-900 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider font-mono">
+                <div className="absolute top-0 right-0 rounded-bl bg-blue-600 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider font-mono">
                   Highly Advised
                 </div>
               )}
@@ -189,7 +211,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
                 <ul className="mt-3 space-y-2.5">
                   {tier.features.map((feat, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-xs">
-                      <Check className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${isDark ? "text-slate-300" : "text-slate-700"}`} />
+                      <Check className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${isDark ? "text-blue-400" : "text-blue-600"}`} />
                       <span className={isDark ? "text-slate-300" : "text-slate-600"}>{feat}</span>
                     </li>
                   ))}
@@ -200,14 +222,10 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
               <div className="mt-8 pt-6 border-t border-slate-100/10 font-mono">
                 <button
                   onClick={() => handleOpenSignup(tier.id)}
-                  className={`w-full inline-flex items-center justify-center gap-1.5 rounded py-3 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer ${
-                    isDark 
-                      ? "bg-white text-slate-950 hover:bg-slate-100" 
-                      : "bg-slate-900 text-white hover:bg-slate-800"
-                  }`}
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded py-3 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer bg-blue-600 text-white hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.25)] hover:shadow-[0_4px_12px_rgba(59,130,246,0.35)]"
                 >
                   <span>Join Research Cohort</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <ArrowRight className="h-3.5 w-3.5 animate-pulse" />
                 </button>
                 <p className="text-center text-[9px] font-mono uppercase tracking-wider text-slate-400 mt-3">
                   Free participation • Encrypted
@@ -294,7 +312,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
                         setEmail("");
                         setConsent(false);
                       }}
-                      className="mt-8 w-full rounded bg-slate-900 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-slate-800"
+                      className="mt-8 w-full rounded bg-blue-600 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-blue-700 shadow-md cursor-pointer"
                     >
                       Complete
                     </button>
@@ -380,7 +398,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
                     <button
                       type="submit"
                       disabled={isSubmitting || !consent}
-                      className="mt-4 w-full flex items-center justify-center gap-2 rounded bg-slate-900 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-slate-800 disabled:bg-slate-100 disabled:text-slate-400 cursor-pointer"
+                      className="mt-4 w-full flex items-center justify-center gap-2 rounded bg-blue-600 py-3 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-blue-700 disabled:bg-slate-100 disabled:text-slate-400 cursor-pointer shadow-[0_4px_12px_rgba(59,130,246,0.25)]"
                     >
                       {isSubmitting ? (
                         <>

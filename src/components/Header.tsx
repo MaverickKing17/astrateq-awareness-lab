@@ -81,7 +81,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => handleMobileNavigate("cohort")}
-            className="hidden sm:inline-flex items-center justify-center rounded bg-slate-900 px-4 py-2 text-[10px] font-bold text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer uppercase tracking-wider font-mono"
+            className="hidden sm:inline-flex items-center justify-center rounded bg-blue-600 px-4 py-2 text-[10px] font-bold text-white shadow-[0_2px_8px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_4px_12px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer uppercase tracking-wider font-mono"
           >
             Join Research Cohort
           </button>
@@ -134,7 +134,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => handleMobileNavigate("cohort")}
             className={`block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider rounded transition-colors font-mono ${
               activePage === "cohort" 
-                ? "bg-slate-900 text-white font-black" 
+                ? "bg-blue-600 text-white font-black" 
                 : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
             }`}
           >
@@ -143,10 +143,10 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           <div className="pt-2 px-3">
             <button
               onClick={() => handleMobileNavigate("simulation")}
-              className="w-full flex items-center justify-center gap-1.5 rounded bg-slate-900 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-md hover:bg-slate-800 active:scale-95 transition-all cursor-pointer"
+              className="w-full flex items-center justify-center gap-1.5 rounded bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:bg-blue-700 active:scale-95 transition-all cursor-pointer"
             >
               <span>Start Awareness Simulation</span>
-              <span className="text-slate-400">→</span>
+              <span className="text-blue-200">→</span>
             </button>
           </div>
         </div>

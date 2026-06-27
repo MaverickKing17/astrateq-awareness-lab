@@ -77,7 +77,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
       <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm relative overflow-hidden">
         
         {/* Top Accent */}
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-slate-900" />
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-500 to-blue-700" />
 
         {/* Form header */}
         <div className="mb-8">
@@ -99,7 +99,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
           {/* Progress bar */}
           <div className="mt-4 h-1 w-full rounded-full bg-slate-100">
             <div 
-              className="h-1 rounded-full bg-slate-900 transition-all duration-300"
+              className="h-1 rounded-full bg-blue-600 transition-all duration-300"
               style={{ width: `${(step / 5) * 100}%` }}
             />
           </div>
@@ -134,12 +134,12 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         onClick={() => selectOption("drivingFrequency", opt.value)}
                         className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
                             : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
                         <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
-                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
                         }`}>
                           {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
@@ -180,12 +180,12 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         onClick={() => selectOption("commuteType", opt.value)}
                         className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
                             : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
                         <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
-                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
                         }`}>
                           {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
@@ -226,12 +226,12 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         onClick={() => selectOption("timeOfDay", opt.value)}
                         className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
                             : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
                         <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
-                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
                         }`}>
                           {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
@@ -272,12 +272,12 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         onClick={() => selectOption("fatigueAssessment", opt.value)}
                         className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
                             : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
                         <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
-                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
                         }`}>
                           {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
@@ -318,12 +318,12 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         onClick={() => selectOption("attentionHabits", opt.value)}
                         className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
                             : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
                         <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
-                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
                         }`}>
                           {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
@@ -349,7 +349,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             className={`inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded border cursor-pointer transition-all ${
               step === 1 || isSubmitting
                 ? "text-slate-300 border-slate-100 cursor-not-allowed"
-                : "text-slate-600 border-slate-200 hover:bg-slate-50"
+                : "text-slate-600 border-slate-200 hover:bg-blue-50/40 hover:text-blue-600 hover:border-blue-200"
             }`}
           >
             <ArrowLeft className="h-4 w-4" />
@@ -360,7 +360,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             type="button"
             onClick={nextStep}
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 rounded bg-slate-900 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-slate-800 active:scale-95 cursor-pointer transition-all"
+            className="inline-flex items-center gap-2 rounded bg-blue-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_2px_10px_rgba(59,130,246,0.2)] hover:bg-blue-700 hover:shadow-[0_4px_14px_rgba(59,130,246,0.3)] active:scale-95 cursor-pointer transition-all"
           >
             <span>{step === 5 ? "Transmit Profile" : "Continue"}</span>
             {step === 5 ? <Sparkles className="h-4 w-4 animate-pulse" /> : <ArrowRight className="h-4 w-4" />}

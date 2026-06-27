@@ -224,19 +224,18 @@ export default function App() {
                         <span>Secured Canadian Servers</span>
                       </div>
                     </div>
-
-                    {/* CTAs */}
+                    
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                       <button
                         onClick={handleStartSimulation}
-                        className="inline-flex items-center justify-center gap-2 rounded bg-slate-900 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-slate-800 active:scale-95 cursor-pointer font-mono"
+                        className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer font-mono"
                       >
                         <span>Start Awareness Simulation</span>
                         <ArrowRight className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleNavigate("cohort")}
-                        className="inline-flex items-center justify-center rounded border border-slate-200 bg-white px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all hover:bg-slate-50 active:scale-95 cursor-pointer font-mono"
+                        className="inline-flex items-center justify-center rounded border border-blue-200 bg-blue-50/50 px-6 py-4 text-xs font-bold uppercase tracking-wider text-blue-700 transition-all hover:bg-blue-50 hover:border-blue-300 active:scale-95 cursor-pointer font-mono"
                       >
                         Join Research Cohort
                       </button>

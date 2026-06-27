@@ -3,6 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
+import { Resend } from "resend";
 
 dotenv.config();
 
@@ -10,6 +11,21 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+
+// Lazy-initialized Resend client
+let resendClient: Resend | null = null;
+
+function getResendClient(): Resend | null {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("RESEND_API_KEY is not defined in the environment. Email notifications are inactive.");
+    return null;
+  }
+  if (!resendClient) {
+    resendClient = new Resend(apiKey);
+  }
+  return resendClient;
+}
 
 // Lazy-initialized Gemini client
 let aiClient: GoogleGenAI | null = null;
@@ -220,7 +236,7 @@ app.post("/api/generate-insights", async (req, res) => {
 });
 
 // 3. Research Cohort Registration
-app.post("/api/signup-cohort", (req, res) => {
+app.post("/api/signup-cohort", async (req, res) => {
   const { email, tier, score } = req.body;
   if (!email || !tier) {
     return res.status(400).json({ success: false, error: "Email and Tier are required fields." });
@@ -228,12 +244,89 @@ app.post("/api/signup-cohort", (req, res) => {
 
   // Simulate storing in database
   const cohortId = `COHORT-CAN-${Math.floor(1000 + Math.random() * 9000)}`;
+  
+  // Get Tier name
+  let tierName = "Standard Research Engagement";
+  if (tier === "guardian") {
+    tierName = "Active Safety Research Engagement";
+  } else if (tier === "founding") {
+    tierName = "Steering Advisory Panel";
+  }
+
+  let emailSent = false;
+  let emailError = null;
+
+  const resend = getResendClient();
+  if (resend) {
+    try {
+      const { data, error } = await resend.emails.send({
+        from: "Astrateq Research <onboarding@resend.dev>",
+        to: email,
+        subject: `[ASTRATEQ] Research Cohort Enrollment Confirmation: ${cohortId}`,
+        html: `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e6edf5; border-radius: 8px; background-color: #ffffff;">
+            <div style="border-bottom: 2px solid #0f172a; padding-bottom: 16px; margin-bottom: 24px;">
+              <h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #0f172a; letter-spacing: -0.025em; text-transform: uppercase;">ASTRATEQ</h2>
+              <p style="margin: 4px 0 0 0; font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Driver Awareness & Intelligence Study</p>
+            </div>
+            
+            <p style="font-size: 14px; line-height: 1.6; color: #334155;">Hello,</p>
+            <p style="font-size: 14px; line-height: 1.6; color: #334155;">Thank you for registering to join the Astrateq pre-launch driver awareness research cohort. Your enrollment has been successfully logged.</p>
+            
+            <div style="background-color: #f4f7fb; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin: 24px 0;">
+              <h3 style="margin: 0 0 12px 0; font-size: 12px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px;">Enrollment Details</h3>
+              <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                <tr>
+                  <td style="padding: 6px 0; color: #64748b; font-weight: 500; width: 40%;">Cohort ID:</td>
+                  <td style="padding: 6px 0; color: #0f172a; font-weight: bold; font-family: monospace;">${cohortId}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; color: #64748b; font-weight: 500;">Participation Level:</td>
+                  <td style="padding: 6px 0; color: #0f172a; font-weight: bold;">${tierName}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; color: #64748b; font-weight: 500;">Simulated Score:</td>
+                  <td style="padding: 6px 0; color: #0f172a; font-weight: bold;">${score !== undefined ? `${score} / 100` : "Pending Simulation"}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px 0; color: #64748b; font-weight: 500;">Status:</td>
+                  <td style="padding: 6px 0; color: #10b981; font-weight: bold; text-transform: uppercase; font-size: 11px;">Active & Verified</td>
+                </tr>
+              </table>
+            </div>
+
+            <p style="font-size: 13px; line-height: 1.6; color: #475569;"><strong>What happens next?</strong></p>
+            <p style="font-size: 13px; line-height: 1.6; color: #475569; margin-bottom: 24px;">Our research team is currently onboarding Canadian drivers block-by-block. You will receive updates, localized focus insights, and opportunities to validate early software builds as they become available. No action is required from you at this time.</p>
+
+            <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 32px; font-size: 11px; color: #94a3b8; text-align: center; font-family: monospace; text-transform: uppercase; letter-spacing: 0.05em;">
+              This is a pre-launch behavioral simulation and concept validation study.<br>
+              ASTRATEQ CANADA • COGNITIVE SAFETY RESEARCH
+            </div>
+          </div>
+        `
+      });
+
+      if (error) {
+        console.error("Resend sendEmail error object:", error);
+        emailError = error.message;
+      } else {
+        emailSent = true;
+        console.log(`[RESEND] Email successfully sent to ${email} for cohort ID ${cohortId}`);
+      }
+    } catch (err: any) {
+      console.error("Resend API request crashed:", err);
+      emailError = err.message || "Request failed";
+    }
+  }
+
   return res.json({
     success: true,
-    message: `Successfully registered for the ${tier} research tier!`,
+    message: `Successfully registered for the ${tierName}!`,
     cohortId,
     email,
-    tier
+    tier,
+    emailSent,
+    emailError
   });
 });
 

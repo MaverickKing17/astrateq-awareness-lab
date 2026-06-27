@@ -22,11 +22,11 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
           </p>
         </div>
 
-        {/* 3 Value Prop Cards - SECONDARY CARDS (White background, light border #E6EDF5, moderate shadow) */}
+        {/* 3 Value Prop Cards - SECONDARY CARDS (With premium glowing blue borders) */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 */}
-          <div className="relative flex flex-col rounded-xl border-2 border-[#E6EDF5] bg-white p-8 shadow-md transition-all hover:border-slate-300">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-slate-100 border border-slate-200 text-slate-900 mb-6 font-mono font-bold text-xs">
+          <div className="relative flex flex-col rounded-xl border border-blue-200/60 bg-white p-8 shadow-[0_0_25px_rgba(59,130,246,0.08)] ring-1 ring-blue-500/10 transition-all duration-300 hover:border-blue-500 hover:ring-blue-500/30 hover:shadow-[0_0_35px_rgba(59,130,246,0.20)] hover:-translate-y-1">
+            <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 mb-6 font-mono font-bold text-xs">
               01
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
@@ -36,14 +36,14 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               Validate whether a multi-factor numerical simulation score mapped to cognitive attentiveness can effectively reflect visual field checks and task-switching habits over typical travel durations.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
-              <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
               Approved Research Objective
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="relative flex flex-col rounded-xl border-2 border-[#E6EDF5] bg-white p-8 shadow-md transition-all hover:border-slate-300">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-slate-100 border border-slate-200 text-slate-900 mb-6 font-mono font-bold text-xs">
+          <div className="relative flex flex-col rounded-xl border border-blue-200/60 bg-white p-8 shadow-[0_0_25px_rgba(59,130,246,0.08)] ring-1 ring-blue-500/10 transition-all duration-300 hover:border-blue-500 hover:ring-blue-500/30 hover:shadow-[0_0_35px_rgba(59,130,246,0.20)] hover:-translate-y-1">
+            <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 mb-6 font-mono font-bold text-xs">
               02
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
@@ -53,14 +53,14 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               Analyze critical fatigue exposure timelines and cognitive sleep-debt vulnerability to validate whether highlighting precise fatigue risk thresholds can positively influence driver fatigue mitigation behaviors.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
-              <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
               Behavioral Evaluation Area
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="relative flex flex-col rounded-xl border-2 border-[#E6EDF5] bg-white p-8 shadow-md transition-all hover:border-slate-300">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-slate-100 border border-slate-200 text-slate-900 mb-6 font-mono font-bold text-xs">
+          <div className="relative flex flex-col rounded-xl border border-blue-200/60 bg-white p-8 shadow-[0_0_25px_rgba(59,130,246,0.08)] ring-1 ring-blue-500/10 transition-all duration-300 hover:border-blue-500 hover:ring-blue-500/30 hover:shadow-[0_0_35px_rgba(59,130,246,0.20)] hover:-translate-y-1">
+            <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 mb-6 font-mono font-bold text-xs">
               03
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
@@ -70,7 +70,7 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               Examine driver readiness indicators to evaluate how personal safety-readiness benchmarks and localized provincial guidelines correlate with standard visual field responses and hazard scan habits.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
-              <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
               Cognitive Safety Standard
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
           <div className="mt-16 flex justify-center">
             <button
               onClick={onStartSimulation}
-              className="inline-flex items-center justify-center gap-2 rounded bg-slate-900 px-6 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-slate-800 active:scale-95 cursor-pointer font-mono"
+              className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-6 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_0_rgba(59,130,246,0.3)] transition-all hover:bg-blue-700 hover:shadow-[0_6px_20px_0_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer font-mono"
             >
               Start Awareness Simulation
             </button>
