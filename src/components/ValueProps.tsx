@@ -7,11 +7,11 @@ interface ValuePropsProps {
 
 export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
   return (
-    <section id="value-props" className="py-20 sm:py-28 bg-[#F4F7FB]">
+    <section id="value-props" className="py-20 sm:py-28 bg-[#E5ECF4]">
       {/* Upper Intro & Value Props */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-[#EEF3F8] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
+          <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-[#D8E3EE] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
             🍁 Behavioral Science Research Study
           </span>
           <h2 className="mt-4 text-2xl font-bold uppercase tracking-tight text-slate-900 sm:text-3xl">
@@ -78,7 +78,7 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
       </div>
 
       {/* How It Works Section */}
-      <div id="how-it-works" className="mt-20 bg-[#EEF3F8] py-20 sm:py-28 border-y border-slate-200">
+      <div id="how-it-works" className="mt-20 bg-[#D8E3EE] py-20 sm:py-28 border-y border-slate-200/80">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-2xl font-bold uppercase tracking-wider text-slate-900">

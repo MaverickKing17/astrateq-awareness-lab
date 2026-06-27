@@ -157,7 +157,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F4F7FB]">
+    <div className="min-h-screen flex flex-col bg-[#E5ECF4]">
       
       {/* Dynamic Loading Overlay */}
       {isSubmitting && <LoadingOverlay />}
@@ -172,7 +172,7 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-28 border-b border-slate-200">
+            <section className="relative overflow-hidden bg-[#E5ECF4] py-20 sm:py-28 border-b border-slate-200/80">
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
                 <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-200 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
@@ -324,7 +324,7 @@ export default function App() {
             <ValueProps onStartSimulation={handleStartSimulation} />
 
             {/* Privacy Section Highlight (Specific requirement to reinforce simulation/research) */}
-            <section id="privacy-info" className="py-20 sm:py-28 bg-[#EEF3F8] border-b border-slate-200">
+            <section id="privacy-info" className="py-20 sm:py-28 bg-[#D8E3EE] border-b border-slate-200/80">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="rounded-xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0C1424] shadow-xl">
                   {/* Gradient globes */}
@@ -359,7 +359,7 @@ export default function App() {
             </section>
 
             {/* FAQ Section */}
-            <section id="faq-section" className="py-16 sm:py-24 bg-slate-50">
+            <section id="faq-section" className="py-16 sm:py-24 bg-[#E5ECF4] border-t border-slate-200/60">
               <div className="mx-auto max-w-4xl px-4 sm:px-6">
                 <div className="text-center mb-12">
                   <HelpCircle className="mx-auto h-8 w-8 text-slate-900 mb-3" />

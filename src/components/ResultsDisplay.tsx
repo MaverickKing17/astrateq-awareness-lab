@@ -341,7 +341,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
       </div>
 
       {/* Accordion / Interpretation Panel */}
-      <div className="mb-16 bg-[#EEF3F8] rounded-xl p-6 sm:p-8 border border-[#E6EDF5] opacity-95">
+      <div className="mb-16 bg-[#D8E3EE] rounded-xl p-6 sm:p-8 border border-[#cbd5e1] shadow-sm">
         <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
           <Info className="h-4 w-4 text-slate-700" />
           Pre-Launch Study Calibration & Scale Metrics
