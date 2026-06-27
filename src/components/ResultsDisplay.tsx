@@ -153,7 +153,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 Driver Awareness Score
               </h4>
               <p className="mt-1 text-[10px] font-mono text-slate-400 italic">
-                Simulated Output — Conceptual Model (Not Real Data)
+                Simulated Output — Conceptual Model (Not Real-World Data)
               </p>
               <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
                 {levelInfo.text}
@@ -434,29 +434,12 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </div>
           
           <div className="space-y-3">
-            <div className="grid grid-cols-1 gap-2">
-              <button
-                onClick={() => onNavigateToCohort("access")}
-                className="w-full inline-flex items-center justify-between rounded border border-slate-800 bg-slate-900 px-3.5 py-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-200 hover:bg-slate-800 hover:text-white transition-all active:scale-[0.98] cursor-pointer font-mono"
-              >
-                <span>1. Standard Research Level</span>
-                <span className="text-slate-400 font-semibold">Select & Onboard →</span>
-              </button>
-              <button
-                onClick={() => onNavigateToCohort("guardian")}
-                className="w-full inline-flex items-center justify-between rounded border border-slate-700 bg-slate-900 px-3.5 py-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-200 hover:bg-slate-800 hover:text-white transition-all active:scale-[0.98] cursor-pointer font-mono animate-pulse"
-              >
-                <span>2. Active Research Level</span>
-                <span className="text-emerald-400 font-bold">Recommended →</span>
-              </button>
-              <button
-                onClick={() => onNavigateToCohort("founding")}
-                className="w-full inline-flex items-center justify-between rounded border border-white bg-white px-3.5 py-2.5 text-[10px] font-bold uppercase tracking-wider text-slate-950 hover:bg-slate-100 transition-all active:scale-[0.98] cursor-pointer font-mono"
-              >
-                <span>3. Steering Advisory Panel</span>
-                <span className="font-bold text-slate-950">Select & Join →</span>
-              </button>
-            </div>
+            <button
+              onClick={() => onNavigateToCohort("guardian")}
+              className="w-full inline-flex items-center justify-center rounded border border-white bg-white px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-950 hover:bg-slate-100 transition-all active:scale-[0.98] cursor-pointer font-mono"
+            >
+              Join Research Cohort
+            </button>
             <p className="text-center text-[9px] text-slate-500 font-mono uppercase tracking-wider mt-1">
               SPOTS ARE LIMITED IN CA • FREE PARTICIPATION
             </p>

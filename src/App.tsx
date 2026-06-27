@@ -32,28 +32,28 @@ export default function App() {
 
   const faqItems = [
     {
-      q: "What is the Astrateq Driver Awareness Intelligence platform?",
-      a: "Astrateq is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This platform evaluates relative driver focus, attention locking, and fatigue resistance benchmarks to help Canadian drivers assess their road safety readiness."
+      q: "What is the Astrateq Driver Awareness Intelligence study?",
+      a: "Astrateq is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This initiative evaluates relative driver focus, attention locking, and fatigue resistance benchmarks to help Canadian drivers assess their road safety readiness."
     },
     {
       q: "Is this connected to my vehicle?",
-      a: "No — this is a simulation and does not connect to any vehicle system."
+      a: "No — this is a simulation and does not connect to any vehicle system or hardware."
     },
     {
-      q: "Is this replacing insurance or telematics tools?",
-      a: "No — this is a research simulation only."
+      q: "Is this replacing insurance or telematics systems?",
+      a: "No — this is a research simulation for concept validation only."
     },
     {
-      q: "How is the score generated?",
-      a: "It is produced from a behavioral simulation model based on user inputs, not real-world telemetry."
+      q: "How is the awareness score generated?",
+      a: "It is generated from a behavioral simulation model based on user inputs, not real-world telemetry or tracking."
     },
     {
       q: "Is Astrateq planning hardware in the future?",
-      a: "This study focuses only on validating software-based awareness systems."
+      a: "This initiative is focused on validating a software-only Driver Awareness Intelligence concept."
     },
     {
-      q: "What happens after I join the cohort?",
-      a: "You may receive research updates and participation opportunities."
+      q: "What happens after I join the research cohort?",
+      a: "You may receive updates, insights, and opportunities to participate in early research validation."
     },
     {
       q: "Does this require an OBD2 scanner, telematics device, or hardware?",
@@ -64,8 +64,8 @@ export default function App() {
       a: "No. Privacy is our highest directive. Your simulation responses and overall scores are 100% anonymous, encrypted, and stored securely inside Canada. They are never shared, leased, or sold to automotive insurers, marketing agencies, or tracking networks."
     },
     {
-      q: "What do the cohort tiers represent?",
-      a: "Our research cohort is divided into different engagement levels (Casual surveys, active simulation feedback, and founding advisory panel memberships). It is fully funded by pre-launch research capital and participation carries zero cost."
+      q: "What do the research participation levels represent?",
+      a: "Our research cohort is divided into different engagement levels (Standard research level, active safety research engagement, and steering advisory panel memberships). It is fully funded by pre-launch research capital and participation carries zero cost."
     }
   ];
 
@@ -157,7 +157,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#E5ECF4]">
+    <div className="min-h-screen flex flex-col bg-[#F4F7FB]">
       
       {/* Dynamic Loading Overlay */}
       {isSubmitting && <LoadingOverlay />}
@@ -172,7 +172,7 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#E5ECF4] py-20 sm:py-28 border-b border-slate-200/80">
+            <section className="relative overflow-hidden bg-[#F4F7FB] py-24 sm:py-36 border-b border-slate-200/80">
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
                 <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-200 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
@@ -182,7 +182,7 @@ export default function App() {
                   
                   {/* Left Column Text & CTAs */}
                   <div className="lg:col-span-7 text-left">
-                    <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
+                    <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-[#EEF3F8] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
                       <Sparkles className="h-3.5 w-3.5 text-slate-900 animate-pulse" />
                       Concept Validation Open for Enrollment
                     </span>
@@ -194,7 +194,7 @@ export default function App() {
                       model in 60 seconds
                     </h1>
                     <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl">
-                      A simulated intelligence model designed to explore how Canadian drivers respond to fatigue awareness and driving safety insights. Help validate our pre-launch cognitive standards. This is a simulation-based concept for a market validation study.
+                      A behavioral simulation designed to explore how Canadian drivers respond to fatigue awareness, attention patterns, and driving decision contexts.
                     </p>
 
                     {/* Features list */}
@@ -295,6 +295,10 @@ export default function App() {
                               <p className="text-[8px] uppercase text-slate-400">READINESS</p>
                             </div>
                           </div>
+                          
+                          <p className="mt-3 text-[7.5px] font-mono text-slate-400 italic text-center px-4 border-t border-slate-50 pt-2 w-full uppercase tracking-wider">
+                            Simulated Output — Conceptual Model (Not Real-World Data)
+                          </p>
                         </div>
 
                         {/* Tiny live feedback bubbles */}
@@ -324,7 +328,7 @@ export default function App() {
             <ValueProps onStartSimulation={handleStartSimulation} />
 
             {/* Privacy Section Highlight (Specific requirement to reinforce simulation/research) */}
-            <section id="privacy-info" className="py-20 sm:py-28 bg-[#D8E3EE] border-b border-slate-200/80">
+            <section id="privacy-info" className="py-24 sm:py-36 bg-[#EEF3F8] border-b border-slate-200/80">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="rounded-xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0C1424] shadow-xl">
                   {/* Gradient globes */}
@@ -340,17 +344,17 @@ export default function App() {
                     </p>
 
                     <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
-                      <div className="p-4 rounded border border-slate-800 bg-[#0B1220]/60 font-mono">
+                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
                         <p className="font-bold uppercase text-[10px] tracking-wider text-white">Monitoring Policy</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This system is designed without tracking or behavioral monitoring.</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This system is designed without behavioral tracking or monitoring.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800 bg-[#0B1220]/60 font-mono">
+                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
                         <p className="font-bold uppercase text-[10px] tracking-wider text-white">Data Transmission</p>
                         <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">No vehicle data is accessed or transmitted.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800 bg-[#0B1220]/60 font-mono">
+                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
                         <p className="font-bold uppercase text-[10px] tracking-wider text-white">Research Protocol</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This is a simulation-only research environment.</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This is a simulation-only research environment for concept validation.</p>
                       </div>
                     </div>
                   </div>
@@ -359,7 +363,7 @@ export default function App() {
             </section>
 
             {/* FAQ Section */}
-            <section id="faq-section" className="py-16 sm:py-24 bg-[#E5ECF4] border-t border-slate-200/60">
+            <section id="faq-section" className="py-24 sm:py-36 bg-[#F4F7FB] border-t border-slate-200/60">
               <div className="mx-auto max-w-4xl px-4 sm:px-6">
                 <div className="text-center mb-12">
                   <HelpCircle className="mx-auto h-8 w-8 text-slate-900 mb-3" />
@@ -373,7 +377,7 @@ export default function App() {
                     return (
                       <div 
                         key={idx} 
-                        className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+                        className="rounded-xl border border-slate-200/40 bg-white/70 shadow-none hover:bg-white transition-all overflow-hidden"
                       >
                         <button
                           onClick={() => toggleFaq(idx)}

@@ -145,7 +145,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
               onClick={() => handleMobileNavigate("simulation")}
               className="w-full flex items-center justify-center gap-1.5 rounded bg-slate-900 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-md hover:bg-slate-800 active:scale-95 transition-all cursor-pointer"
             >
-              <span>Start Free Simulation</span>
+              <span>Start Awareness Simulation</span>
               <span className="text-slate-400">→</span>
             </button>
           </div>
