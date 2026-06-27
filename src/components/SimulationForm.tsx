@@ -74,32 +74,32 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
 
   return (
     <div id="simulation-section" className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-lg relative overflow-hidden">
+      <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm relative overflow-hidden">
         
-        {/* Glow Top Accent */}
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500" />
+        {/* Top Accent */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-slate-900" />
 
         {/* Form header */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono">
               Driver Awareness Simulation
             </span>
-            <span className="text-sm font-semibold text-slate-500">
-              Question {step} of 5
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+              Step {step} of 5
             </span>
           </div>
-          <h2 className="mt-2 text-2xl font-bold text-slate-900">
+          <h2 className="mt-3 text-xl font-bold uppercase tracking-tight text-slate-900">
             Cognitive Driving Profile Assessment
           </h2>
-          <p className="mt-1 text-xs text-slate-400">
-            Your anonymous responses are processed instantly by our software-based behavioral validation model.
+          <p className="mt-1 text-[11px] text-slate-400 font-mono">
+            SECURE PORT • SUBJECT: DS-2901-DELTA • HARDWARE-FREE VALIDATION
           </p>
 
           {/* Progress bar */}
-          <div className="mt-4 h-1.5 w-full rounded-full bg-slate-100">
+          <div className="mt-4 h-1 w-full rounded-full bg-slate-100">
             <div 
-              className="h-1.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300"
+              className="h-1 rounded-full bg-slate-900 transition-all duration-300"
               style={{ width: `${(step / 5) * 100}%` }}
             />
           </div>
@@ -114,39 +114,38 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.15 }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                    <Car className="h-5 w-5" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Car className="h-4 w-4" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">1. Driving Frequency</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">01. Driving Frequency</h3>
                 </div>
-                <p className="text-sm text-slate-500 mb-6">
+                <p className="text-xs text-slate-500 mb-6">
                   Select your typical driving frequency on Canadian roads to establish baseline cognitive exposure levels.
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {frequencyOptions.map(opt => {
-                    const SelectedIcon = opt.icon;
                     const isSelected = inputs.drivingFrequency === opt.value;
                     return (
                       <button
                         key={opt.value}
                         onClick={() => selectOption("drivingFrequency", opt.value)}
-                        className={`flex items-start text-left p-4 rounded-xl border transition-all cursor-pointer ${
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-blue-500 bg-blue-50/40 shadow-sm" 
-                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50"
+                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
-                        <div className={`mt-0.5 mr-4 flex h-5 w-5 items-center justify-center rounded-full border ${
-                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
                         }`}>
-                          {isSelected && <Check className="h-3 w-3" />}
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
                         <div>
-                          <div className="font-semibold text-slate-900 text-sm">{opt.label}</div>
-                          <div className="text-xs text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -161,38 +160,38 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.15 }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                    <Compass className="h-5 w-5" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Compass className="h-4 w-4" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">2. Commute Environment</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">02. Commute Environment</h3>
                 </div>
-                <p className="text-sm text-slate-500 mb-6">
+                <p className="text-xs text-slate-500 mb-6">
                   What type of route dominates your driving experience? Commute types indicate different cognitive workloads.
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {commuteOptions.map(opt => {
                     const isSelected = inputs.commuteType === opt.value;
                     return (
                       <button
                         key={opt.value}
                         onClick={() => selectOption("commuteType", opt.value)}
-                        className={`flex items-start text-left p-4 rounded-xl border transition-all cursor-pointer ${
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-blue-500 bg-blue-50/40 shadow-sm" 
-                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50"
+                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
-                        <div className={`mt-0.5 mr-4 flex h-5 w-5 items-center justify-center rounded-full border ${
-                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
                         }`}>
-                          {isSelected && <Check className="h-3 w-3" />}
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
                         <div>
-                          <div className="font-semibold text-slate-900 text-sm">{opt.label}</div>
-                          <div className="text-xs text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -207,38 +206,38 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.15 }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                    <Clock className="h-5 w-5" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Clock className="h-4 w-4" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">3. Time-of-Day Driving</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">03. Time-of-Day Driving</h3>
                 </div>
-                <p className="text-sm text-slate-500 mb-6">
+                <p className="text-xs text-slate-500 mb-6">
                   When do you perform the majority of your weekly driving? Light conditions heavily dictate visual attention fatigue.
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {timeOptions.map(opt => {
                     const isSelected = inputs.timeOfDay === opt.value;
                     return (
                       <button
                         key={opt.value}
                         onClick={() => selectOption("timeOfDay", opt.value)}
-                        className={`flex items-start text-left p-4 rounded-xl border transition-all cursor-pointer ${
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-blue-500 bg-blue-50/40 shadow-sm" 
-                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50"
+                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
-                        <div className={`mt-0.5 mr-4 flex h-5 w-5 items-center justify-center rounded-full border ${
-                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
                         }`}>
-                          {isSelected && <Check className="h-3 w-3" />}
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
                         <div>
-                          <div className="font-semibold text-slate-900 text-sm">{opt.label}</div>
-                          <div className="text-xs text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -253,38 +252,38 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.15 }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                    <AlertTriangle className="h-5 w-5" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <AlertTriangle className="h-4 w-4" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">4. Fatigue Self-Assessment</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">04. Fatigue Assessment</h3>
                 </div>
-                <p className="text-sm text-slate-500 mb-6">
+                <p className="text-xs text-slate-500 mb-6">
                   How often do you experience fatigue indicators (yawning, drifting, heavy eyelids) while actively behind the wheel?
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {fatigueOptions.map(opt => {
                     const isSelected = inputs.fatigueAssessment === opt.value;
                     return (
                       <button
                         key={opt.value}
                         onClick={() => selectOption("fatigueAssessment", opt.value)}
-                        className={`flex items-start text-left p-4 rounded-xl border transition-all cursor-pointer ${
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-blue-500 bg-blue-50/40 shadow-sm" 
-                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50"
+                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
-                        <div className={`mt-0.5 mr-4 flex h-5 w-5 items-center justify-center rounded-full border ${
-                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
                         }`}>
-                          {isSelected && <Check className="h-3 w-3" />}
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
                         <div>
-                          <div className="font-semibold text-slate-900 text-sm">{opt.label}</div>
-                          <div className="text-xs text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -299,38 +298,38 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.15 }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                    <Eye className="h-5 w-5" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Eye className="h-4 w-4" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">5. Driving Attention & Habits</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">05. Attention & Habits</h3>
                 </div>
-                <p className="text-sm text-slate-500 mb-6">
+                <p className="text-xs text-slate-500 mb-6">
                   Which description best fits your cognitive state and visual focus patterns on a typical drive?
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {attentionOptions.map(opt => {
                     const isSelected = inputs.attentionHabits === opt.value;
                     return (
                       <button
                         key={opt.value}
                         onClick={() => selectOption("attentionHabits", opt.value)}
-                        className={`flex items-start text-left p-4 rounded-xl border transition-all cursor-pointer ${
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
                           isSelected 
-                            ? "border-blue-500 bg-blue-50/40 shadow-sm" 
-                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50"
+                            ? "border-slate-900 bg-slate-50 shadow-sm" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
                         }`}
                       >
-                        <div className={`mt-0.5 mr-4 flex h-5 w-5 items-center justify-center rounded-full border ${
-                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white"
                         }`}>
-                          {isSelected && <Check className="h-3 w-3" />}
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
                         </div>
                         <div>
-                          <div className="font-semibold text-slate-900 text-sm">{opt.label}</div>
-                          <div className="text-xs text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -347,7 +346,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             type="button"
             onClick={prevStep}
             disabled={step === 1 || isSubmitting}
-            className={`inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl border cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded border cursor-pointer transition-all ${
               step === 1 || isSubmitting
                 ? "text-slate-300 border-slate-100 cursor-not-allowed"
                 : "text-slate-600 border-slate-200 hover:bg-slate-50"
@@ -361,9 +360,9 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             type="button"
             onClick={nextStep}
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 active:scale-95 cursor-pointer"
+            className="inline-flex items-center gap-2 rounded bg-slate-900 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-slate-800 active:scale-95 cursor-pointer transition-all"
           >
-            <span>{step === 5 ? "Submit Assessment" : "Continue"}</span>
+            <span>{step === 5 ? "Transmit Profile" : "Continue"}</span>
             {step === 5 ? <Sparkles className="h-4 w-4 animate-pulse" /> : <ArrowRight className="h-4 w-4" />}
           </button>
         </div>

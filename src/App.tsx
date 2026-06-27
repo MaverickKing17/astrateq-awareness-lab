@@ -152,9 +152,9 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-white py-16 sm:py-24 border-b border-slate-100">
+            <section className="relative overflow-hidden bg-white py-16 sm:py-24 border-b border-slate-200">
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-400 to-cyan-300 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
+                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-200 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
 
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -162,46 +162,46 @@ export default function App() {
                   
                   {/* Left Column Text & CTAs */}
                   <div className="lg:col-span-7 text-left">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-                      <Sparkles className="h-3 w-3 text-blue-600 animate-pulse" />
+                    <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
+                      <Sparkles className="h-3.5 w-3.5 text-slate-900 animate-pulse" />
                       Concept Validation Open for Enrollment
                     </span>
-                    <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl leading-none">
+                    <h1 className="mt-4 text-3xl font-bold uppercase tracking-tight text-slate-900 sm:text-4xl leading-tight">
                       Check your Driver <br />
-                      <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
                         Awareness Readiness
                       </span>{" "}
                       in 60 seconds
                     </h1>
-                    <p className="mt-6 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl">
+                    <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl">
                       A simulated intelligence model designed to explore how Canadian drivers respond to fatigue awareness and driving safety insights. Help validate our pre-launch cognitive standards.
                     </p>
 
                     {/* Features list */}
-                    <div className="mt-8 grid grid-cols-2 gap-4 max-w-lg text-xs font-semibold text-slate-600">
+                    <div className="mt-8 grid grid-cols-2 gap-4 max-w-lg text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono">
                       <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
                         <span>100% Software-Based</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
                         <span>No Hardware Required</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
                         <span>Completely Anonymous</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
-                        <span>Encrypted Canadian Servers</span>
+                        <span>Secured Canadian Servers</span>
                       </div>
                     </div>
 
@@ -209,86 +209,86 @@ export default function App() {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                       <button
                         onClick={handleStartSimulation}
-                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-sm font-semibold text-white shadow-md shadow-blue-500/10 transition-all hover:bg-blue-700 hover:shadow-blue-500/20 active:scale-95 cursor-pointer"
+                        className="inline-flex items-center justify-center gap-2 rounded bg-slate-900 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-slate-800 active:scale-95 cursor-pointer font-mono"
                       >
                         <span>Start Awareness Check</span>
                         <ArrowRight className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleNavigate("cohort")}
-                        className="inline-flex items-center justify-center rounded-xl bg-slate-100 px-6 py-4 text-sm font-semibold text-slate-700 transition-all hover:bg-slate-200 active:scale-95 cursor-pointer"
+                        className="inline-flex items-center justify-center rounded border border-slate-200 bg-white px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all hover:bg-slate-50 active:scale-95 cursor-pointer font-mono"
                       >
                         Explore Cohort Tiers
                       </button>
                     </div>
 
-                    <p className="text-[11px] text-slate-400 mt-4 leading-relaxed">
+                    <p className="text-[9px] font-mono uppercase tracking-wider text-slate-400 mt-6 leading-relaxed">
                       *Note: Astrateq Gadgets does NOT utilize, distribute, or imply OBD2 scanners, dashcams, vehicle telemetry, or insurance tracking metrics. This is a purely cognitive research study.
                     </p>
                   </div>
 
                   {/* Right Column Custom Cockpit Dashboard Mock */}
                   <div className="lg:col-span-5 flex justify-center">
-                    <div className="relative w-full max-w-sm rounded-3xl border border-slate-150 bg-slate-50 p-6 shadow-xl overflow-hidden group">
+                    <div className="relative w-full max-w-sm rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm overflow-hidden">
                       
                       {/* Grid bg overlay */}
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e110_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e110_1px,transparent_1px)] bg-[size:14px_24px]" />
                       
                       <div className="relative">
                         <div className="flex items-center justify-between mb-6">
-                          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400">
-                            <Cpu className="h-4 w-4 text-blue-600" />
+                          <div className="flex items-center gap-1.5 text-[10px] font-bold font-mono text-slate-400 uppercase tracking-wider">
+                            <Cpu className="h-4 w-4 text-slate-900" />
                             <span>COGNITIVE ENGINE V1</span>
                           </div>
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
-                            <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
+                          <span className="inline-flex items-center gap-1.5 rounded border border-slate-200 bg-slate-50 px-2 py-0.5 text-[9px] font-bold font-mono text-slate-700 uppercase tracking-wider">
+                            <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
                             CALIBRATED
                           </span>
                         </div>
 
                         {/* Large Mock Score Dial */}
-                        <div className="flex flex-col items-center py-4 bg-white rounded-2xl shadow-sm border border-slate-100">
+                        <div className="flex flex-col items-center py-6 bg-white rounded border border-slate-200 shadow-sm">
                           <div className="relative flex items-center justify-center h-28 w-28">
                             <svg className="h-full w-full" viewBox="0 0 100 100">
                               <circle cx="50" cy="50" r="40" stroke="#f1f5f9" strokeWidth="8" fill="transparent" />
-                              <circle cx="50" cy="50" r="40" stroke="#3b82f6" strokeWidth="8" strokeDasharray="251.2" strokeDashoffset="50.2" strokeLinecap="round" fill="transparent" />
+                              <circle cx="50" cy="50" r="40" stroke="#0f172a" strokeWidth="8" strokeDasharray="251.2" strokeDashoffset="50.2" strokeLinecap="round" fill="transparent" />
                             </svg>
                             <div className="absolute flex flex-col items-center">
-                              <span className="text-2xl font-black text-slate-800">80</span>
-                              <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none">AWARE INDEX</span>
+                              <span className="text-3xl font-black text-slate-900 font-mono">80</span>
+                              <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none font-mono">AWARE INDEX</span>
                             </div>
                           </div>
                           
-                          <div className="mt-4 flex gap-4 text-center text-[10px] text-slate-400 border-t border-slate-50 pt-3 w-full justify-around">
+                          <div className="mt-5 flex gap-4 text-center text-[10px] text-slate-400 border-t border-slate-100 pt-4 w-full justify-around font-mono">
                             <div>
-                              <p className="font-bold text-slate-700">LOW RISK</p>
-                              <p className="text-[8px] uppercase">FATIGUE</p>
+                              <p className="font-bold text-slate-800">LOW RISK</p>
+                              <p className="text-[8px] uppercase text-slate-400">FATIGUE</p>
                             </div>
-                            <div className="h-6 w-px bg-slate-100" />
+                            <div className="h-6 w-px bg-slate-200" />
                             <div>
-                              <p className="font-bold text-slate-700">95%</p>
-                              <p className="text-[8px] uppercase">ATTENTION</p>
+                              <p className="font-bold text-slate-800">95%</p>
+                              <p className="text-[8px] uppercase text-slate-400">ATTENTION</p>
                             </div>
-                            <div className="h-6 w-px bg-slate-100" />
+                            <div className="h-6 w-px bg-slate-200" />
                             <div>
-                              <p className="font-bold text-slate-700">GOOD</p>
-                              <p className="text-[8px] uppercase">READINESS</p>
+                              <p className="font-bold text-slate-800">GOOD</p>
+                              <p className="text-[8px] uppercase text-slate-400">READINESS</p>
                             </div>
                           </div>
                         </div>
 
                         {/* Tiny live feedback bubbles */}
                         <div className="mt-4 space-y-2">
-                          <div className="flex items-center justify-between p-2.5 rounded-xl bg-blue-50/40 border border-blue-50/60 text-[11px]">
-                            <span className="font-semibold text-slate-700 flex items-center gap-1.5">
-                              <Star className="h-3.5 w-3.5 text-blue-500 fill-blue-500" />
-                              Active Cognitive Model
+                          <div className="flex items-center justify-between p-2.5 rounded border border-slate-200 bg-white text-[10px] font-mono uppercase tracking-wider">
+                            <span className="font-bold text-slate-800 flex items-center gap-1.5">
+                              <Star className="h-3.5 w-3.5 text-slate-800 fill-slate-800" />
+                              ACTIVE MODEL
                             </span>
-                            <span className="text-slate-500">Trans-Canada Ready</span>
+                            <span className="text-slate-500">CAN-ON STANDARD</span>
                           </div>
-                          <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-100 text-[11px] text-slate-500">
-                            <span>Privacy Protocol Status</span>
-                            <span className="font-bold text-emerald-600">100% Secure</span>
+                          <div className="flex items-center justify-between p-2.5 rounded border border-slate-200 bg-white text-[10px] font-mono uppercase tracking-wider text-slate-500">
+                            <span>Privacy Protocol</span>
+                            <span className="font-bold text-slate-900">100% SECURED</span>
                           </div>
                         </div>
 
@@ -304,33 +304,33 @@ export default function App() {
             <ValueProps onStartSimulation={handleStartSimulation} />
 
             {/* Privacy Section Highlight (Specific requirement to reinforce simulation/research) */}
-            <section id="privacy-info" className="py-16 bg-white border-b border-slate-100">
+            <section id="privacy-info" className="py-16 bg-white border-b border-slate-200">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="rounded-3xl bg-slate-900 text-white p-8 sm:p-12 relative overflow-hidden shadow-xl">
+                <div className="rounded-xl bg-slate-950 text-white p-8 sm:p-12 relative overflow-hidden border border-slate-900">
                   {/* Gradient globes */}
-                  <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
                   
                   <div className="relative max-w-3xl">
-                    <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400 bg-slate-800 px-3 py-1 rounded-full mb-4">
-                      <Lock className="h-3 w-3" /> Zero Telematics Agreement
+                    <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-300 bg-slate-900 border border-slate-800 px-3 py-1 rounded mb-4 font-mono">
+                      <Lock className="h-3.5 w-3.5" /> Zero Telematics Agreement
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Our Absolute Privacy Guarantee</h3>
-                    <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Our Absolute Privacy Guarantee</h3>
+                    <p className="mt-4 text-xs text-slate-300 leading-relaxed">
                       We understand that driver tracking tools have created massive skepticism among Canadian drivers. We pledge a zero-telematics, zero-hardware, and zero-insurance sharing policy. Astrateq Gadgets is a behavioral research vehicle validation system.
                     </p>
 
                     <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
-                      <div className="p-4 rounded-xl bg-slate-800 border border-slate-700/50">
-                        <p className="font-bold text-cyan-400">No Location Tracking</p>
-                        <p className="text-[11px] text-slate-400 mt-1">We do not access or collect GPS coordinates or commute routes.</p>
+                      <div className="p-4 rounded border border-slate-800 bg-slate-900/60 font-mono">
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Location Tracking</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">We do not access or collect GPS coordinates or commute routes.</p>
                       </div>
-                      <div className="p-4 rounded-xl bg-slate-800 border border-slate-700/50">
-                        <p className="font-bold text-cyan-400">No Insurance Ties</p>
-                        <p className="text-[11px] text-slate-400 mt-1">Your scores cannot be accessed, shared, or requested by any auto insurer.</p>
+                      <div className="p-4 rounded border border-slate-800 bg-slate-900/60 font-mono">
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Insurance Ties</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">Your scores cannot be accessed, shared, or requested by any auto insurer.</p>
                       </div>
-                      <div className="p-4 rounded-xl bg-slate-800 border border-slate-700/50">
-                        <p className="font-bold text-cyan-400">100% Anonymous</p>
-                        <p className="text-[11px] text-slate-400 mt-1">We process behavioral attributes purely for cognitive research.</p>
+                      <div className="p-4 rounded border border-slate-800 bg-slate-900/60 font-mono">
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">100% Anonymous</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">We process behavioral attributes purely for cognitive research.</p>
                       </div>
                     </div>
                   </div>
@@ -342,8 +342,8 @@ export default function App() {
             <section id="faq-section" className="py-16 sm:py-24 bg-slate-50">
               <div className="mx-auto max-w-4xl px-4 sm:px-6">
                 <div className="text-center mb-12">
-                  <HelpCircle className="mx-auto h-10 w-10 text-blue-600 mb-3" />
-                  <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Frequently Asked Questions</h2>
+                  <HelpCircle className="mx-auto h-8 w-8 text-slate-900 mb-3" />
+                  <h2 className="text-xl font-bold uppercase tracking-wider text-slate-900 sm:text-2xl">Frequently Asked Questions</h2>
                   <p className="text-xs text-slate-500 mt-2">Get direct answers on privacy, objectives, and pre-launch study details.</p>
                 </div>
 
@@ -353,22 +353,22 @@ export default function App() {
                     return (
                       <div 
                         key={idx} 
-                        className="rounded-2xl border border-slate-200/60 bg-white shadow-xs overflow-hidden transition-all"
+                        className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden"
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
-                          className="w-full flex items-center justify-between px-6 py-4.5 text-left font-bold text-slate-800 text-sm sm:text-base cursor-pointer hover:bg-slate-50/50 transition-colors"
+                          className="w-full flex items-center justify-between px-6 py-4.5 text-left font-bold uppercase tracking-wider text-slate-800 text-xs sm:text-sm font-mono cursor-pointer hover:bg-slate-50/50 transition-colors"
                         >
                           <span>{item.q}</span>
                           {isOpen ? (
-                            <ChevronUp className="h-5 w-5 text-blue-600 shrink-0" />
+                            <ChevronUp className="h-4 w-4 text-slate-900 shrink-0" />
                           ) : (
-                            <ChevronDown className="h-5 w-5 text-slate-400 shrink-0" />
+                            <ChevronDown className="h-4 w-4 text-slate-400 shrink-0" />
                           )}
                         </button>
                         
                         {isOpen && (
-                          <div className="px-6 pb-5 pt-1 border-t border-slate-50 text-xs sm:text-sm text-slate-500 leading-relaxed animate-in fade-in duration-200">
+                          <div className="px-6 pb-5 pt-1 border-t border-slate-100 text-xs text-slate-500 leading-relaxed animate-in fade-in duration-250">
                             {item.a}
                           </div>
                         )}

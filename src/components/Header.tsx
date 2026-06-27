@@ -25,62 +25,52 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           onClick={() => onNavigate("landing")}
           className="flex items-center gap-3 transition-opacity hover:opacity-90 text-left"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 shadow-md shadow-blue-500/20 text-white">
-            <svg
-              className="h-6 w-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4.5 16.5L12 3l7.5 13.5M12 3v18M8 12h8" />
-            </svg>
+          <div className="flex h-8 w-8 items-center justify-center rounded bg-slate-900 text-white font-bold text-xs">
+            AQ
           </div>
           <div>
-            <div className="text-lg font-bold tracking-tight text-slate-900 leading-tight">
-              ASTRATEQ
+            <div className="text-sm font-bold tracking-tight text-slate-900 leading-tight">
+              ASTRATEQ <span className="text-blue-600 font-semibold text-xs ml-0.5 font-mono">V1</span>
             </div>
-            <div className="text-[10px] font-semibold uppercase tracking-widest text-blue-600 leading-none">
-              Gadgets
+            <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 leading-none">
+              Validation Platform
             </div>
           </div>
         </button>
 
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-500">
           <button
             onClick={() => scrollToSection("value-props")}
-            className="transition-colors hover:text-blue-600 cursor-pointer"
+            className="transition-colors hover:text-slate-900 cursor-pointer"
           >
             About
           </button>
           <button
             onClick={() => scrollToSection("how-it-works")}
-            className="transition-colors hover:text-blue-600 cursor-pointer"
+            className="transition-colors hover:text-slate-900 cursor-pointer"
           >
             How It Works
           </button>
           <button
             onClick={() => scrollToSection("privacy-info")}
-            className="transition-colors hover:text-blue-600 cursor-pointer"
+            className="transition-colors hover:text-slate-900 cursor-pointer"
           >
-            Privacy
+            Privacy Guarantee
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
-            className="transition-colors hover:text-blue-600 cursor-pointer"
+            className="transition-colors hover:text-slate-900 cursor-pointer"
           >
             FAQ
           </button>
           <button
             onClick={() => onNavigate("cohort")}
             className={`transition-colors cursor-pointer ${
-              activePage === "cohort" ? "text-blue-600 font-semibold" : "hover:text-blue-600"
+              activePage === "cohort" ? "text-blue-600 font-bold" : "hover:text-slate-900"
             }`}
           >
-            Research
+            Research Cohort
           </button>
         </nav>
 
@@ -88,15 +78,15 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={() => onNavigate("cohort")}
-            className="hidden sm:inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-600/10 transition-all hover:bg-blue-700 hover:shadow-blue-600/20 active:scale-95 cursor-pointer"
+            className="hidden sm:inline-flex items-center justify-center rounded bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer uppercase tracking-wider"
           >
-            Join Early Access
+            Join Cohort
           </button>
 
           {/* Mobile indicator for study */}
-          <div className="flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 md:hidden">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-            Study Model
+          <div className="flex items-center gap-1.5 rounded bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-slate-700 uppercase tracking-wider md:hidden border border-slate-200">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            AI ENGAGED
           </div>
         </div>
       </div>
