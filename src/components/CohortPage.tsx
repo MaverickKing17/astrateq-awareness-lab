@@ -11,6 +11,12 @@ interface CohortPageProps {
 
 export default function CohortPage({ score, initialSelectedTier }: CohortPageProps) {
   const [selectedTier, setSelectedTier] = useState<string | null>(initialSelectedTier || null);
+
+  React.useEffect(() => {
+    if (initialSelectedTier) {
+      setSelectedTier(initialSelectedTier);
+    }
+  }, [initialSelectedTier]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [province, setProvince] = useState("ON");
