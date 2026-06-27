@@ -32,8 +32,8 @@ export default function App() {
 
   const faqItems = [
     {
-      q: "What is the Astrateq Driver Awareness Intelligence study?",
-      a: "Astrateq is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This initiative evaluates relative driver focus, attention locking, and fatigue resistance benchmarks to help Canadian drivers assess their road safety readiness."
+      q: "What is the Astrateq Gadgets Driver Awareness Intelligence study?",
+      a: "Astrateq Gadgets is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This initiative evaluates relative driver focus, attention locking, and fatigue resistance benchmarks to help Canadian drivers assess their road safety readiness."
     },
     {
       q: "Is this connected to my vehicle?",
@@ -48,7 +48,7 @@ export default function App() {
       a: "It is generated from a behavioral simulation model based on user inputs, not real-world telemetry or tracking."
     },
     {
-      q: "Is Astrateq planning hardware in the future?",
+      q: "Is Astrateq Gadgets planning hardware in the future?",
       a: "This initiative is focused on validating a software-only Driver Awareness Intelligence concept."
     },
     {
@@ -248,70 +248,107 @@ export default function App() {
 
                   {/* Right Column Custom Cockpit Dashboard Mock */}
                   <div className="lg:col-span-5 flex justify-center">
-                    <div className="relative w-full max-w-sm rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm overflow-hidden">
+                    <div className="relative w-full max-w-sm rounded-2xl border border-blue-100 bg-gradient-to-b from-white to-blue-50/20 p-6 shadow-[0_20px_50px_rgba(59,130,246,0.06)] overflow-hidden transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.12)]">
                       
                       {/* Grid bg overlay */}
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e110_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e110_1px,transparent_1px)] bg-[size:14px_24px]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f606_1px,transparent_1px),linear-gradient(to_bottom,#3b82f606_1px,transparent_1px)] bg-[size:16px_16px]" />
                       
-                      <div className="relative">
+                      {/* Decorative gradient glow spots */}
+                      <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-400/10 rounded-full blur-2xl pointer-events-none" />
+                      <div className="absolute -bottom-10 -left-10 w-36 h-36 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none" />
+
+                      <div className="relative z-10">
                         <div className="flex items-center justify-between mb-6">
-                          <div className="flex items-center gap-1.5 text-[10px] font-bold font-mono text-slate-400 uppercase tracking-wider">
-                            <Cpu className="h-4 w-4 text-slate-900" />
+                          <div className="flex items-center gap-1.5 text-[10px] font-extrabold font-mono text-blue-600 uppercase tracking-widest">
+                            <Cpu className="h-4 w-4 text-blue-600 animate-pulse" />
                             <span>COGNITIVE ENGINE V1</span>
                           </div>
-                          <span className="inline-flex items-center gap-1.5 rounded border border-slate-200 bg-slate-50 px-2 py-0.5 text-[9px] font-bold font-mono text-slate-700 uppercase tracking-wider">
-                            <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
+                          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[9px] font-bold font-mono text-emerald-700 uppercase tracking-wider">
+                            <span className="relative flex h-1.5 w-1.5">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                            </span>
                             CALIBRATED
                           </span>
                         </div>
 
                         {/* Large Mock Score Dial */}
-                        <div className="flex flex-col items-center py-6 bg-white rounded border border-slate-200 shadow-sm">
-                          <div className="relative flex items-center justify-center h-28 w-28">
-                            <svg className="h-full w-full" viewBox="0 0 100 100">
+                        <div className="flex flex-col items-center py-7 bg-white rounded-xl border border-blue-100/80 shadow-[0_4px_20px_rgba(59,130,246,0.02)]">
+                          <div className="relative flex items-center justify-center h-32 w-32">
+                            {/* Inner visual grid effect */}
+                            <div className="absolute inset-2 rounded-full border border-dashed border-blue-100 animate-[spin_120s_linear_infinite]" />
+                            
+                            <svg className="h-full w-full transform -rotate-90" viewBox="0 0 100 100">
+                              <defs>
+                                <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                  <stop offset="0%" stopColor="#2563eb" />
+                                  <stop offset="100%" stopColor="#06b6d4" />
+                                </linearGradient>
+                              </defs>
+                              {/* Background Circle */}
                               <circle cx="50" cy="50" r="40" stroke="#f1f5f9" strokeWidth="8" fill="transparent" />
-                              <circle cx="50" cy="50" r="40" stroke="#0f172a" strokeWidth="8" strokeDasharray="251.2" strokeDashoffset="50.2" strokeLinecap="round" fill="transparent" />
+                              {/* Decorative tick circle */}
+                              <circle cx="50" cy="50" r="43" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="2 3" fill="transparent" opacity="0.7" />
+                              {/* Active Score Circle */}
+                              <circle 
+                                cx="50" 
+                                cy="50" 
+                                r="40" 
+                                stroke="url(#scoreGrad)" 
+                                strokeWidth="8" 
+                                strokeDasharray="251.2" 
+                                strokeDashoffset="50.2" 
+                                strokeLinecap="round" 
+                                fill="transparent" 
+                              />
                             </svg>
-                            <div className="absolute flex flex-col items-center">
-                              <span className="text-3xl font-black text-slate-900 font-mono">80</span>
-                              <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none font-mono">AWARE INDEX</span>
+                            <div className="absolute flex flex-col items-center justify-center">
+                              <span className="text-4xl font-extrabold text-slate-900 font-mono tracking-tighter leading-none">80</span>
+                              <span className="text-[7.5px] font-black text-slate-400 uppercase tracking-widest leading-none font-mono mt-1.5">AWARE INDEX</span>
                             </div>
                           </div>
                           
-                          <div className="mt-5 flex gap-4 text-center text-[10px] text-slate-400 border-t border-slate-100 pt-4 w-full justify-around font-mono">
+                          <div className="mt-6 flex gap-4 text-center border-t border-slate-100 pt-5 w-full justify-around">
                             <div>
-                              <p className="font-bold text-slate-800">LOW RISK</p>
-                              <p className="text-[8px] uppercase text-slate-400">FATIGUE</p>
+                              <p className="text-xs font-black text-emerald-600 font-mono uppercase">LOW RISK</p>
+                              <p className="text-[8px] font-bold uppercase text-slate-400 font-mono mt-0.5">FATIGUE</p>
                             </div>
-                            <div className="h-6 w-px bg-slate-200" />
+                            <div className="h-7 w-px bg-slate-100" />
                             <div>
-                              <p className="font-bold text-slate-800">95%</p>
-                              <p className="text-[8px] uppercase text-slate-400">ATTENTION</p>
+                              <p className="text-xs font-black text-blue-600 font-mono uppercase">95%</p>
+                              <p className="text-[8px] font-bold uppercase text-slate-400 font-mono mt-0.5">ATTENTION</p>
                             </div>
-                            <div className="h-6 w-px bg-slate-200" />
+                            <div className="h-7 w-px bg-slate-100" />
                             <div>
-                              <p className="font-bold text-slate-800">GOOD</p>
-                              <p className="text-[8px] uppercase text-slate-400">READINESS</p>
+                              <p className="text-xs font-black text-cyan-600 font-mono uppercase">GOOD</p>
+                              <p className="text-[8px] font-bold uppercase text-slate-400 font-mono mt-0.5">READINESS</p>
                             </div>
                           </div>
                           
-                          <p className="mt-3 text-[7.5px] font-mono text-slate-400 italic text-center px-4 border-t border-slate-50 pt-2 w-full uppercase tracking-wider">
+                          <p className="mt-4 text-[7px] font-mono text-slate-400 text-center px-4 border-t border-blue-50/50 pt-3.5 w-full uppercase tracking-widest">
                             Simulated Output — Conceptual Model (Not Real-World Data)
                           </p>
                         </div>
 
                         {/* Tiny live feedback bubbles */}
-                        <div className="mt-4 space-y-2">
-                          <div className="flex items-center justify-between p-2.5 rounded border border-slate-200 bg-white text-[10px] font-mono uppercase tracking-wider">
-                            <span className="font-bold text-slate-800 flex items-center gap-1.5">
-                              <Star className="h-3.5 w-3.5 text-slate-800 fill-slate-800" />
+                        <div className="mt-4 space-y-3">
+                          <div className="flex items-center justify-between p-3 rounded-xl border border-blue-100/60 bg-white text-[10px] font-mono uppercase tracking-wider shadow-[0_2px_10px_rgba(59,130,246,0.01)]">
+                            <span className="font-bold text-slate-800 flex items-center gap-2">
+                              <div className="p-1 rounded bg-blue-50 text-blue-600">
+                                <Star className="h-3.5 w-3.5 fill-blue-500 text-blue-500" />
+                              </div>
                               ACTIVE MODEL
                             </span>
-                            <span className="text-slate-500">CAN-ON STANDARD</span>
+                            <span className="font-black text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full text-[9px] tracking-wide">CAN-ON STANDARD</span>
                           </div>
-                          <div className="flex items-center justify-between p-2.5 rounded border border-slate-200 bg-white text-[10px] font-mono uppercase tracking-wider text-slate-500">
-                            <span>Privacy Protocol</span>
-                            <span className="font-bold text-slate-900">100% SECURED</span>
+                          <div className="flex items-center justify-between p-3 rounded-xl border border-blue-100/60 bg-white text-[10px] font-mono uppercase tracking-wider shadow-[0_2px_10px_rgba(59,130,246,0.01)] text-slate-500">
+                            <span className="font-bold text-slate-800 flex items-center gap-2">
+                              <div className="p-1 rounded bg-emerald-50 text-emerald-600">
+                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                              </div>
+                              Privacy Protocol
+                            </span>
+                            <span className="font-black text-emerald-600 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full text-[9px] tracking-wide">100% SECURED</span>
                           </div>
                         </div>
 
@@ -362,39 +399,65 @@ export default function App() {
             </section>
 
             {/* FAQ Section */}
-            <section id="faq-section" className="py-24 sm:py-36 bg-[#F4F7FB] border-t border-slate-200/60">
-              <div className="mx-auto max-w-4xl px-4 sm:px-6">
-                <div className="text-center mb-12">
-                  <HelpCircle className="mx-auto h-8 w-8 text-slate-900 mb-3" />
-                  <h2 className="text-xl font-bold uppercase tracking-wider text-slate-900 sm:text-2xl">Frequently Asked Questions</h2>
-                  <p className="text-xs text-slate-500 mt-2">Get direct answers on privacy, objectives, and pre-launch study details.</p>
+            <section id="faq-section" className="py-24 sm:py-36 bg-gradient-to-b from-slate-50/50 to-blue-50/20 border-t border-slate-200/60 relative overflow-hidden">
+              {/* Decorative subtle background glows */}
+              <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-1/3 right-0 -translate-y-1/2 w-80 h-80 bg-cyan-400/5 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
+                <div className="text-center mb-16">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-4">
+                    Support & Transparency
+                  </span>
+                  <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
+                    Frequently Asked Questions
+                  </h2>
+                  <p className="text-xs text-slate-500 mt-3 max-w-lg mx-auto leading-relaxed">
+                    Get direct, transparent answers on our research parameters, privacy architecture, study guidelines, and hardware-free validation pipeline.
+                  </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4.5">
                   {faqItems.map((item, idx) => {
                     const isOpen = openFaqIdx === idx;
                     return (
                       <div 
                         key={idx} 
-                        className="rounded-xl border border-slate-200/40 bg-white/70 shadow-none hover:bg-white transition-all overflow-hidden"
+                        className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                          isOpen 
+                            ? "border-blue-400 bg-white shadow-[0_12px_28px_rgba(59,130,246,0.08)] ring-1 ring-blue-500/10" 
+                            : "border-slate-200/60 bg-white/60 hover:bg-white hover:border-blue-300 hover:shadow-[0_8px_20px_rgba(59,130,246,0.04)]"
+                        }`}
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
-                          className="w-full flex items-center justify-between px-6 py-4.5 text-left font-bold uppercase tracking-wider text-slate-800 text-xs sm:text-sm font-mono cursor-pointer hover:bg-slate-50/50 transition-colors"
+                          className="w-full flex items-center justify-between px-6 py-5 text-left transition-all cursor-pointer font-sans"
                         >
-                          <span>{item.q}</span>
-                          {isOpen ? (
-                            <ChevronUp className="h-4 w-4 text-slate-900 shrink-0" />
-                          ) : (
-                            <ChevronDown className="h-4 w-4 text-slate-400 shrink-0" />
-                          )}
+                          <span className={`text-xs sm:text-sm font-bold uppercase tracking-wider font-mono transition-colors duration-250 ${isOpen ? 'text-blue-600' : 'text-slate-800'}`}>
+                            {item.q}
+                          </span>
+                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                            isOpen ? "bg-blue-50 text-blue-600 rotate-180" : "bg-slate-50 text-slate-400"
+                          }`}>
+                            <ChevronDown className="h-4 w-4" />
+                          </div>
                         </button>
                         
-                        {isOpen && (
-                          <div className="px-6 pb-5 pt-1 border-t border-slate-100 text-xs text-slate-500 leading-relaxed animate-in fade-in duration-250">
-                            {item.a}
-                          </div>
-                        )}
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-6 pb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                                {item.a}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     );
                   })}

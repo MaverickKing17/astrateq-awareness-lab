@@ -112,7 +112,7 @@ app.post("/api/generate-insights", async (req, res) => {
       - Attention Habits: ${attentionHabits}
       
       CRITICAL INSTRUCTIONS:
-      1. You are generating content for the "Astrateq Driver Awareness Platform", which is a software-based behavioral intelligence research system and validation funnel.
+      1. You are generating content for the "Astrateq Gadgets Driver Awareness Platform", which is a software-based behavioral intelligence research system and validation funnel.
       2. You MUST use approved terminology: "Driver Awareness Intelligence", "Simulation Model", "Behavioral Safety Insights", "Fatigue Risk Awareness", "Attention Readiness Profile", "Market Validation Study", "Research Cohort", "Awareness Score".
       3. Do NOT use or imply forbidden hardware terms: "OBD", "dashcam", "CAN bus", "vehicle diagnostics", "insurance tracking", "telematics", "hardware device", "fleet monitoring", "automotive scanner". This is a purely software-based, behavioral assessment.
       4. Your tone must be premium, professional, calm, research-validated, and supportive. Emphasize behavioral science, fatigue mitigation, and attention management in Canada (mentioning Canadian weather/road contexts like winter preparedness or long Trans-Canada distances where relevant).
@@ -260,18 +260,18 @@ app.post("/api/signup-cohort", async (req, res) => {
   if (resend) {
     try {
       const { data, error } = await resend.emails.send({
-        from: "Astrateq Research <onboarding@resend.dev>",
+        from: "Astrateq Gadgets <onboarding@resend.dev>",
         to: email,
-        subject: `[ASTRATEQ] Research Cohort Enrollment Confirmation: ${cohortId}`,
+        subject: `[ASTRATEQ GADGETS] Research Cohort Enrollment Confirmation: ${cohortId}`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e6edf5; border-radius: 8px; background-color: #ffffff;">
             <div style="border-bottom: 2px solid #0f172a; padding-bottom: 16px; margin-bottom: 24px;">
-              <h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #0f172a; letter-spacing: -0.025em; text-transform: uppercase;">ASTRATEQ</h2>
+              <h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #0f172a; letter-spacing: -0.025em; text-transform: uppercase;">ASTRATEQ GADGETS</h2>
               <p style="margin: 4px 0 0 0; font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Driver Awareness & Intelligence Study</p>
             </div>
             
             <p style="font-size: 14px; line-height: 1.6; color: #334155;">Hello,</p>
-            <p style="font-size: 14px; line-height: 1.6; color: #334155;">Thank you for registering to join the Astrateq pre-launch driver awareness research cohort. Your enrollment has been successfully logged.</p>
+            <p style="font-size: 14px; line-height: 1.6; color: #334155;">Thank you for registering to join the Astrateq Gadgets pre-launch driver awareness research cohort. Your enrollment has been successfully logged.</p>
             
             <div style="background-color: #f4f7fb; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; margin: 24px 0;">
               <h3 style="margin: 0 0 12px 0; font-size: 12px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px;">Enrollment Details</h3>
@@ -300,7 +300,7 @@ app.post("/api/signup-cohort", async (req, res) => {
 
             <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-top: 32px; font-size: 11px; color: #94a3b8; text-align: center; font-family: monospace; text-transform: uppercase; letter-spacing: 0.05em;">
               This is a pre-launch behavioral simulation and concept validation study.<br>
-              ASTRATEQ CANADA • COGNITIVE SAFETY RESEARCH
+              ASTRATEQ GADGETS CANADA • COGNITIVE SAFETY RESEARCH
             </div>
           </div>
         `

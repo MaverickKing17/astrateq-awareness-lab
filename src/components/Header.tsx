@@ -35,7 +35,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         >
           <img
             src="https://i.ibb.co/DfpC9vNt/Astrateq.png"
-            alt="Astrateq Logo"
+            alt="Astrateq Gadgets Logo"
             className="h-10 w-auto object-contain"
             referrerPolicy="no-referrer"
           />

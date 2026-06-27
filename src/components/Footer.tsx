@@ -50,19 +50,18 @@ export default function Footer() {
             <div>
               <button
                 onClick={() => setIsSupportOpen(true)}
-                className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-slate-950 bg-slate-100 border border-slate-200 px-4 py-2 rounded hover:bg-slate-200 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-colors cursor-pointer"
               >
                 <span>Contact Study Coordinator</span>
-                <span className="text-slate-400 font-mono">→</span>
+                <span className="text-blue-200 font-mono">→</span>
               </button>
             </div>
           </div>
 
           <div className="mt-8 border-t border-slate-100 pt-6 text-center text-[10px] text-slate-400 font-mono">
-            <p>© {new Date().getFullYear()} ASTRATEQ. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} ASTRATEQ GADGETS. All rights reserved.</p>
             <p className="mt-2 text-[9px] uppercase tracking-wider leading-relaxed text-slate-400 max-w-3xl mx-auto">
-              This platform is a <strong>Simulation Model & Market Validation Study</strong>. It is not an OBD device,
-              telematics tracking software, or auto insurance product. No location telemetry is executed.
+              This platform is an <strong>educational questionnaire and research study</strong> to evaluate driver focus. We do NOT sell auto insurance, we do NOT track your GPS location, and we do NOT require any physical hardware plugins in your vehicle.
             </p>
           </div>
         </div>
@@ -132,7 +131,7 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className="w-full rounded bg-slate-900 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-slate-800"
+                    className="w-full rounded bg-blue-600 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] cursor-pointer"
                   >
                     Transmit Message
                   </button>

@@ -347,7 +347,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           Pre-Launch Study Calibration & Scale Metrics
         </h3>
         <p className="text-xs text-slate-500 mb-6 max-w-4xl leading-relaxed">
-          The <strong className="text-slate-900">Astrateq Driver Awareness Score</strong> is calibrated using aggregated behavioral surveys from Canadian cohorts. Since this is a software-based study rather than hardware-integrated diagnostics, we evaluate focus using self-reported visual locking frequencies, diurnal scheduling conflicts, and typical fatigue events.
+          The <strong className="text-slate-900">Astrateq Gadgets Driver Awareness Score</strong> is calibrated using aggregated behavioral surveys from Canadian cohorts. Since this is a software-based study rather than hardware-integrated diagnostics, we evaluate focus using self-reported visual locking frequencies, diurnal scheduling conflicts, and typical fatigue events.
         </p>
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="bg-white p-5 rounded border border-[#E6EDF5] shadow-xs">

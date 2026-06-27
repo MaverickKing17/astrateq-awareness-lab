@@ -390,7 +390,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
                         className="mt-1 h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer"
                       />
                       <label htmlFor="consent" className="text-[10px] text-slate-500 leading-relaxed cursor-pointer font-mono uppercase">
-                        I consent to contribute my anonymous answers to Astrateq's Canadian validation study.
+                        I consent to contribute my anonymous answers to Astrateq Gadgets' Canadian validation study.
                       </label>
                     </div>
 
