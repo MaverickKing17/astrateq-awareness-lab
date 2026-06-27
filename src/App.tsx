@@ -37,23 +37,23 @@ export default function App() {
     },
     {
       q: "Is this connected to my vehicle?",
-      a: "No. This is a simulation and does not connect to any vehicle systems."
+      a: "No — this is a simulation and does not connect to any vehicle system."
     },
     {
       q: "Is this replacing insurance or telematics tools?",
-      a: "No. This is a research simulation, not an insurance or tracking system."
+      a: "No — this is a research simulation only."
     },
     {
-      q: "How is the score calculated?",
-      a: "It is generated from a behavioral simulation model based on user inputs, not real-world telemetry."
+      q: "How is the score generated?",
+      a: "It is produced from a behavioral simulation model based on user inputs, not real-world telemetry."
     },
     {
       q: "Is Astrateq planning hardware in the future?",
-      a: "This study is focused on validating software-based awareness systems only."
+      a: "This study focuses only on validating software-based awareness systems."
     },
     {
-      q: "What happens after I join the research cohort?",
-      a: "You may receive updates about research findings and future concept validation steps."
+      q: "What happens after I join the cohort?",
+      a: "You may receive research updates and participation opportunities."
     },
     {
       q: "Does this require an OBD2 scanner, telematics device, or hardware?",
@@ -157,7 +157,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50/50">
+    <div className="min-h-screen flex flex-col bg-[#F4F7FB]">
       
       {/* Dynamic Loading Overlay */}
       {isSubmitting && <LoadingOverlay />}
@@ -172,7 +172,7 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-white py-16 sm:py-24 border-b border-slate-200">
+            <section className="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-28 border-b border-slate-200">
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
                 <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-200 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
@@ -324,9 +324,9 @@ export default function App() {
             <ValueProps onStartSimulation={handleStartSimulation} />
 
             {/* Privacy Section Highlight (Specific requirement to reinforce simulation/research) */}
-            <section id="privacy-info" className="py-16 bg-white border-b border-slate-200">
+            <section id="privacy-info" className="py-20 sm:py-28 bg-[#EEF3F8] border-b border-slate-200">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="rounded-xl bg-slate-950 text-white p-8 sm:p-12 relative overflow-hidden border border-slate-900">
+                <div className="rounded-xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0C1424] shadow-xl">
                   {/* Gradient globes */}
                   <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
                   
@@ -336,21 +336,21 @@ export default function App() {
                     </span>
                     <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Privacy & Verification Standard</h3>
                     <p className="mt-4 text-xs text-slate-300 leading-relaxed">
-                      We understand that driver tracking tools have created massive skepticism among Canadian drivers. This system is designed without tracking or behavioral monitoring. No vehicle data is accessed or transmitted in this simulation.
+                      We understand that driver tracking tools have created massive skepticism among Canadian drivers. We are committed to a strict standard of transparent research safety.
                     </p>
 
                     <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
-                      <div className="p-4 rounded border border-slate-800 bg-slate-900/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Location Tracking</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">We do not access or collect GPS coordinates or commute routes.</p>
+                      <div className="p-4 rounded border border-slate-800 bg-[#0B1220]/60 font-mono">
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Monitoring Policy</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This system is designed without tracking or behavioral monitoring.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800 bg-slate-900/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Insurance Ties</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">Your scores cannot be accessed, shared, or requested by any auto insurer.</p>
+                      <div className="p-4 rounded border border-slate-800 bg-[#0B1220]/60 font-mono">
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Data Transmission</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">No vehicle data is accessed or transmitted.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800 bg-slate-900/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">100% Anonymous</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">We process behavioral attributes purely for cognitive research.</p>
+                      <div className="p-4 rounded border border-slate-800 bg-[#0B1220]/60 font-mono">
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Research Protocol</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This is a simulation-only research environment.</p>
                       </div>
                     </div>
                   </div>
