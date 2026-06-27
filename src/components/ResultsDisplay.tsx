@@ -217,7 +217,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               {fatigueRiskProfile}
             </p>
             <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
-              Simulated Output — Conceptual Model (Not Real Data)
+              Simulated Output — Conceptual Model (Not Real-World Data)
             </p>
 
             <div className="mt-4 border-t border-slate-100 pt-3">
@@ -265,7 +265,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               {attentionReadiness}
             </p>
             <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
-              Simulated Output — Conceptual Model (Not Real Data)
+              Simulated Output — Conceptual Model (Not Real-World Data)
             </p>
 
             <div className="mt-4 border-t border-slate-100 pt-3">
@@ -307,7 +307,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               {safetyIntelligenceReadiness}
             </p>
             <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
-              Simulated Output — Conceptual Model (Not Real Data)
+              Simulated Output — Conceptual Model (Not Real-World Data)
             </p>
 
             <div className="mt-4 border-t border-slate-100 pt-3">
@@ -331,7 +331,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           {/* Qualitative Overall Evaluation Panel */}
           <div className="rounded-xl bg-slate-950 p-6 text-white shadow-[0_0_25px_rgba(6,182,212,0.2)] relative overflow-hidden border-2 border-slate-800">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-2">Simulated Driver Assessment Summary</h4>
-            <p className="text-[10px] font-mono text-slate-400 italic mb-2">Simulated Output — Conceptual Model (Not Real Data)</p>
+            <p className="text-[10px] font-mono text-slate-400 italic mb-2">Simulated Output — Conceptual Model (Not Real-World Data)</p>
             <p className="text-xs text-slate-300 leading-relaxed">
               {overallEvaluation}
             </p>
@@ -372,6 +372,50 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             </h4>
             <p className="text-xs text-slate-400 mt-2 leading-relaxed">
               Substantial risk vectors identified. Frequent visual field disconnection, driving during biological sleep dips, or persistent yawning. Needs behavioral adjustment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* What happens after your simulation Section */}
+      <div className="mb-16 rounded-xl border border-blue-100 bg-white p-6 sm:p-8 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-500" />
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-4">
+          Next Steps & Research Pipeline
+        </span>
+        <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-2 font-sans">
+          What happens after your simulation?
+        </h3>
+        <p className="text-xs text-slate-500 mb-6 max-w-2xl leading-relaxed">
+          Here is what you can expect as you progress from this cognitive simulation study to our active research pipeline:
+        </p>
+        <div className="grid gap-6 sm:grid-cols-4">
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">01 / ASSESSMENT</span>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Receive Awareness Score</h4>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+              Your overall Driver Awareness score is calculated based on self-reported attention locking and circadian indicators.
+            </p>
+          </div>
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">02 / PROFILE ANALYSIS</span>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Fatigue & Attention Profiles</h4>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+              We analyze sleep debt exposure, micro-distractions, and typical commute schedules to map focus dips.
+            </p>
+          </div>
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">03 / CLASSIFICATION</span>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Assigned Research Cohort</h4>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+              Based on your results, you are mapped to a specific demographic and behavioral safety research group.
+            </p>
+          </div>
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">04 / COLLABORATION</span>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Join Research Updates</h4>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+              You can optionally enroll in early research updates, helping refine hands-free cognitive validation models.
             </p>
           </div>
         </div>

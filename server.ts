@@ -307,7 +307,13 @@ app.post("/api/signup-cohort", async (req, res) => {
       });
 
       if (error) {
-        console.error("Resend sendEmail error object:", error);
+        if (error.name === "validation_error" || (error.message && error.message.includes("Single Sender"))) {
+          console.log("\n[RESEND SANDBOX NOTICE]");
+          console.log(`The Resend API key is currently in Sandbox/Onboarding mode. Email could not be delivered to "${email}" because it is not a verified recipient in your Resend account.`);
+          console.log("This is the EXPECTED behavior for unverified Resend domains. The registration was registered successfully in-memory.\n");
+        } else {
+          console.error("Resend sendEmail error object:", error);
+        }
         emailError = error.message;
       } else {
         emailSent = true;

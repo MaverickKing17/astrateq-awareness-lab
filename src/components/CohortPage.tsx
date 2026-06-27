@@ -244,7 +244,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
         <div>
           <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 leading-snug">Canadian Cognitive Safety Research Standard</h4>
           <p className="text-xs text-slate-500 leading-relaxed mt-1.5">
-            Our study adheres strictly to ethical guidelines. Your personal email and behavioral answers are purely mapped to simulated intelligence focus baselines, validating software performance before public release. No location tracking or telemetry is ever executed.
+            Our study adheres to strict research guidelines. Your email and simulation answers are mapped to conceptual focus benchmarks, validating software simulation performance before release. This system is designed without behavioral tracking or monitoring, no vehicle data is accessed or transmitted, and this is a simulation-only research environment.
           </p>
         </div>
       </div>

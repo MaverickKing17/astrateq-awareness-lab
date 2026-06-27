@@ -7,7 +7,7 @@ interface ValuePropsProps {
 
 export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
   return (
-    <section id="value-props" className="py-24 sm:py-36 bg-[#F4F7FB]">
+    <section id="value-props" className="py-28 sm:py-44 bg-[#F4F7FB]">
       {/* Upper Intro & Value Props */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
@@ -64,7 +64,7 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               03
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
-              Do drivers cluster into distinct behavioral safety profiles based on input data?
+              Do drivers cluster into distinct behavioral safety profiles based on self-reported inputs?
             </h3>
             <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow">
               Examine driver readiness indicators to evaluate how personal safety-readiness benchmarks and localized provincial guidelines correlate with standard visual field responses and hazard scan habits.
@@ -78,7 +78,7 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
       </div>
 
       {/* How It Works Section - Alternate Section (Background: Premium Light Gradient & Tech Feel) */}
-      <div id="how-it-works" className="mt-28 bg-gradient-to-b from-slate-50 to-slate-100/90 py-24 sm:py-36 border-y border-slate-200/80 relative overflow-hidden">
+      <div id="how-it-works" className="mt-28 bg-gradient-to-b from-slate-50 to-slate-100/90 py-28 sm:py-44 border-y border-slate-200/80 relative overflow-hidden">
         {/* Subtle Tech Accents */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]" />
         

@@ -172,7 +172,7 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#F4F7FB] py-24 sm:py-36 border-b border-slate-200/80">
+            <section className="relative overflow-hidden bg-[#F4F7FB] py-28 sm:py-44 border-b border-slate-200/80">
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
                 <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-200 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
@@ -187,14 +187,10 @@ export default function App() {
                       Concept Validation Open for Enrollment
                     </span>
                     <h1 className="mt-4 text-3xl font-bold uppercase tracking-tight text-slate-900 sm:text-4xl leading-tight font-sans">
-                      Explore a simulated <br />
-                      <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
-                        Driver Awareness Intelligence
-                      </span>{" "}
-                      model in 60 seconds
+                      Explore a simulated <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Driver Awareness Intelligence</span> model in 60 seconds
                     </h1>
                     <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl">
-                      A behavioral simulation designed to explore how Canadian drivers respond to fatigue awareness, attention patterns, and driving decision contexts.
+                      A behavioral simulation designed to explore how Canadian drivers respond to fatigue awareness, attention patterns, and driving decision behaviors.
                     </p>
 
                     {/* Features list */}
@@ -240,6 +236,10 @@ export default function App() {
                         Join Research Cohort
                       </button>
                     </div>
+
+                    <p className="mt-4 text-[10px] text-slate-500 font-mono uppercase tracking-wider leading-relaxed">
+                      You will complete a 60-second simulation, receive a conceptual awareness score, and see your research cohort classification.
+                    </p>
 
                     <p className="text-[9px] font-mono uppercase tracking-wider text-slate-400 mt-6 leading-relaxed">
                       *Note: Astrateq Gadgets does NOT utilize, distribute, or imply OBD2 scanners, dashcams, vehicle telemetry, or insurance tracking metrics. This is a purely cognitive research study.
@@ -364,7 +364,7 @@ export default function App() {
             <ValueProps onStartSimulation={handleStartSimulation} />
 
             {/* Privacy Section Highlight (Specific requirement to reinforce simulation/research) */}
-            <section id="privacy-info" className="py-24 sm:py-36 bg-[#EEF3F8] border-b border-slate-200/80">
+            <section id="privacy-info" className="relative bg-[#EEF3F8] py-28 sm:py-44 border-b border-slate-200/80">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="rounded-xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0C1424] shadow-xl">
                   {/* Gradient globes */}
@@ -399,7 +399,7 @@ export default function App() {
             </section>
 
             {/* FAQ Section */}
-            <section id="faq-section" className="py-24 sm:py-36 bg-gradient-to-b from-slate-50/50 to-blue-50/20 border-t border-slate-200/60 relative overflow-hidden">
+            <section id="faq-section" className="py-28 sm:py-44 bg-gradient-to-b from-slate-50/50 to-blue-50/20 border-t border-slate-200/60 relative overflow-hidden">
               {/* Decorative subtle background glows */}
               <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute top-1/3 right-0 -translate-y-1/2 w-80 h-80 bg-cyan-400/5 rounded-full blur-3xl pointer-events-none" />
