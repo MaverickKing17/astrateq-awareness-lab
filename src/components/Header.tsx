@@ -25,17 +25,12 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           onClick={() => onNavigate("landing")}
           className="flex items-center gap-3 transition-opacity hover:opacity-90 text-left"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded bg-slate-900 text-white font-bold text-xs">
-            AQ
-          </div>
-          <div>
-            <div className="text-sm font-bold tracking-tight text-slate-900 leading-tight">
-              ASTRATEQ <span className="text-blue-600 font-semibold text-xs ml-0.5 font-mono">V1</span>
-            </div>
-            <div className="text-[9px] font-bold uppercase tracking-wider text-slate-400 leading-none">
-              Validation Platform
-            </div>
-          </div>
+          <img
+            src="https://i.ibb.co/DfpC9vNt/Astrateq.png"
+            alt="Astrateq Logo"
+            className="h-10 w-auto object-contain"
+            referrerPolicy="no-referrer"
+          />
         </button>
 
         {/* Navigation - Desktop */}
