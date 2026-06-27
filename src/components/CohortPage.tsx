@@ -21,13 +21,13 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
   const tiers = [
     {
       id: "access",
-      title: "Awareness Access Tier",
+      title: "Standard Research Engagement",
       engagement: "Basic Contributor",
-      desc: "Receive bi-monthly regional benchmarks, driver attention focus reports, and early platform beta opportunities.",
-      requirement: "Periodic surveys (5 min, every 60 days)",
+      desc: "Receive bi-monthly regional benchmarks, driver attention focus reports, and early platform beta simulation validation opportunities.",
+      requirement: "Periodic simulation surveys (5 min, every 60 days)",
       features: [
          "Bi-monthly Canadian driver statistics",
-         "Early software beta access keys",
+         "Early simulation model feedback keys",
          "General community benchmark reports",
          "100% cloud-simulated access"
       ],
@@ -36,14 +36,14 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
     },
     {
       id: "guardian",
-      title: "Guardian Research Tier",
+      title: "Active Safety Research Engagement",
       engagement: "Active Researcher",
-      desc: "Deep-dive focus profiling, cognitive load analysis workshops, and direct feedback channels with behavioural safety scientists.",
+      desc: "Deep-dive focus profiling, cognitive load analysis workshops, and direct feedback channels with behavioural safety simulation scientists.",
       requirement: "Monthly active simulator evaluations",
       features: [
         "Personalized cognitive fatigue trends",
         "Invitation to cognitive safety workshops",
-        "Priority beta feature validation channels",
+        "Priority simulation feature validation channels",
         "Direct email feedback log with researchers"
       ],
       badge: "Popular Choice",
@@ -52,9 +52,9 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
     },
     {
       id: "founding",
-      title: "Founding Intelligence Cohort",
-      engagement: "Advisory Panelist",
-      desc: "Direct involvement in defining future safety standards. Quarterly closed-door virtual roundtables and early conceptual review.",
+      title: "Steering Advisory Panel",
+      engagement: "Core Panelist",
+      desc: "Direct involvement in defining future safety standards and simulation hypotheses. Quarterly closed-door virtual roundtables and early conceptual model review.",
       requirement: "Quarterly advisory sessions & interviews",
       features: [
         "Closed-door advisory panel membership",
@@ -113,18 +113,17 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-50 border border-slate-200 rounded px-3 py-1 font-mono">
-          🇨🇦 Pre-Launch Waitlist & Engagement
+          🇨🇦 Pre-Launch Waitlist & Research Participation
         </span>
         <h1 className="mt-4 text-2xl font-bold uppercase tracking-tight text-slate-900 sm:text-3xl">
-          Join Research Cohort
+          Research Participation Levels
         </h1>
         <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-          Select your desired research engagement tier. We are enrolling Canadian drivers to validate the 
-          <strong> Driver Awareness Intelligence</strong> simulation model and collect feedback for safer road habits.
+          Select your desired level of research participation. Each option represents **research engagement depth only** to collect feedback for validating our cognitive simulation model—this is NOT a commercial SaaS product, subscription plan, or finished application.
         </p>
         <div className="mt-4 inline-flex items-center gap-2 bg-slate-50 px-4 py-1.5 rounded border border-slate-200 text-[10px] text-slate-600 font-mono uppercase tracking-wider">
           <Info className="h-3.5 w-3.5 text-slate-500" />
-          <span>Purely software study. No physical tracking hardware required.</span>
+          <span>Purely software simulation study. No physical tracking hardware required.</span>
         </div>
       </div>
 
@@ -192,7 +191,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
               </div>
 
               {/* Action CTA */}
-              <div className="mt-8 pt-6 border-t border-slate-100/10">
+              <div className="mt-8 pt-6 border-t border-slate-100/10 font-mono">
                 <button
                   onClick={() => handleOpenSignup(tier.id)}
                   className={`w-full inline-flex items-center justify-center gap-1.5 rounded py-3 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer ${
@@ -201,7 +200,7 @@ export default function CohortPage({ score, initialSelectedTier }: CohortPagePro
                       : "bg-slate-900 text-white hover:bg-slate-800"
                   }`}
                 >
-                  <span>Select Cohort</span>
+                  <span>Join Research Cohort</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </button>
                 <p className="text-center text-[9px] font-mono uppercase tracking-wider text-slate-400 mt-3">

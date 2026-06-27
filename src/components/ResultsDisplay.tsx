@@ -95,7 +95,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
         
         {/* Score Card - Primary Visual (Takes 4 cols on desktop) */}
-        <div className="lg:col-span-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm relative overflow-hidden h-full lg:sticky lg:top-20">
+        <div className="lg:col-span-4 rounded-xl border-2 border-slate-900 bg-white p-6 shadow-[0_0_25px_rgba(6,182,212,0.15)] relative overflow-hidden h-full lg:sticky lg:top-20">
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-slate-900" />
           <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-6">
             Overall Awareness Readiness
@@ -152,8 +152,14 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               <h4 className="mt-3 text-xs font-bold uppercase tracking-wider text-slate-800">
                 Driver Awareness Score
               </h4>
+              <p className="mt-1 text-[10px] font-mono text-slate-400 italic">
+                Simulated Output — Conceptual Model
+              </p>
               <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
                 {levelInfo.text}
+              </p>
+              <p className="mt-2 text-[9px] font-mono text-slate-400 leading-tight">
+                This is a simulated model output, not real-world measured data.
               </p>
             </div>
           </div>
@@ -185,7 +191,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <div className="lg:col-span-8 flex flex-col gap-6">
           
           {/* Card 1: Fatigue Risk */}
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-300 shadow-none">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
@@ -210,6 +216,9 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             <p className="text-slate-600 text-xs leading-relaxed">
               {fatigueRiskProfile}
             </p>
+            <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
+              Simulated Output — Conceptual Model. This is a simulated model output, not real-world measured data.
+            </p>
 
             <div className="mt-4 border-t border-slate-100 pt-3">
               <button 
@@ -230,7 +239,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </div>
 
           {/* Card 2: Attention Readiness */}
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-300 shadow-none">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
@@ -255,6 +264,9 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             <p className="text-slate-600 text-xs leading-relaxed">
               {attentionReadiness}
             </p>
+            <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
+              Simulated Output — Conceptual Model. This is a simulated model output, not real-world measured data.
+            </p>
 
             <div className="mt-4 border-t border-slate-100 pt-3">
               <button 
@@ -275,7 +287,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </div>
 
           {/* Card 3: Safety Intelligence Readiness */}
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-300 shadow-none">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
@@ -293,6 +305,9 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
 
             <p className="text-slate-600 text-xs leading-relaxed">
               {safetyIntelligenceReadiness}
+            </p>
+            <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
+              Simulated Output — Conceptual Model. This is a simulated model output, not real-world measured data.
             </p>
 
             <div className="mt-4 border-t border-slate-100 pt-3">
@@ -314,8 +329,9 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </div>
 
           {/* Qualitative Overall Evaluation Panel */}
-          <div className="rounded-xl bg-slate-950 p-6 text-white shadow-sm relative overflow-hidden border border-slate-900">
+          <div className="rounded-xl bg-slate-950 p-6 text-white shadow-[0_0_25px_rgba(6,182,212,0.2)] relative overflow-hidden border-2 border-slate-800">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-2">Simulated Driver Assessment Summary</h4>
+            <p className="text-[10px] font-mono text-slate-400 italic mb-2">Simulated Output — Conceptual Model</p>
             <p className="text-xs text-slate-300 leading-relaxed">
               {overallEvaluation}
             </p>

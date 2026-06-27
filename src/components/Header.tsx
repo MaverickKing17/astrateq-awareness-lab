@@ -56,7 +56,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => scrollToSection("privacy-info")}
             className="transition-colors hover:text-slate-900 cursor-pointer"
           >
-            Privacy Guarantee
+            Privacy & Trust
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
@@ -67,7 +67,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           <button
             onClick={() => onNavigate("cohort")}
             className={`transition-colors cursor-pointer ${
-              activePage === "cohort" ? "text-blue-600 font-bold" : "hover:text-slate-900"
+              activePage === "cohort" ? "text-slate-900 font-bold" : "hover:text-slate-900"
             }`}
           >
             Research Cohort
@@ -78,9 +78,9 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={() => onNavigate("cohort")}
-            className="hidden sm:inline-flex items-center justify-center rounded bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer uppercase tracking-wider"
+            className="hidden sm:inline-flex items-center justify-center rounded bg-slate-900 px-4 py-2 text-[10px] font-bold text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer uppercase tracking-wider font-mono"
           >
-            Join Cohort
+            Join Research Cohort
           </button>
 
           {/* Mobile indicator for study */}

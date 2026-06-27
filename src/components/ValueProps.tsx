@@ -30,10 +30,10 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               01
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
-              Driver Awareness Insight Score
+              Hypothesis: Awareness scoring may correlate with safer driving awareness behavior
             </h3>
             <p className="mt-3 text-slate-500 text-xs leading-relaxed flex-grow">
-              Validate a multi-factor numerical score mapped to cognitive attentiveness. Measures how visual field checks and task-switching habits compound over typical travel durations.
+              Validate whether a multi-factor numerical simulation score mapped to cognitive attentiveness can effectively reflect visual field checks and task-switching habits over typical travel durations.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
@@ -47,10 +47,10 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               02
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
-              Fatigue Risk Awareness Profile
+              Hypothesis: fatigue context awareness may influence driving safety decisions
             </h3>
             <p className="mt-3 text-slate-500 text-xs leading-relaxed flex-grow">
-              Analyze critical fatigue exposure timelines and cognitive sleep-debt vulnerability. Understand the precise thresholds where micro-delays start compromising lane discipline.
+              Analyze critical fatigue exposure timelines and cognitive sleep-debt vulnerability to validate whether highlighting precise fatigue risk thresholds can positively influence driver fatigue mitigation behaviors.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
@@ -64,10 +64,10 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               03
             </div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
-              Safety Intelligence Readiness Level
+              Hypothesis: drivers show different safety readiness patterns based on behavior inputs
             </h3>
             <p className="mt-3 text-slate-500 text-xs leading-relaxed flex-grow">
-              Review personal safety-readiness benchmarks. Align your responses against aggregated Canadian regional studies to identify specific attention triggers and focus vulnerabilities.
+              Examine driver readiness indicators to evaluate how personal safety-readiness benchmarks and localized provincial guidelines correlate with standard visual field responses and hazard scan habits.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-slate-900 animate-pulse" />
@@ -141,7 +141,7 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
               onClick={onStartSimulation}
               className="inline-flex items-center justify-center gap-2 rounded bg-slate-900 px-6 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow transition-all hover:bg-slate-800 active:scale-95 cursor-pointer"
             >
-              Start Free Awareness Check
+              Start Awareness Simulation
             </button>
           </div>
         </div>

@@ -36,6 +36,26 @@ export default function App() {
       a: "Astrateq is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This platform evaluates relative driver focus, attention locking, and fatigue resistance benchmarks to help Canadian drivers assess their road safety readiness."
     },
     {
+      q: "Is this connected to my vehicle?",
+      a: "No. This is a simulation and does not connect to any vehicle systems."
+    },
+    {
+      q: "Is this replacing insurance or telematics tools?",
+      a: "No. This is a research simulation, not an insurance or tracking system."
+    },
+    {
+      q: "How is the score calculated?",
+      a: "It is generated from a behavioral simulation model based on user inputs, not real-world telemetry."
+    },
+    {
+      q: "Is Astrateq planning hardware in the future?",
+      a: "This study is focused on validating software-based awareness systems only."
+    },
+    {
+      q: "What happens after I join the research cohort?",
+      a: "You may receive updates about research findings and future concept validation steps."
+    },
+    {
       q: "Does this require an OBD2 scanner, telematics device, or hardware?",
       a: "No! This is a strict software-only research study. We do not require, sell, or support vehicle hardware, OBD scanners, dashcams, CAN bus adapters, or fleet tracking devices. It is entirely browser-based and behavioral."
     },
@@ -166,15 +186,15 @@ export default function App() {
                       <Sparkles className="h-3.5 w-3.5 text-slate-900 animate-pulse" />
                       Concept Validation Open for Enrollment
                     </span>
-                    <h1 className="mt-4 text-3xl font-bold uppercase tracking-tight text-slate-900 sm:text-4xl leading-tight">
-                      Check your Driver <br />
+                    <h1 className="mt-4 text-3xl font-bold uppercase tracking-tight text-slate-900 sm:text-4xl leading-tight font-sans">
+                      Explore a simulated <br />
                       <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
-                        Awareness Readiness
+                        Driver Awareness Intelligence
                       </span>{" "}
-                      in 60 seconds
+                      model in 60 seconds
                     </h1>
                     <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl">
-                      A simulated intelligence model designed to explore how Canadian drivers respond to fatigue awareness and driving safety insights. Help validate our pre-launch cognitive standards.
+                      A simulated intelligence model designed to explore how Canadian drivers respond to fatigue awareness and driving safety insights. Help validate our pre-launch cognitive standards. This is a simulation-based concept for a market validation study.
                     </p>
 
                     {/* Features list */}
@@ -211,14 +231,14 @@ export default function App() {
                         onClick={handleStartSimulation}
                         className="inline-flex items-center justify-center gap-2 rounded bg-slate-900 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-slate-800 active:scale-95 cursor-pointer font-mono"
                       >
-                        <span>Start Awareness Check</span>
+                        <span>Start Awareness Simulation</span>
                         <ArrowRight className="h-4 w-4" />
                       </button>
                       <button
                         onClick={() => handleNavigate("cohort")}
                         className="inline-flex items-center justify-center rounded border border-slate-200 bg-white px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all hover:bg-slate-50 active:scale-95 cursor-pointer font-mono"
                       >
-                        Explore Cohort Tiers
+                        Join Research Cohort
                       </button>
                     </div>
 
@@ -312,11 +332,11 @@ export default function App() {
                   
                   <div className="relative max-w-3xl">
                     <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-300 bg-slate-900 border border-slate-800 px-3 py-1 rounded mb-4 font-mono">
-                      <Lock className="h-3.5 w-3.5" /> Zero Telematics Agreement
+                      <Lock className="h-3.5 w-3.5" /> Simulation Trust Protocol
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Our Absolute Privacy Guarantee</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Privacy & Verification Standard</h3>
                     <p className="mt-4 text-xs text-slate-300 leading-relaxed">
-                      We understand that driver tracking tools have created massive skepticism among Canadian drivers. We pledge a zero-telematics, zero-hardware, and zero-insurance sharing policy. Astrateq Gadgets is a behavioral research vehicle validation system.
+                      We understand that driver tracking tools have created massive skepticism among Canadian drivers. This system is designed without tracking or behavioral monitoring. No vehicle data is accessed or transmitted in this simulation.
                     </p>
 
                     <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
