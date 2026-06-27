@@ -1,0 +1,6 @@
+{
+  "name": "Astrateq Driver Awareness Platform",
+  "description": "Driver Awareness Intelligence Pre-Launch Validation Platform for Canadian Drivers",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
