@@ -180,372 +180,465 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
   };
 
   return (
-    <div className="bg-[#F4F7FB] min-h-screen">
+    <div className="bg-[#F8FAFC] min-h-screen text-slate-900 font-sans antialiased overflow-x-hidden relative">
+      
+      {/* GLOBAL GLOW MOTIFS */}
+      <div className="absolute top-[10%] left-[-10%] w-[45vw] h-[45vw] bg-blue-400/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-[35%] right-[-10%] w-[40vw] h-[40vw] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       {/* SECTION 1 — HERO: THE BIG BELIEF STATEMENT */}
-      <section className="relative overflow-hidden py-24 sm:py-32 border-b border-slate-200 bg-gradient-to-b from-slate-50 to-[#F4F7FB]">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]" />
+      <section className="relative overflow-hidden pt-20 pb-24 md:py-32 border-b border-slate-200/60 bg-gradient-to-b from-white via-[#F8FAFC] to-[#F1F5F9]/50">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[radial-gradient(#3b82f6_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
+        
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <span className="inline-flex items-center gap-1.5 border border-blue-200 bg-blue-50/80 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono rounded-full mb-6">
-              🇨🇦 Pre-Launch Concept Validation
-            </span>
-            <h1 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-5xl leading-tight font-sans">
-              Help shape the future of <br />
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                Driver Awareness Intelligence
-              </span>{" "}
-              in Canada.
-            </h1>
-            <p className="mt-6 text-sm text-slate-600 leading-relaxed max-w-3xl mx-auto font-sans font-medium">
-              Astrateq Gadgets is validating demand for a software-based driver awareness concept designed to help Canadian drivers better understand fatigue exposure, attention patterns, and safer driving behavior — without vehicle tracking, insurance scoring, or hardware.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => scrollToForm()}
-                className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer font-mono"
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 text-left space-y-6">
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 border border-blue-200 bg-blue-50/70 px-4 py-1.5 text-[9px] font-extrabold uppercase tracking-widest text-blue-700 font-mono rounded-full shadow-xs"
               >
-                <span>Join Research Cohort</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              {onStartSimulation && (
+                <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
+                🇨🇦 Canada Driver Safety Research Initiative
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-900 leading-[1.05] font-sans"
+              >
+                Help shape the future of <br className="hidden sm:inline" />
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">
+                  Driver Awareness Intelligence
+                </span> <br className="hidden sm:inline" />
+                in Canada.
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl font-sans font-medium"
+              >
+                Astrateq Gadgets is validating demand for a software-based driver awareness concept designed to help Canadian drivers better understand fatigue exposure, attention patterns, and safer driving behavior — <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-2">without vehicle tracking, insurance scoring, or hardware</span>.
+              </motion.p>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="pt-4 flex flex-col sm:flex-row gap-4"
+              >
                 <button
-                  onClick={onStartSimulation}
-                  className="inline-flex items-center justify-center gap-2 rounded border border-slate-200 bg-white px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-slate-700 shadow-sm transition-all hover:bg-slate-50 active:scale-95 cursor-pointer font-mono"
+                  onClick={() => scrollToForm()}
+                  className="group inline-flex items-center justify-center gap-2.5 rounded bg-blue-600 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_18px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer font-mono"
                 >
-                  <span>Try the 60-Second Simulation</span>
+                  <span>Join Research Cohort</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
-              )}
+                {onStartSimulation && (
+                  <button
+                    onClick={onStartSimulation}
+                    className="inline-flex items-center justify-center gap-2.5 rounded border border-slate-200 bg-white px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95 cursor-pointer font-mono"
+                  >
+                    <span>Try the 60-Second Simulation</span>
+                  </button>
+                )}
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] text-slate-400 font-mono uppercase tracking-wider border-t border-slate-200/60"
+              >
+                <div className="flex items-center gap-1.5">
+                  <Check className="h-4 w-4 text-emerald-500" />
+                  <span>No Financial Obligation</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Check className="h-4 w-4 text-emerald-500" />
+                  <span>No Hardware Deposits</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Check className="h-4 w-4 text-emerald-500" />
+                  <span>100% Privacy Focused</span>
+                </div>
+              </motion.div>
             </div>
 
-            <div className="mt-8 flex justify-center items-center gap-6 text-[10px] text-slate-400 font-mono uppercase tracking-wider">
-              <span>NO OBLIGATION</span>
-              <span>•</span>
-              <span>NO DEPOSITS</span>
-              <span>•</span>
-              <span>100% BEHAVIORAL RESEARCH</span>
-            </div>
+            {/* Right Mini Dashboard Column */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="lg:col-span-5 flex justify-center"
+            >
+              <div className="relative w-full max-w-md rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-md p-6 shadow-[0_20px_50px_rgba(59,130,246,0.06)] overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f605_1px,transparent_1px),linear-gradient(to_bottom,#3b82f605_1px,transparent_1px)] bg-[size:16px_16px]" />
+                
+                <div className="relative z-10 space-y-5">
+                  <div className="flex justify-between items-center border-b border-slate-100 pb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 font-mono">Cognitive Model v1.4</span>
+                    </div>
+                    <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-[9px] font-bold text-slate-800 uppercase tracking-wide font-mono font-bold">Calibrated</span>
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center py-6">
+                    <div className="relative h-32 w-32 flex items-center justify-center rounded-full border border-blue-100 bg-blue-50/20 shadow-inner">
+                      <svg className="absolute inset-0 transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="42" stroke="#EFF6FF" strokeWidth="8" fill="transparent" />
+                        <circle cx="50" cy="50" r="42" stroke="#3b82f6" strokeWidth="8" fill="transparent" strokeDasharray="263" strokeDashoffset="52" strokeLinecap="round" />
+                      </svg>
+                      <div className="text-center">
+                        <span className="block text-3xl font-black text-slate-800 tracking-tight">80</span>
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest font-mono">Aware Index</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-4 text-center">
+                    <div>
+                      <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest font-mono">Fatigue Risk</p>
+                      <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono mt-1">Low Risk</p>
+                    </div>
+                    <div className="border-x border-slate-100">
+                      <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest font-mono">Attention</p>
+                      <p className="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono mt-1">95%</p>
+                    </div>
+                    <div>
+                      <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest font-mono">Readiness</p>
+                      <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider font-mono mt-1">Optimal</p>
+                    </div>
+                  </div>
+
+                  <p className="text-center text-[8px] font-bold text-slate-400 uppercase tracking-widest font-mono pt-2">
+                    Simulated Output • Conceptual Research Model Only
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
       {/* SECTION 7 — TRUST LAYER (High on page to build immediate conviction) */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-white relative overflow-hidden">
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded font-mono mb-3">
-              Privacy First & Uncompromised
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200/80 text-[10px] font-extrabold uppercase tracking-widest text-slate-600 font-mono">
+              Privacy First Commitment
             </span>
-            <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
-              Built without tracking
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
+              Awareness Intelligence, Built Without Tracking
             </h2>
-            <p className="text-xs text-slate-500 mt-3 leading-relaxed">
-              We understand that vehicle tracking tools create resistance. Our system is designed around transparency and extreme user privacy.
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xl mx-auto font-sans">
+              We understand that vehicle tracking tools create resistance. Our research platform is designed around strict data isolation, transparency, and extreme privacy.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs">
-              <div className="h-9 w-9 rounded bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                <Smartphone className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">No vehicle connection</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                The concept does not require vehicle data, OBD integration, or any electronic connection to your car.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs">
-              <div className="h-9 w-9 rounded bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                <Lock className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">No insurance sharing</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                Your answers are not shared with insurers. We believe behavioral awareness should never cause pricing anxiety.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs">
-              <div className="h-9 w-9 rounded bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">No hardware required</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                No dashcam installation, GPS tracker, or scanning devices. Astrateq relies purely on software cognitive concepts.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs">
-              <div className="h-9 w-9 rounded bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                <Users className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">No advertising resale model</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                We do not monetize your input through ads. Your participation is purely mapped to anonymous road safety research.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs">
-              <div className="h-9 w-9 rounded bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                <FileText className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Simulation-only research</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                The current experience is a conceptual framework designed to measure driver interest in safety-focused awareness models.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs">
-              <div className="h-9 w-9 rounded bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                <MapPin className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Canadian driver focus</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                Designed around Canadian road conditions, winter commute pressures, long highways, and high local safety standards.
-              </p>
-            </div>
+            {[
+              {
+                icon: <Smartphone className="h-5 w-5" />,
+                title: "No vehicle connection",
+                desc: "The concept does not require vehicle data, OBD2 scanner integration, or any physical link to your car's computer systems."
+              },
+              {
+                icon: <Lock className="h-5 w-5" />,
+                title: "No insurance sharing",
+                desc: "Your answers are strictly quarantined. We believe behavioral awareness should never lead to pricing adjustments or premium anxiety."
+              },
+              {
+                icon: <ShieldCheck className="h-5 w-5" />,
+                title: "No hardware required",
+                desc: "Zero dashcam installations, GPS units, or hardware accessories are distributed or required. Astrateq relies purely on software concepts."
+              },
+              {
+                icon: <Users className="h-5 w-5" />,
+                title: "No advertising resale",
+                desc: "We do not monetize your engagement through advertisers or data aggregators. Your parameters are strictly mapped to safety research."
+              },
+              {
+                icon: <FileText className="h-5 w-5" />,
+                title: "Simulation-only research",
+                desc: "Our current module serves exclusively as a conceptual framework designed to explore driver demand for cognitive safety solutions."
+              },
+              {
+                icon: <MapPin className="h-5 w-5" />,
+                title: "Canadian driver focus",
+                desc: "Custom-modeled around Canadian road realities: high-pressure highway corridors, winter hazards, long commutes, and unique local safety standards."
+              }
+            ].map((card, idx) => (
+              <motion.div 
+                key={idx}
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="p-6 rounded-xl border border-slate-200 bg-slate-50/40 hover:bg-white hover:border-blue-200 hover:shadow-[0_12px_30px_rgba(59,130,246,0.04)] transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="h-10 w-10 rounded-lg bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 text-blue-600 flex items-center justify-center mb-5 border border-blue-100/40">
+                    {card.icon}
+                  </div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 font-mono">{card.title}</h3>
+                  <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed font-sans">
+                    {card.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SECTION 2 — THE PROBLEM: WHY THIS NEEDS TO EXIST */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 bg-slate-50/50 border-b border-slate-200/60 relative overflow-hidden">
+        <div className="absolute inset-y-0 right-0 w-1/3 bg-radial-gradient from-red-500/5 to-transparent blur-[120px] pointer-events-none" />
+        
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-5 text-left">
-              <span className="inline-flex items-center gap-1.5 border border-red-200 bg-red-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-red-600 font-mono rounded-full mb-4">
+            <div className="lg:col-span-5 text-left space-y-4">
+              <span className="inline-flex items-center gap-1.5 border border-red-200 bg-red-50 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-red-600 font-mono rounded-full">
                 The Road Safety Challenge
               </span>
-              <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl font-sans">
+              <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans leading-tight">
                 Driver awareness is still an overlooked safety layer.
               </h2>
-              <p className="mt-4 text-xs text-slate-600 leading-relaxed font-sans font-medium">
-                Most modern automotive safety tools focus on the vehicle, the fleet, the insurer, or invasive dash cameras. Very few systems are built to help everyday drivers understand their own fatigue exposure, attention habits, and commuting realities in a privacy-first, software-only way.
+              <p className="text-sm text-slate-600 leading-relaxed font-sans font-medium">
+                Most modern automotive safety tools focus entirely on the vehicle, the fleet manager, or intrusive dash cams. Almost no solutions exist to help everyday drivers build cognitive mindfulness around fatigue, attention levels, and driving context in a privacy-first, purely voluntary way.
               </p>
             </div>
 
             <div className="lg:col-span-7 space-y-6">
-              
-              <div className="p-5 bg-white rounded-xl border border-slate-100 shadow-xs flex gap-4 items-start">
-                <div className="h-8 w-8 rounded bg-red-50 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <AlertTriangle className="h-4.5 w-4.5" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Fatigue is hard to notice early</h3>
-                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1 font-sans">
-                    Drivers often recognize fatigue only after their physical focus has already begun to slip or micro-distractions have already locked.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 bg-white rounded-xl border border-slate-100 shadow-xs flex gap-4 items-start">
-                <div className="h-8 w-8 rounded bg-red-50 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <ShieldAlert className="h-4.5 w-4.5" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Existing tools can feel invasive</h3>
-                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1 font-sans">
-                    Dashcams, real-time telematics, constant GPS tracking, and insurance apps create privacy resistance and premium anxiety.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 bg-white rounded-xl border border-slate-100 shadow-xs flex gap-4 items-start">
-                <div className="h-8 w-8 rounded bg-red-50 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="h-4.5 w-4.5" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Canadian driving adds real pressure</h3>
-                  <p className="text-[11px] text-slate-500 leading-relaxed mt-1 font-sans">
-                    Long commutes, sudden winter weather, vast highway stretches, night travel, and high traffic fatigue significantly stress daily cognitive reserves.
-                  </p>
-                </div>
-              </div>
-
+              {[
+                {
+                  icon: <AlertTriangle className="h-5 w-5" />,
+                  title: "Fatigue is hard to notice early",
+                  desc: "Drivers frequently fail to recognize their own cognitive decline until physical focus begins to slip or micro-distractions have already developed."
+                },
+                {
+                  icon: <ShieldAlert className="h-5 w-5" />,
+                  title: "Existing tools can feel invasive",
+                  desc: "Dashcams, heavy telemetry systems, constant route tracking, and insurance trackers build intense privacy resistance and behavioral anxiety."
+                },
+                {
+                  icon: <MapPin className="h-5 w-5" />,
+                  title: "Canadian driving demands real focus",
+                  desc: "Vast highway expanses, severe winter whiteouts, long inter-city travel corridors, and twilight commutes put immense pressure on daily attention reserves."
+                }
+              ].map((prob, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ x: 4 }}
+                  className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-red-200 transition-all duration-200 flex gap-4 items-start"
+                >
+                  <div className="h-9 w-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100/50">
+                    {prob.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono">{prob.title}</h3>
+                    <p className="text-xs text-slate-500 leading-relaxed mt-1 font-sans">
+                      {prob.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
+
           </div>
         </div>
       </section>
 
       {/* SECTION 3 — THE CONCEPT: WHAT ASTRATEQ IS VALIDATING */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-white">
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded font-mono mb-3">
-              Conceptual Innovation
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full font-mono">
+              Research Objectives
             </span>
-            <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
-              What Astrateq Gadgets is validating
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
+              What Astrateq Gadgets Is Validating
             </h2>
-            <p className="text-xs text-slate-500 mt-4 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-sm text-slate-500 leading-relaxed max-w-2xl mx-auto">
               Astrateq Gadgets is exploring a software-based Driver Awareness Intelligence concept that uses behavioral inputs to generate simulated awareness insights. The goal is to understand whether Canadian drivers want a privacy-first way to reflect on fatigue exposure, attention patterns, and driving context.
             </p>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-3">
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs text-center flex flex-col items-center">
-              <div className="h-10 w-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4 border border-blue-100">
-                <Brain className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Driver Awareness Score</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                A conceptual score calibrated from voluntary user questionnaire baselines to help drivers self-reflect on awareness and attention levels.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs text-center flex flex-col items-center">
-              <div className="h-10 w-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4 border border-blue-100">
-                <Eye className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Fatigue Risk Awareness Profile</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                A simulated profile structured around commuting frequency, clock-based diurnal rhythms, sleep deficits, and highway fatigue exposure.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl border border-[#E6EDF5] bg-slate-50/50 shadow-xs text-center flex flex-col items-center">
-              <div className="h-10 w-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4 border border-blue-100">
-                <Users className="h-5 w-5" />
-              </div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Research Cohort Classification</h3>
-              <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                A structured demographic taxonomy mapping driver focus profiles to tailored research segments to measure and study safety patterns.
-              </p>
-            </div>
+            {[
+              {
+                icon: <Brain className="h-5 w-5" />,
+                title: "Driver Awareness Score",
+                desc: "A conceptual rating calculated from user self-reported parameters to encourage self-reflection, mindfulness, and attention-profile understanding."
+              },
+              {
+                icon: <Eye className="h-5 w-5" />,
+                title: "Fatigue Risk Profile",
+                desc: "A simulated risk curve calibrated based on commute length, sleep patterns, driving schedule, and geographic fatigue factors."
+              },
+              {
+                icon: <Users className="h-5 w-5" />,
+                title: "Research Classification",
+                desc: "A structural grouping mechanism matching individual driver profiles to safe driving cohorts for aggregated data trends."
+              }
+            ].map((pillar, idx) => (
+              <motion.div 
+                key={idx}
+                whileHover={{ y: -4 }}
+                className="p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all duration-300 text-center flex flex-col items-center"
+              >
+                <div className="h-11 w-11 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100">
+                  {pillar.icon}
+                </div>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 font-mono">{pillar.title}</h3>
+                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                  {pillar.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SECTION 4 — DIFFERENTIATION: WHAT MAKES ASTRATEQ DIFFERENT */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-slate-50">
+      <section className="py-20 sm:py-28 bg-slate-50/50 border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-3">
-              Market Positioning
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+              Market Distinctions
             </span>
-            <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
-              Awareness intelligence without surveillance.
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
+              Awareness Intelligence Without Surveillance
             </h2>
-            <p className="text-xs text-slate-500 mt-3 leading-relaxed">
-              We draw a sharp line between traditional tracking products and our educational, privacy-centric software research approach.
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xl mx-auto">
+              We draw a sharp, non-negotiable boundary line between traditional tracking products and our educational, privacy-centric software validation approach.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto overflow-hidden rounded-xl border border-[#E6EDF5] bg-white shadow-sm">
-            <div className="grid grid-cols-2 bg-slate-900 text-white p-4 font-mono text-[10px] font-bold uppercase tracking-widest">
-              <div>Current Market Approach</div>
-              <div className="border-l border-slate-700 pl-4">Astrateq Direction</div>
+          <div className="max-w-4xl mx-auto overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+            {/* Table Header */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 bg-slate-900 text-white p-4.5 font-mono text-[10px] font-black uppercase tracking-widest">
+              <div className="px-2">Current Market Approach</div>
+              <div className="border-t sm:border-t-0 sm:border-l border-slate-700 mt-2 pt-2 sm:mt-0 sm:pt-0 sm:pl-6">
+                Astrateq Direction
+              </div>
             </div>
             
-            <div className="divide-y divide-[#E6EDF5] font-sans text-xs">
-              <div className="grid grid-cols-2 p-4">
-                <div className="text-slate-500 pr-4">Dashcams require hardware installation and continuous in-cabin monitoring.</div>
-                <div className="border-l border-[#E6EDF5] pl-4 font-bold text-slate-900 flex items-center gap-1.5">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  Software-first concept validation
+            {/* Table Rows */}
+            <div className="divide-y divide-slate-100 font-sans text-xs">
+              {[
+                {
+                  market: "Dashcams require permanent hardware installation and continuous in-cabin video capture.",
+                  astrateq: "100% software-based, conceptual simulation with absolutely zero visual recording."
+                },
+                {
+                  market: "Telematics capture real-time vehicle electronics, coordinates, and exact speed vectors.",
+                  astrateq: "No vehicle connection or electronic interfaces. Purely behavioral focus parameters."
+                },
+                {
+                  market: "Insurance apps track driving details to directly alter underwriting and rate pricing.",
+                  astrateq: "Zero insurance reporting. Built entirely for personal awareness reflection and safety education."
+                },
+                {
+                  market: "Safety advice is static, generic, un-calibrated, and rarely context-sensitive.",
+                  astrateq: "Personalized simulated awareness index mapped to regional highway contexts."
+                },
+                {
+                  market: "Fleet tools are locked behind corporate networks and focus exclusively on business assets.",
+                  astrateq: "Built from the ground up for individual, daily Canadian driver safety empowerment."
+                }
+              ].map((row, idx) => (
+                <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 hover:bg-slate-50/40 transition-colors">
+                  <div className="p-5 text-slate-500 pr-6 leading-relaxed flex items-start gap-2.5">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-300 mt-1.5 shrink-0" />
+                    <span>{row.market}</span>
+                  </div>
+                  <div className="border-t sm:border-t-0 sm:border-l border-slate-100 p-5 sm:pl-6 font-bold text-slate-900 flex items-start gap-2.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{row.astrateq}</span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-2 p-4">
-                <div className="text-slate-500 pr-4">Telematics track real-time physical vehicle coordinates and route vectors.</div>
-                <div className="border-l border-[#E6EDF5] pl-4 font-bold text-slate-900 flex items-center gap-1.5">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  No vehicle connection
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 p-4">
-                <div className="text-slate-500 pr-4">Insurance applications collect data specifically to score risk and alter pricing.</div>
-                <div className="border-l border-[#E6EDF5] pl-4 font-bold text-slate-900 flex items-center gap-1.5">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  No insurance scoring
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 p-4">
-                <div className="text-slate-500 pr-4">Safety advice remains generic, un-calibrated, and static.</div>
-                <div className="border-l border-[#E6EDF5] pl-4 font-bold text-slate-900 flex items-center gap-1.5">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  Personalized simulated awareness profile
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 p-4">
-                <div className="text-slate-500 pr-4">Fleet tools target commercial logistics operators rather than everyday drivers.</div>
-                <div className="border-l border-[#E6EDF5] pl-4 font-bold text-slate-900 flex items-center gap-1.5">
-                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
-                  Built for everyday Canadian drivers
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 5 — HOW THE VALIDATION PROGRAM WORKS */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-white">
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded font-mono mb-3">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full font-mono">
               Simple Engagement Flow
             </span>
-            <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
-              How the validation program works
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
+              How the Validation Program Works
             </h2>
-            <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+            <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto">
               We design our research validation to be extremely smooth, transparent, and direct.
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-4">
-            <div className="relative p-5 rounded-xl border border-slate-100 bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">STEP 01</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Try the simulation</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Complete our highly responsive 60-second Driver Awareness Simulation questionnaire.
-              </p>
-            </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
+            
+            {/* Visual connector line for desktop */}
+            <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-dashed bg-slate-200 -z-10" />
 
-            <div className="relative p-5 rounded-xl border border-slate-100 bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">STEP 02</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Review awareness profile</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Instantly view your simulated awareness score, fatigue profile, and assigned research cohort.
-              </p>
-            </div>
-
-            <div className="relative p-5 rounded-xl border border-slate-100 bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">STEP 03</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Join research cohort</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Formally submit your pre-launch interest to help us validate this software concept with real demand.
-              </p>
-            </div>
-
-            <div className="relative p-5 rounded-xl border border-slate-100 bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">STEP 04</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">Receive concept updates</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Get early updates as Astrateq aggregates local research insights and refines safety intelligence.
-              </p>
-            </div>
+            {[
+              {
+                step: "01",
+                title: "Try the Simulation",
+                desc: "Complete our highly responsive 60-second Driver Awareness Simulation questionnaire."
+              },
+              {
+                step: "02",
+                title: "Review Your Profile",
+                desc: "Instantly view your simulated awareness score, fatigue profile, and assigned research cohort."
+              },
+              {
+                step: "03",
+                title: "Join Research Cohort",
+                desc: "Formally register your pre-launch interest to validate this software concept with real demand parameters."
+              },
+              {
+                step: "04",
+                title: "Receive Concept Updates",
+                desc: "Get periodic study updates as Astrateq aggregates regional insights and refines safety intelligence."
+              }
+            ].map((flow, idx) => (
+              <div key={idx} className="relative p-5 rounded-xl border border-slate-200 bg-slate-50/30 hover:bg-white transition-all duration-300">
+                <div className="h-8 w-8 rounded-full bg-blue-600 text-white font-mono text-xs font-bold flex items-center justify-center mb-4 shadow-sm">
+                  {flow.step}
+                </div>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mb-2">{flow.title}</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                  {flow.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SECTION 6 — RESEARCH PARTICIPATION LEVELS */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-slate-50">
+      <section className="py-20 sm:py-28 bg-slate-50/50 border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-3">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
               Engagement Tiers
             </span>
-            <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
               Research Participation Levels
             </h2>
-            <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+            <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto">
               We categorize our validation program into three voluntary engagement depths. Select the level that matches your interest.
             </p>
           </div>
@@ -557,43 +650,43 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               return (
                 <div 
                   key={tier.id}
-                  className={`rounded-xl border p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${
+                  className={`rounded-2xl border p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${
                     isDark 
-                      ? "bg-slate-950 text-white border-blue-900/40 shadow-md" 
-                      : "bg-white text-slate-900 border-slate-200 shadow-sm hover:border-blue-400"
-                  } ${tier.highlight ? "ring-2 ring-blue-500 ring-offset-2" : ""} ${isSelected ? "border-blue-600 bg-blue-500/5" : ""}`}
+                      ? "bg-slate-900 text-white border-slate-800 shadow-xl" 
+                      : "bg-white text-slate-900 border-slate-200/80 shadow-xs hover:border-blue-400"
+                  } ${tier.highlight ? "ring-2 ring-blue-500 ring-offset-2" : ""} ${isSelected ? "border-blue-600 bg-blue-500/5 ring-1 ring-blue-500/20" : ""}`}
                 >
                   <div>
-                    <div className="flex justify-between items-center mb-4">
-                      <span className={`inline-flex items-center rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider font-mono ${
-                        isDark ? "bg-slate-900 text-slate-300 border border-slate-800" : "bg-slate-100 text-slate-800 border border-slate-200"
+                    <div className="flex justify-between items-center mb-6">
+                      <span className={`inline-flex items-center rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-wider font-mono border ${
+                        isDark ? "bg-slate-800 text-slate-300 border-slate-700" : "bg-slate-100 text-slate-800 border-slate-200"
                       }`}>
                         {tier.badge}
                       </span>
                       <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">{tier.levelLabel}</span>
                     </div>
 
-                    <h3 className="text-base font-bold uppercase tracking-wide leading-tight">{tier.title}</h3>
+                    <h3 className="text-lg font-black uppercase tracking-wide leading-tight">{tier.title}</h3>
                     
                     <p className={`mt-4 text-xs leading-relaxed ${isDark ? "text-slate-300" : "text-slate-500"}`}>
                       {tier.desc}
                     </p>
 
-                    <div className={`mt-5 p-3.5 rounded flex flex-col gap-1 text-[11px] ${
-                      isDark ? "bg-slate-900/60 border border-slate-800" : "bg-slate-50 border border-slate-200"
+                    <div className={`mt-5 p-4 rounded-xl flex flex-col gap-1 text-xs ${
+                      isDark ? "bg-slate-800/60 border border-slate-700/60" : "bg-slate-50 border border-slate-200/60"
                     }`}>
-                      <span className={`font-bold font-mono text-[10px] uppercase tracking-wider ${isDark ? "text-slate-400" : "text-slate-500"}`}>Requirement:</span>
-                      <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-[10px] font-mono">{tier.requirement}</span>
+                      <span className={`font-bold font-mono text-[9px] uppercase tracking-widest ${isDark ? "text-slate-400" : "text-slate-500"}`}>Requirement:</span>
+                      <span className="font-extrabold text-slate-900 dark:text-white uppercase tracking-wider text-[10px] font-mono leading-relaxed">{tier.requirement}</span>
                     </div>
 
-                    <p className={`mt-6 text-[10px] font-bold uppercase tracking-wider font-mono ${isDark ? "text-slate-400" : "text-slate-400"}`}>
+                    <p className={`mt-6 text-[10px] font-black uppercase tracking-widest font-mono ${isDark ? "text-slate-400" : "text-slate-400"}`}>
                       Inclusions:
                     </p>
 
-                    <ul className="mt-3 space-y-2.5">
+                    <ul className="mt-3.5 space-y-3">
                       {tier.features.map((feat, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs">
-                          <Check className={`h-3.5 w-3.5 mt-0.5 shrink-0 ${isDark ? "text-blue-400" : "text-blue-600"}`} />
+                        <li key={idx} className="flex items-start gap-2.5 text-xs">
+                          <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isDark ? "text-blue-400" : "text-blue-600"}`} />
                           <span className={isDark ? "text-slate-300" : "text-slate-600"}>{feat}</span>
                         </li>
                       ))}
@@ -603,10 +696,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   <div className="mt-8 pt-6 border-t border-slate-100/10 font-mono">
                     <button
                       onClick={() => scrollToForm(tier.id)}
-                      className={`w-full inline-flex items-center justify-center gap-1.5 rounded py-3 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer ${
+                      className={`w-full inline-flex items-center justify-center gap-2 rounded py-3.5 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer ${
                         isSelected 
                           ? "bg-slate-900 text-white border border-slate-800" 
-                          : "bg-blue-600 text-white hover:bg-blue-700"
+                          : "bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
                       }`}
                     >
                       <span>{isSelected ? "Selected Level" : "Select Level & Register"}</span>
@@ -625,70 +718,69 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       </section>
 
       {/* SECTION 8 — WHAT HAPPENS AFTER JOINING */}
-      <section className="py-20 sm:py-28 border-b border-slate-200 bg-white">
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded font-mono mb-3">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full font-mono">
               Expectation Transparency
             </span>
-            <h2 className="text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
-              What happens after you join?
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
+              What Happens After You Join?
             </h2>
-            <p className="text-xs text-slate-500 mt-3 leading-relaxed">
+            <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto">
               We value your feedback and timeline commitment. Here is what you can expect as an active cohort member:
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="p-5 rounded-xl border border-[#E6EDF5] bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono">01 / CONFIRMATION</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mt-2">You receive confirmation</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Your research cohort interest is registered immediately. We generate a persistent anonymous Cohort ID.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl border border-[#E6EDF5] bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono">02 / COMMUNICATIONS</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mt-2">You may receive updates</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Astrateq occasionally shares high-level concept validation reports, regional benchmarks, and study progress.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl border border-[#E6EDF5] bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono">03 / INFLUENCE</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mt-2">You help shape the concept</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Your participation and focus telemetry surveys help determine whether the concept moves toward future prototype development.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-xl border border-[#E6EDF5] bg-slate-50/50">
-              <span className="text-[10px] font-bold text-blue-600 font-mono">04 / LIABILITY</span>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mt-2">No purchase commitment</h4>
-              <p className="text-[11px] text-slate-500 mt-2 leading-relaxed font-sans">
-                Onboarding does not require fees, deposits, or subsequent subscription contracts. It is entirely study-based.
-              </p>
-            </div>
+            {[
+              {
+                step: "01 / CONFIRMATION",
+                title: "You receive confirmation",
+                desc: "Your research cohort interest is registered immediately. We generate a persistent anonymous Cohort ID."
+              },
+              {
+                step: "02 / COMMUNICATIONS",
+                title: "You may receive updates",
+                desc: "Astrateq occasionally shares high-level concept validation reports, regional benchmarks, and study progress."
+              },
+              {
+                step: "03 / INFLUENCE",
+                title: "You help shape the concept",
+                desc: "Your participation and focus telemetry surveys help determine whether the concept moves toward future prototype development."
+              },
+              {
+                step: "04 / LIABILITY",
+                title: "No purchase commitment",
+                desc: "Onboarding does not require fees, deposits, or subsequent subscription contracts. It is entirely study-based."
+              }
+            ].map((card, idx) => (
+              <div key={idx} className="p-5.5 rounded-xl border border-slate-200 bg-slate-50/40 hover:bg-white hover:border-blue-200 transition-all duration-300">
+                <span className="text-[9px] font-black text-blue-600 font-mono tracking-widest">{card.step}</span>
+                <h4 className="text-xs font-black uppercase tracking-wide text-slate-900 font-mono mt-2.5">{card.title}</h4>
+                <p className="text-xs text-slate-500 mt-2 leading-relaxed font-sans">
+                  {card.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SECTION 9 — SIGNUP FORM / RESERVATION FORM */}
-      <section ref={formRef} id="signup-form-section" className="py-20 sm:py-28 border-b border-slate-200 bg-slate-50">
+      <section ref={formRef} id="signup-form-section" className="py-20 sm:py-28 bg-slate-50/50 border-b border-slate-200/60 relative">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-lg relative overflow-hidden">
+          <div className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-10 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-blue-600 to-cyan-500" />
             
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[9px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-3">
+            <div className="text-center mb-8 space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[9px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
                 Research Enrollment
               </span>
-              <h3 className="text-xl font-black uppercase tracking-wider text-slate-900">
+              <h3 className="text-2xl font-black uppercase tracking-tight text-slate-900 font-sans">
                 Join the Driver Awareness Research Cohort
               </h3>
-              <p className="text-xs text-slate-500 mt-2 max-w-md mx-auto">
+              <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
                 Submit your enrollment parameters below. Registration is entirely free, anonymous, and secured under strict guidelines.
               </p>
             </div>
@@ -731,11 +823,11 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSignupSubmit} className="space-y-5">
+              <form onSubmit={handleSignupSubmit} className="space-y-6">
                 
                 {/* Level Recap Indicator */}
-                <div className="p-3.5 rounded border border-blue-100 bg-blue-50/30 text-xs">
-                  <p className="text-[9px] font-bold text-blue-500 uppercase tracking-wider font-mono">Selected Level:</p>
+                <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/40 text-xs">
+                  <p className="text-[9px] font-bold text-blue-500 uppercase tracking-widest font-mono">Selected Level:</p>
                   <p className="font-extrabold text-slate-900 uppercase mt-0.5">
                     {tiers.find(t => t.id === selectedTier)?.title}
                   </p>
@@ -744,7 +836,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   </p>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-2">
                   {/* First Name Input */}
                   <div>
                     <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono">
@@ -756,7 +848,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       placeholder="e.g. Liam"
-                      className="w-full rounded border border-slate-200 bg-white py-2.5 px-3.5 text-xs font-sans text-slate-800 focus:border-slate-900 focus:outline-none transition-colors"
+                      className="w-full rounded border border-slate-200 bg-white py-2.5 px-3.5 text-xs font-sans text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -768,7 +860,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     <select
                       value={province}
                       onChange={(e) => setProvince(e.target.value)}
-                      className="w-full rounded border border-slate-200 py-2.5 px-3.5 text-xs bg-white font-mono uppercase tracking-wider text-slate-800 focus:border-slate-900 focus:outline-none cursor-pointer transition-colors"
+                      className="w-full rounded border border-slate-200 py-2.5 px-3.5 text-xs bg-white font-mono uppercase tracking-wider text-slate-800 focus:border-blue-500 focus:outline-none cursor-pointer transition-colors"
                     >
                       {provinces.map(prov => (
                         <option key={prov.code} value={prov.code}>
@@ -794,7 +886,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="yourname@domain.ca"
-                      className="w-full rounded border border-slate-200 py-2.5 pl-10 pr-4 text-xs font-sans text-slate-800 focus:border-slate-900 focus:outline-none transition-colors"
+                      className="w-full rounded border border-slate-200 py-2.5 pl-10 pr-4 text-xs font-sans text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -803,14 +895,14 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 <div>
                   <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 font-mono flex justify-between">
                     <span>Driving Context (Optional)</span>
-                    <span className="text-slate-400">e.g. daily highway commute</span>
+                    <span className="text-slate-400 font-mono">e.g. daily highway commute</span>
                   </label>
                   <textarea
                     rows={3}
                     value={drivingContext}
                     onChange={(e) => setDrivingContext(e.target.value)}
                     placeholder="Briefly describe your regular routes or typical fatigue challenges (e.g. long highway travel, winter storms)..."
-                    className="w-full rounded border border-slate-200 bg-white py-2.5 px-3.5 text-xs font-sans text-slate-800 focus:border-slate-900 focus:outline-none transition-colors resize-none"
+                    className="w-full rounded border border-slate-200 bg-white py-2.5 px-3.5 text-xs font-sans text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
