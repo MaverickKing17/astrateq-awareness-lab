@@ -32,40 +32,36 @@ export default function App() {
 
   const faqItems = [
     {
-      q: "What is the Astrateq Gadgets Driver Awareness Intelligence study?",
-      a: "Astrateq Gadgets is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This initiative evaluates relative driver focus, attention locking, and fatigue resistance benchmarks to help Canadian drivers assess their road safety readiness."
+      q: "Is this a real product yet?",
+      a: "No. Astrateq Gadgets is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This is a concept validation system, not a finished application, subscription, or SaaS product."
     },
     {
       q: "Is this connected to my vehicle?",
-      a: "No — this is a simulation and does not connect to any vehicle system or hardware."
+      a: "No. This is a software-based behavioral simulation and does not connect to any vehicle systems, OBD ports, or vehicle electronics."
     },
     {
-      q: "Is this replacing insurance or telematics systems?",
-      a: "No — this is a research simulation for concept validation only."
+      q: "Does this require hardware?",
+      a: "No. This is a purely browser-based cognitive research study. No physical devices, dashcams, on-board trackers, or adapters are needed or distributed."
     },
     {
-      q: "How is the awareness score generated?",
-      a: "It is generated from a behavioral simulation model based on user inputs, not real-world telemetry or tracking."
+      q: "Is this used by insurance companies?",
+      a: "Absolutely not. Privacy is our highest priority. Your responses and overall scores are completely anonymous, encrypted, and are never shared, leased, or sold to automotive insurers, marketing agencies, or external databases."
     },
     {
-      q: "Is Astrateq Gadgets planning hardware in the future?",
-      a: "This initiative is focused on validating a software-only Driver Awareness Intelligence concept."
+      q: "What does joining the research cohort mean?",
+      a: "Joining the research cohort means you register your interest in early concept updates and optional feedback cycles, helping validate whether this software-based driver awareness concept should move toward future development."
     },
     {
-      q: "What happens after I join the research cohort?",
-      a: "You may receive updates, insights, and opportunities to participate in early research validation."
+      q: "What happens after I join?",
+      a: "You will receive an automated confirmation and optional, high-level updates as our concept validation progresses. There is no purchase commitment or product contract involved."
     },
     {
-      q: "Does this require an OBD2 scanner, telematics device, or hardware?",
-      a: "No! This is a strict software-only research study. We do not require, sell, or support vehicle hardware, OBD scanners, dashcams, CAN bus adapters, or fleet tracking devices. It is entirely browser-based and behavioral."
+      q: "Will this become a prototype?",
+      a: "The goal of this pre-launch market validation study is to gauge demand among Canadian drivers. If we observe strong, high-intent interest across our research cohorts, we will evaluate moving the concept toward prototype development."
     },
     {
-      q: "Is my personal data shared with insurance companies?",
-      a: "No. Privacy is our highest directive. Your simulation responses and overall scores are 100% anonymous, encrypted, and stored securely inside Canada. They are never shared, leased, or sold to automotive insurers, marketing agencies, or tracking networks."
-    },
-    {
-      q: "What do the research participation levels represent?",
-      a: "Our research cohort is divided into different engagement levels (Standard research level, active safety research engagement, and steering advisory panel memberships). It is fully funded by pre-launch research capital and participation carries zero cost."
+      q: "How is this different from on-board trackers, dashcams, or OBD devices?",
+      a: "Traditional tools monitor physical vehicles or capture external video feeds. Astrateq Gadgets takes a completely different path—we focus purely on cognitive and behavioral awareness, designed to help everyday drivers understand their own focus habits and fatigue indicators in a privacy-first, software-only environment."
     }
   ];
 
@@ -490,6 +486,7 @@ export default function App() {
           <CohortPage 
             score={insights?.score} 
             initialSelectedTier={onboardedTier} 
+            onStartSimulation={handleStartSimulation}
           />
         )}
 

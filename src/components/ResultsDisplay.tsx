@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { DriverInsights, DriverSimulationInputs } from "../types";
 import { 
-  Brain, Eye, ShieldCheck, Lock, Check, CheckCircle2, MapPinOff, ShieldAlert, Cpu, 
-  Info, ChevronDown, ChevronUp, AlertCircle, Sparkles, ArrowRight
+  Brain, Eye, ShieldCheck, Lock, Check, MapPin, Cpu, 
+  Info, ChevronDown, ChevronUp, Sparkles, ArrowRight, RefreshCw, Compass
 } from "lucide-react";
 
 interface ResultsDisplayProps {
@@ -22,17 +22,73 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
     setActiveTab(prev => (prev === tab ? null : tab));
   };
 
-  // Determine levels and badges
+  // Determine levels and badges based on the new behavioral score scale
   const getLevel = (scoreValue: number) => {
-    if (scoreValue >= 80) return { label: "Good", color: "text-emerald-800 bg-emerald-50/50 border-emerald-200 font-mono", border: "border-emerald-500", text: "You show strong awareness and good driving habits. Keep building on these positive patterns." };
-    if (scoreValue >= 60) return { label: "Moderate", color: "text-amber-800 bg-amber-50/50 border-amber-200 font-mono", border: "border-amber-400", text: "Moderate fatigue exposure or focus variance detected. Opportunities to reinforce focus habits." };
-    return { label: "Needs Review", color: "text-rose-800 bg-rose-50/50 border-rose-200 font-mono", border: "border-rose-400", text: "Cognitive focus limits indicate opportunities for risk reduction and schedule restructuring." };
+    if (scoreValue >= 80) {
+      return { 
+        label: "Strong Focus", 
+        color: "text-blue-800 bg-blue-50/80 border-blue-200 font-mono", 
+        border: "border-blue-500", 
+        text: "Strong awareness patterns and stable attention behavior under driving conditions" 
+      };
+    }
+    if (scoreValue >= 40) {
+      return { 
+        label: "Variable Focus", 
+        color: "text-amber-800 bg-amber-50/80 border-amber-200 font-mono", 
+        border: "border-amber-400", 
+        text: "Moderate awareness patterns with variable attention exposure" 
+      };
+    }
+    return { 
+      label: "Elevated Opportunity", 
+      color: "text-rose-800 bg-rose-50/80 border-rose-200 font-mono", 
+      border: "border-rose-400", 
+      text: "Elevated opportunity for awareness improvement in driving behavior patterns" 
+    };
   };
 
   const levelInfo = getLevel(score);
 
+  // Determine Cohort Assignment based on the new guidelines
+  const getCohortAssignment = (scoreValue: number) => {
+    if (scoreValue >= 80) {
+      return {
+        id: "standard",
+        name: "Awareness Cohort",
+        desc: "Standard research participant group for general behavioral modeling",
+        colorClass: "border-blue-200 bg-blue-50/30 text-blue-800",
+        badgeColor: "bg-blue-600 text-white",
+        textColor: "text-blue-900",
+        bulletColor: "bg-blue-500"
+      };
+    }
+    if (scoreValue >= 40) {
+      return {
+        id: "guardian",
+        name: "Guardian Cohort",
+        desc: "Higher engagement group with elevated interest in safety awareness systems",
+        colorClass: "border-amber-200 bg-amber-50/30 text-amber-800",
+        badgeColor: "bg-amber-500 text-white",
+        textColor: "text-amber-900",
+        bulletColor: "bg-amber-500"
+      };
+    }
+    return {
+      id: "founding",
+      name: "Founding Research Cohort",
+      desc: "High-intent participants for early concept validation and feedback",
+      colorClass: "border-rose-200 bg-rose-50/30 text-rose-800",
+      badgeColor: "bg-rose-600 text-white",
+      textColor: "text-rose-900",
+      bulletColor: "bg-rose-500"
+    };
+  };
+
+  const cohort = getCohortAssignment(score);
+
   // SVG parameters for circular indicator
-  const radius = 50;
+  const radius = 60;
   const stroke = 10;
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
@@ -48,13 +104,13 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             <span>🇨🇦</span> Post-Assessment Results
           </span>
           <h1 className="mt-4 text-2xl font-bold uppercase tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Driver Awareness Report
+            Driver Awareness Simulation Output
           </h1>
           <p className="mt-3 text-xs text-slate-500 leading-relaxed max-w-2xl">
             Thank you for completing your assessment. Your results provide personalized insights into your driving readiness and help advance road safety research across Canada.
           </p>
           <div className="mt-4 flex flex-wrap gap-3 items-center text-[10px] text-slate-400 font-mono">
-            <span>METHOD: SIMULATED BEHAVIORAL AI</span>
+            <span>METHOD: SIMULATED BEHAVIORAL MODEL</span>
             <span>•</span>
             <span>TARGET: CANADIAN COMMUTERS</span>
             <span>•</span>
@@ -103,7 +159,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
 
           <div className="flex flex-col sm:flex-row lg:flex-col items-center gap-6">
             {/* Circular Gauge */}
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center p-2 rounded-full bg-cyan-500/[0.03] shadow-[0_0_30px_rgba(6,182,212,0.1)]">
               <svg height={radius * 2} width={radius * 2}>
                 {/* Background circle */}
                 <circle
@@ -129,43 +185,52 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 />
                 <defs>
                   <linearGradient id="slateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#0f172a" />
-                    <stop offset="100%" stopColor="#475569" />
+                    <stop offset="0%" stopColor="#2563eb" />
+                    <stop offset="100%" stopColor="#06b6d4" />
                   </linearGradient>
                 </defs>
               </svg>
               <div className="absolute flex flex-col items-center justify-center">
-                <span className="text-3xl font-bold text-slate-900 leading-none font-mono">
+                <span className="text-4xl font-extrabold text-slate-900 leading-none font-mono">
                   {score}
                 </span>
-                <span className="text-[10px] font-bold text-slate-400 mt-0.5 font-mono">
-                  /100
+                <span className="text-[8px] font-black text-slate-400 mt-1 uppercase tracking-widest font-mono">
+                  Simulated Index
                 </span>
               </div>
             </div>
 
             {/* Gauge evaluation summary */}
             <div className="flex-1 text-center sm:text-left lg:text-center">
-              <span className={`inline-flex rounded border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${levelInfo.color}`}>
+              <span className={`inline-flex rounded-full border px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider ${levelInfo.color}`}>
                 {levelInfo.label}
               </span>
               <h4 className="mt-3 text-xs font-bold uppercase tracking-wider text-slate-800">
-                Driver Awareness Score
+                Simulated Awareness Index
               </h4>
-              <p className="mt-1 text-[10px] font-mono text-slate-400 italic">
-                Simulated Output — Conceptual Model (Not Real-World Data)
-              </p>
-              <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
+              <p className="mt-2 text-[10px] text-slate-500 leading-relaxed font-sans">
                 {levelInfo.text}
-              </p>
-              <p className="mt-2 text-[9px] font-mono text-slate-400 leading-tight">
-                This is a simulated model output, not real-world measured data.
               </p>
             </div>
           </div>
 
+          {/* CRITICAL SUPPORTING LABEL */}
+          <div className="mt-6 border-t border-slate-100 pt-4 text-center bg-slate-50/60 p-3 rounded-lg border border-slate-100">
+            <p className="text-[9px] font-bold font-mono text-slate-500 uppercase tracking-wider">
+              Critical Disclaimer
+            </p>
+            <p className="mt-1 text-[10px] font-mono font-medium text-slate-600 leading-normal">
+              Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
+            </p>
+          </div>
+
+          {/* Small Trust Disclaimer under Score Section */}
+          <p className="mt-4 text-[9px] text-slate-400 font-medium text-center font-sans">
+            This is a simulated behavioral research model. No vehicle data is accessed, tracked, or transmitted.
+          </p>
+
           {/* Scale breakdown sub-panel */}
-          <div className="mt-6 border-t border-slate-100 pt-6">
+          <div className="mt-6 border-t border-slate-100 pt-4">
             <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5 font-mono">
               <Info className="h-3.5 w-3.5 text-slate-500" />
               Score Scale Interpretation
@@ -173,15 +238,15 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             <div className="space-y-1.5 text-[10px] font-mono">
               <div className="flex justify-between items-center bg-slate-50 p-2 border border-slate-100 rounded">
                 <span className="font-bold text-slate-700">80 - 100</span>
-                <span className="font-bold text-emerald-800 uppercase tracking-wide">Strong</span>
+                <span className="font-bold text-blue-700 uppercase tracking-wide">Strong</span>
               </div>
               <div className="flex justify-between items-center bg-slate-50 p-2 border border-slate-100 rounded">
-                <span className="font-bold text-slate-700">60 - 79</span>
-                <span className="font-bold text-amber-800 uppercase tracking-wide">Moderate</span>
+                <span className="font-bold text-slate-700">40 - 79</span>
+                <span className="font-bold text-amber-700 uppercase tracking-wide">Moderate</span>
               </div>
               <div className="flex justify-between items-center bg-slate-50 p-2 border border-slate-100 rounded">
-                <span className="font-bold text-slate-700">20 - 59</span>
-                <span className="font-bold text-rose-800 uppercase tracking-wide">Needs Review</span>
+                <span className="font-bold text-slate-700">0 - 39</span>
+                <span className="font-bold text-rose-700 uppercase tracking-wide">Opportunity</span>
               </div>
             </div>
           </div>
@@ -190,149 +255,188 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         {/* Breakdown Cards (Takes 8 cols on desktop) */}
         <div className="lg:col-span-8 flex flex-col gap-6">
           
-          {/* Card 1: Fatigue Risk */}
-          <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
-                  <Brain className="h-4 w-4" />
-                </div>
-                <div>
-                  <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Fatigue Risk Awareness</h3>
-                  <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Sleep debt, circadian alignments & transit times</p>
-                </div>
-              </div>
-              <span className={`px-2 py-0.5 border rounded text-[10px] font-bold uppercase tracking-wider font-mono ${
-                inputs.fatigueAssessment === "rarely_tired" 
-                  ? "bg-emerald-50 text-emerald-800 border-emerald-200" 
-                  : inputs.fatigueAssessment === "sometimes_tired" 
-                    ? "bg-amber-50 text-amber-800 border-amber-200" 
-                    : "bg-rose-50 text-rose-800 border-rose-200"
-              }`}>
-                {inputs.fatigueAssessment === "rarely_tired" ? "Optimized" : inputs.fatigueAssessment === "sometimes_tired" ? "Moderate Exposure" : "High Risk"}
-              </span>
+          {/* COHORT CLASSIFICATION BLOCK (CRITICAL FOR CONVERSION - SECOND MOST IMPORTANT) */}
+          <div className="rounded-xl border-2 border-blue-500/20 bg-gradient-to-br from-white to-blue-50/20 p-6 sm:p-8 shadow-[0_10px_30px_rgba(59,130,246,0.04)] relative overflow-hidden">
+            <div className="absolute top-0 right-0 rounded-bl bg-blue-600 px-3 py-1 text-[9px] font-bold text-white uppercase tracking-widest font-mono">
+              Assigned Cohort
             </div>
             
-            <p className="text-slate-600 text-xs leading-relaxed">
-              {fatigueRiskProfile}
-            </p>
-            <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
-              Simulated Output — Conceptual Model (Not Real-World Data)
-            </p>
-
-            <div className="mt-4 border-t border-slate-100 pt-3">
-              <button 
-                onClick={() => toggleTab("fatigue")} 
-                className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono"
-              >
-                <span>{activeTab === "fatigue" ? "Collapse Details" : "View Details"}</span>
-                {activeTab === "fatigue" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
-              </button>
+            <h3 className="text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-2">
+              Your Research Cohort Assignment
+            </h3>
+            
+            <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mt-4">
+              <div className={`rounded-xl border p-4 w-full sm:w-auto shrink-0 ${cohort.colorClass}`}>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest block font-mono">Matched Level</span>
+                <h4 className="text-base font-black uppercase mt-1 tracking-tight font-sans">
+                  {cohort.name}
+                </h4>
+              </div>
               
-              {activeTab === "fatigue" && (
-                <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono animate-in slide-in-from-top-2 duration-150">
-                  <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Cognitive Risk Factor Analysis:</p>
-                  Our research suggests that fatigue acts as a delayed feedback trigger. When driving during <strong className="text-slate-900">{inputs.timeOfDay}</strong> hours, biological circadian signals increase drowsiness cycles. Over long-distance Canadian commutes, this reduces split-second decision velocities.
+              <div className="flex-1">
+                <p className="text-xs text-slate-700 font-sans leading-relaxed">
+                  {cohort.desc}
+                </p>
+                <div className="mt-3 flex items-center gap-1.5 text-[9px] text-slate-500 font-mono uppercase tracking-wide">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Cohort allocation completed
                 </div>
-              )}
+              </div>
+            </div>
+
+            <div className="mt-5 border-t border-blue-100/60 pt-4">
+              <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider text-center sm:text-left">
+                *IMPORTANT LABEL: Cohort assignment is based on simulated behavioral modeling inputs, not real-world evaluation.
+              </p>
             </div>
           </div>
 
-          {/* Card 2: Attention Readiness */}
-          <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
-                  <Eye className="h-4 w-4" />
-                </div>
-                <div>
-                  <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Attention Readiness</h3>
-                  <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Micro-distraction management & scanning behavior</p>
-                </div>
-              </div>
-              <span className={`px-2 py-0.5 border rounded text-[10px] font-bold uppercase tracking-wider font-mono ${
-                inputs.attentionHabits === "always_focused" 
-                  ? "bg-emerald-50 text-emerald-800 border-emerald-200" 
-                  : inputs.attentionHabits === "frequent_radio_adjust"
-                    ? "bg-amber-50 text-amber-800 border-amber-200"
-                    : "bg-rose-50 text-rose-800 border-rose-200"
-              }`}>
-                {inputs.attentionHabits === "always_focused" ? "Highly Focused" : "Split Focus"}
-              </span>
-            </div>
-
-            <p className="text-slate-600 text-xs leading-relaxed">
-              {attentionReadiness}
+          {/* INTERPRETATION PANEL */}
+          <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-6">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">
+              What your awareness result suggests
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed font-sans">
+              Based on your answers, your current cognitive awareness profile indicates a score of <strong className="text-slate-900">{score}/100</strong>. This maps to the <strong className="text-slate-900">{cohort.name}</strong> research group, which helps evaluate localized Canadian travel behaviors, focus locking intervals, and fatigue-related circadian profiles.
             </p>
-            <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
-              Simulated Output — Conceptual Model (Not Real-World Data)
-            </p>
-
-            <div className="mt-4 border-t border-slate-100 pt-3">
-              <button 
-                onClick={() => toggleTab("attention")} 
-                className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono"
-              >
-                <span>{activeTab === "attention" ? "Collapse Details" : "View Details"}</span>
-                {activeTab === "attention" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
-              </button>
-              
-              {activeTab === "attention" && (
-                <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono animate-in slide-in-from-top-2 duration-150">
-                  <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Attention Allocation Dynamics:</p>
-                  By responding that you utilize <strong className="text-slate-900">{inputs.attentionHabits.replace(/_/g, " ")}</strong>, your visual attention is frequently split. Taking your eyes off the visual field for just 1.5 seconds at 100 km/h means traveling over 40 meters blind. This highlights the vital importance of a hands-free, locked-in setup.
-                </div>
-              )}
-            </div>
           </div>
 
-          {/* Card 3: Safety Intelligence Readiness */}
-          <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
-                  <ShieldCheck className="h-4 w-4" />
+          {/* 3 BEHAVIORAL INSIGHT CARDS */}
+          <div className="grid gap-6">
+            
+            {/* Card 1: Fatigue Exposure Pattern */}
+            <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Brain className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Fatigue Exposure Pattern</h3>
+                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Based on driving time and frequency inputs</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Safety Readiness</h3>
-                  <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Actionable recommendations & tactical improvements</p>
-                </div>
+                <span className="px-2 py-0.5 border border-slate-100 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+                  Input Mapping
+                </span>
               </div>
-              <span className="px-2 py-0.5 border border-slate-200 bg-slate-50 rounded text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono">
-                Action Tips
-              </span>
-            </div>
-
-            <p className="text-slate-600 text-xs leading-relaxed">
-              {safetyIntelligenceReadiness}
-            </p>
-            <p className="mt-1 text-[9px] font-mono text-slate-400 italic">
-              Simulated Output — Conceptual Model (Not Real-World Data)
-            </p>
-
-            <div className="mt-4 border-t border-slate-100 pt-3">
-              <button 
-                onClick={() => toggleTab("safety")} 
-                className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono"
-              >
-                <span>{activeTab === "safety" ? "Collapse Details" : "View Details"}</span>
-                {activeTab === "safety" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
-              </button>
               
-              {activeTab === "safety" && (
-                <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono animate-in slide-in-from-top-2 duration-150">
-                  <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Tactical Focus Recommendation:</p>
-                  Always pre-plan temperature, audio channels, and route coordinates BEFORE taking off. If long <strong className="text-slate-900">{inputs.commuteType}</strong> driving stretches cause mental drift, implement a standard 15-minute cognitive rest interval to break focus loops.
-                </div>
-              )}
+              <p className="text-slate-600 text-xs leading-relaxed font-sans">
+                {fatigueRiskProfile}
+              </p>
+              <p className="mt-1.5 text-[9px] font-mono text-slate-400 italic">
+                Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
+              </p>
+
+              <div className="mt-4 border-t border-slate-100 pt-3">
+                <button 
+                  onClick={() => toggleTab("fatigue")} 
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono animate-none"
+                >
+                  <span>{activeTab === "fatigue" ? "Collapse Details" : "View Details"}</span>
+                  {activeTab === "fatigue" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                </button>
+                
+                {activeTab === "fatigue" && (
+                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono">
+                    <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Fatigue Exposure Metrics:</p>
+                    Your self-reported frequency of driving (especially during <strong className="text-slate-900">{inputs.timeOfDay}</strong> hours) directly models standard biological fatigue waves. This behavioral simulation evaluates these indicators against established pre-launch Canadian safety baselines.
+                  </div>
+                )}
+              </div>
             </div>
+
+            {/* Card 2: Attention Stability Profile */}
+            <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Eye className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Attention Stability Profile</h3>
+                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Based on self-reported focus behavior indicators</p>
+                  </div>
+                </div>
+                <span className="px-2 py-0.5 border border-slate-100 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+                  Input Mapping
+                </span>
+              </div>
+
+              <p className="text-slate-600 text-xs leading-relaxed font-sans">
+                {attentionReadiness}
+              </p>
+              <p className="mt-1.5 text-[9px] font-mono text-slate-400 italic">
+                Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
+              </p>
+
+              <div className="mt-4 border-t border-slate-100 pt-3">
+                <button 
+                  onClick={() => toggleTab("attention")} 
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono animate-none"
+                >
+                  <span>{activeTab === "attention" ? "Collapse Details" : "View Details"}</span>
+                  {activeTab === "attention" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                </button>
+                
+                {activeTab === "attention" && (
+                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono">
+                    <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Attention Allocation Dynamics:</p>
+                    By indicating your habit of <strong className="text-slate-900">{inputs.attentionHabits.replace(/_/g, " ")}</strong>, our simulated focus matrix estimates visual locking stability rates over typical commutes to help you reflect on micro-distractions.
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Card 3: Driving Context Sensitivity */}
+            <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Compass className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Driving Context Sensitivity</h3>
+                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Based on environmental and commute conditions</p>
+                  </div>
+                </div>
+                <span className="px-2 py-0.5 border border-slate-200 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-700 font-mono">
+                  Input Mapping
+                </span>
+              </div>
+
+              <p className="text-slate-600 text-xs leading-relaxed font-sans">
+                {safetyIntelligenceReadiness}
+              </p>
+              <p className="mt-1.5 text-[9px] font-mono text-slate-400 italic">
+                Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
+              </p>
+
+              <div className="mt-4 border-t border-slate-100 pt-3">
+                <button 
+                  onClick={() => toggleTab("safety")} 
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono animate-none"
+                >
+                  <span>{activeTab === "safety" ? "Collapse Details" : "View Details"}</span>
+                  {activeTab === "safety" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                </button>
+                
+                {activeTab === "safety" && (
+                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono">
+                    <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Contextual Response Factors:</p>
+                    Commutes structured as <strong className="text-slate-900">{inputs.commuteType.replace(/_/g, " ")}</strong> across various provincial routes introduce external cognitive strains. Pre-planning rest frequencies acts as a powerful offset.
+                  </div>
+                )}
+              </div>
+            </div>
+
           </div>
 
           {/* Qualitative Overall Evaluation Panel */}
-          <div className="rounded-xl bg-slate-950 p-6 text-white shadow-[0_0_25px_rgba(6,182,212,0.2)] relative overflow-hidden border-2 border-slate-800">
+          <div className="rounded-xl bg-slate-950 p-6 text-white shadow-[0_0_25px_rgba(59,130,246,0.15)] relative overflow-hidden border-2 border-slate-800">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-2">Simulated Driver Assessment Summary</h4>
-            <p className="text-[10px] font-mono text-slate-400 italic mb-2">Simulated Output — Conceptual Model (Not Real-World Data)</p>
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-[10px] font-mono text-slate-400 italic mb-2">Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)</p>
+            <p className="text-xs text-slate-300 leading-relaxed font-sans">
               {overallEvaluation}
             </p>
           </div>
@@ -340,82 +444,72 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         </div>
       </div>
 
-      {/* Accordion / Interpretation Panel */}
-      <div className="mb-16 bg-[#D8E3EE] rounded-xl p-6 sm:p-8 border border-[#cbd5e1] shadow-sm">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
-          <Info className="h-4 w-4 text-slate-700" />
-          Pre-Launch Study Calibration & Scale Metrics
+      {/* WHAT THIS MEANS SECTION (CONVERSION BRIDGE) */}
+      <div className="mb-16 rounded-xl border border-blue-100 bg-white p-6 sm:p-8 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-500" />
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-4">
+          Framework Explanation & Next Steps
+        </span>
+        <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-2 font-sans">
+          What this result means
         </h3>
-        <p className="text-xs text-slate-500 mb-6 max-w-4xl leading-relaxed">
-          The <strong className="text-slate-900">Astrateq Gadgets Driver Awareness Score</strong> is calibrated using aggregated behavioral surveys from Canadian cohorts. Since this is a software-based study rather than hardware-integrated diagnostics, we evaluate focus using self-reported visual locking frequencies, diurnal scheduling conflicts, and typical fatigue events.
+        <p className="text-xs text-slate-500 mb-6 max-w-2xl leading-relaxed">
+          Please review the foundational details of this cognitive research initiative:
         </p>
         <div className="grid gap-6 sm:grid-cols-3">
-          <div className="bg-white p-5 rounded border border-[#E6EDF5] shadow-xs">
-            <h4 className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1 font-mono">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> High Score (80 - 100)
-            </h4>
-            <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-              Indicates excellent focus routines, zero smartphone interaction, and proactive fatigue planning. Standard cognitive response times remain highly optimal.
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">01 / BEHAVIORAL PATTERNS</span>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed font-sans">
+              This is a simulation of driver awareness behavior patterns designed around self-reported focus reserves and circadian alignments.
             </p>
           </div>
-          <div className="bg-white p-5 rounded border border-[#E6EDF5] shadow-xs">
-            <h4 className="text-[10px] font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1 font-mono">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" /> Medium Score (60 - 79)
-            </h4>
-            <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-              Highlights moderate distraction exposure (e.g., occasional dashboard scrolling) or suboptimal sleep windows. Minor cognitive drift indicators present.
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">02 / CONTEXTUAL INPUTS</span>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed font-sans">
+              It reflects how users respond to contextual driving inputs, evaluating focus thresholds over typical continuous commutes.
             </p>
           </div>
-          <div className="bg-white p-5 rounded border border-[#E6EDF5] shadow-xs">
-            <h4 className="text-[10px] font-bold uppercase tracking-wider text-rose-800 flex items-center gap-1 font-mono">
-              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" /> Low Score (Under 60)
-            </h4>
-            <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-              Substantial risk vectors identified. Frequent visual field disconnection, driving during biological sleep dips, or persistent yawning. Needs behavioral adjustment.
+          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
+            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">03 / CONCEPT VALIDATION</span>
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed font-sans">
+              It helps validate user interest in future driver awareness intelligence systems without relying on invasive hardware tracking.
             </p>
           </div>
         </div>
       </div>
 
-      {/* What happens after your simulation Section */}
-      <div className="mb-16 rounded-xl border border-blue-100 bg-white p-6 sm:p-8 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-500 to-cyan-500" />
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-4">
-          Next Steps & Research Pipeline
-        </span>
-        <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-2 font-sans">
-          What happens after your simulation?
+      {/* Scale breakdown panel */}
+      <div className="mb-16 bg-[#EEF3F8] rounded-xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2 font-mono">
+          <Info className="h-4 w-4 text-slate-700" />
+          Pre-Launch Study Calibration & Metrics
         </h3>
-        <p className="text-xs text-slate-500 mb-6 max-w-2xl leading-relaxed">
-          Here is what you can expect as you progress from this cognitive simulation study to our active research pipeline:
+        <p className="text-xs text-slate-500 mb-6 max-w-4xl leading-relaxed font-sans">
+          The <strong className="text-slate-900">Driver Awareness Intelligence</strong> model is calibrated using behavioral surveys from Canadian cohorts. Since this is a software-based study rather than hardware-integrated assessment, we evaluate focus using self-reported visual locking frequencies, diurnal scheduling conflicts, and typical fatigue events.
         </p>
-        <div className="grid gap-6 sm:grid-cols-4">
-          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
-            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">01 / ASSESSMENT</span>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Receive Awareness Score</h4>
-            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Your overall Driver Awareness score is calculated based on self-reported attention locking and circadian indicators.
+        <div className="grid gap-6 sm:grid-cols-3">
+          <div className="bg-white p-5 rounded border border-slate-100 shadow-sm">
+            <h4 className="text-[10px] font-bold uppercase tracking-wider text-blue-800 flex items-center gap-1 font-mono">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> Strong Score (80 - 100)
+            </h4>
+            <p className="text-xs text-slate-400 mt-2 leading-relaxed font-sans">
+              Indicates excellent focus routines, zero smartphone interaction, and proactive fatigue planning. Standard cognitive response times remain highly optimal.
             </p>
           </div>
-          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
-            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">02 / PROFILE ANALYSIS</span>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Fatigue & Attention Profiles</h4>
-            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              We analyze sleep debt exposure, micro-distractions, and typical commute schedules to map focus dips.
+          <div className="bg-white p-5 rounded border border-slate-100 shadow-sm">
+            <h4 className="text-[10px] font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1 font-mono">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" /> Moderate Score (40 - 79)
+            </h4>
+            <p className="text-xs text-slate-400 mt-2 leading-relaxed font-sans">
+              Highlights moderate distraction exposure (e.g., occasional dashboard scrolling) or suboptimal sleep windows. Minor cognitive drift indicators present.
             </p>
           </div>
-          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
-            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">03 / CLASSIFICATION</span>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Assigned Research Cohort</h4>
-            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Based on your results, you are mapped to a specific demographic and behavioral safety research group.
-            </p>
-          </div>
-          <div className="p-4 rounded border border-slate-100 bg-slate-50/50">
-            <span className="text-[10px] font-bold text-blue-600 font-mono block mb-1">04 / COLLABORATION</span>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono">Join Research Updates</h4>
-            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              You can optionally enroll in early research updates, helping refine hands-free cognitive validation models.
+          <div className="bg-white p-5 rounded border border-slate-100 shadow-sm">
+            <h4 className="text-[10px] font-bold uppercase tracking-wider text-rose-800 flex items-center gap-1 font-mono">
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" /> Opportunity Score (Under 40)
+            </h4>
+            <p className="text-xs text-slate-400 mt-2 leading-relaxed font-sans">
+              Substantial focus vectors identified. Frequent visual field disconnection, driving during biological sleep dips, or persistent fatigue signals. Needs behavioral adjustment.
             </p>
           </div>
         </div>
@@ -425,13 +519,13 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
       <div className="grid gap-8 md:grid-cols-3 items-stretch mb-12">
         
         {/* Module 1: Privacy Safeguards */}
-        <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-xs flex flex-col justify-between">
+        <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm flex flex-col justify-between">
           <div>
             <div className="flex h-10 w-10 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900 mb-4">
               <Lock className="h-4 w-4" />
             </div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2">Privacy First. Always.</h3>
-            <p className="text-xs text-slate-500 leading-relaxed mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Privacy First. Always.</h3>
+            <p className="text-xs text-slate-500 leading-relaxed mb-4 font-sans">
               Your privacy is at the core of everything we do. Your data is used only for pre-launch research purposes and is never sold or shared with third parties. You're in control.
             </p>
           </div>
@@ -451,14 +545,14 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </ul>
         </div>
 
-        {/* Module 2: Help Advance Road Safety (Main Highlighted CTA Card) */}
-        <div className="rounded-xl border border-slate-900 bg-slate-950 p-6 shadow-md relative flex flex-col justify-between overflow-hidden text-white">
+        {/* Module 2: Help Advance Road Safety (Main Highlighted CTA Card with ONE dominant CTA) */}
+        <div className="rounded-xl border border-slate-900 bg-slate-950 p-6 shadow-md relative flex flex-col justify-between overflow-hidden text-white ring-2 ring-blue-500 ring-offset-2">
           <div>
             <span className="inline-flex items-center gap-1 rounded border border-slate-800 bg-slate-900 px-2 py-0.5 text-[9px] font-bold text-slate-300 uppercase font-mono mb-3">
               Research Study Signup
             </span>
-            <h3 className="text-xs font-bold uppercase tracking-wider mb-2 text-white">Help Advance Road Safety</h3>
-            <p className="text-xs text-slate-400 leading-relaxed mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider mb-2 text-white font-mono">Help Advance Road Safety</h3>
+            <p className="text-xs text-slate-400 leading-relaxed mb-4 font-sans">
               Join our Early Access Research Cohort and help shape the future of driver safety intelligence. Your insights contribute to smarter tools, safer roads, and stronger communities.
             </p>
             <ul className="space-y-2 text-[11px] text-slate-300 font-mono mb-6">
@@ -479,7 +573,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           
           <div className="space-y-3">
             <button
-              onClick={() => onNavigateToCohort("guardian")}
+              onClick={() => onNavigateToCohort(cohort.id)}
               className="w-full inline-flex items-center justify-center rounded bg-blue-600 border border-blue-500 hover:bg-blue-700 hover:border-blue-600 px-5 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all active:scale-[0.98] cursor-pointer font-mono"
             >
               Join Research Cohort
@@ -494,27 +588,27 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex h-10 w-10 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900 mb-4">
-              <ShieldAlert className="h-4 w-4" />
+              <ShieldCheck className="h-4 w-4" />
             </div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">What We Do NOT Do</h3>
-            <div className="space-y-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 font-mono">What We Do NOT Do</h3>
+            <div className="space-y-4 font-sans">
               <div className="flex items-start gap-3">
                 <div className="mt-0.5 p-1 rounded bg-slate-100 border border-slate-200 text-slate-900 shrink-0">
-                  <MapPinOff className="h-3 w-3" />
+                  <MapPin className="h-3 w-3" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Vehicle Tracking</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">We do not collect or track your location or driving routes.</p>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Location Tracking</h4>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">We do not collect or track your location, GPS, or driving routes.</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <div className="mt-0.5 p-1 rounded bg-slate-100 border border-slate-200 text-slate-900 shrink-0">
-                  <ShieldAlert className="h-3 w-3" />
+                  <Lock className="h-3 w-3" />
                 </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Insurance Sharing</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">We do not share data with insurers or any third parties.</p>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">We do not share any data with insurance underwriters or providers.</p>
                 </div>
               </div>
 
@@ -524,7 +618,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">Simulation Only</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">This assessment is simulation-based. No vehicle or device required.</p>
+                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">This assessment is simulation-only. No vehicle connection is required.</p>
                 </div>
               </div>
             </div>
@@ -539,6 +633,33 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </div>
         </div>
 
+      </div>
+
+      {/* PRIMARY CTA SECTION (CRITICAL CONVERSION POINT) */}
+      <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto my-12">
+        <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-3 font-sans">
+          Ready to Help Shape the Concept?
+        </h3>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+          <button
+            onClick={() => onNavigateToCohort(cohort.id)}
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all active:scale-[0.98] cursor-pointer font-mono"
+          >
+            Join Research Cohort
+          </button>
+          
+          <button
+            onClick={onReset}
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-slate-300 hover:border-slate-400 bg-white px-8 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all active:scale-[0.98] cursor-pointer font-mono"
+          >
+            Retake Simulation
+          </button>
+        </div>
+
+        <p className="mt-4 text-[11px] text-slate-500 font-sans font-medium">
+          Join early research access to help validate the Driver Awareness Intelligence concept.
+        </p>
       </div>
 
     </div>
