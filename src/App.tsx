@@ -350,7 +350,7 @@ export default function App() {
                   <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl font-sans">
                     Canadian Pilot Cohort Targets
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-200 max-w-xl mx-auto leading-relaxed">
                     Astrateq is currently in the pre-launch validation phase. We are recruiting early pilot participants and gathering simulator diagnostics to establish localized safety baselines across Canada.
                   </p>
                 </div>
@@ -361,10 +361,10 @@ export default function App() {
                   {/* Card 1 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">PILOT COHORT LIMIT</p>
+                      <p className="text-[9px] text-slate-300 uppercase tracking-widest font-extrabold">PILOT COHORT LIMIT</p>
                       <p className="text-3xl font-black text-white">1,000</p>
                     </div>
-                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                    <p className="text-[10px] text-slate-200 mt-4 leading-relaxed font-sans">
                       <span className="text-cyan-400 font-bold font-mono text-[9px] block mb-1">FOUNDING ALLOCATIONS</span>
                       Early pilot slots are capped to maintain direct developer communication and hardware support.
                     </p>
@@ -373,10 +373,10 @@ export default function App() {
                   {/* Card 2 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">STUDY TARGET SIZE</p>
+                      <p className="text-[9px] text-slate-300 uppercase tracking-widest font-extrabold">STUDY TARGET SIZE</p>
                       <p className="text-3xl font-black text-white">5,000</p>
                     </div>
-                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                    <p className="text-[10px] text-slate-200 mt-4 leading-relaxed font-sans">
                       <span className="text-blue-400 font-bold font-mono text-[9px] block mb-1">SIMULATION RUNS</span>
                       Required anonymous driver focus runs to calibrate cognitive fatigue baselines on Canadian roads.
                     </p>
@@ -385,10 +385,10 @@ export default function App() {
                   {/* Card 3 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">PROVINCIAL SCOPE</p>
+                      <p className="text-[9px] text-slate-300 uppercase tracking-widest font-extrabold">PROVINCIAL SCOPE</p>
                       <p className="text-3xl font-black text-white">10 / 10</p>
                     </div>
-                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                    <p className="text-[10px] text-slate-200 mt-4 leading-relaxed font-sans">
                       <span className="text-indigo-400 font-bold font-mono text-[9px] block mb-1">COAST TO COAST</span>
                       Gathering telemetry to validate edge calculations in winter conditions across all provinces.
                     </p>
@@ -397,10 +397,10 @@ export default function App() {
                   {/* Card 4 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">LAUNCH STAGE</p>
+                      <p className="text-[9px] text-slate-300 uppercase tracking-widest font-extrabold">LAUNCH STAGE</p>
                       <p className="text-3xl font-black text-white">PHASE 1</p>
                     </div>
-                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                    <p className="text-[10px] text-slate-200 mt-4 leading-relaxed font-sans">
                       <span className="text-emerald-400 font-bold font-mono text-[9px] block mb-1">CONCEPT VALIDATION</span>
                       Confirming demand and aggregating initial driver telemetry before starting hardware production.
                     </p>
@@ -408,7 +408,7 @@ export default function App() {
 
                 </div>
 
-                <div className="mt-10 grid gap-4 grid-cols-1 md:grid-cols-2 text-xs text-slate-400 border-t border-slate-800/80 pt-8 font-mono">
+                <div className="mt-10 grid gap-4 grid-cols-1 md:grid-cols-2 text-xs text-slate-200 border-t border-slate-800/80 pt-8 font-mono">
                   <div className="flex items-center gap-3">
                     <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
                     <span><strong>Current Stage:</strong> Active Pre-Launch Pilot Recruitment</span>
@@ -421,7 +421,7 @@ export default function App() {
 
                 {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
                 <div className="mt-12 text-center p-6 rounded-xl border border-slate-800 bg-black/40 max-w-xl mx-auto">
-                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  <p className="text-xs text-slate-200 leading-relaxed font-sans">
                     Want to contribute to our early research and establish your custom driver focus score? Try the 60-second diagnostic simulator.
                   </p>
                   <div className="mt-4">

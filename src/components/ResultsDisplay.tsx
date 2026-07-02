@@ -5,6 +5,8 @@ import {
   Info, ChevronDown, ChevronUp, Sparkles, ArrowRight, RefreshCw, Compass
 } from "lucide-react";
 
+const HWY_404_POV_IMAGE = "/src/assets/images/windshield_hwy404_simulation_1783018308241.jpg";
+
 interface ResultsDisplayProps {
   insights: DriverInsights;
   inputs: DriverSimulationInputs;
@@ -106,7 +108,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           <h1 className="mt-4 text-2xl font-bold uppercase tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Driver Awareness Simulation Output
           </h1>
-          <p className="mt-3 text-xs text-slate-500 leading-relaxed max-w-2xl">
+          <p className="mt-3 text-xs text-slate-700 leading-relaxed max-w-2xl font-medium">
             Thank you for completing your assessment. Your results provide personalized insights into your driving readiness and help advance road safety research across Canada.
           </p>
           <div className="mt-4 flex flex-wrap gap-3 items-center text-[10px] text-slate-400 font-mono">
@@ -128,10 +130,10 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <div className="lg:col-span-5">
           <div className="relative overflow-hidden rounded-xl h-60 lg:h-72 shadow-sm group border border-slate-200">
             <img 
-              src="/src/assets/images/windshield_hwy404_simulation_1783018308241.jpg"
+              src={HWY_404_POV_IMAGE}
               alt="Hwy 404 Windshield AR HUD Simulation"
               referrerPolicy="no-referrer"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="absolute inset-0 h-full w-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
             />
             {/* Ambient gradients */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/40 to-transparent" />
@@ -209,7 +211,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               <h4 className="mt-3 text-xs font-bold uppercase tracking-wider text-slate-800">
                 Simulated Awareness Index
               </h4>
-              <p className="mt-2 text-[10px] text-slate-500 leading-relaxed font-sans">
+              <p className="mt-2 text-[10px] text-slate-700 leading-relaxed font-sans font-medium">
                 {levelInfo.text}
               </p>
             </div>
@@ -217,10 +219,10 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
 
           {/* CRITICAL SUPPORTING LABEL */}
           <div className="mt-6 border-t border-slate-100 pt-4 text-center bg-slate-50/60 p-3 rounded-lg border border-slate-100">
-            <p className="text-[9px] font-bold font-mono text-slate-500 uppercase tracking-wider">
+            <p className="text-[9px] font-bold font-mono text-slate-700 uppercase tracking-wider">
               Critical Disclaimer
             </p>
-            <p className="mt-1 text-[10px] font-mono font-medium text-slate-600 leading-normal">
+            <p className="mt-1 text-[10px] font-mono font-medium text-slate-800 leading-normal">
               Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
             </p>
           </div>
@@ -232,8 +234,8 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
 
           {/* Scale breakdown sub-panel */}
           <div className="mt-6 border-t border-slate-100 pt-4">
-            <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5 font-mono">
-              <Info className="h-3.5 w-3.5 text-slate-500" />
+            <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5 font-mono">
+              <Info className="h-3.5 w-3.5 text-slate-700" />
               Score Scale Interpretation
             </h4>
             <div className="space-y-1.5 text-[10px] font-mono">
@@ -278,7 +280,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 <p className="text-xs text-slate-700 font-sans leading-relaxed">
                   {cohort.desc}
                 </p>
-                <div className="mt-3 flex items-center gap-1.5 text-[9px] text-slate-500 font-mono uppercase tracking-wide">
+                <div className="mt-3 flex items-center gap-1.5 text-[9px] text-slate-700 font-mono uppercase tracking-wide font-medium">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Reservation tier unlocked
                 </div>
@@ -286,7 +288,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             </div>
 
             <div className="mt-5 border-t border-blue-100/60 pt-4">
-              <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider text-center sm:text-left">
+              <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider text-center sm:text-left font-semibold">
                 *IMPORTANT LABEL: Qualified pre-order tier is calculated based on simulated behavioral modeling inputs. No cash deposit is required.
               </p>
             </div>
@@ -314,10 +316,10 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                   </div>
                   <div>
                     <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Fatigue Exposure Pattern</h3>
-                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Based on driving time and frequency inputs</p>
+                    <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wide font-medium">Based on driving time and frequency inputs</p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 border border-slate-100 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+                <span className="px-2 py-0.5 border border-slate-100 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-700 font-mono">
                   Input Mapping
                 </span>
               </div>
@@ -339,7 +341,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </button>
                 
                 {activeTab === "fatigue" && (
-                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono">
+                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-700 leading-relaxed border border-slate-200 font-mono font-medium">
                     <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Fatigue Exposure Metrics:</p>
                     Your self-reported frequency of driving (especially during <strong className="text-slate-900">{inputs.timeOfDay}</strong> hours) directly models standard biological fatigue waves. This behavioral simulation evaluates these indicators against established pre-launch Canadian safety baselines.
                   </div>
@@ -454,7 +456,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-2 font-sans">
           What this result means
         </h3>
-        <p className="text-xs text-slate-500 mb-6 max-w-2xl leading-relaxed">
+        <p className="text-xs text-slate-700 mb-6 max-w-2xl leading-relaxed font-medium">
           Please review the foundational details of this cognitive research initiative:
         </p>
         <div className="grid gap-6 sm:grid-cols-3">
@@ -485,7 +487,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           <Info className="h-4 w-4 text-slate-700" />
           Pre-Launch Study Calibration & Metrics
         </h3>
-        <p className="text-xs text-slate-500 mb-6 max-w-4xl leading-relaxed font-sans">
+        <p className="text-xs text-slate-700 mb-6 max-w-4xl leading-relaxed font-sans font-medium">
           The <strong className="text-slate-900">Driver Awareness Intelligence</strong> model is calibrated using behavioral surveys from Canadian cohorts. Since this is a software-based study rather than hardware-integrated assessment, we evaluate focus using self-reported visual locking frequencies, diurnal scheduling conflicts, and typical fatigue events.
         </p>
         <div className="grid gap-6 sm:grid-cols-3">
@@ -526,7 +528,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               <Lock className="h-4 w-4" />
             </div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Privacy First. Always.</h3>
-            <p className="text-xs text-slate-500 leading-relaxed mb-4 font-sans">
+            <p className="text-xs text-slate-700 leading-relaxed mb-4 font-sans font-medium">
               Your privacy is at the core of everything we do. Your data is used only for pre-launch research purposes and is never sold or shared with third parties. You're in control.
             </p>
           </div>
@@ -599,7 +601,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Location Tracking</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">We do not collect or track your location, GPS, or driving routes.</p>
+                  <p className="text-[11px] text-slate-700 mt-1 leading-relaxed font-medium">We do not collect or track your location, GPS, or driving routes.</p>
                 </div>
               </div>
               
@@ -609,7 +611,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Insurance Sharing</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">We do not share any data with insurance underwriters or providers.</p>
+                  <p className="text-[11px] text-slate-700 mt-1 leading-relaxed font-medium">We do not share any data with insurance underwriters or providers.</p>
                 </div>
               </div>
 
@@ -619,7 +621,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">Simulation Only</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">This assessment is simulation-only. No vehicle connection is required.</p>
+                  <p className="text-[11px] text-slate-700 mt-1 leading-relaxed font-medium">This assessment is simulation-only. No vehicle connection is required.</p>
                 </div>
               </div>
             </div>
@@ -658,7 +660,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </button>
         </div>
 
-        <p className="mt-4 text-[11px] text-slate-500 font-sans font-semibold">
+        <p className="mt-4 text-[11px] text-slate-700 font-sans font-bold">
           Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
         </p>
       </div>

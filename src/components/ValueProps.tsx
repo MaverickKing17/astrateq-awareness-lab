@@ -58,13 +58,13 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
       <section className="py-24 sm:py-32 bg-gradient-to-b from-white to-[#F8FAFC] border-b border-slate-200/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/50 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/50 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               Research Enquiries
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
               What we are validating together
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 max-w-lg mx-auto leading-relaxed font-sans font-medium">
               We translate rigorous cognitive science into real-world software tests. Every participant signup contributes to vital baseline benchmarks.
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             
             {/* Card 1 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/80 hover:shadow-[0_20px_40px_rgba(59,130,246,0.04)]">
+            <div className="relative flex flex-col justify-between rounded-2xl border-x border-b border-t-2 border-slate-200 border-t-blue-600 bg-white p-8 shadow-md transition-all duration-300 hover:border-blue-400/80 hover:shadow-lg">
               <div className="space-y-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 font-mono font-bold text-xs">
                   01
@@ -81,18 +81,18 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 leading-snug font-sans">
                   Can drivers preempt fatigue before it impairs steering?
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-sans">
+                <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-sans font-medium">
                   We are assessing whether brief, local pre-trip focus check-ins can flag cognitive attention drift 15 minutes before the driver feels tired.
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-slate-100 space-y-1.5">
-                <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">PRIMARY OUTCOME TARGET</p>
+                <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500 font-mono">PRIMARY OUTCOME TARGET</p>
                 <p className="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider font-mono">92% Precision in Early Accumulation Warning</p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/80 hover:shadow-[0_20px_40px_rgba(59,130,246,0.04)]">
+            <div className="relative flex flex-col justify-between rounded-2xl border-x border-b border-t-2 border-slate-200 border-t-cyan-500 bg-white p-8 shadow-md transition-all duration-300 hover:border-cyan-400/80 hover:shadow-lg">
               <div className="space-y-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 font-mono font-bold text-xs">
                   02
@@ -100,18 +100,18 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 leading-snug font-sans">
                   Does instant, on-device analysis correct split focus?
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-sans">
+                <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-sans font-medium">
                   We are validating if highly-optimized, lightweight machine learning models can run in memory to support eye-scanning cycles with zero lag.
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-slate-100 space-y-1.5">
-                <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">PRIMARY OUTCOME TARGET</p>
+                <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500 font-mono">PRIMARY OUTCOME TARGET</p>
                 <p className="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider font-mono">100% Offline Edge Gaze Focal Verification</p>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/80 hover:shadow-[0_20px_40px_rgba(59,130,246,0.04)]">
+            <div className="relative flex flex-col justify-between rounded-2xl border-x border-b border-t-2 border-slate-200 border-t-indigo-600 bg-white p-8 shadow-md transition-all duration-300 hover:border-indigo-400/80 hover:shadow-lg">
               <div className="space-y-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 font-mono font-bold text-xs">
                   03
@@ -119,12 +119,12 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 leading-snug font-sans">
                   Can we establish driver safety limits without tracking?
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-sans">
+                <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-sans font-medium">
                   Instead of demanding constant GPS, OBD connections, and telematics logs, we test if a fully isolated software model successfully protects driver welfare.
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-slate-100 space-y-1.5">
-                <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">PRIMARY OUTCOME TARGET</p>
+                <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500 font-mono">PRIMARY OUTCOME TARGET</p>
                 <p className="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider font-mono">Zero Network Footprint with 100% RAM Privacy</p>
               </div>
             </div>
@@ -138,13 +138,13 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
       <div id="how-it-works" className="bg-[#F8FAFC] py-24 sm:py-32 border-b border-slate-200/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/50 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/50 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               The Path to Pure Awareness
             </span>
             <h2 className="mt-3 text-3xl font-black uppercase tracking-tight text-slate-900 font-sans">
               The Early Validation Pipeline
             </h2>
-            <p className="mt-3 text-xs sm:text-sm text-slate-500 max-w-lg mx-auto font-sans leading-relaxed">
+            <p className="mt-3 text-xs sm:text-sm text-slate-700 max-w-lg mx-auto font-sans leading-relaxed font-medium">
               Our validation model guarantees your direct influence over our eventual prototype architecture. No deposits, no binding commitments.
             </p>
           </div>
@@ -152,45 +152,45 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
             
             {/* Step 1 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/60">
+            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md transition-all duration-300 hover:border-blue-400/60 hover:shadow-lg">
               <div className="flex h-11 w-11 items-center justify-center rounded bg-blue-600 text-white font-mono text-xs font-black shadow-sm">
                 01
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Simulate First</h4>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+              <p className="mt-3 text-xs text-slate-700 leading-relaxed font-sans font-medium">
                 Complete the 60-second diagnostic simulator to establish your baseline fatigue exposure score.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/60">
+            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md transition-all duration-300 hover:border-blue-400/60 hover:shadow-lg">
               <div className="flex h-11 w-11 items-center justify-center rounded bg-blue-600 text-white font-mono text-xs font-black shadow-sm">
                 02
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Choose Priority Level</h4>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+              <p className="mt-3 text-xs text-slate-700 leading-relaxed font-sans font-medium">
                 Review your results and match with a secure early priority level that guarantees launch discount access.
               </p>
             </div>
 
             {/* Step-3 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/60">
+            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md transition-all duration-300 hover:border-blue-400/60 hover:shadow-lg">
               <div className="flex h-11 w-11 items-center justify-center rounded bg-blue-600 text-white font-mono text-xs font-black shadow-sm">
                 03
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Provide Driving Context</h4>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+              <p className="mt-3 text-xs text-slate-700 leading-relaxed font-sans font-medium">
                 Register your typical regional route variables to help tailor our localized neural logic profiles.
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.01)] transition-all duration-300 hover:border-blue-400/60">
+            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-md transition-all duration-300 hover:border-blue-400/60 hover:shadow-lg">
               <div className="flex h-11 w-11 items-center justify-center rounded bg-blue-600 text-white font-mono text-xs font-black shadow-sm">
                 04
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Unlock Sandboxed Builds</h4>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+              <p className="mt-3 text-xs text-slate-700 leading-relaxed font-sans font-medium">
                 Receive initial sandboxed software invitations and developmental briefs once the study confirms demand.
               </p>
             </div>
@@ -199,7 +199,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
 
           {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
           <div className="mt-16 text-center max-w-xl mx-auto p-6 rounded-2xl border border-slate-200 bg-slate-50/50">
-            <p className="text-xs text-slate-500 leading-relaxed font-sans">
+            <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
               Curious how your own focus habits compare? Complete our interactive diagnostic simulator in under a minute to assess your baseline fatigue profile.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -228,13 +228,13 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               The Path Forward
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
               What Happens If Validation Succeeds?
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto leading-relaxed font-sans">
+            <p className="text-xs sm:text-sm text-slate-700 max-w-lg mx-auto leading-relaxed font-sans font-medium">
               Your engagement directly directs our next milestones. Today's collaborative insights fuel tomorrow's production software builds.
             </p>
           </div>
@@ -319,7 +319,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                     }`}>
                       {step.status}
                     </span>
-                    <p className="text-[11px] text-slate-500 leading-relaxed font-sans">{step.desc}</p>
+                    <p className="text-[11px] text-slate-700 leading-relaxed font-sans font-medium">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -328,7 +328,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
 
           {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
           <div className="mt-16 text-center">
-            <p className="text-xs text-slate-500 leading-relaxed font-sans max-w-md mx-auto">
+            <p className="text-xs text-slate-700 leading-relaxed font-sans max-w-md mx-auto font-medium">
               Our pre-launch milestones are triggered when community support reaches critical mass. Secure your early validation placement today to hasten progress.
             </p>
             <div className="mt-5">

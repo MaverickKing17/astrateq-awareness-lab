@@ -5,6 +5,8 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
+const R_AND_D_LAB_IMAGE = "/src/assets/images/automotive_rd_lab_1783018331045.jpg";
+
 interface CohortPageProps {
   score?: number;
   initialSelectedTier?: string;
@@ -232,10 +234,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               >
                 <div className="relative overflow-hidden rounded-xl h-44 sm:h-52">
                   <img
-                    src="/src/assets/images/automotive_rd_lab_1783018331045.jpg"
+                    src={R_AND_D_LAB_IMAGE}
                     alt="Advanced Automotive Human-Factors R&D Laboratory Workstation"
                     referrerPolicy="no-referrer"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-750 group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-cover rounded-xl transition-transform duration-750 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/10 to-transparent" />
                   <div className="absolute bottom-3.5 left-4 right-4 text-white flex justify-between items-end">
@@ -265,18 +267,18 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
 
               <motion.p 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
+                animate={{ opacity: 0.9 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-[10px] sm:text-xs text-slate-500 font-mono"
+                className="text-[10px] sm:text-xs text-slate-700 font-mono font-medium"
               >
                 Takes under 30 seconds • Runs locally in memory • No vehicle adapters • Cancel anytime
               </motion.p>
 
               <motion.div 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
+                animate={{ opacity: 0.9 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] text-slate-400 font-mono uppercase tracking-wider border-t border-blue-200/30"
+                className="pt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] text-slate-700 font-mono uppercase tracking-wider border-t border-blue-200/30 font-semibold"
               >
                 <div className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-emerald-500" />
@@ -310,7 +312,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 <div className="relative z-10 space-y-5">
                   <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                     <div className="flex flex-col">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 font-mono">ASTRATEQ REGISTRY</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-500 font-mono">ASTRATEQ REGISTRY</span>
                       <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 font-mono mt-0.5">Priority Early Access Key</span>
                     </div>
                     <span className="inline-flex items-center rounded bg-blue-50 border border-blue-200 px-2.5 py-0.5 text-[8px] font-bold text-blue-700 uppercase tracking-wide font-mono">VALIDATION STAGE</span>
@@ -318,32 +320,31 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
 
                   <div className="space-y-3 font-mono text-[10px]">
                     <div className="flex justify-between">
-                      <span className="text-slate-400 uppercase">PROTOTYPE RELEASE:</span>
+                      <span className="text-slate-600 font-semibold uppercase">PROTOTYPE RELEASE:</span>
                       <span className="text-slate-900 font-black">PHASE 1 ROLLOUTS</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400 uppercase">COLLABORATION LEVEL:</span>
+                      <span className="text-slate-600 font-semibold uppercase">COLLABORATION LEVEL:</span>
                       <span className="text-slate-900 font-black">RESEARCH COHORT</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400 uppercase">SECURED DISCOUNT:</span>
+                      <span className="text-slate-600 font-semibold uppercase">SECURED DISCOUNT:</span>
                       <span className="text-emerald-600 font-black font-extrabold">UP TO 50% INTRO RATE</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400 uppercase">SECURITY PROTOCOL:</span>
+                      <span className="text-slate-600 font-semibold uppercase">SECURITY PROTOCOL:</span>
                       <span className="text-slate-900 font-black">100% OFFLINE EDGE AI</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400 uppercase">REGION LIMITS:</span>
+                      <span className="text-slate-600 font-semibold uppercase">REGION LIMITS:</span>
                       <span className="text-slate-900 font-black">CANADA SOVEREIGN</span>
                     </div>
                   </div>
 
                   <div className="border-t border-dashed border-slate-200 pt-4 text-center">
-                    <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">COLLABORATION CODE</p>
+                    <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest font-mono">COLLABORATION CODE</p>
                     <p className="text-lg font-black text-slate-800 uppercase tracking-wider font-mono mt-1">CAN-COHORT-PENDING</p>
-                  </div>
-
+                  </div> Barcode Code 1
                   {/* Pseudo Barcode */}
                   <div className="flex justify-center items-center gap-0.5 h-10 w-full bg-slate-50 rounded border border-slate-100 px-3 opacity-60">
                     {[1, 3, 2, 4, 1, 3, 2, 4, 1, 2, 4, 3, 1, 3, 2, 4, 1, 2, 3, 4, 2, 1, 3, 4, 1, 2, 3, 1, 4, 3].map((val, idx) => (
@@ -354,11 +355,12 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                           width: val === 4 ? "4px" : val === 3 ? "3px" : val === 2 ? "2px" : "1px",
                           height: "24px" 
                         }} 
+                        id={`barcode-item-${idx}`}
                       />
                     ))}
                   </div>
 
-                  <p className="text-center text-[7px] font-bold text-slate-400 uppercase tracking-widest font-mono">
+                  <p className="text-center text-[7px] font-bold text-slate-500 uppercase tracking-widest font-mono">
                     Zero Obligation • Submit Form Below to Register Key
                   </p>
                 </div>
@@ -374,13 +376,13 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               Reservation Benefits
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
               Why your participation matters
             </h2>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-sans">
+            <p className="text-sm text-slate-700 leading-relaxed max-w-lg mx-auto font-sans font-medium">
               Joining our priority validation cohort registers your interest in high-privacy safety options with no upfront cost.
             </p>
           </div>
@@ -407,14 +409,14 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 key={idx}
                 whileHover={{ y: -8, scale: 1.01 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="p-8 rounded-2xl border border-slate-200/60 bg-white shadow-[0_20px_50px_rgba(59,130,246,0.06)] hover:border-cyan-400/50 hover:shadow-[0_25px_60px_rgba(59,130,246,0.1)] transition-all duration-300 flex flex-col justify-between"
+                className="p-8 rounded-2xl border border-slate-200 bg-white shadow-md hover:border-blue-400/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="h-12 w-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6">
                     {item.icon}
                   </div>
                   <h3 className="text-sm font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-3">{item.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -470,7 +472,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                       {item.icon}
                     </div>
                     <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mb-2">{item.title}</h3>
-                    <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                    <p className="text-[11px] text-slate-700 leading-relaxed font-sans font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -526,7 +528,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     {prob.icon}
                   </div>
                   <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{prob.title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                  <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
                     {prob.desc}
                   </p>
                 </div>
@@ -542,13 +544,13 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full font-mono">
+            <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-700 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full font-mono">
               Simple Priority Flow
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
               How the Validation Process Works
             </h2>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-sans">
+            <p className="text-sm text-slate-700 leading-relaxed max-w-lg mx-auto font-sans font-medium">
               Lock in your priority early access through a transparent, fully free community queue.
             </p>
           </div>
@@ -586,7 +588,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     {flow.step}
                   </div>
                   <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{flow.title}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                  <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
                     {flow.desc}
                   </p>
                 </div>
@@ -612,13 +614,13 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               Market Distinctions
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
               Awareness intelligence without surveillance.
             </h2>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-xl mx-auto font-sans">
+            <p className="text-sm text-slate-700 leading-relaxed max-w-xl mx-auto font-sans font-medium">
               Astrateq software is engineered to prioritize personal driver empowerment over remote corporate monitoring.
             </p>
           </div>
@@ -653,8 +655,8 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 }
               ].map((row, idx) => (
                 <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 hover:bg-slate-50/40 transition-colors">
-                  <div className="p-5 text-slate-500 pr-6 leading-relaxed flex items-start gap-2.5">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-300 mt-1.5 shrink-0" />
+                  <div className="p-5 text-slate-700 pr-6 leading-relaxed flex items-start gap-2.5 font-medium">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400 mt-1.5 shrink-0" />
                     <span>{row.market}</span>
                   </div>
                   <div className="border-t sm:border-t-0 sm:border-l border-slate-100 p-5 sm:pl-6 font-bold text-slate-900 flex items-start gap-2.5">
@@ -736,13 +738,13 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               Priority Tiers
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
               Select Your Collaboration Level
             </h2>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-sans">
+            <p className="text-sm text-slate-700 leading-relaxed max-w-lg mx-auto font-sans font-medium">
               Choose the queue depth that matches your pre-launch interest. Every tier secures priority early access with absolutely no financial deposit required.
             </p>
           </div>
@@ -757,7 +759,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   className={`rounded-2xl border p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${
                     isDark 
                       ? "bg-slate-900 text-white border-slate-800 shadow-xl" 
-                      : "bg-white text-slate-900 border-slate-200/80 shadow-xs hover:border-blue-400"
+                      : "bg-white text-slate-900 border-slate-200 shadow-md hover:border-blue-400 hover:shadow-lg"
                   } ${tier.highlight ? "ring-2 ring-blue-500 ring-offset-2" : ""} ${isSelected ? "border-blue-600 bg-blue-500/5 ring-1 ring-blue-500/20" : ""}`}
                 >
                   <div>
@@ -767,19 +769,19 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                       }`}>
                         {tier.badge}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">{tier.levelLabel}</span>
+                      <span className="text-[10px] font-bold text-slate-600 uppercase font-mono">{tier.levelLabel}</span>
                     </div>
 
                     <h3 className="text-lg font-black uppercase tracking-wide leading-tight">{tier.title}</h3>
                     
-                    <p className={`mt-4 text-xs leading-relaxed ${isDark ? "text-slate-300" : "text-slate-500"}`}>
+                    <p className={`mt-4 text-xs leading-relaxed font-medium ${isDark ? "text-slate-200" : "text-slate-700"}`}>
                       {tier.desc}
                     </p>
 
                     <div className={`mt-5 p-4 rounded-xl flex flex-col gap-1 text-xs ${
                       isDark ? "bg-slate-800/60 border border-slate-700/60" : "bg-slate-50 border border-slate-200/60"
                     }`}>
-                      <span className={`font-bold font-mono text-[9px] uppercase tracking-widest ${isDark ? "text-slate-400" : "text-slate-500"}`}>Requirement:</span>
+                      <span className={`font-bold font-mono text-[9px] uppercase tracking-widest ${isDark ? "text-slate-400" : "text-slate-600"}`}>Requirement:</span>
                       <span className="font-extrabold text-slate-900 dark:text-white uppercase tracking-wider text-[10px] font-mono leading-relaxed">{tier.requirement}</span>
                     </div>
 
@@ -815,7 +817,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             })}
           </div>
 
-          <p className="text-center text-[10px] font-mono uppercase tracking-wider text-slate-400 mt-10">
+          <p className="text-center text-[10px] font-mono uppercase tracking-wider text-slate-600 mt-10 font-bold">
             *No deposit required • No payment obligation • Cancel anytime • 100% offline edge AI
           </p>
 
@@ -825,17 +827,17 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       {/* SIGNUP FORM ENROLLMENT */}
       <section ref={formRef} id="signup-form-section" className="py-16 sm:py-24 bg-slate-50/50 border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-10 shadow-xl relative overflow-hidden">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-md relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-blue-600 to-cyan-500" />
             
             <div className="text-center mb-8 space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[9px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[9px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
                 Astrateq Priority Registry
               </span>
               <h3 className="text-2xl font-black uppercase tracking-tight text-slate-900 font-sans">
                 Join the Driver Intelligence Cohort
               </h3>
-              <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed font-sans">
+              <p className="text-xs text-slate-700 max-w-md mx-auto leading-relaxed font-sans font-medium">
                 Complete the priority registration below to lock in your early access key. Your slot secures your early-bird discount rate and priority rollout tier.
               </p>
             </div>
@@ -846,10 +848,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   <Check className="h-6 w-6" />
                 </div>
                 <h4 className="text-base font-bold uppercase tracking-wide text-slate-900">Priority Registration Confirmed!</h4>
-                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1 font-mono">
+                <p className="text-[10px] text-slate-700 font-bold uppercase tracking-widest mt-1 font-mono">
                   Collaboration Tier: {signupResult.tierLabel}
                 </p>
-                <p className="text-xs text-slate-500 mt-3 max-w-sm leading-relaxed font-sans">
+                <p className="text-xs text-slate-700 mt-3 max-w-sm leading-relaxed font-sans font-medium">
                   Success! Your Astrateq early access reservation has been securely logged. We will notify you with direct development updates, survey check-ins, and coordinate your prototype key when testing begins.
                 </p>
 
@@ -886,7 +888,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   <p className="font-extrabold text-slate-900 uppercase mt-0.5">
                     {tiers.find(t => t.id === selectedTier)?.title}
                   </p>
-                  <p className="text-[10px] text-slate-500 mt-1 font-mono">
+                  <p className="text-[10px] text-slate-700 mt-1 font-mono font-medium">
                     COMMITMENT: {tiers.find(t => t.id === selectedTier)?.requirement.toUpperCase()}
                   </p>
                 </div>
@@ -979,7 +981,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     onChange={(e) => setConsent(e.target.checked)}
                     className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
                   />
-                  <label htmlFor="consent" className="text-[10px] text-slate-500 leading-normal cursor-pointer font-sans uppercase font-bold tracking-wide">
+                  <label htmlFor="consent" className="text-[10px] text-slate-700 leading-normal cursor-pointer font-sans uppercase font-bold tracking-wide">
                     I agree to lock in my priority early access queue spot and receive edge-AI software prototype updates.
                   </label>
                 </div>
@@ -1055,13 +1057,13 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       <section className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-b border-slate-200/50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono mb-4">
               Cohort FAQ
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 font-sans">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs text-slate-500 mt-3 max-w-lg mx-auto leading-relaxed font-sans">
+            <p className="text-xs text-slate-700 mt-3 max-w-lg mx-auto leading-relaxed font-sans font-medium">
               Get direct, transparent answers on our research parameters, privacy architecture, study guidelines, and hardware-free validation pipeline.
             </p>
           </div>
@@ -1091,7 +1093,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-5 pt-0 border-t border-slate-100 text-xs sm:text-sm text-slate-500 leading-relaxed font-sans">
+                        <div className="p-5 pt-0 border-t border-slate-100 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans font-medium">
                           {item.a}
                         </div>
                       </motion.div>

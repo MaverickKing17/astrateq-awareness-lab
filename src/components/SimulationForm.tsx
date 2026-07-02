@@ -82,17 +82,17 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
         {/* Form header */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono">
               Driver Awareness Simulation
             </span>
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-600 font-mono">
               Step {step} of 5
             </span>
           </div>
           <h2 className="mt-3 text-xl font-bold uppercase tracking-tight text-slate-900">
             Cognitive Driving Profile Assessment
           </h2>
-          <p className="mt-1 text-[11px] text-slate-400 font-mono">
+          <p className="mt-1 text-[11px] text-slate-600 font-mono font-medium">
             SECURE PORT • SUBJECT: DS-2901-DELTA • HARDWARE-FREE VALIDATION
           </p>
 
@@ -122,7 +122,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                   </div>
                   <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">01. Driving Frequency</h3>
                 </div>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-slate-700 mb-6 font-medium">
                   Select your typical driving frequency on Canadian roads to establish baseline cognitive exposure levels.
                 </p>
                 <div className="grid gap-3">
@@ -145,7 +145,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         </div>
                         <div>
                           <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
-                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -168,7 +168,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                   </div>
                   <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">02. Commute Environment</h3>
                 </div>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-slate-700 mb-6 font-medium">
                   What type of route dominates your driving experience? Commute types indicate different cognitive workloads.
                 </p>
                 <div className="grid gap-3">
@@ -191,7 +191,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         </div>
                         <div>
                           <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
-                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -214,7 +214,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                   </div>
                   <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">03. Time-of-Day Driving</h3>
                 </div>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-slate-700 mb-6 font-medium">
                   When do you perform the majority of your weekly driving? Light conditions heavily dictate visual attention fatigue.
                 </p>
                 <div className="grid gap-3">
@@ -237,7 +237,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         </div>
                         <div>
                           <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
-                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -260,7 +260,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                   </div>
                   <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">04. Fatigue Assessment</h3>
                 </div>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-slate-700 mb-6 font-medium">
                   How often do you experience fatigue indicators (yawning, drifting, heavy eyelids) while actively behind the wheel?
                 </p>
                 <div className="grid gap-3">
@@ -283,7 +283,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         </div>
                         <div>
                           <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
-                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
                         </div>
                       </button>
                     );
@@ -306,7 +306,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                   </div>
                   <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">05. Attention & Habits</h3>
                 </div>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-slate-700 mb-6 font-medium">
                   Which description best fits your cognitive state and visual focus patterns on a typical drive?
                 </p>
                 <div className="grid gap-3">
@@ -329,7 +329,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                         </div>
                         <div>
                           <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
-                          <div className="text-[11px] text-slate-500 mt-1">{opt.desc}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
                         </div>
                       </button>
                     );
