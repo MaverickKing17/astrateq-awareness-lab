@@ -390,33 +390,40 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           <div className="grid gap-8 sm:grid-cols-3">
             {[
               {
-                icon: <Award className="h-6 w-6 text-blue-600" />,
+                icon: <Award className="h-5 w-5 text-blue-400" />,
                 title: "Guaranteed Early Access Slot",
-                desc: "Secure first-priority credentials in the initial software rollout. As soon as private prototype keys generate, your spot is locked."
+                desc: "Secure first-priority credentials in the initial software rollout. As soon as private prototype keys generate, your spot is locked.",
+                border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.25)]",
+                iconBg: "bg-blue-500/10 border-blue-500/30"
               },
               {
-                icon: <Sparkles className="h-6 w-6 text-cyan-500" />,
+                icon: <Sparkles className="h-5 w-5 text-cyan-400" />,
                 title: "Up to 50% Locked-In Savings",
-                desc: "Registration completely locks in your early-bird pricing slot, ensuring you escape standard post-launch subscription rates."
+                desc: "Registration completely locks in your early-bird pricing slot, ensuring you escape standard post-launch subscription rates.",
+                border: "border-cyan-500/80 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.25)]",
+                iconBg: "bg-cyan-500/10 border-cyan-500/30"
               },
               {
-                icon: <Users className="h-6 w-6 text-indigo-600" />,
+                icon: <Users className="h-5 w-5 text-indigo-400" />,
                 title: "Direct Prototype Influence",
-                desc: "Provide feedback directly to our product designers to prioritize Commute Metrics, Fatigue curves, and interface preferences."
+                desc: "Provide feedback directly to our product designers to prioritize Commute Metrics, Fatigue curves, and interface preferences.",
+                border: "border-indigo-500/80 hover:border-indigo-400 hover:shadow-[0_0_30px_rgba(99,102,241,0.25)]",
+                iconBg: "bg-indigo-500/10 border-indigo-500/30"
               }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
                 whileHover={{ y: -8, scale: 1.01 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="p-8 rounded-2xl border border-slate-200 bg-white shadow-md hover:border-blue-400/50 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className={`p-8 rounded-2xl border-2 bg-slate-900 text-white transition-all duration-300 flex flex-col justify-between ${item.border}`}
+                id={`cohort-value-prop-card-${idx}`}
               >
                 <div>
-                  <div className="h-12 w-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6">
+                  <div className={`h-11 w-11 rounded-xl border flex items-center justify-center mb-6 ${item.iconBg}`}>
                     {item.icon}
                   </div>
-                  <h3 className="text-sm font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-3">{item.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans font-medium">
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-white font-mono mb-3">{item.title}</h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -448,31 +455,38 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             <div className="lg:col-span-7 grid gap-6 sm:grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  icon: <AlertTriangle className="h-5 w-5 text-amber-500" />,
+                  icon: <AlertTriangle className="h-5 w-5 text-amber-400" />,
                   title: "Fatigue builds in secret",
-                  desc: "Your cognitive resources slip quietly during late night shifts or repetitive multi-hour highway travel."
+                  desc: "Your cognitive resources slip quietly during late night shifts or repetitive multi-hour highway travel.",
+                  border: "border-amber-500/80 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]",
+                  iconBg: "bg-amber-500/10 border-amber-500/30"
                 },
                 {
-                  icon: <ShieldAlert className="h-5 w-5 text-red-500" />,
+                  icon: <ShieldAlert className="h-5 w-5 text-red-400" />,
                   title: "Invasive tracking is wrong",
-                  desc: "Standard safety programs require continuous GPS uploads, vehicle OBD connections, or insurance telemetry profiles."
+                  desc: "Standard safety programs require continuous GPS uploads, vehicle OBD connections, or insurance telemetry profiles.",
+                  border: "border-red-500/80 hover:border-red-400 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]",
+                  iconBg: "bg-red-500/10 border-red-500/30"
                 },
                 {
-                  icon: <MapPin className="h-5 w-5 text-blue-500" />,
+                  icon: <MapPin className="h-5 w-5 text-blue-400" />,
                   title: "Calibrated for local terrain",
-                  desc: "Models are calibrated to manage remote northern ranges, dense local bottlenecks, and snowy glare reflections."
+                  desc: "Models are calibrated to manage remote northern ranges, dense local bottlenecks, and snowy glare reflections.",
+                  border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]",
+                  iconBg: "bg-blue-500/10 border-blue-500/30"
                 }
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className="p-6 rounded-xl border border-slate-200/80 bg-slate-50/50 hover:bg-white transition-all duration-200 flex flex-col justify-between"
+                  className={`p-6 rounded-xl border-2 bg-slate-900 text-white transition-all duration-300 flex flex-col justify-between ${item.border}`}
+                  id={`cohort-reality-card-${idx}`}
                 >
                   <div>
-                    <div className="h-10 w-10 rounded-lg bg-white border border-slate-100 flex items-center justify-center mb-4">
+                    <div className={`h-10 w-10 rounded-lg border flex items-center justify-center mb-4 ${item.iconBg}`}>
                       {item.icon}
                     </div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mb-2">{item.title}</h3>
-                    <p className="text-[11px] text-slate-700 leading-relaxed font-sans font-medium">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-white font-mono mb-2">{item.title}</h3>
+                    <p className="text-[11px] text-slate-300 leading-relaxed font-sans font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -504,31 +518,38 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           <div className="grid gap-6 sm:grid-cols-3">
             {[
               {
-                icon: <Brain className="h-5 w-5 text-blue-600" />,
+                icon: <Brain className="h-5 w-5 text-blue-400" />,
                 title: "Local Edge-AI Silicon",
-                desc: "Harnesses your smartphone or device's native Neural Engine / GPU core to execute gaze and fatigue-tracking algorithms with zero cloud data transmission."
+                desc: "Harnesses your smartphone or device's native Neural Engine / GPU core to execute gaze and fatigue-tracking algorithms with zero cloud data transmission.",
+                border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]",
+                iconBg: "bg-blue-500/10 border-blue-500/30"
               },
               {
-                icon: <Eye className="h-5 w-5 text-cyan-600" />,
+                icon: <Eye className="h-5 w-5 text-cyan-400" />,
                 title: "Optic Focal Calibration",
-                desc: "High-contrast focal assessment compatible with standard device lenses, polarized sunglasses, night driving, and corrective eyewear."
+                desc: "High-contrast focal assessment compatible with standard device lenses, polarized sunglasses, night driving, and corrective eyewear.",
+                border: "border-cyan-500/80 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]",
+                iconBg: "bg-cyan-500/10 border-cyan-500/30"
               },
               {
-                icon: <Lock className="h-5 w-5 text-indigo-600" />,
+                icon: <Lock className="h-5 w-5 text-indigo-400" />,
                 title: "Volatile Memory Standard",
-                desc: "No local or remote video database is ever saved. Eyelid speed coordinates are mapped temporarily in RAM, processed, and immediately purged."
+                desc: "No local or remote video database is ever saved. Eyelid speed coordinates are mapped temporarily in RAM, processed, and immediately purged.",
+                border: "border-indigo-500/80 hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]",
+                iconBg: "bg-indigo-500/10 border-indigo-500/30"
               }
             ].map((prob, idx) => (
               <div 
                 key={idx}
-                className="p-6 bg-white rounded-xl border border-slate-200 shadow-xs hover:border-blue-400/50 transition-all duration-200 flex flex-col justify-between"
+                className={`p-6 rounded-xl border-2 bg-slate-900 text-white transition-all duration-200 flex flex-col justify-between ${prob.border}`}
+                id={`cohort-spec-card-${idx}`}
               >
                 <div>
-                  <div className="h-10 w-10 rounded-lg bg-slate-50 border border-slate-100 text-blue-600 flex items-center justify-center mb-5 shrink-0">
+                  <div className={`h-10 w-10 rounded-lg border flex items-center justify-center mb-5 shrink-0 ${prob.iconBg}`}>
                     {prob.icon}
                   </div>
-                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{prob.title}</h3>
-                  <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-white font-mono mb-2">{prob.title}</h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
                     {prob.desc}
                   </p>
                 </div>
@@ -558,37 +579,49 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
             
             {/* Visual connector line for desktop */}
-            <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-dashed bg-slate-300 -z-10" />
+            <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-dashed bg-slate-700 -z-10" />
 
             {[
               {
                 step: "01",
                 title: "Select Priority Level",
-                desc: "Choose from Standard, VIP Elite, or Founding Collaborator with zero payment or deposit required."
+                desc: "Choose from Standard, VIP Elite, or Founding Collaborator with zero payment or deposit required.",
+                border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]",
+                stepBg: "bg-blue-600 text-white"
               },
               {
                 step: "02",
                 title: "Diagnostic Check-In",
-                desc: "Review your baseline fatigue metrics from our simulator to calibrate your early-bird queue discount."
+                desc: "Review your baseline fatigue metrics from our simulator to calibrate your early-bird queue discount.",
+                border: "border-cyan-500/80 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]",
+                stepBg: "bg-cyan-600 text-white"
               },
               {
                 step: "03",
                 title: "Submit Driving Context",
-                desc: "Register your typical regional route variables to help customize our offline neural models."
+                desc: "Register your typical regional route variables to help customize our offline neural models.",
+                border: "border-purple-500/80 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]",
+                stepBg: "bg-purple-600 text-white"
               },
               {
                 step: "04",
                 title: "Unlock Prototype Keys",
-                desc: "Receive your private platform download credentials and instructions once the prototype builds are active."
+                desc: "Receive your private platform download credentials and instructions once the prototype builds are active.",
+                border: "border-emerald-500/80 hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]",
+                stepBg: "bg-emerald-600 text-white"
               }
             ].map((flow, idx) => (
-              <div key={idx} className="relative p-6 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all duration-300 flex flex-col justify-between shadow-xs">
+              <div 
+                key={idx} 
+                className={`relative p-6 rounded-xl border-2 bg-slate-900 text-white transition-all duration-300 flex flex-col justify-between ${flow.border}`}
+                id={`cohort-flow-card-${idx}`}
+              >
                 <div>
-                  <div className="flex h-8 w-8 rounded-full bg-blue-600 text-white font-mono text-xs font-bold items-center justify-center mb-4 shadow-sm">
+                  <div className={`flex h-8 w-8 rounded-full font-mono text-xs font-bold items-center justify-center mb-4 shadow-sm ${flow.stepBg}`}>
                     {flow.step}
                   </div>
-                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{flow.title}</h4>
-                  <p className="text-xs text-slate-700 leading-relaxed font-sans font-medium">
+                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-white font-mono mb-2">{flow.title}</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
                     {flow.desc}
                   </p>
                 </div>
@@ -751,60 +784,84 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
 
           <div className="grid gap-8 lg:grid-cols-3 items-stretch">
             {tiers.map((tier) => {
-              const isDark = tier.id === "founding";
               const isSelected = selectedTier === tier.id;
+              
+              const tierThemes = {
+                access: {
+                  border: isSelected 
+                    ? "border-blue-500 ring-2 ring-blue-500 scale-[1.01]" 
+                    : "border-slate-700/80 hover:border-slate-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]",
+                  badgeClass: "bg-slate-800 text-slate-300 border-slate-700",
+                  requirementBg: "bg-slate-800/50 border-slate-700/50",
+                  featColor: "text-slate-400"
+                },
+                guardian: {
+                  border: isSelected 
+                    ? "border-blue-500 ring-2 ring-blue-500 scale-[1.01]" 
+                    : "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.25)]",
+                  badgeClass: "bg-blue-950 text-blue-400 border-blue-800/60",
+                  requirementBg: "bg-blue-950/40 border-blue-800/40",
+                  featColor: "text-blue-400"
+                },
+                founding: {
+                  border: isSelected 
+                    ? "border-rose-500 ring-2 ring-rose-500 scale-[1.01]" 
+                    : "border-rose-500/80 hover:border-rose-400 hover:shadow-[0_0_30px_rgba(244,63,94,0.25)]",
+                  badgeClass: "bg-rose-950 text-rose-400 border-rose-800/60",
+                  requirementBg: "bg-rose-950/40 border-rose-800/40",
+                  featColor: "text-rose-400"
+                }
+              }[tier.id] || {
+                border: "border-slate-800",
+                badgeClass: "bg-slate-800 text-slate-300",
+                requirementBg: "bg-slate-800/50",
+                featColor: "text-blue-400"
+              };
+
               return (
                 <div 
                   key={tier.id}
-                  className={`rounded-2xl border p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${
-                    isDark 
-                      ? "bg-slate-900 text-white border-slate-800 shadow-xl" 
-                      : "bg-white text-slate-900 border-slate-200 shadow-md hover:border-blue-400 hover:shadow-lg"
-                  } ${tier.highlight ? "ring-2 ring-blue-500 ring-offset-2" : ""} ${isSelected ? "border-blue-600 bg-blue-500/5 ring-1 ring-blue-500/20" : ""}`}
+                  className={`rounded-2xl border-2 p-8 flex flex-col justify-between transition-all duration-300 relative overflow-hidden bg-slate-900 text-white shadow-xl ${tierThemes.border} ${tier.highlight ? "ring-2 ring-blue-500/50 ring-offset-2 ring-offset-slate-950" : ""}`}
                 >
                   <div>
                     <div className="flex justify-between items-center mb-6">
-                      <span className={`inline-flex items-center rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-wider font-mono border ${
-                        isDark ? "bg-slate-800 text-slate-300 border-slate-700" : "bg-slate-100 text-slate-800 border-slate-200"
-                      }`}>
+                      <span className={`inline-flex items-center rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-wider font-mono border ${tierThemes.badgeClass}`}>
                         {tier.badge}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-600 uppercase font-mono">{tier.levelLabel}</span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">{tier.levelLabel}</span>
                     </div>
 
                     <h3 className="text-lg font-black uppercase tracking-wide leading-tight">{tier.title}</h3>
                     
-                    <p className={`mt-4 text-xs leading-relaxed font-medium ${isDark ? "text-slate-200" : "text-slate-700"}`}>
+                    <p className="mt-4 text-xs leading-relaxed font-medium text-slate-300">
                       {tier.desc}
                     </p>
 
-                    <div className={`mt-5 p-4 rounded-xl flex flex-col gap-1 text-xs ${
-                      isDark ? "bg-slate-800/60 border border-slate-700/60" : "bg-slate-50 border border-slate-200/60"
-                    }`}>
-                      <span className={`font-bold font-mono text-[9px] uppercase tracking-widest ${isDark ? "text-slate-400" : "text-slate-600"}`}>Requirement:</span>
-                      <span className="font-extrabold text-slate-900 dark:text-white uppercase tracking-wider text-[10px] font-mono leading-relaxed">{tier.requirement}</span>
+                    <div className={`mt-5 p-4 rounded-xl flex flex-col gap-1 text-xs ${tierThemes.requirementBg}`}>
+                      <span className="font-bold font-mono text-[9px] uppercase tracking-widest text-slate-400">Requirement:</span>
+                      <span className="font-extrabold text-white uppercase tracking-wider text-[10px] font-mono leading-relaxed">{tier.requirement}</span>
                     </div>
 
-                    <p className={`mt-6 text-[10px] font-black uppercase tracking-widest font-mono ${isDark ? "text-slate-400" : "text-slate-400"}`}>
+                    <p className="mt-6 text-[10px] font-black uppercase tracking-widest font-mono text-slate-400">
                       Inclusions:
                     </p>
 
                     <ul className="mt-3.5 space-y-3">
                       {tier.features.map((feat, idx) => (
                         <li key={idx} className="flex items-start gap-2.5 text-xs">
-                          <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isDark ? "text-blue-400" : "text-blue-600"}`} />
-                          <span className={isDark ? "text-slate-300" : "text-slate-600"}>{feat}</span>
+                          <Check className={`h-4 w-4 mt-0.5 shrink-0 ${tierThemes.featColor}`} />
+                          <span className="text-slate-300">{feat}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-slate-100/10 font-mono">
+                  <div className="mt-8 pt-6 border-t border-slate-800 font-mono">
                     <button
                       onClick={() => scrollToForm(tier.id)}
                       className={`w-full inline-flex items-center justify-center gap-2 rounded py-3.5 text-xs font-bold uppercase tracking-wider transition-all active:scale-95 cursor-pointer ${
                         isSelected 
-                          ? "bg-slate-900 text-white border border-slate-800" 
+                          ? "bg-slate-800 text-white border border-slate-700" 
                           : "bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
                       }`}
                     >

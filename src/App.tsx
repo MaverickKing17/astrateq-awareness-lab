@@ -458,45 +458,70 @@ export default function App() {
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
-                      icon: <Check className="h-5 w-5 text-blue-600" />,
                       title: "Decides What Insights Matter",
-                      desc: "Your simulation variables guide our eventual focus dashboard. By selecting which parameters to record, you direct what features our local edge model prioritizes."
+                      desc: "Your simulation variables guide our eventual focus dashboard. By selecting which parameters to record, you direct what features our local edge model prioritizes.",
+                      theme: {
+                        border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.25)]",
+                        iconColor: "text-blue-400",
+                        iconBg: "bg-blue-500/10 border-blue-500/30",
+                      }
                     },
                     {
-                      icon: <Check className="h-5 w-5 text-blue-600" />,
                       title: "Locks Down Privacy Standards",
-                      desc: "Your feedback cements an alternative to remote insurance tracking, proving that drivers actively value zero-trace, local-memory data isolation standards."
+                      desc: "Your feedback cements an alternative to remote insurance tracking, proving that drivers actively value zero-trace, local-memory data isolation standards.",
+                      theme: {
+                        border: "border-cyan-500/80 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.25)]",
+                        iconColor: "text-cyan-400",
+                        iconBg: "bg-cyan-500/10 border-cyan-500/30",
+                      }
                     },
                     {
-                      icon: <Check className="h-5 w-5 text-blue-600" />,
                       title: "Declares What Drivers Value",
-                      desc: "Standard safety suites demand constant cloud logins and OBD connections. Your signup demonstrates that drivers explicitly demand hardware-free, personal solutions."
+                      desc: "Standard safety suites demand constant cloud logins and OBD connections. Your signup demonstrates that drivers explicitly demand hardware-free, personal solutions.",
+                      theme: {
+                        border: "border-indigo-500/80 hover:border-indigo-400 hover:shadow-[0_0_25px_rgba(99,102,241,0.25)]",
+                        iconColor: "text-indigo-400",
+                        iconBg: "bg-indigo-500/10 border-indigo-500/30",
+                      }
                     },
                     {
-                      icon: <Check className="h-5 w-5 text-blue-600" />,
                       title: "Determines Project Investment",
-                      desc: "Strong regional metrics show partners that driver focus is a highly valued priority. Your participation triggers development of Canada's first sovereign driver AI."
+                      desc: "Strong regional metrics show partners that driver focus is a highly valued priority. Your participation triggers development of Canada's first sovereign driver AI.",
+                      theme: {
+                        border: "border-amber-500/80 hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.25)]",
+                        iconColor: "text-amber-400",
+                        iconBg: "bg-amber-500/10 border-amber-500/30",
+                      }
                     },
                     {
-                      icon: <Check className="h-5 w-5 text-blue-600" />,
                       title: "Coordinates Priority Rollout",
-                      desc: "As an early contributor, your signup guarantees primary rollout access and locks in founding early-bird launch pricing without any monetary deposits."
+                      desc: "As an early contributor, your signup guarantees primary rollout access and locks in founding early-bird launch pricing without any monetary deposits.",
+                      theme: {
+                        border: "border-emerald-500/80 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.25)]",
+                        iconColor: "text-emerald-400",
+                        iconBg: "bg-emerald-500/10 border-emerald-500/30",
+                      }
                     },
                     {
-                      icon: <Check className="h-5 w-5 text-blue-600" />,
                       title: "Adapts to Canadian Commutes",
-                      desc: "Whether you drive frozen rural highways or heavy urban gridlocks, your province and routing parameters shape the algorithmic thresholds for localized weather variables."
+                      desc: "Whether you drive frozen rural highways or heavy urban gridlocks, your province and routing parameters shape the algorithmic thresholds for localized weather variables.",
+                      theme: {
+                        border: "border-rose-500/80 hover:border-rose-400 hover:shadow-[0_0_25px_rgba(244,63,94,0.25)]",
+                        iconColor: "text-rose-400",
+                        iconBg: "bg-rose-500/10 border-rose-500/30",
+                      }
                     }
                   ].map((item, idx) => (
                     <div 
                       key={idx}
-                      className="p-6 rounded-xl border border-slate-200/80 bg-slate-50/30 hover:bg-white hover:border-blue-400 transition-all duration-300 hover:shadow-[0_15px_30px_rgba(59,130,246,0.02)]"
+                      className={`p-8 rounded-2xl border-2 bg-slate-900 text-white transition-all duration-300 transform hover:-translate-y-1 ${item.theme.border}`}
+                      id={`app-value-prop-card-${idx}`}
                     >
-                      <div className="h-8 w-8 rounded bg-blue-50 border border-blue-100 flex items-center justify-center mb-4">
-                        {item.icon}
+                      <div className={`h-10 w-10 rounded-xl border flex items-center justify-center mb-6 ${item.theme.iconBg}`}>
+                        <Check className={`h-5 w-5 ${item.theme.iconColor}`} />
                       </div>
-                      <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 font-mono mb-2">{item.title}</h3>
-                      <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                      <h3 className="text-sm font-extrabold uppercase tracking-wider text-white font-mono mb-3">{item.title}</h3>
+                      <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
                         {item.desc}
                       </p>
                     </div>

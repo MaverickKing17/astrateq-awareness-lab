@@ -69,11 +69,11 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </p>
           </div>
 
-          {/* Cards styled elegantly with Stripe/Linear-like premium borders and generous breathing room */}
+          {/* Cards styled elegantly with premium fully colorful Microsoft-style borders and generous breathing room */}
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             
             {/* Card 1 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border-x border-b border-slate-800 border-t-4 border-t-blue-500 bg-[#0F172A] p-8 shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)]">
+            <div className="relative flex flex-col justify-between rounded-2xl border-2 border-blue-500/80 bg-slate-900 p-8 shadow-[0_0_25px_rgba(59,130,246,0.15)] transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)]" id="value-prop-card-1">
               <div className="space-y-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 font-mono font-bold text-xs">
                   01
@@ -92,7 +92,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Card 2 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border-x border-b border-slate-800 border-t-4 border-t-cyan-500 bg-[#0F172A] p-8 shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(6,182,212,0.35)]">
+            <div className="relative flex flex-col justify-between rounded-2xl border-2 border-cyan-500/80 bg-slate-900 p-8 shadow-[0_0_25px_rgba(6,182,212,0.15)] transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(6,182,212,0.35)]" id="value-prop-card-2">
               <div className="space-y-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono font-bold text-xs">
                   02
@@ -111,7 +111,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Card 3 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border-x border-b border-slate-800 border-t-4 border-t-indigo-500 bg-[#0F172A] p-8 shadow-[0_0_30px_rgba(99,102,241,0.15)] transition-all duration-300 hover:border-indigo-400 hover:shadow-[0_0_40px_rgba(99,102,241,0.35)]">
+            <div className="relative flex flex-col justify-between rounded-2xl border-2 border-indigo-500/80 bg-slate-900 p-8 shadow-[0_0_25px_rgba(99,102,241,0.15)] transition-all duration-300 hover:border-indigo-400 hover:shadow-[0_0_40px_rgba(99,102,241,0.35)]" id="value-prop-card-3">
               <div className="space-y-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-mono font-bold text-xs">
                   03

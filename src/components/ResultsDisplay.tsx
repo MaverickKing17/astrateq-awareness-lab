@@ -308,126 +308,126 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           <div className="grid gap-6">
             
             {/* Card 1: Fatigue Exposure Pattern */}
-            <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
+            <div className="rounded-xl border-2 border-blue-500/80 bg-slate-900 p-6 text-white shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all hover:border-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                  <div className="p-2 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400">
                     <Brain className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Fatigue Exposure Pattern</h3>
-                    <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wide font-medium">Based on driving time and frequency inputs</p>
+                    <h3 className="font-bold uppercase tracking-wider text-white text-xs font-mono">Fatigue Exposure Pattern</h3>
+                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide font-medium">Based on driving time and frequency inputs</p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 border border-slate-100 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-700 font-mono">
+                <span className="px-2 py-0.5 border border-blue-500/30 bg-blue-500/10 rounded text-[9px] font-bold uppercase tracking-wider text-blue-400 font-mono">
                   Input Mapping
                 </span>
               </div>
               
-              <p className="text-slate-600 text-xs leading-relaxed font-sans">
+              <p className="text-slate-200 text-xs leading-relaxed font-sans font-medium">
                 {fatigueRiskProfile}
               </p>
-              <p className="mt-1.5 text-[9px] font-mono text-slate-400 italic">
+              <p className="mt-1.5 text-[9px] font-mono text-slate-500 italic">
                 Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
               </p>
 
-              <div className="mt-4 border-t border-slate-100 pt-3">
+              <div className="mt-4 border-t border-slate-800 pt-3">
                 <button 
                   onClick={() => toggleTab("fatigue")} 
-                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono animate-none"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-blue-400 hover:text-blue-300 cursor-pointer font-mono animate-none"
                 >
                   <span>{activeTab === "fatigue" ? "Collapse Details" : "View Details"}</span>
                   {activeTab === "fatigue" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                 </button>
                 
                 {activeTab === "fatigue" && (
-                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-700 leading-relaxed border border-slate-200 font-mono font-medium">
-                    <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Fatigue Exposure Metrics:</p>
-                    Your self-reported frequency of driving (especially during <strong className="text-slate-900">{inputs.timeOfDay}</strong> hours) directly models standard biological fatigue waves. This behavioral simulation evaluates these indicators against established pre-launch Canadian safety baselines.
+                  <div className="mt-3 bg-slate-950 p-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono font-medium">
+                    <p className="font-bold text-blue-400 uppercase tracking-wider text-[10px] mb-1">Fatigue Exposure Metrics:</p>
+                    Your self-reported frequency of driving (especially during <strong className="text-white">{inputs.timeOfDay}</strong> hours) directly models standard biological fatigue waves. This behavioral simulation evaluates these indicators against established pre-launch Canadian safety baselines.
                   </div>
                 )}
               </div>
             </div>
 
             {/* Card 2: Attention Stability Profile */}
-            <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
+            <div className="rounded-xl border-2 border-cyan-500/80 bg-slate-900 p-6 text-white shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                  <div className="p-2 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
                     <Eye className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Attention Stability Profile</h3>
+                    <h3 className="font-bold uppercase tracking-wider text-white text-xs font-mono">Attention Stability Profile</h3>
                     <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Based on self-reported focus behavior indicators</p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 border border-slate-100 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-500 font-mono">
+                <span className="px-2 py-0.5 border border-cyan-500/30 bg-cyan-500/10 rounded text-[9px] font-bold uppercase tracking-wider text-cyan-400 font-mono">
                   Input Mapping
                 </span>
               </div>
 
-              <p className="text-slate-600 text-xs leading-relaxed font-sans">
+              <p className="text-slate-200 text-xs leading-relaxed font-sans font-medium">
                 {attentionReadiness}
               </p>
-              <p className="mt-1.5 text-[9px] font-mono text-slate-400 italic">
+              <p className="mt-1.5 text-[9px] font-mono text-slate-500 italic">
                 Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
               </p>
 
-              <div className="mt-4 border-t border-slate-100 pt-3">
+              <div className="mt-4 border-t border-slate-800 pt-3">
                 <button 
                   onClick={() => toggleTab("attention")} 
-                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono animate-none"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 cursor-pointer font-mono animate-none"
                 >
                   <span>{activeTab === "attention" ? "Collapse Details" : "View Details"}</span>
                   {activeTab === "attention" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                 </button>
                 
                 {activeTab === "attention" && (
-                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono">
-                    <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Attention Allocation Dynamics:</p>
-                    By indicating your habit of <strong className="text-slate-900">{inputs.attentionHabits.replace(/_/g, " ")}</strong>, our simulated focus matrix estimates visual locking stability rates over typical commutes to help you reflect on micro-distractions.
+                  <div className="mt-3 bg-slate-950 p-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono">
+                    <p className="font-bold text-cyan-400 uppercase tracking-wider text-[10px] mb-1">Attention Allocation Dynamics:</p>
+                    By indicating your habit of <strong className="text-white">{inputs.attentionHabits.replace(/_/g, " ")}</strong>, our simulated focus matrix estimates visual locking stability rates over typical commutes to help you reflect on micro-distractions.
                   </div>
                 )}
               </div>
             </div>
 
             {/* Card 3: Driving Context Sensitivity */}
-            <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm transition-all hover:border-slate-300">
+            <div className="rounded-xl border-2 border-indigo-500/80 bg-slate-900 p-6 text-white shadow-[0_0_20px_rgba(99,102,241,0.15)] transition-all hover:border-indigo-400 hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                  <div className="p-2 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
                     <Compass className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="font-bold uppercase tracking-wider text-slate-900 text-xs font-mono">Driving Context Sensitivity</h3>
+                    <h3 className="font-bold uppercase tracking-wider text-white text-xs font-mono">Driving Context Sensitivity</h3>
                     <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wide">Based on environmental and commute conditions</p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 border border-slate-200 bg-slate-50 rounded text-[9px] font-bold uppercase tracking-wider text-slate-700 font-mono">
+                <span className="px-2 py-0.5 border border-indigo-500/30 bg-indigo-500/10 rounded text-[9px] font-bold uppercase tracking-wider text-indigo-400 font-mono">
                   Input Mapping
                 </span>
               </div>
 
-              <p className="text-slate-600 text-xs leading-relaxed font-sans">
+              <p className="text-slate-200 text-xs leading-relaxed font-sans font-medium">
                 {safetyIntelligenceReadiness}
               </p>
-              <p className="mt-1.5 text-[9px] font-mono text-slate-400 italic">
+              <p className="mt-1.5 text-[9px] font-mono text-slate-500 italic">
                 Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)
               </p>
 
-              <div className="mt-4 border-t border-slate-100 pt-3">
+              <div className="mt-4 border-t border-slate-800 pt-3">
                 <button 
                   onClick={() => toggleTab("safety")} 
-                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 hover:text-slate-700 cursor-pointer font-mono animate-none"
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-indigo-400 hover:text-indigo-300 cursor-pointer font-mono animate-none"
                 >
                   <span>{activeTab === "safety" ? "Collapse Details" : "View Details"}</span>
                   {activeTab === "safety" ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                 </button>
                 
                 {activeTab === "safety" && (
-                  <div className="mt-3 bg-slate-50 p-4 rounded text-xs text-slate-500 leading-relaxed border border-slate-200 font-mono">
-                    <p className="font-bold text-slate-800 uppercase tracking-wider text-[10px] mb-1">Contextual Response Factors:</p>
-                    Commutes structured as <strong className="text-slate-900">{inputs.commuteType.replace(/_/g, " ")}</strong> across various provincial routes introduce external cognitive strains. Pre-planning rest frequencies acts as a powerful offset.
+                  <div className="mt-3 bg-slate-950 p-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono">
+                    <p className="font-bold text-indigo-400 uppercase tracking-wider text-[10px] mb-1">Contextual Response Factors:</p>
+                    Commutes structured as <strong className="text-white">{inputs.commuteType.replace(/_/g, " ")}</strong> across various provincial routes introduce external cognitive strains. Pre-planning rest frequencies acts as a powerful offset.
                   </div>
                 )}
               </div>
@@ -522,36 +522,36 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
       <div className="grid gap-8 md:grid-cols-3 items-stretch mb-12">
         
         {/* Module 1: Privacy Safeguards */}
-        <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-sm flex flex-col justify-between">
+        <div className="rounded-xl border-2 border-cyan-500/80 bg-slate-900 p-6 text-white shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] flex flex-col justify-between">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 mb-4">
               <Lock className="h-4 w-4" />
             </div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2 font-mono">Privacy First. Always.</h3>
-            <p className="text-xs text-slate-700 leading-relaxed mb-4 font-sans font-medium">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-2 font-mono">Privacy First. Always.</h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-4 font-sans font-medium">
               Your privacy is at the core of everything we do. Your data is used only for pre-launch research purposes and is never sold or shared with third parties. You're in control.
             </p>
           </div>
-          <ul className="space-y-2 border-t border-slate-100 pt-4 text-[11px] text-slate-600 font-mono">
+          <ul className="space-y-2 border-t border-slate-800 pt-4 text-[11px] text-slate-300 font-mono">
             <li className="flex items-center gap-2">
-              <Check className="h-3.5 w-3.5 text-slate-900" />
+              <Check className="h-3.5 w-3.5 text-cyan-400" />
               <span>100% anonymous assessment</span>
             </li>
             <li className="flex items-center gap-2">
-              <Check className="h-3.5 w-3.5 text-slate-900" />
+              <Check className="h-3.5 w-3.5 text-cyan-400" />
               <span>Encrypted & stored in Canada</span>
             </li>
             <li className="flex items-center gap-2">
-              <Check className="h-3.5 w-3.5 text-slate-900" />
-              <span>Full control over your deletion</span>
+              <Check className="h-3.5 w-3.5 text-cyan-400" />
+              <span>Full control over your data deletion</span>
             </li>
           </ul>
         </div>
 
         {/* Module 2: Help Advance Road Safety (Main Highlighted CTA Card with ONE dominant CTA) */}
-        <div className="rounded-xl border border-slate-900 bg-slate-950 p-6 shadow-md relative flex flex-col justify-between overflow-hidden text-white ring-2 ring-blue-500 ring-offset-2">
+        <div className="rounded-xl border-2 border-rose-500 bg-slate-950 p-6 shadow-xl relative flex flex-col justify-between overflow-hidden text-white ring-2 ring-rose-500/50 ring-offset-2 ring-offset-slate-950 hover:border-rose-400 hover:shadow-[0_0_30px_rgba(244,63,94,0.25)] transition-all duration-300">
           <div>
-            <span className="inline-flex items-center gap-1 rounded border border-slate-800 bg-slate-900 px-2 py-0.5 text-[9px] font-bold text-slate-300 uppercase font-mono mb-3">
+            <span className="inline-flex items-center gap-1 rounded border border-rose-500/30 bg-rose-500/15 px-2 py-0.5 text-[9px] font-bold text-rose-400 uppercase font-mono mb-3">
               Research Study Signup
             </span>
             <h3 className="text-xs font-bold uppercase tracking-wider mb-2 text-white font-mono">Help Advance Road Safety</h3>
@@ -588,48 +588,48 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         </div>
 
         {/* Module 3: What We Do NOT Do */}
-        <div className="rounded-xl border-2 border-[#E6EDF5] bg-white p-6 shadow-xs flex flex-col justify-between">
+        <div className="rounded-xl border-2 border-indigo-500/80 bg-slate-900 p-6 text-white shadow-[0_0_20px_rgba(99,102,241,0.15)] transition-all hover:border-indigo-400 hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] flex flex-col justify-between">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 mb-4">
               <ShieldCheck className="h-4 w-4" />
             </div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 font-mono">What We Do NOT Do</h3>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4 font-mono">What We Do NOT Do</h3>
             <div className="space-y-4 font-sans">
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 p-1 rounded bg-slate-100 border border-slate-200 text-slate-900 shrink-0">
+                <div className="mt-0.5 p-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 shrink-0">
                   <MapPin className="h-3 w-3" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Location Tracking</h4>
-                  <p className="text-[11px] text-slate-700 mt-1 leading-relaxed font-medium">We do not collect or track your location, GPS, or driving routes.</p>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-white font-mono leading-none">No Location Tracking</h4>
+                  <p className="text-[11px] text-slate-300 mt-1 leading-relaxed font-medium">We do not collect or track your location, GPS, or driving routes.</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 p-1 rounded bg-slate-100 border border-slate-200 text-slate-900 shrink-0">
+                <div className="mt-0.5 p-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 shrink-0">
                   <Lock className="h-3 w-3" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">No Insurance Sharing</h4>
-                  <p className="text-[11px] text-slate-700 mt-1 leading-relaxed font-medium">We do not share any data with insurance underwriters or providers.</p>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-white font-mono leading-none">No Insurance Sharing</h4>
+                  <p className="text-[11px] text-slate-300 mt-1 leading-relaxed font-medium">We do not share any data with insurance underwriters or providers.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="mt-0.5 p-1 rounded bg-slate-100 border border-slate-200 text-slate-900 shrink-0">
+                <div className="mt-0.5 p-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 shrink-0">
                   <Cpu className="h-3 w-3" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono leading-none">Simulation Only</h4>
-                  <p className="text-[11px] text-slate-700 mt-1 leading-relaxed font-medium">This assessment is simulation-only. No vehicle connection is required.</p>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-white font-mono leading-none">Simulation Only</h4>
+                  <p className="text-[11px] text-slate-300 mt-1 leading-relaxed font-medium">This assessment is simulation-only. No vehicle connection is required.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mt-4 pt-4 border-t border-slate-100 text-center">
+          <div className="mt-4 pt-4 border-t border-slate-800 text-center">
             <button
               onClick={onReset}
-              className="text-xs font-bold uppercase tracking-wider text-blue-600 hover:text-blue-800 cursor-pointer underline font-mono"
+              className="text-xs font-bold uppercase tracking-wider text-blue-400 hover:text-blue-300 cursor-pointer underline font-mono"
             >
               Reset Questionnaire
             </button>
