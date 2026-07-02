@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-const R_AND_D_LAB_IMAGE = "/src/assets/images/automotive_rd_lab_1783018331045.jpg";
+import R_AND_D_LAB_IMAGE from "../assets/images/automotive_rd_lab_1783018331045.jpg";
 
 interface CohortPageProps {
   score?: number;
@@ -232,14 +232,14 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white p-2.5 max-w-xl group"
               >
-                <div className="relative overflow-hidden rounded-xl h-44 sm:h-52">
+                <div className="relative overflow-hidden rounded-xl h-60 sm:h-72">
                   <img
                     src={R_AND_D_LAB_IMAGE}
                     alt="Advanced Automotive Human-Factors R&D Laboratory Workstation"
                     referrerPolicy="no-referrer"
                     className="absolute inset-0 h-full w-full object-cover rounded-xl transition-transform duration-750 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-3.5 left-4 right-4 text-white flex justify-between items-end">
                     <div>
                       <span className="text-[8px] font-extrabold uppercase tracking-widest text-cyan-400 font-mono">LABORATORY SPECIFICATION</span>

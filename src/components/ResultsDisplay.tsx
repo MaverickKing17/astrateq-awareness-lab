@@ -5,7 +5,7 @@ import {
   Info, ChevronDown, ChevronUp, Sparkles, ArrowRight, RefreshCw, Compass
 } from "lucide-react";
 
-const HWY_404_POV_IMAGE = "/src/assets/images/driver_lifestyle_simulation_1783021555044.jpg";
+import HWY_404_POV_IMAGE from "../assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 
 interface ResultsDisplayProps {
   insights: DriverInsights;
@@ -136,7 +136,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               className="absolute inset-0 h-full w-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
             />
             {/* Ambient gradients */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
             <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded border border-slate-200/20 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white font-mono shadow-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-slate-400 animate-pulse" />
               Pre-Launch Simulation Visual
