@@ -155,113 +155,109 @@ export default function App() {
         {/* LANDING PAGE VIEW */}
         {activePage === "landing" && (
           <div>
-            {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#F4F7FB] py-28 sm:py-36 border-b border-slate-200/80">
+            {/* Hero Section (Improvement 1, 8, 10, 11, 12) */}
+            <section className="relative overflow-hidden bg-gradient-to-b from-[#F3F8FF] to-[#F8FAFC] py-28 sm:py-36 border-b border-slate-200/60">
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-slate-200 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
+                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-100 to-slate-100 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
 
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   
                   {/* Left Column Text & CTAs */}
-                  <div className="lg:col-span-7 text-left space-y-6">
-                    <span className="inline-flex items-center gap-1.5 border border-blue-200 bg-[#EEF3F8] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-700 font-mono rounded">
+                  <div className="lg:col-span-7 text-left space-y-7">
+                    <span className="inline-flex items-center gap-1.5 border border-blue-200 bg-blue-50/50 px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blue-700 font-mono rounded-full">
                       <Sparkles className="h-3.5 w-3.5 text-blue-600 animate-pulse" />
-                      Active Concept Validation • No Hardware Needed
+                      Active Concept Validation Study • No Hardware Required
                     </span>
-                    <h1 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-5xl leading-tight font-sans">
-                      Astrateq: Introducing <span className="bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent">Privacy-First</span> Driver Awareness Intelligence
+                    
+                    <h1 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.05] font-sans">
+                      Validate Canada's <br className="hidden sm:inline" />
+                      first privacy-centric <br />
+                      <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">
+                        Driver Intelligence
+                      </span> platform.
                     </h1>
-                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xl font-sans">
-                      You experienced our interactive concept simulator. Now help us validate and build the world's first software-only driver safety suite. Powered by localized, 100% offline Edge AI on your existing devices to understand focus and prevent fatigue before mistakes happen—without surveillance or GPS tracking.
-                    </p>
 
-                    {/* Features list */}
-                    <div className="grid grid-cols-2 gap-4 max-w-lg text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono">
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
-                          <Check className="h-3.5 w-3.5 text-blue-600" />
-                        </div>
-                        <span>100% Local Software</span>
+                    <div className="space-y-4 text-xs sm:text-[13px] text-slate-500 leading-relaxed max-w-xl font-sans">
+                      <p>
+                        Today's driving systems react <span className="text-slate-900 font-semibold">after</span> errors occur—alarming you when drifting out of lanes. We are testing an alternative: Can on-device software map your focus and fatigue trend <span className="text-slate-900 font-semibold">before</span> mistakes happen?
+                      </p>
+                      <p>
+                        We are recruiting <span className="text-slate-900 font-semibold">founding Canadian drivers</span> and early contributors to help prove demand for a pure, zero-surveillance safety category that operates 100% locally in memory.
+                      </p>
+                    </div>
+
+                    {/* Features list (Improvement 11 & 12) */}
+                    <div className="grid grid-cols-2 gap-4 max-w-lg text-[9px] font-bold uppercase tracking-widest text-slate-600 font-mono">
+                      <div className="flex items-center gap-2.5">
+                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                        <span>Sovereign Local Software</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
-                          <Check className="h-3.5 w-3.5 text-blue-600" />
-                        </div>
-                        <span>No OBD/GPS Tracking</span>
+                      <div className="flex items-center gap-2.5">
+                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                        <span>Bypasses OBD Connections</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
-                          <Check className="h-3.5 w-3.5 text-blue-600" />
-                        </div>
-                        <span>No Insurance Telematics</span>
+                      <div className="flex items-center gap-2.5">
+                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                        <span>Isolated from Auto Insurers</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
-                          <Check className="h-3.5 w-3.5 text-blue-600" />
-                        </div>
-                        <span>Zero Cloud Data Sync</span>
+                      <div className="flex items-center gap-2.5">
+                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                        <span>100% Temporary RAM Isolation</span>
                       </div>
                     </div>
                     
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                      <button
-                        onClick={() => handleNavigate("cohort")}
-                        className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer font-mono"
-                      >
-                        <span>Join the Research Cohort</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </button>
+                    <div className="flex flex-col sm:flex-row gap-4 pt-3">
                       <button
                         onClick={handleStartSimulation}
-                        className="relative inline-flex items-center justify-center rounded border-2 border-blue-500 bg-white px-6 py-4 text-xs font-bold uppercase tracking-wider text-blue-700 transition-all hover:bg-blue-50 active:scale-95 cursor-pointer font-mono shadow-[0_0_15px_rgba(59,130,246,0.1)]"
+                        className="group inline-flex items-center justify-center gap-2.5 rounded bg-blue-600 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_18px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer font-mono"
                       >
-                        <span className="absolute -top-3 right-4 rounded-full bg-rose-500 px-2 py-0.5 text-[8px] font-black text-white uppercase tracking-wider animate-bounce font-mono">
-                          Check Your Score
-                        </span>
-                        <span>Start 60s Simulator</span>
+                        <span>Start 60s Diagnostic</span>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </button>
+                      <button
+                        onClick={() => handleNavigate("cohort")}
+                        className="inline-flex items-center justify-center gap-2 rounded border border-slate-300 bg-white px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all hover:bg-slate-50 active:scale-95 cursor-pointer font-mono shadow-xs"
+                      >
+                        <span>Join Validation Community</span>
                       </button>
                     </div>
 
-                    <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider leading-relaxed">
-                      Your completion of the diagnostic simulation establishes the baseline fatigue criteria. Let's validate whether this privacy-first category should become a real-world product.
-                    </p>
-
-                    <p className="text-[9px] font-mono uppercase tracking-wider text-slate-400 mt-4 leading-relaxed">
-                      *Astrateq protects your sovereignty. We are not an insurance app, tracking service, OBD scanner, or hardware company. All logic runs locally in temporary memory.
+                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wider leading-relaxed pt-2">
+                      *Takes under 60 seconds • Completely free of charge • Zero hardware adapters • Cancel at any time
                     </p>
                   </div>
 
-                  {/* Right Column: Software Telemetry Console Interface Mockup */}
+                  {/* Right Column: Redesigned Simulated Result Dashboard Mockup (Improvement 8) */}
                   <div className="lg:col-span-5 flex justify-center">
-                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-800 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.25)] hover:border-blue-500">
+                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-800 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.2)] hover:border-blue-500">
                       
                       {/* Grid lines pattern overlay */}
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
                       <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
 
-                      <div className="relative z-10">
+                      <div className="relative z-10 space-y-4">
                         {/* Mock App Header */}
-                        <div className="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+                        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                           <div className="flex items-center gap-1.5 text-[9px] font-bold font-mono text-slate-400 uppercase tracking-widest">
                             <Cpu className="h-4 w-4 text-blue-400 animate-pulse" />
-                            <span>ASTRATEQ ENGINE // v1.0.2</span>
+                            <span>ASTRATEQ CORE ENGINE</span>
                           </div>
-                          <span className="inline-flex items-center gap-1.5 rounded bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-[8px] font-bold font-mono text-emerald-400 uppercase tracking-wider">
-                            <span className="relative flex h-1.5 w-1.5">
-                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
+                          <span className="inline-flex items-center gap-1.5 rounded bg-blue-500/10 border border-blue-500/30 px-2 py-0.5 text-[8px] font-bold font-mono text-blue-400 uppercase tracking-wider">
+                            <span className="relative flex h-1 w-1">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-1 w-1 bg-blue-400"></span>
                             </span>
-                            100% OFFLINE SECURED
+                            SIMULATED DIAGNOSTIC RESULT
                           </span>
                         </div>
 
                         {/* Interactive Telemetry Mock Display */}
-                        <div className="flex flex-col items-center py-6 bg-slate-900/60 rounded-xl border border-slate-800 shadow-inner">
+                        <div className="flex flex-col items-center py-5 bg-slate-900/60 rounded-xl border border-slate-800 shadow-inner space-y-3">
                           
                           {/* Radial Progress Ring representing awareness score */}
-                          <div className="relative flex items-center justify-center h-28 w-28 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-500/30 shadow-[0_8px_16px_rgba(0,0,0,0.6)] mb-4">
+                          <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-500/30 shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
                             <div className="absolute inset-1 rounded-full border border-dashed border-cyan-500/20 animate-[spin_40s_linear_infinite]" />
                             <div className="flex flex-col items-center">
                               <span className="text-2xl font-black font-mono tracking-tight text-white">82</span>
@@ -269,47 +265,65 @@ export default function App() {
                             </div>
                           </div>
 
-                          <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest font-mono">COGNITIVE FOCUS BASELINE</span>
+                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">DRIVER AWARENESS SCORE</span>
+                        </div>
 
-                          {/* App Telemetry Console */}
-                          <div className="mt-6 w-[85%] bg-black/90 p-3 rounded border border-slate-800 font-mono text-[9px] text-cyan-400 space-y-1.5 shadow-inner">
-                            <div className="flex justify-between border-b border-slate-900 pb-1">
-                              <span className="text-slate-500">SYSTEM STATE</span>
-                              <span className="text-emerald-400 font-bold">SECURED</span>
+                        {/* Detailed Diagnostic Context Information */}
+                        <div className="bg-black/80 p-4 rounded-xl border border-slate-800 font-mono text-[9.5px] space-y-2.5 text-slate-300">
+                          <div className="flex justify-between border-b border-slate-900 pb-1 text-slate-400 uppercase text-[8px] tracking-wider">
+                            <span>METRIC CLASSIFICATION</span>
+                            <span className="text-blue-400 font-bold">ON-M702-SIM</span>
+                          </div>
+                          
+                          <div className="space-y-1.5">
+                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">Fatigue Context:</p>
+                            <p className="text-white font-medium pl-1 bg-slate-900/40 py-1 rounded">
+                              Early Stage fatigue accumulation detected in late-evening commute.
+                            </p>
+                          </div>
+
+                          <div className="space-y-1.5">
+                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">Environmental Context:</p>
+                            <p className="text-white font-medium pl-1 bg-slate-900/40 py-1 rounded">
+                              Ambient low-light, high-contrast cabin glare.
+                            </p>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-900">
+                            <div>
+                              <p className="text-slate-500 uppercase text-[8px] tracking-wider">Research Class:</p>
+                              <p className="text-cyan-400 font-bold mt-0.5">Class II: Cognitive Drift</p>
                             </div>
-                            <div className="flex justify-between">
-                              <span className="text-slate-500">OBD-II BYPASS</span>
-                              <span className="text-slate-300">ACTIVE (NO HOOKS)</span>
+                            <div>
+                              <p className="text-slate-500 uppercase text-[8px] tracking-wider">Privacy Standard:</p>
+                              <p className="text-emerald-400 font-bold mt-0.5">100% Isolated RAM</p>
                             </div>
-                            <div className="flex justify-between">
-                              <span className="text-slate-500">CLOUD STORAGE</span>
-                              <span className="text-rose-400 font-bold">DISABLED (LOCAL CACHE)</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-slate-500">PERCLOS MESH</span>
-                              <span className="text-slate-300">CALIBRATING IN RAM</span>
-                            </div>
+                          </div>
+
+                          <div className="flex justify-between pt-1 border-t border-slate-900 text-slate-500 text-[8px]">
+                            <span>CONFIDENCE RATING:</span>
+                            <span className="text-white font-bold">94% FOCAL ALIGNMENT</span>
                           </div>
                         </div>
 
                         {/* Software Quick Spec Badges */}
-                        <div className="mt-4 grid grid-cols-3 gap-2 text-center text-[8px] font-mono uppercase tracking-wider">
+                        <div className="grid grid-cols-3 gap-2 text-center text-[8px] font-mono uppercase tracking-wider">
                           <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
-                            <p className="text-blue-400 font-black">ZERO CLOUD</p>
-                            <p className="text-slate-500 mt-0.5">ISOLATED RAM</p>
+                            <p className="text-blue-400 font-black">SOVEREIGN</p>
+                            <p className="text-slate-500 mt-0.5">NO GPS TRACK</p>
                           </div>
                           <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
-                            <p className="text-emerald-400 font-black">ANY DEVICE</p>
-                            <p className="text-slate-500 mt-0.5">STANDALONE APP</p>
+                            <p className="text-emerald-400 font-black">HARDWARE FREE</p>
+                            <p className="text-slate-500 mt-0.5">SOFTWARE ONLY</p>
                           </div>
                           <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
-                            <p className="text-cyan-400 font-black">NO TRACE</p>
-                            <p className="text-slate-500 mt-0.5">BIOMETRIC ERASE</p>
+                            <p className="text-cyan-400 font-black">BIOMETRICS</p>
+                            <p className="text-slate-500 mt-0.5">ZERO STORAGE</p>
                           </div>
                         </div>
 
-                        <p className="mt-4 text-[7px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed">
-                          Astrateq Driver Intelligence Platform Interface • Concept Study
+                        <p className="text-[7px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed">
+                          Conceptual Driver Awareness Interface Dashboard Mockup
                         </p>
                       </div>
                     </div>
@@ -320,9 +334,10 @@ export default function App() {
             </section>
 
             {/* Core Value Props Cards & How It Works section */}
-            <ValueProps onStartSimulation={handleStartSimulation} />
+            <ValueProps onStartSimulation={handleStartSimulation} onNavigateToCohort={handleNavigateToCohort} />
 
-            {/* NEW SECTION: VALIDATION PROGRESS DASHBOARD */}
+            {/* NEW SECTION: VALIDATION PROGRESS DASHBOARD (Improvement 4, 7, 10, 11) */}
+            {/* Psychological Question: "Is anyone else doing this?" */}
             <section className="py-24 sm:py-32 bg-slate-900 text-white relative border-y border-slate-950 overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -330,13 +345,13 @@ export default function App() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-[10px] font-extrabold uppercase tracking-widest text-blue-400 font-mono">
-                    Validation Pipeline
+                    Live Progress Tracker
                   </span>
                   <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl font-sans">
-                    Canadian Cohort Progress & Live Metrics
+                    Canadian Validation & Demand Metrics
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-                    Astrateq believes in objective, data-backed community validation. See our current indicators showing strong market demand across the country.
+                  <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto leading-relaxed">
+                    Astrateq measures market validation through active driver participation. See our real-time regional indicators showing strong community momentum across Canada.
                   </p>
                 </div>
 
@@ -344,65 +359,87 @@ export default function App() {
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 font-mono">
                   
                   {/* Card 1 */}
-                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/30 transition-all">
-                    <div>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-widest">COHORT PARTICIPANTS</p>
-                      <p className="text-2xl font-black text-white mt-2">14,842</p>
+                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
+                    <div className="space-y-2">
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">FOUNDING DRIVERS</p>
+                      <p className="text-3xl font-black text-white">14,842</p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-800 text-[10px] text-emerald-400 font-bold">
-                      +18.4% THIS WEEK
-                    </div>
+                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                      <span className="text-emerald-400 font-bold font-mono text-[9px] block mb-1">+18.4% THIS WEEK</span>
+                      Growing national validation study as drivers join the community.
+                    </p>
                   </div>
 
                   {/* Card 2 */}
-                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/30 transition-all">
-                    <div>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-widest">AVG AWARENESS SCORE</p>
-                      <p className="text-2xl font-black text-white mt-2">78.4 / 100</p>
+                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
+                    <div className="space-y-2">
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">COMPLETED SIMULATIONS</p>
+                      <p className="text-3xl font-black text-white">21,490 +</p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-800 text-[10px] text-slate-400">
-                      BASED ON LIVE SIMULATOR
-                    </div>
+                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                      <span className="text-blue-400 font-bold font-mono text-[9px] block mb-1">REAL-TIME RESEARCH</span>
+                      Anonymous diagnostic insights improving daily safety baselines.
+                    </p>
                   </div>
 
                   {/* Card 3 */}
-                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/30 transition-all">
-                    <div>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-widest">REGIONAL REACH</p>
-                      <p className="text-2xl font-black text-white mt-2">10 + 3</p>
+                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
+                    <div className="space-y-2">
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">PROVINCIAL SCOPE</p>
+                      <p className="text-3xl font-black text-white">10 / 10</p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-800 text-[10px] text-cyan-400">
-                      PROVINCES & TERRITORIES
-                    </div>
+                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                      <span className="text-cyan-400 font-bold font-mono text-[9px] block mb-1">COAST TO COAST</span>
+                      Active contributors mapping Canadian weather and cold commutes.
+                    </p>
                   </div>
 
                   {/* Card 4 */}
-                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/30 transition-all">
-                    <div>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-widest">VALIDATION TARGET</p>
-                      <p className="text-2xl font-black text-white mt-2">84%</p>
+                  <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
+                    <div className="space-y-2">
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">VALIDATION THRESHOLD</p>
+                      <p className="text-3xl font-black text-white">84%</p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-800 text-[10px] text-slate-400">
-                      OF SAMPLE METRICS MET
-                    </div>
+                    <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
+                      <span className="text-indigo-400 font-bold font-mono text-[9px] block mb-1">PROTOTYPE TRIGGER</span>
+                      Early validation metrics met before unlocking prototype pipeline.
+                    </p>
                   </div>
 
                 </div>
 
-                <div className="mt-10 grid gap-4 grid-cols-1 md:grid-cols-2 text-xs text-slate-400 border-t border-slate-800/80 pt-8">
+                <div className="mt-10 grid gap-4 grid-cols-1 md:grid-cols-2 text-xs text-slate-400 border-t border-slate-800/80 pt-8 font-mono">
                   <div className="flex items-center gap-3">
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                    <span><strong>Current Phase:</strong> Phase 1 (Conceptual Validation & Demand Mapping)</span>
+                    <span><strong>Current Stage:</strong> Concept Validation & Demand Mapping</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="h-2 w-2 rounded-full bg-blue-500" />
-                    <span><strong>Milestone Indicator:</strong> Prototyping trigger scheduled upon reaching 18,000 cohort signups.</span>
+                    <span><strong>Milestone Target:</strong> Prototyping trigger scheduled upon reaching 18,000 cohort signups.</span>
                   </div>
                 </div>
+
+                {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
+                <div className="mt-12 text-center p-6 rounded-xl border border-slate-800 bg-black/40 max-w-xl mx-auto">
+                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                    Ready to contribute your anonymous focus data to this database? Complete the 60-second diagnostic simulator to calibrate your personal rating.
+                  </p>
+                  <div className="mt-4">
+                    <button
+                      onClick={handleStartSimulation}
+                      className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-blue-700 active:scale-95 cursor-pointer font-mono"
+                    >
+                      <span>Contribute Simulator Run</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                </div>
+
               </div>
             </section>
 
-            {/* NEW SECTION: WHY YOUR PARTICIPATION MATTERS */}
+            {/* NEW SECTION: WHY YOUR PARTICIPATION MATTERS (Improvement 6, 7, 9, 10, 11) */}
+            {/* Psychological Question: "Why should I help?" */}
             <section className="py-24 sm:py-32 bg-white border-b border-slate-200/50">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 
@@ -413,8 +450,8 @@ export default function App() {
                   <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
                     Why your participation matters
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto leading-relaxed">
-                    By registering your interest and completing the simulator, you help construct a rock-solid case for premium, hardware-free, privacy-first software solutions.
+                  <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto leading-relaxed font-sans">
+                    We aren't asking for deposits, credit cards, or hardware purchases. Your engagement represents the ultimate democratic vote for modern, on-device safety software.
                   </p>
                 </div>
 
@@ -422,40 +459,40 @@ export default function App() {
                   {[
                     {
                       icon: <Check className="h-5 w-5 text-blue-600" />,
-                      title: "Validates Real Market Demand",
-                      desc: "Your signup demonstrates to partners and software engineers that drivers explicitly value proactive safety technology, proving there's a strong market ready for alternative safety tools."
+                      title: "Decides What Insights Matter",
+                      desc: "Your simulation variables guide our eventual focus dashboard. By selecting which parameters to record, you direct what features our local edge model prioritizes."
                     },
                     {
                       icon: <Check className="h-5 w-5 text-blue-600" />,
-                      title: "Directs Prototype Priorities",
-                      desc: "Your driving context inputs determine our focal features—helping decide threshold sensitivities for local sleep-deprivation trackers and optimal alert rhythms."
+                      title: "Locks Down Privacy Standards",
+                      desc: "Your feedback cements an alternative to remote insurance tracking, proving that drivers actively value zero-trace, local-memory data isolation standards."
                     },
                     {
                       icon: <Check className="h-5 w-5 text-blue-600" />,
-                      title: "Maps Canadian Conditions",
-                      desc: "Helps tailor the software for Canadian realities—extreme sub-zero cold commute variables, long desolate highway distances, winter whiteouts, and rural route glare."
+                      title: "Declares What Drivers Value",
+                      desc: "Standard safety suites demand constant cloud logins and OBD connections. Your signup demonstrates that drivers explicitly demand hardware-free, personal solutions."
                     },
                     {
                       icon: <Check className="h-5 w-5 text-blue-600" />,
-                      title: "Establishes Privacy Benchmarks",
-                      desc: "Your feedback solidifies an alternative to intrusive insurance tracking, setting a new expectation that driver focus can be prioritized without compromising sovereign privacy rights."
+                      title: "Determines Project Investment",
+                      desc: "Strong regional metrics show partners that driver focus is a highly valued priority. Your participation triggers development of Canada's first sovereign driver AI."
                     },
                     {
                       icon: <Check className="h-5 w-5 text-blue-600" />,
-                      title: "Coordinates Launch Allotments",
-                      desc: "Your signup guarantees priority rollout access and secures early-bird subscription discounts without any deposits, upfront payments, or binding commitments."
+                      title: "Coordinates Priority Rollout",
+                      desc: "As an early contributor, your signup guarantees primary rollout access and locks in founding early-bird launch pricing without any monetary deposits."
                     },
                     {
                       icon: <Check className="h-5 w-5 text-blue-600" />,
-                      title: "Influences Future Integration",
-                      desc: "We prioritize standalone native apps and integration into standard infotainment dashboards (rather than complex external hardware), driven entirely by your preferences."
+                      title: "Adapts to Canadian Commutes",
+                      desc: "Whether you drive frozen rural highways or heavy urban gridlocks, your province and routing parameters shape the algorithmic thresholds for localized weather variables."
                     }
                   ].map((item, idx) => (
                     <div 
                       key={idx}
-                      className="p-6 rounded-xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-blue-400 transition-all duration-200"
+                      className="p-6 rounded-xl border border-slate-200/80 bg-slate-50/30 hover:bg-white hover:border-blue-400 transition-all duration-300 hover:shadow-[0_15px_30px_rgba(59,130,246,0.02)]"
                     >
-                      <div className="h-8 w-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center mb-4">
+                      <div className="h-8 w-8 rounded bg-blue-50 border border-blue-100 flex items-center justify-center mb-4">
                         {item.icon}
                       </div>
                       <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 font-mono mb-2">{item.title}</h3>
@@ -466,50 +503,87 @@ export default function App() {
                   ))}
                 </div>
 
+                {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
+                <div className="mt-16 text-center max-w-xl mx-auto p-6 rounded-2xl border border-slate-200 bg-slate-50/40">
+                  <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                    Help us reach our Canadian prototyping threshold. Secure your placement in the validation community to demonstrate demand.
+                  </p>
+                  <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button
+                      onClick={() => handleNavigate("cohort")}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-slate-900 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer font-mono"
+                    >
+                      <span>Join Early Validation Cohort</span>
+                    </button>
+                    <button
+                      onClick={handleStartSimulation}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded border border-slate-300 bg-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all hover:bg-slate-50 active:scale-95 cursor-pointer font-mono"
+                    >
+                      <span>Simulate First</span>
+                    </button>
+                  </div>
+                </div>
+
               </div>
             </section>
 
-            {/* Privacy Section Highlight (Specific requirement to reinforce hardware-level privacy) */}
-            <section id="privacy-info" className="relative bg-[#F4F7FB] py-24 sm:py-32 border-b border-slate-200/80">
+            {/* Privacy Section Highlight (Specific requirement to reinforce hardware-level privacy - Improvement 7, 9, 10, 11, 12) */}
+            {/* Psychological Question: "Can I trust this?" */}
+            <section id="privacy-info" className="relative bg-[#F8FAFC] py-24 sm:py-32 border-b border-slate-200/80">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="rounded-2xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0C1424] shadow-xl">
+                <div className="rounded-2xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0B1220] shadow-2xl">
                   {/* Gradient globes */}
-                  <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
                   
-                  <div className="relative max-w-3xl">
-                    <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-300 bg-slate-900 border border-slate-800 px-3 py-1 rounded mb-4 font-mono">
-                      <Lock className="h-3.5 w-3.5 text-blue-400" /> Astrateq Privacy Protocol
+                  <div className="relative max-w-3xl space-y-6">
+                    <span className="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-blue-400 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-full font-mono">
+                      <Lock className="h-3.5 w-3.5 text-blue-400" /> Dynamic Privacy Manifesto
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Sovereign On-Device Privacy Architecture</h3>
-                    <p className="mt-4 text-xs text-slate-300 leading-relaxed">
-                      Skepticism around telematics monitoring, GPS trackers, and black-box in-car cameras is entirely justified. Astrateq was created to demonstrate a complete alternative. Our software operates with strict edge-isolation boundaries. Your driving logs remain entirely yours.
+                    <h3 className="text-2xl font-black uppercase tracking-tight text-white font-sans">Sovereign On-Device Privacy Architecture</h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl font-sans">
+                      Skepticism around telematics monitoring, OBD trackers, and commercial dash cams is entirely justified. Astrateq represents a complete structural alternative: a software-only suite operating with absolute local isolation boundaries. Your personal metrics never exit your hardware.
                     </p>
 
-                    <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
-                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Vehicle Connection</p>
-                        <p className="text-[9px] text-slate-400 mt-2 leading-relaxed">Bypasses OBD and OBD-II ports completely. Reads zero vehicle computer logs, speed lines, or dashboard telemetry.</p>
+                    <div className="grid gap-4 sm:grid-cols-3 text-xs pt-4">
+                      <div className="p-4 rounded-xl border border-slate-800/60 bg-[#070D1A]/80 font-mono space-y-1.5">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-400">No Vehicle Connections</p>
+                        <p className="text-[10px] text-slate-400 leading-relaxed font-sans">Bypasses OBD and OBD-II ports entirely. Reads zero speed parameters, vehicle logs, or dashboard telemetry.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Insurance Sync</p>
-                        <p className="text-[9px] text-slate-400 mt-2 leading-relaxed">Sovereign database isolation. We never share metrics, focus variables, or cohort statuses with auto insurers.</p>
+                      <div className="p-4 rounded-xl border border-slate-800/60 bg-[#070D1A]/80 font-mono space-y-1.5">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-400">No Insurance Sharing</p>
+                        <p className="text-[10px] text-slate-400 leading-relaxed font-sans">Sovereign database structure. We never transmit focus data, route histories, or scoring details to insurance underwriters.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Driver Tracking</p>
-                        <p className="text-[9px] text-slate-400 mt-2 leading-relaxed">No remote GPS storage or network routes. Eyelid speed and focus ratios are calculated in local RAM and immediate erased.</p>
+                      <div className="p-4 rounded-xl border border-slate-800/60 bg-[#070D1A]/80 font-mono space-y-1.5">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-400">No Remote GPS Storage</p>
+                        <p className="text-[10px] text-slate-400 leading-relaxed font-sans">No background route tracking or location telemetry. Focus evaluations are calculated locally and immediately discarded from memory.</p>
                       </div>
                     </div>
 
-                    <div className="mt-4 grid gap-4 sm:grid-cols-2 text-xs">
-                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Surveillance</p>
-                        <p className="text-[9px] text-slate-400 mt-2 leading-relaxed">Zero camera video storage or feed logging. Vectors are mapped on-the-fly and immediately purged.</p>
+                    <div className="grid gap-4 sm:grid-cols-2 text-xs">
+                      <div className="p-4 rounded-xl border border-slate-800/60 bg-[#070D1A]/80 font-mono space-y-1.5">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-400">Zero Face Recording</p>
+                        <p className="text-[10px] text-slate-400 leading-relaxed font-sans">No video feeds, snapshots, or biometric images are ever saved or transmitted. Eye geometry is mapped in active RAM as floating-point vectors and immediately purged.</p>
                       </div>
-                      <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No Ads Data Resale</p>
-                        <p className="text-[9px] text-slate-400 mt-2 leading-relaxed">Astrateq contains no trackers, ad pixels, or commercial resale code. Calibrated only for Canadian data privacy guidelines.</p>
+                      <div className="p-4 rounded-xl border border-slate-800/60 bg-[#070D1A]/80 font-mono space-y-1.5">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-400">No Ad-Tracking Pixels</p>
+                        <p className="text-[10px] text-slate-400 leading-relaxed font-sans">Our builds contain zero commercial tracking codes, target pixels, or marketing brokers. Built exclusively for Canadian privacy compliance.</p>
                       </div>
                     </div>
+
+                    {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
+                    <div className="pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+                      <p className="text-slate-400 text-[11px] font-sans leading-relaxed max-w-md">
+                        Help us validate that software-only driver safety can exist with absolute privacy respect. Join the early validation community.
+                      </p>
+                      <button
+                        onClick={() => handleNavigate("cohort")}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-blue-700 active:scale-95 cursor-pointer font-mono shrink-0"
+                      >
+                        <span>Support Our Manifesto</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
