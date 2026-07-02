@@ -35,22 +35,22 @@ export default function Footer() {
                   Canadian Safety Standards
                 </p>
                 <p className="text-[11px] text-slate-400 mt-0.5">
-                  Pre-launch reservation platform designed specifically for Canadian road conditions.
+                  Pre-launch validation platform designed specifically for Canadian road conditions.
                 </p>
               </div>
             </div>
 
             {/* Center section: Questions */}
             <div className="flex flex-col gap-0.5 text-left md:text-right">
-              <span className="font-bold text-slate-800 uppercase tracking-wider text-[10px]">Pre-Order Coordinator</span>
-              <span className="text-[11px] text-slate-400">Our coordination team answers questions regarding pre-orders and priority shipping.</span>
+              <span className="font-bold text-slate-800 uppercase tracking-wider text-[10px]">Launch Coordinator</span>
+              <span className="text-[11px] text-slate-400">Our coordination team answers questions regarding early access and prototype participation.</span>
             </div>
 
             {/* Right section: Contact Support Link */}
             <div>
               <button
                 onClick={() => setIsSupportOpen(true)}
-                className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-colors cursor-pointer animate-pulse"
               >
                 <span>Contact Launch Coordinator</span>
                 <span className="text-blue-200 font-mono">→</span>
@@ -59,9 +59,9 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 border-t border-slate-100 pt-6 text-center text-[10px] text-slate-400 font-mono">
-            <p>© {new Date().getFullYear()} ASTRATEQ GADGETS. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} ASTRATEQ. All rights reserved.</p>
             <p className="mt-2 text-[9px] uppercase tracking-wider leading-relaxed text-slate-400 max-w-3xl mx-auto">
-              This platform is a <strong>pre-launch reservation & waitlist portal</strong> for the upcoming Astrateq Aware-1 dashboard alert console. All early pre-orders are 100% free with no deposit required. We do NOT sell auto insurance, track your GPS location, or require OBD/OBD-II vehicle port integration.
+              This platform is a <strong>conceptual pre-launch validation and waitlist portal</strong> for evaluating interest in upcoming Astrateq Driver Awareness Intelligence offline software. All early registrations are 100% free with no deposit required. We do NOT sell auto insurance, track your GPS location, require OBD/OBD-II vehicle port integration, or sell hardware.
             </p>
           </div>
         </div>
@@ -87,13 +87,13 @@ export default function Footer() {
             <div className="p-6">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-8 text-center">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                    <Check className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-4 text-sm font-bold text-slate-900 uppercase tracking-wider">Inquiry Received</h3>
-                  <p className="mt-2 text-xs text-slate-500 leading-relaxed max-w-xs">
-                    Your transmission was saved. A launch coordinator will respond at your registered email address.
-                  </p>
+                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                     <Check className="h-5 w-5" />
+                   </div>
+                   <h3 className="mt-4 text-sm font-bold text-slate-900 uppercase tracking-wider">Inquiry Received</h3>
+                   <p className="mt-2 text-xs text-slate-500 leading-relaxed max-w-xs">
+                     Your transmission was saved. A launch coordinator will respond at your registered email address.
+                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -120,13 +120,13 @@ export default function Footer() {
                       rows={4}
                       value={supportMsg}
                       onChange={(e) => setSupportMsg(e.target.value)}
-                      placeholder="Ask a question about the Astrateq Aware-1 dashboard console or submit reservation feedback..."
+                      placeholder="Ask a question about the Astrateq software concept or submit research feedback..."
                       className="w-full rounded border border-slate-200 p-2.5 text-xs focus:border-slate-400 focus:outline-none"
                     />
                   </div>
 
                   <p className="text-[10px] text-slate-400 leading-relaxed">
-                    By submitting, you agree to allow our team to contact you about your pre-order reservation and priority waitlist status.
+                    By submitting, you agree to allow our team to contact you about your pre-launch reservation and priority waitlist status.
                   </p>
 
                   <button
