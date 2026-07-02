@@ -5,7 +5,7 @@ import {
   Info, ChevronDown, ChevronUp, Sparkles, ArrowRight, RefreshCw, Compass
 } from "lucide-react";
 
-const HWY_404_POV_IMAGE = "/src/assets/images/windshield_hwy404_simulation_1783018308241.jpg";
+const HWY_404_POV_IMAGE = "/src/assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 
 interface ResultsDisplayProps {
   insights: DriverInsights;
@@ -131,7 +131,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           <div className="relative overflow-hidden rounded-xl h-60 lg:h-72 shadow-sm group border border-slate-200">
             <img 
               src={HWY_404_POV_IMAGE}
-              alt="Hwy 404 Windshield AR HUD Simulation"
+              alt="Driver Lifestyle AR HUD Simulation"
               referrerPolicy="no-referrer"
               className="absolute inset-0 h-full w-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
             />
@@ -142,9 +142,9 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               Pre-Launch Simulation Visual
             </div>
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-300 font-mono">Cognitive Driver Study</p>
-              <h3 className="mt-1 text-base font-bold uppercase tracking-wide">Hwy 404 Windshield AR HUD Simulation</h3>
-              <p className="text-[11px] text-slate-300 mt-1">First-person driver-gaze model calibrated for multi-lane Toronto routes.</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-300 font-mono">Cognitive Driver Cabin Study</p>
+              <h3 className="mt-1 text-base font-bold uppercase tracking-wide">Driver Cabin HUD Simulation</h3>
+              <p className="text-[11px] text-slate-300 mt-1">Active driver-gaze behavioral model mapping situational awareness in high-density Canadian transit.</p>
             </div>
           </div>
         </div>

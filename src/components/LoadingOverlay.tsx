@@ -71,24 +71,24 @@ export default function LoadingOverlay() {
       <div className="absolute top-[25%] left-[25%] w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-[25%] right-[25%] w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-xl overflow-hidden rounded-2xl border border-slate-800 bg-[#0B1220]/90 p-6 sm:p-8 text-white shadow-[0_0_50px_rgba(59,130,246,0.15)] relative">
+      <div className="w-full max-w-xl overflow-hidden rounded-2xl border-2 border-slate-700 bg-slate-900/98 p-6 sm:p-8 text-white shadow-[0_0_60px_rgba(59,130,246,0.35)] relative">
         
         {/* Decorative corner brackets */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyan-500/30 rounded-tl" />
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyan-500/30 rounded-tr" />
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyan-500/30 rounded-bl" />
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyan-500/30 rounded-br" />
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyan-500/40 rounded-tl" />
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyan-500/40 rounded-tr" />
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyan-500/40 rounded-bl" />
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyan-500/40 rounded-br" />
 
         {/* Engine Header */}
-        <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+        <div className="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-6">
           <div className="flex items-center gap-2">
             <Cpu className="h-5 w-5 text-blue-400 animate-pulse shrink-0" />
             <div>
-              <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 font-mono">ASTRATEQ ENGINE v1.04</span>
-              <h2 className="text-xs font-bold text-slate-200 font-mono mt-0.5">COGNITIVE COMPILING ENGINE</h2>
+              <span className="text-[9px] font-black uppercase tracking-widest text-slate-300 font-mono">ASTRATEQ ENGINE v1.04</span>
+              <h2 className="text-xs font-bold text-slate-100 font-mono mt-0.5">COGNITIVE COMPILING ENGINE</h2>
             </div>
           </div>
-          <div className="flex items-center gap-1.5 rounded bg-blue-500/15 border border-blue-500/30 px-2 py-0.5 text-[8.5px] font-bold text-blue-400 font-mono uppercase tracking-wider">
+          <div className="flex items-center gap-1.5 rounded bg-blue-500/15 border border-blue-500/40 px-2 py-0.5 text-[8.5px] font-bold text-blue-400 font-mono uppercase tracking-wider">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-400"></span>
@@ -101,13 +101,13 @@ export default function LoadingOverlay() {
         <div className="grid gap-6 md:grid-cols-2 mb-6">
           
           {/* Left Sub-Panel: Score Dial (Value locking to 82) */}
-          <div className="rounded-xl bg-slate-950/80 p-5 border border-slate-800 flex flex-col items-center justify-center space-y-4">
-            <span className="text-[8px] font-extrabold uppercase tracking-widest text-slate-400 font-mono">DRIVER AWARENESS SCORE</span>
+          <div className="rounded-xl bg-slate-950/95 p-5 border border-slate-700/80 flex flex-col items-center justify-center space-y-4">
+            <span className="text-[8px] font-extrabold uppercase tracking-widest text-slate-300 font-mono">DRIVER AWARENESS SCORE</span>
             
             {/* Cyber Ring */}
-            <div className="relative flex items-center justify-center h-32 w-32 rounded-full bg-gradient-to-b from-slate-900 to-slate-950 border-4 border-blue-500/30 shadow-[0_8px_20px_rgba(0,0,0,0.5)]">
+            <div className="relative flex items-center justify-center h-32 w-32 rounded-full bg-gradient-to-b from-slate-900 to-slate-950 border-4 border-blue-500/50 shadow-[0_8px_20px_rgba(0,0,0,0.5)]">
               {/* Spinning dotted orbit */}
-              <div className="absolute inset-1.5 rounded-full border border-dashed border-cyan-500/30 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute inset-1.5 rounded-full border border-dashed border-cyan-500/40 animate-[spin_20s_linear_infinite]" />
               
               {/* Dynamic Progress Indicator arc */}
               <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-cyan-400 border-r-blue-500 animate-[spin_3s_linear_infinite] opacity-50" />
@@ -122,21 +122,21 @@ export default function LoadingOverlay() {
               </div>
             </div>
 
-            <p className="text-[9px] text-slate-500 font-mono uppercase tracking-wider text-center">
+            <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider text-center">
               Calibrated against Canadian road safety indexes
             </p>
           </div>
 
           {/* Right Sub-Panel: Telemetry & Confidence Ratings */}
-          <div className="rounded-xl bg-slate-950/80 p-5 border border-slate-800 flex flex-col justify-between space-y-4 font-mono text-xs">
+          <div className="rounded-xl bg-slate-950/95 p-5 border border-slate-700/80 flex flex-col justify-between space-y-4 font-mono text-xs">
             
             {/* Telemetry Indicator 1: Confidence Rating */}
             <div className="space-y-1.5">
-              <div className="flex justify-between text-[9px] uppercase text-slate-400 tracking-wider">
+              <div className="flex justify-between text-[9px] uppercase text-slate-300 tracking-wider font-semibold">
                 <span>CONFIDENCE RATING</span>
                 <span className="text-cyan-400 font-bold">{confidence}% FOCAL ALIGNMENT</span>
               </div>
-              <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
+              <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-700">
                 <div 
                   className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-150" 
                   style={{ width: `${confidence}%` }}
@@ -145,18 +145,18 @@ export default function LoadingOverlay() {
             </div>
 
             {/* Telemetry Indicator 2: Privacy Execution */}
-            <div className="p-3 bg-slate-900/60 rounded border border-slate-800/80 flex items-center justify-between">
+            <div className="p-3 bg-slate-900/90 rounded border border-slate-700/80 flex items-center justify-between">
               <div className="space-y-0.5">
-                <p className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">PRIVACY STANDARDS</p>
+                <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">PRIVACY STANDARDS</p>
                 <p className="text-[10px] font-black uppercase text-emerald-400 tracking-wider">{ramStatus}</p>
               </div>
-              <div className={`p-1.5 rounded bg-slate-950 border ${ramStatus === "100% ISOLATED RAM" ? "border-emerald-500/30 text-emerald-400" : "border-slate-800 text-slate-500"}`}>
+              <div className={`p-1.5 rounded bg-slate-950 border ${ramStatus === "100% ISOLATED RAM" ? "border-emerald-500/40 text-emerald-400" : "border-slate-700 text-slate-300"}`}>
                 <Lock className={`h-4 w-4 ${ramStatus === "100% ISOLATED RAM" ? "animate-none" : "animate-pulse"}`} />
               </div>
             </div>
 
             {/* Diagnostic system output */}
-            <div className="text-[8px] text-slate-500 border-t border-slate-900 pt-3 flex items-center justify-between uppercase tracking-wider">
+            <div className="text-[8px] text-slate-400 border-t border-slate-800 pt-3 flex items-center justify-between uppercase tracking-wider">
               <div className="flex items-center gap-1">
                 <Activity className="h-3 w-3 text-cyan-500 animate-pulse" />
                 <span>Cabin Focal Scan Matrix</span>
@@ -168,9 +168,9 @@ export default function LoadingOverlay() {
         </div>
 
         {/* Lower Terminal: Diagnostic Steps Progress List */}
-        <div className="rounded-xl border border-slate-800 bg-[#070C15]/80 p-5 space-y-3.5 font-mono text-[10px]">
-          <div className="flex items-center gap-1.5 border-b border-slate-900 pb-2 text-[8px] font-extrabold uppercase text-slate-400 tracking-widest">
-            <Terminal className="h-3.5 w-3.5 text-slate-500" />
+        <div className="rounded-xl border border-slate-700 bg-slate-950/90 p-5 space-y-3.5 font-mono text-[10px]">
+          <div className="flex items-center gap-1.5 border-b border-slate-800 pb-2 text-[8px] font-extrabold uppercase text-slate-300 tracking-widest">
+            <Terminal className="h-3.5 w-3.5 text-slate-400" />
             <span>Telemetry Pipeline Diagnostics</span>
           </div>
 
