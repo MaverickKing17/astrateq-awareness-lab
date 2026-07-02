@@ -6,6 +6,7 @@ import SimulationForm from "./components/SimulationForm";
 import ResultsDisplay from "./components/ResultsDisplay";
 import CohortPage from "./components/CohortPage";
 import LoadingOverlay from "./components/LoadingOverlay";
+import HWY_404_POV_IMAGE from "./assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 import { DriverSimulationInputs, DriverInsights, ActivePage } from "./types";
 import { 
   Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check
@@ -156,9 +157,15 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             {/* Hero Section (Improvement 1, 8, 10, 11, 12) */}
-            <section className="relative overflow-hidden bg-gradient-to-b from-[#F3F8FF] to-[#F8FAFC] py-28 sm:py-36 border-b border-slate-200/60">
+            <section className="relative overflow-hidden py-28 sm:py-36 border-b border-slate-200/60">
+              {/* Cinematic Hero Background Integration */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center -z-20"
+                style={{ backgroundImage: `url(${HWY_404_POV_IMAGE})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/92 to-slate-50/95 -z-10" />
               <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-100 to-slate-100 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
+                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-100 to-slate-100 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72rem]" />
               </div>
 
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -461,67 +468,67 @@ export default function App() {
                       title: "Decides What Insights Matter",
                       desc: "Your simulation variables guide our eventual focus dashboard. By selecting which parameters to record, you direct what features our local edge model prioritizes.",
                       theme: {
-                        border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.25)]",
-                        iconColor: "text-blue-400",
-                        iconBg: "bg-blue-500/10 border-blue-500/30",
+                        border: "hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)]",
+                        iconColor: "text-blue-600",
+                        iconBg: "bg-blue-50 border-blue-200",
                       }
                     },
                     {
                       title: "Locks Down Privacy Standards",
                       desc: "Your feedback cements an alternative to remote insurance tracking, proving that drivers actively value zero-trace, local-memory data isolation standards.",
                       theme: {
-                        border: "border-cyan-500/80 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.25)]",
-                        iconColor: "text-cyan-400",
-                        iconBg: "bg-cyan-500/10 border-cyan-500/30",
+                        border: "hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]",
+                        iconColor: "text-cyan-600",
+                        iconBg: "bg-cyan-50 border-cyan-200",
                       }
                     },
                     {
                       title: "Declares What Drivers Value",
                       desc: "Standard safety suites demand constant cloud logins and OBD connections. Your signup demonstrates that drivers explicitly demand hardware-free, personal solutions.",
                       theme: {
-                        border: "border-indigo-500/80 hover:border-indigo-400 hover:shadow-[0_0_25px_rgba(99,102,241,0.25)]",
-                        iconColor: "text-indigo-400",
-                        iconBg: "bg-indigo-500/10 border-indigo-500/30",
+                        border: "hover:border-indigo-400 hover:shadow-[0_0_25px_rgba(99,102,241,0.15)]",
+                        iconColor: "text-indigo-600",
+                        iconBg: "bg-indigo-50 border-indigo-200",
                       }
                     },
                     {
                       title: "Determines Project Investment",
                       desc: "Strong regional metrics show partners that driver focus is a highly valued priority. Your participation triggers development of Canada's first sovereign driver AI.",
                       theme: {
-                        border: "border-amber-500/80 hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.25)]",
-                        iconColor: "text-amber-400",
-                        iconBg: "bg-amber-500/10 border-amber-500/30",
+                        border: "hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]",
+                        iconColor: "text-amber-600",
+                        iconBg: "bg-amber-50 border-amber-200",
                       }
                     },
                     {
                       title: "Coordinates Priority Rollout",
                       desc: "As an early contributor, your signup guarantees primary rollout access and locks in founding early-bird launch pricing without any monetary deposits.",
                       theme: {
-                        border: "border-emerald-500/80 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.25)]",
-                        iconColor: "text-emerald-400",
-                        iconBg: "bg-emerald-500/10 border-emerald-500/30",
+                        border: "hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]",
+                        iconColor: "text-emerald-600",
+                        iconBg: "bg-emerald-50 border-emerald-200",
                       }
                     },
                     {
                       title: "Adapts to Canadian Commutes",
                       desc: "Whether you drive frozen rural highways or heavy urban gridlocks, your province and routing parameters shape the algorithmic thresholds for localized weather variables.",
                       theme: {
-                        border: "border-rose-500/80 hover:border-rose-400 hover:shadow-[0_0_25px_rgba(244,63,94,0.25)]",
-                        iconColor: "text-rose-400",
-                        iconBg: "bg-rose-500/10 border-rose-500/30",
+                        border: "hover:border-rose-400 hover:shadow-[0_0_25px_rgba(244,63,94,0.15)]",
+                        iconColor: "text-rose-600",
+                        iconBg: "bg-rose-50 border-rose-200",
                       }
                     }
                   ].map((item, idx) => (
                     <div 
                       key={idx}
-                      className={`p-8 rounded-2xl border-2 bg-slate-900 text-white transition-all duration-300 transform hover:-translate-y-1 ${item.theme.border}`}
+                      className={`p-8 rounded-2xl border border-slate-200 bg-white shadow-lg text-slate-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl ${item.theme.border}`}
                       id={`app-value-prop-card-${idx}`}
                     >
                       <div className={`h-10 w-10 rounded-xl border flex items-center justify-center mb-6 ${item.theme.iconBg}`}>
                         <Check className={`h-5 w-5 ${item.theme.iconColor}`} />
                       </div>
-                      <h3 className="text-sm font-extrabold uppercase tracking-wider text-white font-mono mb-3">{item.title}</h3>
-                      <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
+                      <h3 className="text-sm font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-3">{item.title}</h3>
+                      <p className="text-xs text-slate-600 leading-relaxed font-sans font-medium">
                         {item.desc}
                       </p>
                     </div>
