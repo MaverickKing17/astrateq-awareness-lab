@@ -128,8 +128,9 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <div className="lg:col-span-5">
           <div className="relative overflow-hidden rounded-xl h-60 lg:h-72 shadow-sm group border border-slate-200">
             <img 
-              src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&w=1200&q=80"
-              alt="Canada Winding Mountain Road"
+              src="/src/assets/images/windshield_hwy404_simulation_1783018308241.jpg"
+              alt="Hwy 404 Windshield AR HUD Simulation"
+              referrerPolicy="no-referrer"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Ambient gradients */}
@@ -140,8 +141,8 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             </div>
             <div className="absolute bottom-6 left-6 right-6 text-white">
               <p className="text-[10px] font-bold uppercase tracking-wider text-slate-300 font-mono">Cognitive Driver Study</p>
-              <h3 className="mt-1 text-base font-bold uppercase tracking-wide">Trans-Canada Highway Simulation</h3>
-              <p className="text-[11px] text-slate-300 mt-1">Validating active attention cues over long continuous distances.</p>
+              <h3 className="mt-1 text-base font-bold uppercase tracking-wide">Hwy 404 Windshield AR HUD Simulation</h3>
+              <p className="text-[11px] text-slate-300 mt-1">First-person driver-gaze model calibrated for multi-lane Toronto routes.</p>
             </div>
           </div>
         </div>
@@ -576,10 +577,10 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               onClick={() => onNavigateToCohort(cohort.id)}
               className="w-full inline-flex items-center justify-center rounded bg-blue-600 border border-blue-500 hover:bg-blue-700 hover:border-blue-600 px-5 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all active:scale-[0.98] cursor-pointer font-mono"
             >
-              Join Research Cohort
+              {cohort.id === 'founding' ? 'Claim Founding Allocation' : 'Secure Priority Access'}
             </button>
-            <p className="text-center text-[9px] text-slate-500 font-mono uppercase tracking-wider mt-1">
-              SPOTS ARE LIMITED IN CA • FREE PARTICIPATION
+            <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-1 leading-normal">
+              Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
             </p>
           </div>
         </div>
@@ -646,7 +647,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             onClick={() => onNavigateToCohort(cohort.id)}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all active:scale-[0.98] cursor-pointer font-mono"
           >
-            Reserve Aware-1 Pre-Order Slot
+            {cohort.id === 'founding' ? 'Claim Founding Allocation' : 'Secure Priority Access'}
           </button>
           
           <button
@@ -657,8 +658,8 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </button>
         </div>
 
-        <p className="mt-4 text-[11px] text-slate-500 font-sans font-medium">
-          Secure your priority queue reservation slot today with zero upfront cost or credit card deposit.
+        <p className="mt-4 text-[11px] text-slate-500 font-sans font-semibold">
+          Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
         </p>
       </div>
 

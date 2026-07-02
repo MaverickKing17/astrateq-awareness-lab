@@ -345,13 +345,13 @@ export default function App() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-[10px] font-extrabold uppercase tracking-widest text-blue-400 font-mono">
-                    Live Progress Tracker
+                    Validation Study Milestones
                   </span>
                   <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl font-sans">
-                    Canadian Validation & Demand Metrics
+                    Canadian Pilot Cohort Targets
                   </h2>
-                  <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto leading-relaxed">
-                    Astrateq measures market validation through active driver participation. See our real-time regional indicators showing strong community momentum across Canada.
+                  <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+                    Astrateq is currently in the pre-launch validation phase. We are recruiting early pilot participants and gathering simulator diagnostics to establish localized safety baselines across Canada.
                   </p>
                 </div>
 
@@ -361,24 +361,24 @@ export default function App() {
                   {/* Card 1 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">FOUNDING DRIVERS</p>
-                      <p className="text-3xl font-black text-white">14,842</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">PILOT COHORT LIMIT</p>
+                      <p className="text-3xl font-black text-white">1,000</p>
                     </div>
                     <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
-                      <span className="text-emerald-400 font-bold font-mono text-[9px] block mb-1">+18.4% THIS WEEK</span>
-                      Growing national validation study as drivers join the community.
+                      <span className="text-cyan-400 font-bold font-mono text-[9px] block mb-1">FOUNDING ALLOCATIONS</span>
+                      Early pilot slots are capped to maintain direct developer communication and hardware support.
                     </p>
                   </div>
 
                   {/* Card 2 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">COMPLETED SIMULATIONS</p>
-                      <p className="text-3xl font-black text-white">21,490 +</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">STUDY TARGET SIZE</p>
+                      <p className="text-3xl font-black text-white">5,000</p>
                     </div>
                     <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
-                      <span className="text-blue-400 font-bold font-mono text-[9px] block mb-1">REAL-TIME RESEARCH</span>
-                      Anonymous diagnostic insights improving daily safety baselines.
+                      <span className="text-blue-400 font-bold font-mono text-[9px] block mb-1">SIMULATION RUNS</span>
+                      Required anonymous driver focus runs to calibrate cognitive fatigue baselines on Canadian roads.
                     </p>
                   </div>
 
@@ -389,20 +389,20 @@ export default function App() {
                       <p className="text-3xl font-black text-white">10 / 10</p>
                     </div>
                     <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
-                      <span className="text-cyan-400 font-bold font-mono text-[9px] block mb-1">COAST TO COAST</span>
-                      Active contributors mapping Canadian weather and cold commutes.
+                      <span className="text-indigo-400 font-bold font-mono text-[9px] block mb-1">COAST TO COAST</span>
+                      Gathering telemetry to validate edge calculations in winter conditions across all provinces.
                     </p>
                   </div>
 
                   {/* Card 4 */}
                   <div className="p-6 rounded-xl border border-slate-800 bg-slate-950/60 backdrop-blur-md flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
                     <div className="space-y-2">
-                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">VALIDATION THRESHOLD</p>
-                      <p className="text-3xl font-black text-white">84%</p>
+                      <p className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold">LAUNCH STAGE</p>
+                      <p className="text-3xl font-black text-white">PHASE 1</p>
                     </div>
                     <p className="text-[10px] text-slate-400 mt-4 leading-relaxed font-sans">
-                      <span className="text-indigo-400 font-bold font-mono text-[9px] block mb-1">PROTOTYPE TRIGGER</span>
-                      Early validation metrics met before unlocking prototype pipeline.
+                      <span className="text-emerald-400 font-bold font-mono text-[9px] block mb-1">CONCEPT VALIDATION</span>
+                      Confirming demand and aggregating initial driver telemetry before starting hardware production.
                     </p>
                   </div>
 
@@ -410,26 +410,26 @@ export default function App() {
 
                 <div className="mt-10 grid gap-4 grid-cols-1 md:grid-cols-2 text-xs text-slate-400 border-t border-slate-800/80 pt-8 font-mono">
                   <div className="flex items-center gap-3">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                    <span><strong>Current Stage:</strong> Concept Validation & Demand Mapping</span>
+                    <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+                    <span><strong>Current Stage:</strong> Active Pre-Launch Pilot Recruitment</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="h-2 w-2 rounded-full bg-blue-500" />
-                    <span><strong>Milestone Target:</strong> Prototyping trigger scheduled upon reaching 18,000 cohort signups.</span>
+                    <span className="h-2 w-2 rounded-full bg-cyan-500" />
+                    <span><strong>Milestone Target:</strong> Initial prototype manufacturing scheduled once target cohorts are secured.</span>
                   </div>
                 </div>
 
                 {/* SUBTLE INTEGRATED CTA (Improvement 7) */}
                 <div className="mt-12 text-center p-6 rounded-xl border border-slate-800 bg-black/40 max-w-xl mx-auto">
                   <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                    Ready to contribute your anonymous focus data to this database? Complete the 60-second diagnostic simulator to calibrate your personal rating.
+                    Want to contribute to our early research and establish your custom driver focus score? Try the 60-second diagnostic simulator.
                   </p>
                   <div className="mt-4">
                     <button
                       onClick={handleStartSimulation}
                       className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-blue-700 active:scale-95 cursor-pointer font-mono"
                     >
-                      <span>Contribute Simulator Run</span>
+                      <span>Start Anonymous Diagnostic</span>
                       <ArrowRight className="h-3.5 w-3.5" />
                     </button>
                   </div>

@@ -223,6 +223,31 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 Reserve your early software priority slot today. No payment, deposit, or binding commitment is required. Joining the validation effort registers your queue placement and guarantees up to a <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-2">50% discount</span> once the offline platform is production-ready.
               </motion.p>
               
+              {/* Premium Advanced R&D Lab Visual Embedding */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white p-2.5 max-w-xl group"
+              >
+                <div className="relative overflow-hidden rounded-xl h-44 sm:h-52">
+                  <img
+                    src="/src/assets/images/automotive_rd_lab_1783018331045.jpg"
+                    alt="Advanced Automotive Human-Factors R&D Laboratory Workstation"
+                    referrerPolicy="no-referrer"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-750 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/10 to-transparent" />
+                  <div className="absolute bottom-3.5 left-4 right-4 text-white flex justify-between items-end">
+                    <div>
+                      <span className="text-[8px] font-extrabold uppercase tracking-widest text-cyan-400 font-mono">LABORATORY SPECIFICATION</span>
+                      <h4 className="text-xs font-black uppercase tracking-wide">ASTRATEQ COGNITIVE R&D LAB</h4>
+                    </div>
+                    <span className="text-[8px] font-mono uppercase bg-blue-600/90 backdrop-blur-md border border-blue-400/30 px-2 py-0.5 rounded text-white tracking-widest font-bold">ACTIVE TEST RUN</span>
+                  </div>
+                </div>
+              </motion.div>
+              
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -233,7 +258,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   onClick={() => scrollToForm()}
                   className="group inline-flex items-center justify-center gap-2.5 rounded bg-blue-600 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_18px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer font-mono"
                 >
-                  <span>Select Collaboration Level</span>
+                  <span>Secure Priority Access</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </motion.div>
@@ -658,8 +683,8 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl font-sans">
               Built without tracking
             </h2>
-            <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto font-sans">
-              Our software operates inside volatile memory buffers to fully isolate and safeguard your digital rights.
+            <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto font-sans font-medium">
+              Engineered with 100% On-Device Edge Processing. Your telemetry never touches the cloud. What happens in the cabin, stays in the cabin.
             </p>
           </div>
 
@@ -781,7 +806,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                           : "bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
                       }`}
                     >
-                      <span>{isSelected ? "Selected Level" : "Select Level & Register"}</span>
+                      <span>{isSelected ? "Allocation Locked" : (tier.id === "founding" ? "Claim Founding Allocation" : "Secure Priority Access")}</span>
                       <ArrowRight className="h-3.5 w-3.5" />
                     </button>
                   </div>
@@ -968,18 +993,18 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>Processing Registration...</span>
+                      <span>Securing Allocation...</span>
                     </>
                   ) : (
                     <>
-                      <span>Submit Priority Registration</span>
+                      <span>{selectedTier === 'founding' ? 'Claim Founding Allocation' : 'Secure Priority Access'}</span>
                       <ArrowRight className="h-4 w-4" />
                     </>
                   )}
                 </button>
                 
-                <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-3">
-                  No deposit required • Bypasses OBD-II • No insurance logs • Cancel anytime
+                <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-3 leading-normal">
+                  Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
                 </p>
 
               </form>
@@ -1008,7 +1033,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   onClick={() => scrollToForm()}
                   className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 hover:bg-blue-700 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer font-mono"
                 >
-                  <span>Join the Research Cohort</span>
+                  <span>Secure Priority Access</span>
                 </button>
                 <button
                   onClick={activeOnStartSimulation}
@@ -1018,8 +1043,8 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 </button>
               </div>
 
-              <p className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">
-                No deposit required • Bypasses OBD-II • Cancel anytime
+              <p className="text-[10px] text-slate-400 font-mono uppercase tracking-widest leading-normal">
+                Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
               </p>
             </div>
           </div>
