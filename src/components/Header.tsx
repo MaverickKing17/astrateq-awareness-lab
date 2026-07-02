@@ -47,7 +47,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => scrollToSection("value-props")}
             className="transition-colors hover:text-slate-900 cursor-pointer"
           >
-            About
+            Device Specs
           </button>
           <button
             onClick={() => scrollToSection("how-it-works")}
@@ -73,7 +73,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
               activePage === "cohort" ? "text-slate-900 font-bold" : "hover:text-slate-900"
             }`}
           >
-            Research Cohort
+            Reserve Aware-1
           </button>
         </nav>
 
@@ -83,7 +83,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => handleMobileNavigate("cohort")}
             className="hidden sm:inline-flex items-center justify-center rounded bg-blue-600 px-4 py-2 text-[10px] font-bold text-white shadow-[0_2px_8px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_4px_12px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer uppercase tracking-wider font-mono"
           >
-            Join Research Cohort
+            Reserve Aware-1
           </button>
 
           {/* Mobile indicator for study */}
@@ -110,7 +110,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => scrollToSection("value-props")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
           >
-            About Study
+            Device Specs
           </button>
           <button
             onClick={() => scrollToSection("how-it-works")}
@@ -138,7 +138,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
                 : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
             }`}
           >
-            Research Cohort
+            Reserve Aware-1
           </button>
           <div className="pt-2 px-3">
             <button

@@ -46,45 +46,50 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
   const tiers = [
     {
       id: "access",
-      title: "Awareness Participant",
-      levelLabel: "Level 1",
-      desc: "For users who complete the simulation and want light concept validation reports.",
-      requirement: "Periodic voluntary feedback surveys",
+      title: "Standard Priority Reservation",
+      levelLabel: "Early-Bird Queue",
+      desc: "Perfect for everyday drivers looking to secure their Aware-1 alert console at a baseline launch discount.",
+      requirement: "Free reservation slot with no deposit",
       features: [
-        "Quarterly Canadian driver statistics",
-        "Early conceptual update briefs",
-        "100% software-based research updates"
+        "20% Guaranteed Launch Discount",
+        "Production queue status notifications",
+        "Standard Matte Graphite chassis",
+        "No credit card required to secure slot"
       ],
-      badge: "General Update",
+      badge: "20% LAUNCH DISCOUNT",
       color: "border-slate-200 bg-white text-slate-900"
     },
     {
       id: "guardian",
-      title: "Guardian Research Participant",
-      levelLabel: "Level 2",
-      desc: "For users highly interested in fatigue awareness, attention patterns, and privacy-first safety tools.",
-      requirement: "Monthly optional simulator evaluations",
+      title: "VIP Elite Reservation",
+      levelLabel: "Batch 1 Guaranteed",
+      desc: "Our most popular tier. Secures early production priority and maximum locked-in savings.",
+      requirement: "Free priority slot with no deposit",
       features: [
-        "Personalized simulated fatigue trends",
-        "Direct email feedback log with researchers",
-        "Priority invitation to focus group studies"
+        "40% VIP Launch Discount (Locked-In)",
+        "Guaranteed Batch 1 Priority Shipment",
+        "Exclusive Slate Silver metallic finish",
+        "Priority beta firmware feature voting rights",
+        "Cancel anytime with zero penalty"
       ],
-      badge: "High Engagement",
+      badge: "40% VIP DISCOUNT • POPULAR",
       color: "border-blue-500 bg-white text-slate-900",
       highlight: true
     },
     {
       id: "founding",
-      title: "Founding Validation Participant",
-      levelLabel: "Level 3",
-      desc: "For high-intent users willing to provide deeper feedback as the software concept develops.",
-      requirement: "Quarterly virtual advisory interviews",
+      title: "Founding Backer Allocation",
+      levelLabel: "Batch 1 Executive",
+      desc: "For ultimate driver safety advocates wishing to collaborate with Astrateq hardware engineers.",
+      requirement: "Free executive slot with no deposit",
       features: [
-        "Co-author attribution opportunities on research",
-        "Closed-door conceptual roundtables",
-        "Lifetime platform validation credits"
+        "50% Custom Founding Launch Discount",
+        "Chassis laser-engraved with your custom name plate",
+        "Lifetime core firmware updates free of charge",
+        "Direct virtual roundtable interviews with builders",
+        "Founding steering panel feature voting rights"
       ],
-      badge: "Steering Panel",
+      badge: "50% FOUNDING DISCOUNT",
       color: "border-rose-500 bg-slate-950 text-white"
     }
   ];
@@ -92,35 +97,27 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
   const faqItems = [
     {
       q: "Is this a real product yet?",
-      a: "No. Astrateq Gadgets is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This is a concept validation system, not a finished application, subscription, or SaaS product."
+      a: "Yes, Astrateq is pre-launching the production queue for the Astrateq Aware-1 dashboard alert console. We are conducting this market validation and priority reservation campaign to gauge production batch volumes across Canadian provinces. Your reservation locks in your priority discount queue slot with zero deposit."
     },
     {
-      q: "Is this connected to my vehicle?",
-      a: "No. This is a software-based behavioral simulation and does not connect to any vehicle systems, OBD ports, or vehicle electronics."
+      q: "Is this connected to my vehicle's computer?",
+      a: "No. Unlike intrusive telematics adapters, the Astrateq Aware-1 is 100% independent. It does not plug into your OBD or OBD-II ports, doesn't read vehicle diagnostic codes, and does not require wire splicing. It is powered via a simple USB-C or standard 12V outlet."
     },
     {
-      q: "Does this require hardware?",
-      a: "No. This is a purely browser-based cognitive research study. No physical devices, dashcams, on-board trackers, or adapters are needed or distributed."
+      q: "Does this require complex hardware installation?",
+      a: "Not at all. The Aware-1 is designed for instant, tool-free setup. It attaches magnetically to a subtle, damage-free dashboard gel mount. You can dock or undock the device in less than a second."
     },
     {
       q: "Is this used by insurance companies?",
-      a: "Absolutely not. Privacy is our highest priority. Your responses and overall scores are completely anonymous, encrypted, and are never shared, leased, or sold to automotive insurers, marketing agencies, or external databases."
+      a: "Absolutely not. Privacy is our highest priority. The Astrateq Aware-1 runs entirely localized Edge AI. There is no cellular transmitter, no GPS tracking, and no cloud storage. Since no cameras record footage and all eye-mesh vectors are calculated locally and immediately discarded, no data can ever be shared, sold, or leased to insurers or third parties."
     },
     {
-      q: "What does joining the research cohort mean?",
-      a: "Joining the research cohort means you register your interest in early concept updates and optional feedback cycles, helping validate whether this software-based driver awareness concept should move toward future development."
+      q: "What is the 60-Second Driver Awareness Simulator?",
+      a: "The simulator is our interactive diagnostic lead magnet. It is a quick, browser-based questionnaire designed to gauge your fatigue exposure and attentiveness. Completing it helps model your driving risk parameters, calibrates your Aware-1 alerts, and instantly unlocks a 40% early-bird launch discount code."
     },
     {
-      q: "What happens after I join?",
-      a: "You will receive an automated confirmation and optional, high-level updates as our concept validation progresses. There is no purchase commitment or product contract involved."
-    },
-    {
-      q: "Will this become a prototype?",
-      a: "The goal of this pre-launch market validation study is to gauge demand among Canadian drivers. If we observe strong, high-intent interest across our research cohorts, we will evaluate moving the concept toward prototype development."
-    },
-    {
-      q: "How is this different from telematics, dashcams, or OBD devices?",
-      a: "Traditional tools monitor physical vehicles or capture external video feeds. Astrateq Gadgets takes a completely different path—we focus purely on cognitive and behavioral awareness, designed to help everyday drivers understand their own focus habits and fatigue indicators in a privacy-first, software-only environment."
+      q: "What happens after I reserve?",
+      a: "You will receive an immediate confirmation of your reservation slot. We will send you priority production updates, behind-the-scenes engineering design files, and shipping notifications as your queue slot approaches. There is no deposit required and you can cancel anytime."
     }
   ];
 
@@ -187,9 +184,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       {/* GLOBAL GLOW MOTIFS */}
       <div className="absolute top-[8%] left-[-15%] w-[50vw] h-[50vw] bg-blue-400/5 blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="absolute top-[30%] right-[-15%] w-[45vw] h-[45vw] bg-cyan-400/5 blur-[150px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-[60%] left-[-10%] w-[40vw] h-[40vw] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none -z-10" />
-
-      {/* SECTION 1 — HERO: THE BIG BELIEF STATEMENT */}
+      <div className="absolute top-[60%] left-[-10%] w-[40vw] h-[40vw] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none -z-10" />      {/* SECTION 1 — HERO: THE PRE-ORDER CONVICTION STATEMENT */}
       <section className="relative overflow-hidden pt-20 pb-24 md:py-32 border-b border-slate-200/50 bg-gradient-to-b from-[#F3F8FF] to-[#EAF3FB]">
         <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-[radial-gradient(#3b82f6_1.5px,transparent_1.5px)] [background-size:24px_24px]" />
         
@@ -205,7 +200,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 className="inline-flex items-center gap-2 border border-blue-200/60 bg-blue-50/70 px-4 py-1.5 text-[9px] font-extrabold uppercase tracking-widest text-blue-700 font-mono rounded-full shadow-xs"
               >
                 <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-                🇨🇦 Canada Driver Safety Research Initiative
+                🇨🇦 Astrateq Canada Production Reservation Campaign
               </motion.div>
               
               <motion.h1 
@@ -214,11 +209,11 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-900 leading-[1.08] font-sans"
               >
-                Discover your <br className="hidden sm:inline" />
+                Secure your <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">
-                  Driver Awareness Profile
+                  Priority Production Slot
                 </span> <br />
-                in 60 seconds.
+                for the Aware-1.
               </motion.h1>
               
               <motion.p 
@@ -227,7 +222,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl font-sans font-medium"
               >
-                Complete a short behavioral simulation to receive a conceptual Awareness Score, Fatigue Exposure Profile, and Research Cohort Classification — <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-2">without vehicle tracking, insurance scoring, or hardware</span>.
+                Reserve your Astrateq Aware-1 dashboard alert console today. No deposit, credit card, or financial commitment is required. Locking in your spot registers your batch queue and reserves up to a <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-2">50% discount</span> on the final production batch.
               </motion.p>
               
               <motion.div 
@@ -237,10 +232,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 className="pt-4 flex flex-col sm:flex-row gap-4"
               >
                 <button
-                  onClick={activeOnStartSimulation}
+                  onClick={() => scrollToForm()}
                   className="group inline-flex items-center justify-center gap-2.5 rounded bg-blue-600 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_18px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer font-mono"
                 >
-                  <span>Start Awareness Simulation</span>
+                  <span>Select Tier & Reserve</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </motion.div>
@@ -251,7 +246,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-[10px] sm:text-xs text-slate-500 font-mono"
               >
-                Takes under 60 seconds · No vehicle connection · No insurance use · No hardware required
+                Takes under 30 seconds • No vehicle connection • No insurance telematics • Cancel anytime
               </motion.p>
 
               <motion.div 
@@ -266,64 +261,82 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-emerald-500" />
-                  <span>No Hardware Deposits</span>
+                  <span>No Deposits Required</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-emerald-500" />
-                  <span>100% Privacy Focused</span>
+                  <span>100% Edge AI Privacy</span>
                 </div>
               </motion.div>
             </div>
 
-            {/* Right Mini Dashboard Column (Tier 1 Conversion Card) */}
+            {/* Right Mini Dashboard Column (Tactile Pre-Order Queue Ticket) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
               className="lg:col-span-5 flex justify-center"
             >
-              <div className="relative w-full max-w-md rounded-2xl border border-blue-200/50 bg-white/95 backdrop-blur-md p-6 shadow-[0_20px_50px_rgba(59,130,246,0.12)] shadow-cyan-500/5 overflow-hidden group hover:border-cyan-400/50 transition-colors duration-300">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f604_1px,transparent_1px),linear-gradient(to_bottom,#3b82f604_1px,transparent_1px)] bg-[size:16px_16px]" />
+              <div className="relative w-full max-w-sm rounded-2xl border-2 border-dashed border-slate-300 bg-white p-6 shadow-xl overflow-hidden group hover:border-blue-500 transition-all duration-300">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f602_1px,transparent_1px),linear-gradient(to_bottom,#3b82f604_1px,transparent_1px)] bg-[size:16px_16px]" />
                 
+                {/* Decorative cutouts to simulate a physical ticket */}
+                <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#EAF3FB] border-r border-slate-300 z-10" />
+                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#EAF3FB] border-l border-slate-300 z-10" />
+
                 <div className="relative z-10 space-y-5">
                   <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                     <div className="flex flex-col">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 font-mono">Cognitive Sandbox v1.4</span>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 font-mono mt-0.5">Preview of your simulated awareness output</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 font-mono">ASTRATEQ REGISTRY</span>
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 font-mono mt-0.5">Priority Queue Slot Ticket</span>
                     </div>
-                    <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-[9px] font-bold text-slate-800 uppercase tracking-wide font-mono">Calibrated</span>
+                    <span className="inline-flex items-center rounded bg-blue-50 border border-blue-200 px-2.5 py-0.5 text-[8px] font-bold text-blue-700 uppercase tracking-wide font-mono">ACTIVE SLOT</span>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center py-6">
-                    <div className="relative h-32 w-32 flex items-center justify-center rounded-full border border-blue-100 bg-blue-50/20 shadow-inner">
-                      <svg className="absolute inset-0 transform -rotate-90" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#EFF6FF" strokeWidth="8" fill="transparent" />
-                        <circle cx="50" cy="50" r="42" stroke="#3b82f6" strokeWidth="8" fill="transparent" strokeDasharray="263" strokeDashoffset="52" strokeLinecap="round" />
-                      </svg>
-                      <div className="text-center">
-                        <span className="block text-3xl font-black text-slate-800 tracking-tight">80</span>
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest font-mono">Aware Index</span>
-                      </div>
+                  <div className="space-y-3 font-mono text-[10px]">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400 uppercase">EST DELIVERY:</span>
+                      <span className="text-slate-900 font-black">Q4 2026</span>
                     </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-4 text-center">
-                    <div>
-                      <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest font-mono">Fatigue Risk</p>
-                      <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono mt-1">Low Risk</p>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400 uppercase">BATCH CLASSIFICATION:</span>
+                      <span className="text-slate-900 font-black">BATCH 1 PRIORITY</span>
                     </div>
-                    <div className="border-x border-slate-100">
-                      <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest font-mono">Attention</p>
-                      <p className="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono mt-1">95%</p>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400 uppercase">SECURED DISCOUNT:</span>
+                      <span className="text-emerald-600 font-black">UP TO 50% LAUNCH REFUND</span>
                     </div>
-                    <div>
-                      <p className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest font-mono">Readiness</p>
-                      <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider font-mono mt-1">Optimal</p>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400 uppercase">SECURITY PROTOCOL:</span>
+                      <span className="text-slate-900 font-black">100% OFFLINE EDGE AI</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400 uppercase">REGION ENFORCEMENT:</span>
+                      <span className="text-slate-900 font-black">CANADA SOVEREIGN</span>
                     </div>
                   </div>
 
-                  <p className="text-center text-[8px] font-bold text-slate-400 uppercase tracking-widest font-mono pt-2">
-                    Simulated Output • Not Real-world data
+                  <div className="border-t border-dashed border-slate-200 pt-4 text-center">
+                    <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">RESERVATION KEY</p>
+                    <p className="text-lg font-black text-slate-800 uppercase tracking-wider font-mono mt-1">CAN-A1-PENDING</p>
+                  </div>
+
+                  {/* Pseudo Barcode */}
+                  <div className="flex justify-center items-center gap-0.5 h-10 w-full bg-slate-50 rounded border border-slate-100 px-3 opacity-60">
+                    {[1, 3, 2, 4, 1, 3, 2, 4, 1, 2, 4, 3, 1, 3, 2, 4, 1, 2, 3, 4, 2, 1, 3, 4, 1, 2, 3, 1, 4, 3].map((val, idx) => (
+                      <div 
+                        key={idx} 
+                        className="bg-slate-800 rounded-xs" 
+                        style={{ 
+                          width: val === 4 ? "4px" : val === 3 ? "3px" : val === 2 ? "2px" : "1px",
+                          height: "24px" 
+                        }} 
+                      />
+                    ))}
+                  </div>
+
+                  <p className="text-center text-[7px] font-bold text-slate-400 uppercase tracking-widest font-mono">
+                    Zero Deposit Ticket • Submit Form Below to Confirm Key
                   </p>
                 </div>
               </div>
@@ -333,19 +346,19 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 2 — WHAT YOU RECEIVE IN 60 SECONDS (New Value Section) */}
+      {/* SECTION 2 — WHAT YOU SECURE WITH YOUR FREE RESERVATION */}
       <section className="py-20 sm:py-28 bg-white border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
-              Immediate Evaluation Outputs
+              Reservation Benefits
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
-              What you receive in 60 seconds
+              What You Secure with Your Free Reservation
             </h2>
             <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-sans">
-              Complete the rapid cognitive simulator to map your personalized driving habits and unlock key metrics.
+              Locking in your priority pre-order places you in our Canada production batch with zero financial commitment.
             </p>
           </div>
 
@@ -353,18 +366,18 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             {[
               {
                 icon: <Award className="h-6 w-6 text-blue-600" />,
-                title: "Awareness Score",
-                desc: "A simulated 0–100 profile based on driving habits, fatigue exposure, and attention patterns."
+                title: "Guaranteed Production Slot",
+                desc: "Secure your place in the initial Canada shipping queue. As soon as production tooling commences, your slot is locked."
               },
               {
-                icon: <Brain className="h-6 w-6 text-cyan-500" />,
-                title: "Fatigue Exposure Profile",
-                desc: "See how commute timing, longer drives, night driving, and road conditions may affect awareness."
+                icon: <Sparkles className="h-6 w-6 text-cyan-500" />,
+                title: "Up to 50% Early-Bird Discount",
+                desc: "Registration completely locks in your discount value, which will be applied directly to your purchase upon device release."
               },
               {
                 icon: <Users className="h-6 w-6 text-indigo-600" />,
-                title: "Research Cohort Classification",
-                desc: "Learn whether your profile aligns with Astrateq’s concept validation cohort."
+                title: "Engineering Status Briefs",
+                desc: "Receive direct briefs and hardware logs detailing physical injection molding, optical calibration, and Canadian laboratory testing."
               }
             ].map((item, idx) => (
               <motion.div 
@@ -389,7 +402,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 3 — EMOTIONAL CANADIAN DRIVER RELEVANCE SECTION (New Value Section) */}
+      {/* SECTION 3 — EMOTIONAL CANADIAN DRIVER RELEVANCE SECTION */}
       <section className="py-20 sm:py-28 bg-white border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -403,7 +416,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 Why this matters for Canadian drivers
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans font-medium">
-                Canadian drivers face long commutes, winter conditions, night driving, traffic fatigue, and growing privacy concerns around tracking-based tools. Astrateq Gadgets is exploring a software-based awareness model that helps drivers understand fatigue and focus patterns without turning their driving behavior into surveillance data.
+                Canadian drivers face winter blackouts, endless highway distances, dark commutes, and growing privacy anxiety around tracking-based insurance apps. The Astrateq Aware-1 is a localized hardware console that runs edge-AI offline, designed specifically to help drivers stay awake and alert without sending private data to the cloud.
               </p>
             </div>
 
@@ -412,17 +425,17 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 {
                   icon: <AlertTriangle className="h-5 w-5 text-amber-500" />,
                   title: "Fatigue can build quietly",
-                  desc: "Attention can decline gradually during long commutes, late drives, or repeated daily travel."
+                  desc: "Attention declines gradually during late night commutes or during repeated multi-hour trips."
                 },
                 {
                   icon: <ShieldAlert className="h-5 w-5 text-red-500" />,
-                  title: "Existing tools feel invasive",
-                  desc: "Many solutions rely on cameras, GPS tracking, vehicle data, or insurance scoring."
+                  title: "Tracking tools feel invasive",
+                  desc: "Many solutions rely on invasive phone cameras, constant GPS tracking, or insurance company oversight."
                 },
                 {
                   icon: <MapPin className="h-5 w-5 text-blue-500" />,
-                  title: "Canadian driving adds pressure",
-                  desc: "Weather, highway distances, darkness, congestion, and seasonal conditions can shape awareness patterns."
+                  title: "Calibrated for Canada",
+                  desc: "Built to perform in extreme cold weather, glare, snow reflections, and long rural stretches."
                 }
               ].map((item, idx) => (
                 <div 
@@ -447,19 +460,19 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 4 — WHAT THIS SIMULATION HELPS VALIDATE (Research section) */}
+      {/* SECTION 4 — HARDWARE SPECIFICATIONS */}
       <section className="py-20 sm:py-28 bg-[#EDF5FC] border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 border border-blue-200/80 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
-              Research Hypotheses
+              Device Specs
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
-              What this simulation helps validate
+              Aware-1 Technical Specifications
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed max-w-xl mx-auto font-sans">
-              Astrateq Gadgets is learning whether Canadian drivers want privacy-first awareness tools that help them reflect on fatigue exposure, attention patterns, and driving context.
+              Engineered with physical component integrity, high-precision local optics, and high-efficiency offline neural accelerators.
             </p>
           </div>
 
@@ -467,18 +480,18 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             {[
               {
                 icon: <Brain className="h-5 w-5 text-blue-600" />,
-                title: "Awareness patterns",
-                desc: "Can a short simulation help drivers reflect on attention and focus habits?"
+                title: "Offline Edge AI Silicon",
+                desc: "Integrated neural core running localized gaze-vectors. Zero remote cloud dependency, and zero latency."
               },
               {
                 icon: <Eye className="h-5 w-5 text-cyan-600" />,
-                title: "Fatigue context",
-                desc: "Do driving time, commute type, and repeated trips affect perceived alertness?"
+                title: "Non-Contact IR Matrix",
+                desc: "High-contrast iris and eyelid tracker compatible with polarized sunglasses, corrective lenses, and night conditions."
               },
               {
                 icon: <Users className="h-5 w-5 text-indigo-600" />,
-                title: "Behavioral safety profiles",
-                desc: "Do Canadian drivers cluster into different awareness and fatigue patterns?"
+                title: "Aviation-Grade Chassis",
+                desc: "Anodized aluminum alloy casing with magnetic quick-mount base and high-temperature dashboard adhesive."
               }
             ].map((prob, idx) => (
               <div 
@@ -501,19 +514,19 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 5 — HOW THE VALIDATION PROCESS WORKS (Research/Validation Section) */}
+      {/* SECTION 5 — HOW THE RESERVATION PROCESS WORKS */}
       <section className="py-20 sm:py-28 bg-[#EDF5FC] border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full font-mono">
-              Simple Engagement Flow
+              Simple Pre-Order Flow
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
-              How the Validation Process Works
+              How the Reservation Works
             </h2>
             <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-sans">
-              We design our research validation to be extremely smooth, transparent, and direct.
+              Secure your hardware unit through a clean, fully transparent validation queue.
             </p>
           </div>
 
@@ -525,23 +538,23 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             {[
               {
                 step: "01",
-                title: "Answer questions",
-                desc: "Share driving context, fatigue exposure, and attention habits."
+                title: "Select Reservation Level",
+                desc: "Choose from Standard, VIP Elite, or Founding Backer with zero pre-payment required."
               },
               {
                 step: "02",
-                title: "Generate profile",
-                desc: "Receive a simulated awareness score and fatigue exposure profile."
+                title: "Qualify for Discount (Optional)",
+                desc: "Try our rapid 60-second diagnostic simulator to unlock an additional 40% discount on release."
               },
               {
                 step: "03",
-                title: "Review awareness insights",
-                desc: "Understand what your simulated profile suggests."
+                title: "Track Manufacturing Status",
+                desc: "Get real development logs as we finalize CNC enclosure tooling and PCB layouts."
               },
               {
                 step: "04",
-                title: "Join research cohort",
-                desc: "Choose whether to participate in the validation study."
+                title: "Finalize & Secure Delivery",
+                desc: "Provide your delivery address only when your specific production queue number is ready to ship."
               }
             ].map((flow, idx) => (
               <div key={idx} className="relative p-6 rounded-xl border border-slate-200 bg-white hover:border-blue-400 transition-all duration-300 flex flex-col justify-between shadow-xs">
@@ -549,7 +562,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   <div className="h-8 w-8 rounded-full bg-blue-600 text-white font-mono text-xs font-bold flex items-center justify-center mb-4 shadow-sm">
                     {flow.step}
                   </div>
-                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{flow.title}</h4>
+                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{flow.step === "02" ? "Try Diagnostic Simulator" : flow.title}</h4>
                   <p className="text-xs text-slate-500 leading-relaxed font-sans">
                     {flow.desc}
                   </p>
@@ -560,10 +573,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
 
           <div className="mt-14 flex justify-center">
             <button
-              onClick={activeOnStartSimulation}
+              onClick={onStartSimulation}
               className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 hover:bg-blue-700 px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.2)] transition-all cursor-pointer font-mono"
             >
-              <span>Start Awareness Simulation</span>
+              <span>Try Diagnostic Simulator</span>
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
@@ -571,7 +584,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 6 — DIFFERENTIATION: AWARENESS INTELLIGENCE WITHOUT SURVEILLANCE */}
+      {/* SECTION 6 — DIFFERENTIATION: AWARE-1 VS TRADITIONAL SYSTEMS */}
       <section className="py-20 sm:py-28 bg-white border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -583,16 +596,16 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               Awareness intelligence without surveillance.
             </h2>
             <p className="text-sm text-slate-500 leading-relaxed max-w-xl mx-auto font-sans">
-              Astrateq Gadgets is exploring a different path from dashcams, telematics, insurance apps, and hardware-based monitoring.
+              Astrateq Aware-1 is engineered differently from surveillance cameras, black-box trackers, and insurance-pricing modules.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
             {/* Table Header */}
             <div className="grid grid-cols-1 sm:grid-cols-2 bg-slate-900 text-white p-4.5 font-mono text-[10px] font-black uppercase tracking-widest">
-              <div className="px-2">Current Market Approach</div>
+              <div className="px-2">Traditional Fleet/Insurance Approach</div>
               <div className="border-t sm:border-t-0 sm:border-l border-slate-700 mt-2 pt-2 sm:mt-0 sm:pt-0 sm:pl-6">
-                Astrateq Direction
+                Astrateq Aware-1 Hardware
               </div>
             </div>
             
@@ -600,24 +613,20 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             <div className="divide-y divide-slate-100 font-sans text-xs">
               {[
                 {
-                  market: "Dashcams require permanent hardware installation and continuous in-cabin video capture.",
-                  astrateq: "100% software-based, conceptual simulation with absolutely zero visual recording."
+                  market: "Dashcams capture, record, and stream permanent in-cabin video footage directly to remote servers.",
+                  astrateq: "Zero video recording. High-speed infrared sensors measure relative vectors in RAM and discard them immediately."
                 },
                 {
-                  market: "Telematics capture real-time vehicle electronics, coordinates, and exact speed vectors.",
-                  astrateq: "No vehicle connection or electronic interfaces. Purely behavioral focus parameters."
+                  market: "Telematics and OBD-II hardware log real-time vehicle metrics, coordinates, speed, and braking logs.",
+                  astrateq: "OBD-II bypassed. Powers via basic USB-C with zero link to vehicle electronics or computer systems."
                 },
                 {
-                  market: "Insurance apps track driving details to directly alter underwriting and rate pricing.",
-                  astrateq: "Zero insurance reporting. Built entirely for personal awareness reflection and safety education."
+                  market: "Insurance and mobile apps monitor live GPS driving behaviors to directly alter rates and premiums.",
+                  astrateq: "Zero third-party reporting. No GPS hardware or cell chips are present. Designed purely for personal awareness."
                 },
                 {
-                  market: "Safety advice is static, generic, un-calibrated, and rarely context-sensitive.",
-                  astrateq: "Personalized simulated awareness index mapped to regional highway contexts."
-                },
-                {
-                  market: "Fleet tools are locked behind corporate networks and focus exclusively on business assets.",
-                  astrateq: "Built from the ground up for individual, daily Canadian driver safety empowerment."
+                  market: "Safety alerts rely on static, loud auditory alarms that cause distraction and road anxiety.",
+                  astrateq: "Features a gentle, sweeping 180° peripheral light bar with color-coded soft ambient signals."
                 }
               ].map((row, idx) => (
                 <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 hover:bg-slate-50/40 transition-colors">
@@ -637,7 +646,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 7 — TRUST LAYER (Built without tracking - Upgraded Premium Dark Trust Band) */}
+      {/* SECTION 7 — TRUST LAYER (Uncompromised Privacy Architecture) */}
       <section className="py-24 sm:py-32 bg-gradient-to-b from-[#071323] to-[#0B1E33] text-white border-b border-slate-950 relative overflow-hidden">
         {/* Glowing backdrop circle */}
         <div className="absolute top-[20%] left-[30%] w-[500px] h-[500px] bg-cyan-500/10 blur-[150px] rounded-full pointer-events-none" />
@@ -652,7 +661,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               Built without tracking
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto font-sans">
-              This simulation does not connect to your vehicle, collect live driving data, or share responses with insurers. We believe behavioral safety should never cause pricing anxiety.
+              The Aware-1 console operates on localized edge circuits to isolate and protect your safety.
             </p>
           </div>
 
@@ -660,23 +669,23 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             {[
               {
                 icon: <Smartphone className="h-5 w-5 text-cyan-400" />,
-                title: "No vehicle connection",
-                desc: "No live vehicle data, GPS, OBD, or telematics connection."
+                title: "Bypasses OBD-II",
+                desc: "No link to your vehicle computer, speed sensors, dashboard dials, or diagnostic logs."
               },
               {
                 icon: <Lock className="h-5 w-5 text-cyan-400" />,
-                title: "No insurance sharing",
-                desc: "Responses are not used for underwriting, pricing, or insurance scoring."
+                title: "Zero Insurance Sync",
+                desc: "Pre-launch slots are entirely private. We never share metrics or reservation statuses with insurers."
               },
               {
                 icon: <ShieldCheck className="h-5 w-5 text-cyan-400" />,
-                title: "No hardware required",
-                desc: "No dashcam, scanner, device, or installation required."
+                title: "100% Local Logic",
+                desc: "Eyelid speed variables are computed strictly inside localized edge RAM. Zero video storage."
               },
               {
                 icon: <FileText className="h-5 w-5 text-cyan-400" />,
-                title: "Simulation-only research",
-                desc: "The current experience is used to validate interest in the software concept."
+                title: "Cancel At Any Time",
+                desc: "Pre-launch reservations contain zero financial locks or binding conditions. You hold total control."
               }
             ].map((card, idx) => (
               <div 
@@ -699,19 +708,19 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 8 — RESEARCH COHORT (Engagement levels and signup) */}
+      {/* SECTION 8 — PRE-ORDER RESERVATION (Engagement levels and signup) */}
       <section className="py-20 sm:py-28 bg-white border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
-              Engagement Tiers
+              Priority Tiers
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
-              Research Participation Levels
+              Select Your Reservation Tier
             </h2>
             <p className="text-sm text-slate-500 leading-relaxed max-w-lg mx-auto font-sans">
-              We categorize our validation program into three voluntary engagement depths. Select the level that matches your interest.
+              Choose the queue depth that matches your pre-launch interest. Every tier secures priority early-bird batch delivery with absolutely no cash deposit required.
             </p>
           </div>
 
@@ -784,7 +793,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           </div>
 
           <p className="text-center text-[10px] font-mono uppercase tracking-wider text-slate-400 mt-10">
-            *No purchase. No hardware. No insurance use. Concept validation only.
+            *No deposit required • No payment obligation • Cancel anytime • 100% offline edge AI
           </p>
 
         </div>
@@ -798,13 +807,13 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             
             <div className="text-center mb-8 space-y-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[9px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
-                Research Enrollment
+                Astrateq Priority Registry
               </span>
               <h3 className="text-2xl font-black uppercase tracking-tight text-slate-900 font-sans">
-                Join the Driver Awareness Research Cohort
+                Reserve Your Aware-1 Dashboard Console
               </h3>
-              <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-                Submit your enrollment parameters below. Registration is entirely free, anonymous, and secured under strict guidelines.
+              <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed font-sans">
+                Complete the priority registration below to lock in your production queue number. Your slot secures your early-bird discount rate and estimated shipping priority batch.
               </p>
             </div>
 
@@ -813,23 +822,23 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 <div className="flex h-12 w-12 items-center justify-center rounded bg-blue-600 text-white mb-4 shadow-md">
                   <Check className="h-6 w-6" />
                 </div>
-                <h4 className="text-base font-bold uppercase tracking-wide text-slate-900">Cohort Registration Confirmed</h4>
+                <h4 className="text-base font-bold uppercase tracking-wide text-slate-900">Priority Reservation Confirmed!</h4>
                 <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1 font-mono">
-                  Level: {signupResult.tierLabel}
+                  Tier: {signupResult.tierLabel}
                 </p>
                 <p className="text-xs text-slate-500 mt-3 max-w-sm leading-relaxed font-sans">
-                  Success! Your pre-launch driver interest has been recorded. This invaluable input helps validate the demand profile for software-first driver awareness intelligence.
+                  Success! Your Astrateq Aware-1 production reservation has been securely logged. We will notify you with direct manufacturing updates, optics calibrations, and coordinate your delivery queue when your batch is ready.
                 </p>
 
                 <div className="mt-6 w-full rounded border border-slate-200 bg-slate-50 p-4 font-mono text-center shadow-xs">
-                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Your Research Cohort ID</p>
+                  <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Your Priority Queue Reference ID</p>
                   <p className="text-sm font-extrabold text-slate-800 mt-1 select-all">{signupResult.cohortId}</p>
                 </div>
 
                 <div className="mt-6 flex flex-col gap-1.5 text-[10px] font-mono uppercase text-slate-400">
                   <span>• Registrant Name: <strong className="text-slate-600">{firstName}</strong></span>
                   <span>• Active Route Region: <strong className="text-slate-600">{province}</strong></span>
-                  {drivingContext && <span>• Driving Context: <strong className="text-slate-600">{drivingContext}</strong></span>}
+                  {drivingContext && <span>• Commute Context: <strong className="text-slate-600">{drivingContext}</strong></span>}
                 </div>
 
                 <button
@@ -842,7 +851,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   }}
                   className="mt-8 rounded bg-slate-900 hover:bg-slate-800 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors cursor-pointer font-mono"
                 >
-                  Onboard Another Profile
+                  Create Another Reservation
                 </button>
               </div>
             ) : (
@@ -932,7 +941,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 {score && (
                   <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-2 rounded">
                     <Sparkles className="h-3.5 w-3.5 shrink-0 text-emerald-600" />
-                    <span>Your Simulated Awareness Score ({score}) will be securely paired.</span>
+                    <span>Your Simulated Awareness Score ({score}) will be securely paired to qualify you for up to a 50% early-bird release discount.</span>
                   </div>
                 )}
 
@@ -947,7 +956,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
                   />
                   <label htmlFor="consent" className="text-[10px] text-slate-500 leading-normal cursor-pointer font-sans uppercase font-bold tracking-wide">
-                    I consent to contribute my anonymous answers to Astrateq Gadgets' Canadian validation study.
+                    I agree to lock in my priority pre-order queue spot and receive edge-AI hardware updates.
                   </label>
                 </div>
 
@@ -955,23 +964,23 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 <button
                   type="submit"
                   disabled={isSubmitting || !consent}
-                  className="w-full flex items-center justify-center gap-2 rounded bg-blue-600 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-blue-700 disabled:bg-slate-100 disabled:text-slate-400 cursor-pointer shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.35)]"
+                  className="w-full flex items-center justify-center gap-2 rounded bg-blue-600 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-blue-700 disabled:bg-slate-100 disabled:text-slate-400 cursor-pointer shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.35)] font-mono"
                 >
                   {isSubmitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>Processing Registration...</span>
+                      <span>Processing Reservation...</span>
                     </>
                   ) : (
                     <>
-                      <span>Join Research Cohort</span>
+                      <span>Submit Priority Reservation</span>
                       <ArrowRight className="h-4 w-4" />
                     </>
                   )}
                 </button>
                 
                 <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-3">
-                  No purchase · No vehicle connection · No insurance use · Pre-launch validation only
+                  No deposit required • Bypasses OBD-II • No insurance logs • Cancel anytime
                 </p>
 
               </form>
@@ -980,7 +989,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         </div>
       </section>
 
-      {/* SECTION 11 — FINAL CONVERSION CTA BANNER BEFORE FOOTER (Tier 1 Conversion Card styling) */}
+      {/* SECTION 11 — FINAL CONVERSION CTA BANNER BEFORE FOOTER */}
       <section className="py-20 sm:py-24 bg-white border-b border-slate-200/50 relative">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
           <div className="rounded-3xl border border-blue-200/60 bg-gradient-to-tr from-[#F3F8FF] to-[#EAF3FB] p-8 sm:p-12 text-center shadow-[0_20px_50px_rgba(59,130,246,0.12)] hover:border-cyan-400/50 transition-colors duration-300 relative overflow-hidden group">
@@ -988,11 +997,11 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             
             <div className="relative z-10 space-y-6">
               <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight font-sans">
-                Ready to help shape <br className="hidden sm:inline" />
-                Driver Awareness Intelligence?
+                Ready to secure your <br className="hidden sm:inline" />
+                priority production slot?
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed max-w-xl mx-auto font-sans">
-                Join the research cohort and help validate whether Canadian drivers want privacy-first awareness tools without tracking, insurance scoring, or hardware.
+                Join the early priority queue today with zero obligation or upfront cost. Help us validate demand for premium, offline-first driver awareness console hardware.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
@@ -1000,18 +1009,18 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   onClick={() => scrollToForm()}
                   className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 hover:bg-blue-700 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer font-mono"
                 >
-                  <span>Join Research Cohort</span>
+                  <span>Reserve Aware-1 Priority Slot</span>
                 </button>
                 <button
-                  onClick={activeOnStartSimulation}
+                  onClick={onStartSimulation}
                   className="inline-flex items-center justify-center gap-2 rounded border border-slate-200 bg-white hover:bg-slate-50 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-slate-700 active:scale-95 transition-all cursor-pointer font-mono"
                 >
-                  <span>Try the Simulation First</span>
+                  <span>Try Diagnostic Simulator First</span>
                 </button>
               </div>
 
               <p className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">
-                No purchase · No hardware · Concept validation only
+                No deposit required • Bypasses OBD-II • Cancel anytime
               </p>
             </div>
           </div>

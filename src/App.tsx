@@ -33,35 +33,27 @@ export default function App() {
   const faqItems = [
     {
       q: "Is this a real product yet?",
-      a: "No. Astrateq Gadgets is currently conducting a pre-launch behavioral study to validate a software-only cognitive simulation model. This is a concept validation system, not a finished application, subscription, or SaaS product."
+      a: "Yes, Astrateq is pre-launching the production queue for the Astrateq Aware-1 dashboard alert console. We are conducting this market validation and priority reservation campaign to gauge production batch volumes across Canadian provinces. Your reservation locks in your priority discount queue slot with zero deposit."
     },
     {
-      q: "Is this connected to my vehicle?",
-      a: "No. This is a software-based behavioral simulation and does not connect to any vehicle systems, OBD ports, or vehicle electronics."
+      q: "Is this connected to my vehicle's computer?",
+      a: "No. Unlike intrusive telematics adapters, the Astrateq Aware-1 is 100% independent. It does not plug into your OBD or OBD-II ports, doesn't read vehicle diagnostic codes, and does not require wire splicing. It is powered via a simple USB-C or standard 12V outlet."
     },
     {
-      q: "Does this require hardware?",
-      a: "No. This is a purely browser-based cognitive research study. No physical devices, dashcams, on-board trackers, or adapters are needed or distributed."
+      q: "Does this require complex hardware installation?",
+      a: "Not at all. The Aware-1 is designed for instant, tool-free setup. It attaches magnetically to a subtle, damage-free dashboard gel mount. You can dock or undock the device in less than a second."
     },
     {
       q: "Is this used by insurance companies?",
-      a: "Absolutely not. Privacy is our highest priority. Your responses and overall scores are completely anonymous, encrypted, and are never shared, leased, or sold to automotive insurers, marketing agencies, or external databases."
+      a: "Absolutely not. Privacy is our highest priority. The Astrateq Aware-1 runs entirely localized Edge AI. There is no cellular transmitter, no GPS tracking, and no cloud storage. Since no cameras record footage and all eye-mesh vectors are calculated locally and immediately discarded, no data can ever be shared, sold, or leased to insurers or third parties."
     },
     {
-      q: "What does joining the research cohort mean?",
-      a: "Joining the research cohort means you register your interest in early concept updates and optional feedback cycles, helping validate whether this software-based driver awareness concept should move toward future development."
+      q: "What is the 60-Second Driver Awareness Simulator?",
+      a: "The simulator is our interactive diagnostic lead magnet. It is a quick, browser-based questionnaire designed to gauge your fatigue exposure and attentiveness. Completing it helps model your driving risk parameters, calibrates your Aware-1 alerts, and instantly unlocks a 40% early-bird launch discount code."
     },
     {
-      q: "What happens after I join?",
-      a: "You will receive an automated confirmation and optional, high-level updates as our concept validation progresses. There is no purchase commitment or product contract involved."
-    },
-    {
-      q: "Will this become a prototype?",
-      a: "The goal of this pre-launch market validation study is to gauge demand among Canadian drivers. If we observe strong, high-intent interest across our research cohorts, we will evaluate moving the concept toward prototype development."
-    },
-    {
-      q: "How is this different from on-board trackers, dashcams, or OBD devices?",
-      a: "Traditional tools monitor physical vehicles or capture external video feeds. Astrateq Gadgets takes a completely different path—we focus purely on cognitive and behavioral awareness, designed to help everyday drivers understand their own focus habits and fatigue indicators in a privacy-first, software-only environment."
+      q: "What happens after I reserve?",
+      a: "You will receive an immediate confirmation of your reservation slot. We will send you priority production updates, behind-the-scenes engineering design files, and shipping notifications as your queue slot approaches. There is no deposit required and you can cancel anytime."
     }
   ];
 
@@ -180,13 +172,13 @@ export default function App() {
                   <div className="lg:col-span-7 text-left">
                     <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-[#EEF3F8] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
                       <Sparkles className="h-3.5 w-3.5 text-slate-900 animate-pulse" />
-                      Concept Validation Open for Enrollment
+                      Aware-1 Priority Pre-Order Now Open
                     </span>
-                    <h1 className="mt-4 text-3xl font-bold uppercase tracking-tight text-slate-900 sm:text-4xl leading-tight font-sans">
-                      Explore a simulated <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Driver Awareness Intelligence</span> model in 60 seconds
+                    <h1 className="mt-4 text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-5xl leading-tight font-sans">
+                      Astrateq Aware-1: The World's First <span className="bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent">Privacy-First</span> Driver Awareness Dashboard Gadget
                     </h1>
-                    <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl">
-                      A behavioral simulation designed to explore how Canadian drivers respond to fatigue awareness, attention patterns, and driving decision behaviors.
+                    <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl font-sans">
+                      A sleek, dashboard-mounted physical console powered by localized, offline Edge AI. It monitors driver blink-velocity and visual field checks to prevent fatigue-related accidents—completely independent of car telematics, OBD ports, or intrusive internet cameras.
                     </p>
 
                     {/* Features list */}
@@ -195,159 +187,146 @@ export default function App() {
                         <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
-                        <span>100% Software-Based</span>
+                        <span>100% Offline Edge AI</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
-                        <span>No Hardware Required</span>
+                        <span>No OBD/GPS Tracking</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
-                        <span>Completely Anonymous</span>
+                        <span>Curved Ambient LED Aura</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="flex h-6 w-6 items-center justify-center rounded border border-slate-200 bg-slate-50 text-slate-900">
                           <Check className="h-3.5 w-3.5" />
                         </div>
-                        <span>Secured Canadian Servers</span>
+                        <span>Magnetic Dash Mount</span>
                       </div>
                     </div>
                     
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                       <button
-                        onClick={handleStartSimulation}
+                        onClick={() => handleNavigate("cohort")}
                         className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer font-mono"
                       >
-                        <span>Start Awareness Simulation</span>
+                        <span>Reserve Your Aware-1</span>
                         <ArrowRight className="h-4 w-4" />
                       </button>
                       <button
-                        onClick={() => handleNavigate("cohort")}
-                        className="inline-flex items-center justify-center rounded border border-blue-200 bg-blue-50/50 px-6 py-4 text-xs font-bold uppercase tracking-wider text-blue-700 transition-all hover:bg-blue-50 hover:border-blue-300 active:scale-95 cursor-pointer font-mono"
+                        onClick={handleStartSimulation}
+                        className="relative inline-flex items-center justify-center rounded border-2 border-blue-500 bg-white px-6 py-4 text-xs font-bold uppercase tracking-wider text-blue-700 transition-all hover:bg-blue-50 active:scale-95 cursor-pointer font-mono shadow-[0_0_15px_rgba(59,130,246,0.1)]"
                       >
-                        Join Research Cohort
+                        <span className="absolute -top-3 right-4 rounded-full bg-rose-500 px-2 py-0.5 text-[8px] font-black text-white uppercase tracking-wider animate-bounce font-mono">
+                          Unlock 40% Off
+                        </span>
+                        <span>Start 60s Simulator (Lead Magnet)</span>
                       </button>
                     </div>
 
                     <p className="mt-4 text-[10px] text-slate-500 font-mono uppercase tracking-wider leading-relaxed">
-                      You will complete a 60-second simulation, receive a conceptual awareness score, and see your research cohort classification.
+                      Complete our rapid 60-second Driver Awareness Questionnaire to check your focus score and automatically upgrade your pre-order to the 40% VIP early-bird rate.
                     </p>
 
                     <p className="text-[9px] font-mono uppercase tracking-wider text-slate-400 mt-6 leading-relaxed">
-                      *Note: Astrateq Gadgets does NOT utilize, distribute, or imply OBD2 scanners, dashcams, vehicle telemetry, or insurance tracking metrics. This is a purely cognitive research study.
+                      *Note: Astrateq Gadgets does NOT utilize, distribute, or imply OBD2 scanners, cellular trackers, dashcams, or insurance telematics. All calculations occur offline inside local hardware.
                     </p>
                   </div>
 
-                  {/* Right Column Custom Cockpit Dashboard Mock */}
+                  {/* Right Column Custom Hardware Device Mockup */}
                   <div className="lg:col-span-5 flex justify-center">
-                    <div className="relative w-full max-w-sm rounded-2xl border border-blue-100 bg-gradient-to-b from-white to-blue-50/20 p-6 shadow-[0_20px_50px_rgba(59,130,246,0.06)] overflow-hidden transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.12)]">
+                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-800 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.25)] hover:border-blue-500">
                       
-                      {/* Grid bg overlay */}
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f606_1px,transparent_1px),linear-gradient(to_bottom,#3b82f606_1px,transparent_1px)] bg-[size:16px_16px]" />
+                      {/* Technical Blueprint lines overlay */}
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
                       
-                      {/* Decorative gradient glow spots */}
-                      <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-400/10 rounded-full blur-2xl pointer-events-none" />
-                      <div className="absolute -bottom-10 -left-10 w-36 h-36 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none" />
+                      {/* Decorative ambient device glows */}
+                      <div className="absolute -top-10 -right-10 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
+                      <div className="absolute -bottom-10 -left-10 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
 
                       <div className="relative z-10">
-                        <div className="flex items-center justify-between mb-6">
-                          <div className="flex items-center gap-1.5 text-[10px] font-extrabold font-mono text-blue-600 uppercase tracking-widest">
-                            <Cpu className="h-4 w-4 text-blue-600 animate-pulse" />
-                            <span>COGNITIVE ENGINE V1</span>
+                        {/* Device Header */}
+                        <div className="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+                          <div className="flex items-center gap-1.5 text-[9px] font-bold font-mono text-slate-400 uppercase tracking-widest">
+                            <Cpu className="h-4 w-4 text-blue-400 animate-pulse" />
+                            <span>ASTRATEQ // AWARE-1</span>
                           </div>
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[9px] font-bold font-mono text-emerald-700 uppercase tracking-wider">
+                          <span className="inline-flex items-center gap-1.5 rounded bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-[8px] font-bold font-mono text-emerald-400 uppercase tracking-wider">
                             <span className="relative flex h-1.5 w-1.5">
                               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
                             </span>
-                            CALIBRATED
+                            OFFLINE EDGE AI
                           </span>
                         </div>
 
-                        {/* Large Mock Score Dial */}
-                        <div className="flex flex-col items-center py-7 bg-white rounded-xl border border-blue-100/80 shadow-[0_4px_20px_rgba(59,130,246,0.02)]">
-                          <div className="relative flex items-center justify-center h-32 w-32">
-                            {/* Inner visual grid effect */}
-                            <div className="absolute inset-2 rounded-full border border-dashed border-blue-100 animate-[spin_120s_linear_infinite]" />
-                            
-                            <svg className="h-full w-full transform -rotate-90" viewBox="0 0 100 100">
-                              <defs>
-                                <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                  <stop offset="0%" stopColor="#2563eb" />
-                                  <stop offset="100%" stopColor="#06b6d4" />
-                                </linearGradient>
-                              </defs>
-                              {/* Background Circle */}
-                              <circle cx="50" cy="50" r="40" stroke="#f1f5f9" strokeWidth="8" fill="transparent" />
-                              {/* Decorative tick circle */}
-                              <circle cx="50" cy="50" r="43" stroke="#e2e8f0" strokeWidth="1" strokeDasharray="2 3" fill="transparent" opacity="0.7" />
-                              {/* Active Score Circle */}
-                              <circle 
-                                cx="50" 
-                                cy="50" 
-                                r="40" 
-                                stroke="url(#scoreGrad)" 
-                                strokeWidth="8" 
-                                strokeDasharray="251.2" 
-                                strokeDashoffset="50.2" 
-                                strokeLinecap="round" 
-                                fill="transparent" 
-                              />
-                            </svg>
-                            <div className="absolute flex flex-col items-center justify-center">
-                              <span className="text-4xl font-extrabold text-slate-900 font-mono tracking-tighter leading-none">80</span>
-                              <span className="text-[7.5px] font-black text-slate-400 uppercase tracking-widest leading-none font-mono mt-1.5">AWARE INDEX</span>
-                            </div>
+                        {/* Physical Hardware Representation Card */}
+                        <div className="flex flex-col items-center py-6 bg-slate-900/60 rounded-xl border border-slate-800 shadow-inner">
+                          {/* Curved LED Aura Bar */}
+                          <div className="w-[85%] h-2.5 bg-slate-950 rounded-full overflow-hidden relative border border-slate-800 shadow-[inset_0_1px_3px_rgba(0,0,0,0.8)] mb-6">
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500 rounded-full animate-pulse shadow-[0_0_12px_rgba(34,211,238,0.8)]" style={{ width: "100%" }} />
                           </div>
-                          
-                          <div className="mt-6 flex gap-4 text-center border-t border-slate-100 pt-5 w-full justify-around">
-                            <div>
-                              <p className="text-xs font-black text-emerald-600 font-mono uppercase">LOW RISK</p>
-                              <p className="text-[8px] font-bold uppercase text-slate-400 font-mono mt-0.5">FATIGUE</p>
-                            </div>
-                            <div className="h-7 w-px bg-slate-100" />
-                            <div>
-                              <p className="text-xs font-black text-blue-600 font-mono uppercase">95%</p>
-                              <p className="text-[8px] font-bold uppercase text-slate-400 font-mono mt-0.5">ATTENTION</p>
-                            </div>
-                            <div className="h-7 w-px bg-slate-100" />
-                            <div>
-                              <p className="text-xs font-black text-cyan-600 font-mono uppercase">GOOD</p>
-                              <p className="text-[8px] font-bold uppercase text-slate-400 font-mono mt-0.5">READINESS</p>
-                            </div>
-                          </div>
-                          
-                          <p className="mt-4 text-[7px] font-mono text-slate-400 text-center px-4 border-t border-blue-50/50 pt-3.5 w-full uppercase tracking-widest">
-                            Simulated Output — Conceptual Model (Not Real-World Data)
-                          </p>
-                        </div>
 
-                        {/* Tiny live feedback bubbles */}
-                        <div className="mt-4 space-y-3">
-                          <div className="flex items-center justify-between p-3 rounded-xl border border-blue-100/60 bg-white text-[10px] font-mono uppercase tracking-wider shadow-[0_2px_10px_rgba(59,130,246,0.01)]">
-                            <span className="font-bold text-slate-800 flex items-center gap-2">
-                              <div className="p-1 rounded bg-blue-50 text-blue-600">
-                                <Star className="h-3.5 w-3.5 fill-blue-500 text-blue-500" />
-                              </div>
-                              ACTIVE MODEL
-                            </span>
-                            <span className="font-black text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full text-[9px] tracking-wide">CAN-ON STANDARD</span>
+                          {/* Optical Infrared Lens Sensor Assembly */}
+                          <div className="relative flex items-center justify-center h-28 w-28 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-slate-800 shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
+                            {/* Lens glass reflection sweep */}
+                            <div className="absolute inset-1 rounded-full border border-white/5 bg-radial-gradient" />
+                            <div className="absolute top-2 right-4 w-6 h-1 bg-white/20 rounded-full rotate-45" />
+
+                            {/* Center Infrared Diode (Glowing softly) */}
+                            <div className="absolute h-6 w-6 rounded-full bg-rose-950 border border-rose-900 flex items-center justify-center">
+                              <div className="h-2 w-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_12px_rgba(239,68,68,1)]" />
+                            </div>
+
+                            {/* Visual grid lines representing optical mesh */}
+                            <div className="absolute inset-4 rounded-full border border-dashed border-cyan-500/20 animate-[spin_40s_linear_infinite]" />
                           </div>
-                          <div className="flex items-center justify-between p-3 rounded-xl border border-blue-100/60 bg-white text-[10px] font-mono uppercase tracking-wider shadow-[0_2px_10px_rgba(59,130,246,0.01)] text-slate-500">
-                            <span className="font-bold text-slate-800 flex items-center gap-2">
-                              <div className="p-1 rounded bg-emerald-50 text-emerald-600">
-                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                              </div>
-                              Privacy Protocol
-                            </span>
-                            <span className="font-black text-emerald-600 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full text-[9px] tracking-wide">100% SECURED</span>
+                          <span className="text-[7.5px] font-bold text-slate-500 uppercase tracking-widest font-mono mt-3">NON-CONTACT IR OPTICAL FLOW</span>
+
+                          {/* Digital OLED Micro-Screen display */}
+                          <div className="mt-6 w-[85%] bg-black/90 p-3 rounded border border-slate-800 font-mono text-[9px] text-cyan-400 space-y-1.5 shadow-inner">
+                            <div className="flex justify-between border-b border-slate-900 pb-1">
+                              <span className="text-slate-500">ENGINE STATUS</span>
+                              <span className="text-emerald-400 font-bold">SECURED</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-slate-500">DIAGNOSTICS</span>
+                              <span className="text-slate-300">OBD BYPASSED</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-slate-500">CAMERA STREAM</span>
+                              <span className="text-rose-400 font-bold">DISABLED (LOCAL AI ONLY)</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-slate-500">ALERT PRESETS</span>
+                              <span className="text-slate-300">CANADIAN PORTFOLIO</span>
+                            </div>
                           </div>
                         </div>
 
+                        {/* Hardware Features Quick Bar */}
+                        <div className="mt-4 grid grid-cols-3 gap-2 text-center text-[8px] font-mono uppercase tracking-wider">
+                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
+                            <p className="text-blue-400 font-black">SLATE FRAME</p>
+                            <p className="text-slate-500 mt-0.5">AIRCRAFT ALUM</p>
+                          </div>
+                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
+                            <p className="text-emerald-400 font-black">100% OFFLINE</p>
+                            <p className="text-slate-500 mt-0.5">ZERO TELEMETRY</p>
+                          </div>
+                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
+                            <p className="text-cyan-400 font-black">MAG MOUNT</p>
+                            <p className="text-slate-500 mt-0.5">DOCK SECONDS</p>
+                          </div>
+                        </div>
+
+                        <p className="mt-4 text-[7px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed">
+                          Astrateq Aware-1 Physical Enclosure Layout • Patent Pending
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -359,34 +338,34 @@ export default function App() {
             {/* Core Value Props Cards & How It Works section */}
             <ValueProps onStartSimulation={handleStartSimulation} />
 
-            {/* Privacy Section Highlight (Specific requirement to reinforce simulation/research) */}
+            {/* Privacy Section Highlight (Specific requirement to reinforce hardware-level privacy) */}
             <section id="privacy-info" className="relative bg-[#EEF3F8] py-28 sm:py-44 border-b border-slate-200/80">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="rounded-xl bg-gradient-to-br from-[#0B1220] to-[#0C1424] text-white p-8 sm:p-12 relative overflow-hidden border border-[#0C1424] shadow-xl">
                   {/* Gradient globes */}
-                  <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />
                   
                   <div className="relative max-w-3xl">
                     <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-slate-300 bg-slate-900 border border-slate-800 px-3 py-1 rounded mb-4 font-mono">
-                      <Lock className="h-3.5 w-3.5" /> Simulation Trust Protocol
+                      <Lock className="h-3.5 w-3.5" /> Astrateq Security Protocol
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Privacy & Verification Standard</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide">Astrateq Offline AI Security Standard</h3>
                     <p className="mt-4 text-xs text-slate-300 leading-relaxed">
-                      We understand that driver tracking tools have created massive skepticism among Canadian drivers. We are committed to a strict standard of transparent research safety.
+                      We understand that in-cabin driver cameras and black-box insurance trackers have created massive skepticism among Canadian drivers. We built the Astrateq Aware-1 to completely defy that standard—protecting your safety without sacrificing your dignity or selling your driving history.
                     </p>
 
                     <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
                       <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Monitoring Policy</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This system is designed without behavioral tracking or monitoring.</p>
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Zero Cloud Sync</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">All pupillary vectors and blink speeds are computed inside localized edge silicon. No server transmission.</p>
                       </div>
                       <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Data Transmission</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">No vehicle data is accessed or transmitted.</p>
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">No OBD-II Connection</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">Powered via a clean USB-C or standard 12V adapter. It never reads vehicle computer data or GPS positions.</p>
                       </div>
                       <div className="p-4 rounded border border-slate-800/40 bg-[#0B1220]/60 font-mono">
-                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">Research Protocol</p>
-                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">This is a simulation-only research environment for concept validation.</p>
+                        <p className="font-bold uppercase text-[10px] tracking-wider text-white">100% Privacy Lock</p>
+                        <p className="text-[10px] text-slate-400 mt-2 leading-relaxed">Because no footage is saved or transmitted, your data remains fully yours—completely secure from insurers.</p>
                       </div>
                     </div>
                   </div>

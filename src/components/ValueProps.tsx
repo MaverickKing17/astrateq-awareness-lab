@@ -12,13 +12,13 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-[#EEF3F8] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-700 font-mono rounded">
-            🍁 Behavioral Science Research Study
+            🍁 Premium Driving Safety Hardware
           </span>
-          <h2 className="mt-4 text-2xl font-bold uppercase tracking-tight text-slate-900 sm:text-3xl">
-            Core Validation Objectives
+          <h2 className="mt-4 text-2xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl">
+            Astrateq Aware-1 Core Specifications
           </h2>
-          <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl mx-auto">
-            We are validating a next-generation software concept designed to explore, understand, and measure cognitive driving focus. Join the cohort to test the simulation model.
+          <p className="mt-4 text-xs text-slate-500 leading-relaxed max-w-xl mx-auto font-sans">
+            A next-generation physical console engineered to prevent driver fatigue and distraction. It mounts cleanly on your dashboard, running fully localized edge AI with zero external tracking.
           </p>
         </div>
 
@@ -29,15 +29,15 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
             <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 mb-6 font-mono font-bold text-xs">
               01
             </div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
-              How does awareness scoring correlate with driver attention behavior patterns?
+            <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 leading-snug">
+              Infrared Optical Gaze-Mesh & Blink Sensor
             </h3>
-            <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow">
-              Validate whether a multi-factor numerical simulation score mapped to cognitive attentiveness can effectively reflect visual field checks and task-switching habits over typical travel durations.
+            <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow font-sans">
+              Specialized sub-millimeter NIR micro-cameras continuously assess eye-blink duration patterns (PERCLOS) and gaze-scanning velocity fully offline. Works flawlessly under direct sunlight, pitch-black nights, or through heavy polarized sunglasses.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
-              Approved Research Objective
+              Continuous Active Scanning
             </div>
           </div>
 
@@ -46,15 +46,15 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
             <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 mb-6 font-mono font-bold text-xs">
               02
             </div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
-              Does fatigue-related context awareness influence driving decision quality?
+            <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 leading-snug">
+              Ambient Peripheral Aura Notifications
             </h3>
-            <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow">
-              Analyze critical fatigue exposure timelines and cognitive sleep-debt vulnerability to validate whether highlighting precise fatigue risk thresholds can positively influence driver fatigue mitigation behaviors.
+            <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow font-sans">
+              Our curved micro-LED lightbar transitions from a calming cyan to a pulsing warm amber when fatigue indicators trigger. Designed to be perceived instantly through your peripheral vision, eliminating the need to look down at a screen.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
-              Behavioral Evaluation Area
+              Non-Invasive Visual Cueing
             </div>
           </div>
 
@@ -63,15 +63,15 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
             <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-50 border border-blue-100 text-blue-600 mb-6 font-mono font-bold text-xs">
               03
             </div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 leading-snug">
-              Do drivers cluster into distinct behavioral safety profiles based on self-reported inputs?
+            <h3 className="text-sm font-black uppercase tracking-wider text-slate-900 leading-snug">
+              Total Privacy Offline Edge AI Engine
             </h3>
-            <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow">
-              Examine driver readiness indicators to evaluate how personal safety-readiness benchmarks and localized provincial guidelines correlate with standard visual field responses and hazard scan habits.
+            <p className="mt-4 text-slate-500 text-xs leading-relaxed flex-grow font-sans">
+              Powered by a proprietary localized neural microchip. Zero video recording, zero cloud storage, zero internet transmitters. All eye-mesh and posture vectors are calculated inside the device and immediately discarded. Total security from third parties and insurers.
             </p>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-800 font-mono">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
-              Cognitive Safety Standard
+              Military-Grade Offline Trust
             </div>
           </div>
         </div>
@@ -85,13 +85,13 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono">
-              Research Pipeline
+              The Path to Aware-1
             </span>
             <h2 className="mt-3 text-2xl font-black uppercase tracking-wider text-slate-900 sm:text-3xl">
-              How the Validation Process Works
+              How the Pre-Launch Pipeline Works
             </h2>
-            <p className="mt-3 text-xs text-slate-500 max-w-lg mx-auto">
-              Complete the rapid 60-second behavioral study and view your custom cognitive profile instantly.
+            <p className="mt-3 text-xs text-slate-500 max-w-lg mx-auto font-sans">
+              Secure your hardware allotment and calibrate your personal safety preferences in four simple steps.
             </p>
           </div>
 
@@ -110,10 +110,10 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
                 <div className="mb-3 text-blue-600 bg-blue-50 border border-blue-100/50 p-2.5 rounded-xl">
                   <ClipboardCheck className="h-5 w-5" />
                 </div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900">Answer Questions</h4>
+                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Secure Slot</h4>
               </div>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-                Answer behavioral and contextual questions regarding standard driving frequencies, sleep windows, and typical in-cabin focus habits.
+              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+                Choose your pre-order tier (Standard, VIP Elite, or Founding Backer) to lock in your production queue placement. Zero deposit required.
               </p>
             </div>
 
@@ -127,10 +127,10 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
                 <div className="mb-3 text-blue-600 bg-blue-50 border border-blue-100/50 p-2.5 rounded-xl">
                   <Cpu className="h-5 w-5" />
                 </div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900">Generate Profile</h4>
+                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Diagnostic Check</h4>
               </div>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-                Generate simulated driver awareness profile based on calibrated Canadian regional baselines and focus allocation models.
+              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+                Complete our rapid 60-second Driver Awareness Simulator (Lead Magnet check) to map your risk parameters and unlock a 40% launch discount code.
               </p>
             </div>
 
@@ -144,10 +144,10 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
                 <div className="mb-3 text-blue-600 bg-blue-50 border border-blue-100/50 p-2.5 rounded-xl">
                   <BarChart3 className="h-5 w-5" />
                 </div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900">Conceptual Safety</h4>
+                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Hardware Assembly</h4>
               </div>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-                Display conceptual safety intelligence output, detailing fatigue exposure risks and relative distraction resistance tips.
+              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+                Your custom console is assembled in our limited-edition batch-1 line with selected anodized frame plates and firmware integrations.
               </p>
             </div>
 
@@ -161,20 +161,20 @@ export default function ValueProps({ onStartSimulation }: ValuePropsProps) {
                 <div className="mb-3 text-blue-600 bg-blue-50 border border-blue-100/50 p-2.5 rounded-xl">
                   <Users className="h-5 w-5" />
                 </div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900">Research Cohort</h4>
+                <h4 className="text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Dock & Drive</h4>
               </div>
-              <p className="mt-3 text-xs text-slate-500 leading-relaxed">
-                Offer research cohort participation to select a self-guided or steering advisory engagement level with zero cost or hardware.
+              <p className="mt-3 text-xs text-slate-500 leading-relaxed font-sans">
+                Mount magnetically onto your vehicle's dashboard, plug into standard 12V or USB-C power, and drive with absolute alertness and 100% offline privacy.
               </p>
             </div>
           </div>
 
-          <div className="mt-20 flex justify-center">
+          <div className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onStartSimulation}
               className="inline-flex items-center justify-center gap-2 rounded bg-blue-600 px-8 py-5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(59,130,246,0.35)] transition-all hover:bg-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.45)] active:scale-95 cursor-pointer font-mono"
             >
-              Start Awareness Simulation
+              Start Awareness Simulator (Lead Magnet)
             </button>
           </div>
         </div>

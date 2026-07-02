@@ -50,13 +50,13 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
 
   const levelInfo = getLevel(score);
 
-  // Determine Cohort Assignment based on the new guidelines
+  // Determine Priority Queue Reservation Tier based on simulated score
   const getCohortAssignment = (scoreValue: number) => {
     if (scoreValue >= 80) {
       return {
-        id: "standard",
-        name: "Awareness Cohort",
-        desc: "Standard research participant group for general behavioral modeling",
+        id: "access",
+        name: "Standard Priority Reservation",
+        desc: "Guarantees a production slot in our initial Canada shipping queue with a 20% early-bird discount.",
         colorClass: "border-blue-200 bg-blue-50/30 text-blue-800",
         badgeColor: "bg-blue-600 text-white",
         textColor: "text-blue-900",
@@ -66,8 +66,8 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
     if (scoreValue >= 40) {
       return {
         id: "guardian",
-        name: "Guardian Cohort",
-        desc: "Higher engagement group with elevated interest in safety awareness systems",
+        name: "VIP Elite Reservation",
+        desc: "Secures Batch 1 priority shipping, Slate Silver chassis, and a locked-in 40% VIP launch discount.",
         colorClass: "border-amber-200 bg-amber-50/30 text-amber-800",
         badgeColor: "bg-amber-500 text-white",
         textColor: "text-amber-900",
@@ -76,8 +76,8 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
     }
     return {
       id: "founding",
-      name: "Founding Research Cohort",
-      desc: "High-intent participants for early concept validation and feedback",
+      name: "Founding Backer Allocation",
+      desc: "For ultimate driver advocates wishing to collaborate with builders. Secures a 50% launch discount and custom laser-engraved name plate.",
       colorClass: "border-rose-200 bg-rose-50/30 text-rose-800",
       badgeColor: "bg-rose-600 text-white",
       textColor: "text-rose-900",
@@ -258,16 +258,16 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           {/* COHORT CLASSIFICATION BLOCK (CRITICAL FOR CONVERSION - SECOND MOST IMPORTANT) */}
           <div className="rounded-xl border-2 border-blue-500/20 bg-gradient-to-br from-white to-blue-50/20 p-6 sm:p-8 shadow-[0_10px_30px_rgba(59,130,246,0.04)] relative overflow-hidden">
             <div className="absolute top-0 right-0 rounded-bl bg-blue-600 px-3 py-1 text-[9px] font-bold text-white uppercase tracking-widest font-mono">
-              Assigned Cohort
+              Qualified Tier
             </div>
             
             <h3 className="text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-2">
-              Your Research Cohort Assignment
+              Your Qualified Priority Pre-Order Tier
             </h3>
             
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mt-4">
               <div className={`rounded-xl border p-4 w-full sm:w-auto shrink-0 ${cohort.colorClass}`}>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest block font-mono">Matched Level</span>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest block font-mono">Secured Level</span>
                 <h4 className="text-base font-black uppercase mt-1 tracking-tight font-sans">
                   {cohort.name}
                 </h4>
@@ -279,14 +279,14 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </p>
                 <div className="mt-3 flex items-center gap-1.5 text-[9px] text-slate-500 font-mono uppercase tracking-wide">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Cohort allocation completed
+                  Reservation tier unlocked
                 </div>
               </div>
             </div>
 
             <div className="mt-5 border-t border-blue-100/60 pt-4">
               <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider text-center sm:text-left">
-                *IMPORTANT LABEL: Cohort assignment is based on simulated behavioral modeling inputs, not real-world evaluation.
+                *IMPORTANT LABEL: Qualified pre-order tier is calculated based on simulated behavioral modeling inputs. No cash deposit is required.
               </p>
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               What your awareness result suggests
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed font-sans">
-              Based on your answers, your current cognitive awareness profile indicates a score of <strong className="text-slate-900">{score}/100</strong>. This maps to the <strong className="text-slate-900">{cohort.name}</strong> research group, which helps evaluate localized Canadian travel behaviors, focus locking intervals, and fatigue-related circadian profiles.
+              Based on your answers, your current cognitive awareness profile indicates a score of <strong className="text-slate-900">{score}/100</strong>. This qualifies you for the <strong className="text-slate-900">{cohort.name}</strong>, securing your priority queue slot and manufacturing updates for the physical Astrateq Aware-1 dashboard console.
             </p>
           </div>
 
@@ -628,7 +628,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               onClick={onReset}
               className="text-xs font-bold uppercase tracking-wider text-blue-600 hover:text-blue-800 cursor-pointer underline font-mono"
             >
-              Restart Study
+              Reset Questionnaire
             </button>
           </div>
         </div>
@@ -638,7 +638,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
       {/* PRIMARY CTA SECTION (CRITICAL CONVERSION POINT) */}
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto my-12">
         <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-3 font-sans">
-          Ready to Help Shape the Concept?
+          Ready to Secure Your Aware-1 Priority Slot?
         </h3>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
@@ -646,19 +646,19 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             onClick={() => onNavigateToCohort(cohort.id)}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all active:scale-[0.98] cursor-pointer font-mono"
           >
-            Join Research Cohort
+            Reserve Aware-1 Pre-Order Slot
           </button>
           
           <button
             onClick={onReset}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-slate-300 hover:border-slate-400 bg-white px-8 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all active:scale-[0.98] cursor-pointer font-mono"
           >
-            Retake Simulation
+            Retake Diagnostic Questionnaire
           </button>
         </div>
 
         <p className="mt-4 text-[11px] text-slate-500 font-sans font-medium">
-          Join early research access to help validate the Driver Awareness Intelligence concept.
+          Secure your priority queue reservation slot today with zero upfront cost or credit card deposit.
         </p>
       </div>
 

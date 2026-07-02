@@ -35,15 +35,15 @@ export default function Footer() {
                   Canadian Safety Standards
                 </p>
                 <p className="text-[11px] text-slate-400 mt-0.5">
-                  Pre-launch validation platform utilizing localized regional road risk assessments.
+                  Pre-launch reservation platform designed specifically for Canadian road conditions.
                 </p>
               </div>
             </div>
 
             {/* Center section: Questions */}
             <div className="flex flex-col gap-0.5 text-left md:text-right">
-              <span className="font-bold text-slate-800 uppercase tracking-wider text-[10px]">Research Inquiries</span>
-              <span className="text-[11px] text-slate-400">Our evaluation team answers questions regarding simulation criteria.</span>
+              <span className="font-bold text-slate-800 uppercase tracking-wider text-[10px]">Pre-Order Coordinator</span>
+              <span className="text-[11px] text-slate-400">Our coordination team answers questions regarding pre-orders and priority shipping.</span>
             </div>
 
             {/* Right section: Contact Support Link */}
@@ -52,7 +52,7 @@ export default function Footer() {
                 onClick={() => setIsSupportOpen(true)}
                 className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-colors cursor-pointer"
               >
-                <span>Contact Study Coordinator</span>
+                <span>Contact Launch Coordinator</span>
                 <span className="text-blue-200 font-mono">→</span>
               </button>
             </div>
@@ -61,7 +61,7 @@ export default function Footer() {
           <div className="mt-8 border-t border-slate-100 pt-6 text-center text-[10px] text-slate-400 font-mono">
             <p>© {new Date().getFullYear()} ASTRATEQ GADGETS. All rights reserved.</p>
             <p className="mt-2 text-[9px] uppercase tracking-wider leading-relaxed text-slate-400 max-w-3xl mx-auto">
-              This platform is an <strong>educational questionnaire and research study</strong> to evaluate driver focus. We do NOT sell auto insurance, we do NOT track your GPS location, and we do NOT require any physical hardware plugins in your vehicle.
+              This platform is a <strong>pre-launch reservation & waitlist portal</strong> for the upcoming Astrateq Aware-1 dashboard alert console. All early pre-orders are 100% free with no deposit required. We do NOT sell auto insurance, track your GPS location, or require OBD/OBD-II vehicle port integration.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-6 py-4">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
                 <Mail className="h-4 w-4 text-slate-900" />
-                <span>Contact Study Coordinator</span>
+                <span>Contact Launch Coordinator</span>
               </div>
               <button
                 onClick={() => setIsSupportOpen(false)}
@@ -92,7 +92,7 @@ export default function Footer() {
                   </div>
                   <h3 className="mt-4 text-sm font-bold text-slate-900 uppercase tracking-wider">Inquiry Received</h3>
                   <p className="mt-2 text-xs text-slate-500 leading-relaxed max-w-xs">
-                    Your transmission was saved. A research coordinator will respond at your registered email address.
+                    Your transmission was saved. A launch coordinator will respond at your registered email address.
                   </p>
                 </div>
               ) : (
@@ -120,13 +120,13 @@ export default function Footer() {
                       rows={4}
                       value={supportMsg}
                       onChange={(e) => setSupportMsg(e.target.value)}
-                      placeholder="Ask a question about the Driver Awareness Study or submit feedback..."
+                      placeholder="Ask a question about the Astrateq Aware-1 dashboard console or submit reservation feedback..."
                       className="w-full rounded border border-slate-200 p-2.5 text-xs focus:border-slate-400 focus:outline-none"
                     />
                   </div>
 
                   <p className="text-[10px] text-slate-400 leading-relaxed">
-                    By submitting, you agree to allow our study coordinators to review and link your simulator evaluation questions.
+                    By submitting, you agree to allow our team to contact you about your pre-order reservation and priority waitlist status.
                   </p>
 
                   <button
