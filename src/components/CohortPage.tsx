@@ -393,31 +393,40 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 icon: <Award className="h-5 w-5 text-blue-600" />,
                 title: "Guaranteed Early Access Slot",
                 desc: "Secure first-priority credentials in the initial software rollout. As soon as private prototype keys generate, your spot is locked.",
-                border: "hover:border-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
-                iconBg: "bg-blue-50 border-blue-200"
+                border: "border-blue-200 hover:border-blue-400 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)]",
+                iconBg: "bg-blue-100/60 border-blue-200",
+                bg: "from-blue-50/40 via-white to-blue-50/10",
+                topBar: "bg-blue-500"
               },
               {
                 icon: <Sparkles className="h-5 w-5 text-cyan-600" />,
                 title: "Up to 50% Locked-In Savings",
                 desc: "Registration completely locks in your early-bird pricing slot, ensuring you escape standard post-launch subscription rates.",
-                border: "hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]",
-                iconBg: "bg-cyan-50 border-cyan-200"
+                border: "border-cyan-200 hover:border-cyan-400 hover:shadow-[0_12px_30px_rgba(6,182,212,0.15)]",
+                iconBg: "bg-cyan-100/60 border-cyan-200",
+                bg: "from-cyan-50/40 via-white to-cyan-50/10",
+                topBar: "bg-cyan-500"
               },
               {
                 icon: <Users className="h-5 w-5 text-indigo-600" />,
                 title: "Direct Prototype Influence",
                 desc: "Provide feedback directly to our product designers to prioritize Commute Metrics, Fatigue curves, and interface preferences.",
-                border: "hover:border-indigo-400 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]",
-                iconBg: "bg-indigo-50 border-indigo-200"
+                border: "border-indigo-200 hover:border-indigo-400 hover:shadow-[0_12px_30px_rgba(99,102,241,0.15)]",
+                iconBg: "bg-indigo-100/60 border-indigo-200",
+                bg: "from-indigo-50/40 via-white to-indigo-50/10",
+                topBar: "bg-indigo-500"
               }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
                 whileHover={{ y: -8, scale: 1.01 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className={`p-8 rounded-2xl border border-slate-200 bg-white shadow-lg text-slate-900 transition-all duration-300 flex flex-col justify-between hover:shadow-xl ${item.border}`}
+                className={`relative pt-10 pb-8 px-8 rounded-2xl border bg-gradient-to-br ${item.bg} shadow-lg text-slate-900 transition-all duration-300 flex flex-col justify-between hover:shadow-xl overflow-hidden ${item.border}`}
                 id={`cohort-value-prop-card-${idx}`}
               >
+                {/* Colorful top accent bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 ${item.topBar}`} />
+                
                 <div>
                   <div className={`h-11 w-11 rounded-xl border flex items-center justify-center mb-6 ${item.iconBg}`}>
                     {item.icon}
@@ -586,38 +595,46 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 step: "01",
                 title: "Select Priority Level",
                 desc: "Choose from Standard, VIP Elite, or Founding Collaborator with zero payment or deposit required.",
-                border: "hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]",
-                stepBg: "bg-blue-600 text-white"
+                border: "border-blue-200 hover:border-blue-400 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)]",
+                bg: "from-blue-50/60 to-white",
+                topColor: "border-t-blue-500",
+                stepBg: "bg-blue-100 border border-blue-300 text-blue-700"
               },
               {
                 step: "02",
                 title: "Diagnostic Check-In",
                 desc: "Review your baseline fatigue metrics from our simulator to calibrate your early-bird queue discount.",
-                border: "hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]",
-                stepBg: "bg-cyan-600 text-white"
+                border: "border-cyan-200 hover:border-cyan-400 hover:shadow-[0_12px_30px_rgba(6,182,212,0.15)]",
+                bg: "from-cyan-50/60 to-white",
+                topColor: "border-t-cyan-500",
+                stepBg: "bg-cyan-100 border border-cyan-300 text-cyan-700"
               },
               {
                 step: "03",
                 title: "Submit Driving Context",
                 desc: "Register your typical regional route variables to help customize our offline neural models.",
-                border: "hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]",
-                stepBg: "bg-purple-600 text-white"
+                border: "border-purple-200 hover:border-purple-400 hover:shadow-[0_12px_30px_rgba(168,85,247,0.15)]",
+                bg: "from-purple-50/60 to-white",
+                topColor: "border-t-purple-500",
+                stepBg: "bg-purple-100 border border-purple-300 text-purple-700"
               },
               {
                 step: "04",
                 title: "Unlock Prototype Keys",
                 desc: "Receive your private platform download credentials and instructions once the prototype builds are active.",
-                border: "hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]",
-                stepBg: "bg-emerald-600 text-white"
+                border: "border-emerald-200 hover:border-emerald-400 hover:shadow-[0_12px_30px_rgba(16,185,129,0.15)]",
+                bg: "from-emerald-50/60 to-white",
+                topColor: "border-t-emerald-500",
+                stepBg: "bg-emerald-100 border border-emerald-300 text-emerald-700"
               }
             ].map((flow, idx) => (
               <div 
                 key={idx} 
-                className={`relative p-8 rounded-xl border border-slate-200 bg-white shadow-lg text-slate-900 transition-all duration-300 flex flex-col justify-between hover:shadow-xl ${flow.border}`}
+                className={`relative p-8 rounded-xl border bg-gradient-to-b ${flow.bg} border-t-4 ${flow.topColor} shadow-lg text-slate-900 transition-all duration-300 flex flex-col justify-between hover:shadow-xl overflow-hidden ${flow.border}`}
                 id={`cohort-flow-card-${idx}`}
               >
                 <div>
-                  <div className={`flex h-8 w-8 rounded-full font-mono text-xs font-bold items-center justify-center mb-4 shadow-sm ${flow.stepBg}`}>
+                  <div className={`flex h-8 w-8 rounded-full font-mono text-xs font-black items-center justify-center mb-4 shadow-sm ${flow.stepBg}`}>
                     {flow.step}
                   </div>
                   <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{flow.title}</h4>

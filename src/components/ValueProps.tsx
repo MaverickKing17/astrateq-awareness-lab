@@ -73,9 +73,10 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             
             {/* Card 1 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-lg transition-all duration-300 hover:border-blue-400 hover:shadow-xl" id="value-prop-card-1">
+            <div className="relative flex flex-col justify-between rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50/40 via-white to-blue-50/10 pt-10 pb-8 px-8 shadow-lg transition-all duration-300 hover:border-blue-400 hover:shadow-xl overflow-hidden" id="value-prop-card-1">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-blue-500" />
               <div className="space-y-5">
-                <div className="flex h-9 w-9 items-center justify-center rounded bg-blue-50 border border-blue-200 text-blue-600 font-mono font-bold text-xs">
+                <div className="flex h-9 w-9 items-center justify-center rounded bg-blue-100/60 border border-blue-200 text-blue-700 font-mono font-bold text-xs">
                   01
                 </div>
                 <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 leading-snug font-sans">
@@ -85,16 +86,17 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   We are assessing whether brief, local pre-trip focus check-ins can flag cognitive attention drift 15 minutes before the driver feels tired.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-slate-100 space-y-1.5">
+              <div className="mt-8 pt-4 border-t border-blue-100 space-y-1.5">
                 <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">PRIMARY OUTCOME TARGET</p>
                 <p className="text-[10px] font-extrabold text-blue-600 uppercase tracking-wider font-mono">92% Precision in Early Accumulation Warning</p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-xl" id="value-prop-card-2">
+            <div className="relative flex flex-col justify-between rounded-2xl border border-cyan-200 bg-gradient-to-br from-cyan-50/40 via-white to-cyan-50/10 pt-10 pb-8 px-8 shadow-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-xl overflow-hidden" id="value-prop-card-2">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-cyan-500" />
               <div className="space-y-5">
-                <div className="flex h-9 w-9 items-center justify-center rounded bg-cyan-50 border border-cyan-200 text-cyan-600 font-mono font-bold text-xs">
+                <div className="flex h-9 w-9 items-center justify-center rounded bg-cyan-100/60 border border-cyan-200 text-cyan-700 font-mono font-bold text-xs">
                   02
                 </div>
                 <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 leading-snug font-sans">
@@ -104,16 +106,17 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   We are validating if highly-optimized, lightweight machine learning models can run in memory to support eye-scanning cycles with zero lag.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-slate-100 space-y-1.5">
+              <div className="mt-8 pt-4 border-t border-cyan-100 space-y-1.5">
                 <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">PRIMARY OUTCOME TARGET</p>
                 <p className="text-[10px] font-extrabold text-cyan-600 uppercase tracking-wider font-mono">100% Offline Edge Gaze Focal Verification</p>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-lg transition-all duration-300 hover:border-indigo-400 hover:shadow-xl" id="value-prop-card-3">
+            <div className="relative flex flex-col justify-between rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50/40 via-white to-indigo-50/10 pt-10 pb-8 px-8 shadow-lg transition-all duration-300 hover:border-indigo-400 hover:shadow-xl overflow-hidden" id="value-prop-card-3">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-indigo-500" />
               <div className="space-y-5">
-                <div className="flex h-9 w-9 items-center justify-center rounded bg-indigo-50 border border-indigo-200 text-indigo-600 font-mono font-bold text-xs">
+                <div className="flex h-9 w-9 items-center justify-center rounded bg-indigo-100/60 border border-indigo-200 text-indigo-700 font-mono font-bold text-xs">
                   03
                 </div>
                 <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 leading-snug font-sans">
@@ -123,7 +126,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   Instead of demanding constant GPS, OBD connections, and telematics logs, we test if a fully isolated software model successfully protects driver welfare.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-slate-100 space-y-1.5">
+              <div className="mt-8 pt-4 border-t border-indigo-100 space-y-1.5">
                 <p className="text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">PRIMARY OUTCOME TARGET</p>
                 <p className="text-[10px] font-extrabold text-indigo-600 uppercase tracking-wider font-mono">Zero Network Footprint with 100% RAM Privacy</p>
               </div>
@@ -152,8 +155,8 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
             
             {/* Step 1 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 border-t-2 border-t-blue-500 shadow-lg transition-all duration-300 hover:border-blue-400 hover:shadow-xl">
-              <div className="flex h-11 w-11 items-center justify-center rounded bg-blue-50 border border-blue-200 text-blue-600 font-mono text-xs font-black shadow-sm">
+            <div className="relative flex flex-col items-center text-center bg-gradient-to-b from-blue-50/60 to-white rounded-2xl p-6 sm:p-8 border border-blue-200 border-t-4 border-t-blue-500 shadow-lg transition-all duration-300 hover:border-blue-400 hover:shadow-xl overflow-hidden">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-100 border border-blue-300 text-blue-700 font-mono text-xs font-black shadow-sm">
                 01
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Simulate First</h4>
@@ -163,8 +166,8 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Step 2 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 border-t-2 border-t-cyan-500 shadow-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-xl">
-              <div className="flex h-11 w-11 items-center justify-center rounded bg-cyan-50 border border-cyan-200 text-cyan-600 font-mono text-xs font-black shadow-sm">
+            <div className="relative flex flex-col items-center text-center bg-gradient-to-b from-cyan-50/60 to-white rounded-2xl p-6 sm:p-8 border border-cyan-200 border-t-4 border-t-cyan-500 shadow-lg transition-all duration-300 hover:border-cyan-400 hover:shadow-xl overflow-hidden">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-100 border border-cyan-300 text-cyan-700 font-mono text-xs font-black shadow-sm">
                 02
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Choose Priority Level</h4>
@@ -174,8 +177,8 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Step-3 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 border-t-2 border-t-purple-500 shadow-lg transition-all duration-300 hover:border-purple-400 hover:shadow-xl">
-              <div className="flex h-11 w-11 items-center justify-center rounded bg-purple-50 border border-purple-200 text-purple-600 font-mono text-xs font-black shadow-sm">
+            <div className="relative flex flex-col items-center text-center bg-gradient-to-b from-purple-50/60 to-white rounded-2xl p-6 sm:p-8 border border-purple-200 border-t-4 border-t-purple-500 shadow-lg transition-all duration-300 hover:border-purple-400 hover:shadow-xl overflow-hidden">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-purple-100 border border-purple-300 text-purple-700 font-mono text-xs font-black shadow-sm">
                 03
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Provide Driving Context</h4>
@@ -185,8 +188,8 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Step 4 */}
-            <div className="relative flex flex-col items-center text-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 border-t-2 border-t-emerald-500 shadow-lg transition-all duration-300 hover:border-emerald-400 hover:shadow-xl">
-              <div className="flex h-11 w-11 items-center justify-center rounded bg-emerald-50 border border-emerald-200 text-emerald-600 font-mono text-xs font-black shadow-sm">
+            <div className="relative flex flex-col items-center text-center bg-gradient-to-b from-emerald-50/60 to-white rounded-2xl p-6 sm:p-8 border border-emerald-200 border-t-4 border-t-emerald-500 shadow-lg transition-all duration-300 hover:border-emerald-400 hover:shadow-xl overflow-hidden">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-100 border border-emerald-300 text-emerald-700 font-mono text-xs font-black shadow-sm">
                 04
               </div>
               <h4 className="mt-6 text-xs font-black uppercase tracking-wider text-slate-900 font-mono">Unlock Sandboxed Builds</h4>

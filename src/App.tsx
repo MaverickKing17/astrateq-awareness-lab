@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ValueProps from "./components/ValueProps";
@@ -9,13 +9,30 @@ import LoadingOverlay from "./components/LoadingOverlay";
 import HWY_404_POV_IMAGE from "./assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 import { DriverSimulationInputs, DriverInsights, ActivePage } from "./types";
 import { 
-  Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check
+  Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
   const [activePage, setActivePage] = useState<ActivePage>("landing");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   
   // Simulation results state
   const [inputs, setInputs] = useState<DriverSimulationInputs | null>(null);
@@ -468,62 +485,77 @@ export default function App() {
                       title: "Decides What Insights Matter",
                       desc: "Your simulation variables guide our eventual focus dashboard. By selecting which parameters to record, you direct what features our local edge model prioritizes.",
                       theme: {
-                        border: "hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.15)]",
+                        bg: "from-blue-50/40 via-white to-blue-50/10",
+                        border: "border-blue-200 hover:border-blue-400 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)]",
+                        topBar: "bg-blue-500",
                         iconColor: "text-blue-600",
-                        iconBg: "bg-blue-50 border-blue-200",
+                        iconBg: "bg-blue-100/60 border-blue-200",
                       }
                     },
                     {
                       title: "Locks Down Privacy Standards",
                       desc: "Your feedback cements an alternative to remote insurance tracking, proving that drivers actively value zero-trace, local-memory data isolation standards.",
                       theme: {
-                        border: "hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]",
+                        bg: "from-cyan-50/40 via-white to-cyan-50/10",
+                        border: "border-cyan-200 hover:border-cyan-400 hover:shadow-[0_12px_30px_rgba(6,182,212,0.15)]",
+                        topBar: "bg-cyan-500",
                         iconColor: "text-cyan-600",
-                        iconBg: "bg-cyan-50 border-cyan-200",
+                        iconBg: "bg-cyan-100/60 border-cyan-200",
                       }
                     },
                     {
                       title: "Declares What Drivers Value",
                       desc: "Standard safety suites demand constant cloud logins and OBD connections. Your signup demonstrates that drivers explicitly demand hardware-free, personal solutions.",
                       theme: {
-                        border: "hover:border-indigo-400 hover:shadow-[0_0_25px_rgba(99,102,241,0.15)]",
+                        bg: "from-indigo-50/40 via-white to-indigo-50/10",
+                        border: "border-indigo-200 hover:border-indigo-400 hover:shadow-[0_12px_30px_rgba(99,102,241,0.15)]",
+                        topBar: "bg-indigo-500",
                         iconColor: "text-indigo-600",
-                        iconBg: "bg-indigo-50 border-indigo-200",
+                        iconBg: "bg-indigo-100/60 border-indigo-200",
                       }
                     },
                     {
                       title: "Determines Project Investment",
                       desc: "Strong regional metrics show partners that driver focus is a highly valued priority. Your participation triggers development of Canada's first sovereign driver AI.",
                       theme: {
-                        border: "hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.15)]",
+                        bg: "from-amber-50/40 via-white to-amber-50/10",
+                        border: "border-amber-200 hover:border-amber-400 hover:shadow-[0_12px_30px_rgba(245,158,11,0.15)]",
+                        topBar: "bg-amber-500",
                         iconColor: "text-amber-600",
-                        iconBg: "bg-amber-50 border-amber-200",
+                        iconBg: "bg-amber-100/60 border-amber-200",
                       }
                     },
                     {
                       title: "Coordinates Priority Rollout",
                       desc: "As an early contributor, your signup guarantees primary rollout access and locks in founding early-bird launch pricing without any monetary deposits.",
                       theme: {
-                        border: "hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]",
+                        bg: "from-emerald-50/40 via-white to-emerald-50/10",
+                        border: "border-emerald-200 hover:border-emerald-400 hover:shadow-[0_12px_30px_rgba(16,185,129,0.15)]",
+                        topBar: "bg-emerald-500",
                         iconColor: "text-emerald-600",
-                        iconBg: "bg-emerald-50 border-emerald-200",
+                        iconBg: "bg-emerald-100/60 border-emerald-200",
                       }
                     },
                     {
                       title: "Adapts to Canadian Commutes",
                       desc: "Whether you drive frozen rural highways or heavy urban gridlocks, your province and routing parameters shape the algorithmic thresholds for localized weather variables.",
                       theme: {
-                        border: "hover:border-rose-400 hover:shadow-[0_0_25px_rgba(244,63,94,0.15)]",
+                        bg: "from-rose-50/40 via-white to-rose-50/10",
+                        border: "border-rose-200 hover:border-rose-400 hover:shadow-[0_12px_30px_rgba(244,63,94,0.15)]",
+                        topBar: "bg-rose-500",
                         iconColor: "text-rose-600",
-                        iconBg: "bg-rose-50 border-rose-200",
+                        iconBg: "bg-rose-100/60 border-rose-200",
                       }
                     }
                   ].map((item, idx) => (
                     <div 
                       key={idx}
-                      className={`p-8 rounded-2xl border border-slate-200 bg-white shadow-lg text-slate-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl ${item.theme.border}`}
+                      className={`relative pt-10 pb-8 px-8 rounded-2xl border bg-gradient-to-br ${item.theme.bg} shadow-lg text-slate-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl overflow-hidden ${item.theme.border}`}
                       id={`app-value-prop-card-${idx}`}
                     >
+                      {/* Colorful top accent bar */}
+                      <div className={`absolute top-0 left-0 right-0 h-1.5 ${item.theme.topBar}`} />
+                      
                       <div className={`h-10 w-10 rounded-xl border flex items-center justify-center mb-6 ${item.theme.iconBg}`}>
                         <Check className={`h-5 w-5 ${item.theme.iconColor}`} />
                       </div>
@@ -721,6 +753,23 @@ export default function App() {
 
       {/* Main Footer */}
       <Footer />
+
+      {/* Floating Scroll To Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 10 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg shadow-blue-500/20 hover:bg-blue-500 hover:shadow-blue-500/35 active:scale-95 transition-all cursor-pointer border border-blue-400/30"
+            id="scroll-to-top-button"
+            title="Scroll to top"
+          >
+            <ArrowUp className="h-5 w-5 stroke-[2.5]" />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
     </div>
   );
