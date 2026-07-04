@@ -305,7 +305,7 @@ export default function App() {
 
                   {/* Right Column: Redesigned Simulated Result Dashboard Mockup (Improvement 2, 8, 9) */}
                   <div className="lg:col-span-5 flex justify-center">
-                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-800 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.25)] hover:border-blue-500">
+                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-700 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.3)] hover:border-blue-400">
                       
                       {/* Grid lines pattern overlay */}
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
@@ -314,99 +314,108 @@ export default function App() {
                       <div className="relative z-10 space-y-4">
                         {/* Mock App Header */}
                         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                          <div className="flex items-center gap-1.5 text-[9px] font-bold font-mono text-slate-400 uppercase tracking-widest">
+                          <div className="flex items-center gap-1.5 text-[9.5px] font-black font-mono text-slate-200 uppercase tracking-widest">
                             <Cpu className="h-4 w-4 text-blue-400 animate-pulse" />
                             <span>ASTRATEQ ENGINE v1.2</span>
                           </div>
-                          <span className="inline-flex items-center gap-1.5 rounded bg-blue-500/10 border border-blue-500/30 px-2 py-0.5 text-[8px] font-bold font-mono text-blue-400 uppercase tracking-wider animate-pulse">
-                            <span className="relative flex h-1 w-1">
+                          <span className="inline-flex items-center gap-1.5 rounded bg-blue-500/15 border border-blue-500/40 px-2 py-0.5 text-[8.5px] font-extrabold font-mono text-blue-300 uppercase tracking-wider animate-pulse">
+                            <span className="relative flex h-1.5 w-1.5">
                               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-1 w-1 bg-emerald-400"></span>
+                              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
                             </span>
                             LIVE SIMULATION COMPILING
                           </span>
                         </div>
 
+                        {/* HIGH-CONTRAST CONCEPT EXPLANATION BANNER */}
+                        <div className="bg-blue-950/40 border border-blue-500/30 rounded-xl p-3 text-[10px] text-blue-100 leading-relaxed shadow-sm">
+                          <p className="font-extrabold uppercase tracking-wider text-blue-300 mb-1 flex items-center gap-1.5">
+                            <Info className="h-4 w-4 text-blue-300 shrink-0" />
+                            Active Concept Mockup
+                          </p>
+                          This card simulates how Astrateq’s offline, hardware-free software processes driver fatigue trend patterns entirely on-device without cloud connectivity.
+                        </div>
+
                         {/* Interactive Telemetry Mock Display */}
-                        <div className="flex flex-col items-center py-5 bg-slate-900/60 rounded-xl border border-slate-800 shadow-inner space-y-3 relative overflow-hidden group">
+                        <div className="flex flex-col items-center py-5 bg-slate-900/80 rounded-xl border border-slate-800 shadow-inner space-y-3 relative overflow-hidden group">
                           {/* Pulsing glow background */}
-                          <div className="absolute inset-0 bg-cyan-500/[0.02] pointer-events-none animate-pulse" />
+                          <div className="absolute inset-0 bg-cyan-500/[0.04] pointer-events-none animate-pulse" />
                           
                           {/* Radial Progress Ring representing awareness score */}
-                          <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-500/40 shadow-[0_8px_20px_rgba(59,130,246,0.15)] transition-transform duration-500 group-hover:scale-105">
-                            <div className="absolute inset-1 rounded-full border border-dashed border-cyan-400/30 animate-[spin_30s_linear_infinite]" />
+                          <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-400/50 shadow-[0_8px_20px_rgba(59,130,246,0.25)] transition-transform duration-500 group-hover:scale-105">
+                            <div className="absolute inset-1 rounded-full border border-dashed border-cyan-400/40 animate-[spin_30s_linear_infinite]" />
                             <div className="flex flex-col items-center">
                               <span className="text-2xl font-black font-mono tracking-tight text-white transition-all duration-300">
                                 {dashboardScore}
                               </span>
-                              <span className="text-[7px] font-bold text-emerald-400 uppercase tracking-widest font-mono animate-pulse">
+                              <span className="text-[7.5px] font-black text-emerald-400 uppercase tracking-widest font-mono animate-pulse">
                                 STABLE
                               </span>
                             </div>
                           </div>
 
-                          <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest font-mono flex items-center gap-1.5">
+                          <span className="text-[9.5px] font-black text-slate-200 uppercase tracking-widest font-mono flex items-center gap-1.5">
                             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
                             DRIVER AWARENESS SCORE
                           </span>
                         </div>
 
                         {/* Detailed Diagnostic Context Information */}
-                        <div className="bg-black/80 p-4 rounded-xl border border-slate-800 font-mono text-[9.5px] space-y-2.5 text-slate-300">
-                          <div className="flex justify-between border-b border-slate-900 pb-1 text-slate-400 uppercase text-[8px] tracking-wider">
+                        <div className="bg-black/80 p-4 rounded-xl border border-slate-800 font-mono text-[10px] space-y-3 text-slate-200">
+                          <div className="flex justify-between border-b border-slate-800 pb-1.5 text-slate-300 uppercase text-[8.5px] tracking-wider font-extrabold">
                             <span>METRIC CLASSIFICATION</span>
-                            <span className="text-blue-400 font-bold">ON-COGNITIVE-M702</span>
+                            <span className="text-blue-400 font-black">ON-COGNITIVE-M702</span>
                           </div>
                           
-                          <div className="space-y-1.5">
-                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">System Live Logs:</p>
-                            <p className="text-emerald-400 font-medium pl-2 bg-emerald-950/20 py-1.5 rounded border border-emerald-900/30 font-mono text-[8.5px] leading-relaxed transition-all duration-300 h-7 flex items-center">
+                          <div className="space-y-1">
+                            <p className="text-slate-300 uppercase text-[8px] tracking-wider font-black">System Live Logs:</p>
+                            <p className="text-emerald-300 font-bold pl-2 bg-emerald-950/30 py-1.5 rounded border border-emerald-900/40 font-mono text-[9px] leading-relaxed transition-all duration-300 h-7 flex items-center">
                               &gt; {mockLogs[activeLogIdx]}
                             </p>
                           </div>
 
-                          <div className="space-y-1.5">
-                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">Active Baseline Metric:</p>
-                            <p className="text-white font-medium pl-1 bg-slate-900/40 py-1 rounded">
+                          <div className="space-y-1">
+                            <p className="text-slate-300 uppercase text-[8px] tracking-wider font-black">Active Baseline Metric:</p>
+                            <p className="text-white font-medium pl-2 bg-slate-900/60 py-1.5 rounded border border-slate-800 text-[9px]">
                               Cognitive tracking running at {attentionLevel}% focal alignment.
                             </p>
                           </div>
 
-                          <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-900">
+                          <div className="grid grid-cols-2 gap-3 pt-1.5 border-t border-slate-850">
                             <div>
-                              <p className="text-slate-500 uppercase text-[8px] tracking-wider">Blink Frame Rate:</p>
-                              <p className="text-cyan-400 font-bold mt-0.5">{blinkRate} frames/sec</p>
+                              <p className="text-slate-300 uppercase text-[8px] tracking-wider font-black">Blink Frame Rate:</p>
+                              <p className="text-cyan-300 font-extrabold mt-0.5 text-[9.5px]">{blinkRate} frames/sec</p>
                             </div>
                             <div>
-                              <p className="text-slate-500 uppercase text-[8px] tracking-wider">Privacy Standard:</p>
-                              <p className="text-emerald-400 font-bold mt-0.5">100% Isolated RAM</p>
+                              <p className="text-slate-300 uppercase text-[8px] tracking-wider font-black">Privacy Standard:</p>
+                              <p className="text-emerald-300 font-extrabold mt-0.5 text-[9.5px]">100% Isolated RAM</p>
                             </div>
                           </div>
 
-                          <div className="flex justify-between pt-1 border-t border-slate-900 text-slate-500 text-[8px]">
+                          <div className="flex justify-between pt-1.5 border-t border-slate-850 text-slate-300 text-[8.5px] font-bold">
                             <span>CONFIDENCE RATING:</span>
-                            <span className="text-white font-bold">{attentionLevel}% ATTENTION DENSITY</span>
+                            <span className="text-white font-black">{attentionLevel}% ATTENTION DENSITY</span>
                           </div>
                         </div>
 
                         {/* Software Quick Spec Badges */}
-                        <div className="grid grid-cols-3 gap-2 text-center text-[8px] font-mono uppercase tracking-wider">
-                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60 transition-all hover:border-slate-700">
+                        <div className="grid grid-cols-3 gap-2 text-center text-[8.5px] font-mono uppercase tracking-wider">
+                          <div className="p-2 bg-slate-900/60 rounded border border-slate-800 transition-all hover:border-slate-700">
                             <p className="text-blue-400 font-black">SOVEREIGN</p>
-                            <p className="text-slate-500 mt-0.5">NO GPS TRACK</p>
+                            <p className="text-slate-300 mt-0.5 font-bold">NO GPS TRACK</p>
                           </div>
-                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60 transition-all hover:border-slate-700">
+                          <div className="p-2 bg-slate-900/60 rounded border border-slate-800 transition-all hover:border-slate-700">
                             <p className="text-emerald-400 font-black">HARDWARE FREE</p>
-                            <p className="text-slate-500 mt-0.5">SOFTWARE ONLY</p>
+                            <p className="text-slate-300 mt-0.5 font-bold">SOFTWARE ONLY</p>
                           </div>
-                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60 transition-all hover:border-slate-700">
+                          <div className="p-2 bg-slate-900/60 rounded border border-slate-800 transition-all hover:border-slate-700">
                             <p className="text-cyan-400 font-black">BIOMETRICS</p>
-                            <p className="text-slate-500 mt-0.5">ZERO STORAGE</p>
+                            <p className="text-slate-300 mt-0.5 font-bold">ZERO STORAGE</p>
                           </div>
                         </div>
 
-                        <p className="text-[7.5px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed">
-                          Conceptual Driver Awareness Interface Dashboard Mockup
+                        <p className="text-[9px] font-mono text-slate-400 text-center uppercase tracking-widest leading-relaxed font-bold bg-slate-900/40 py-1.5 rounded-lg border border-slate-800/40">
+                          💡 Conceptual App Interface Simulation
                         </p>
                       </div>
                     </div>
