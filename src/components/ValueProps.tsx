@@ -243,11 +243,8 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           </div>
 
           {/* ROADMAP TIMELINE (Improvement 5) */}
-          <div className="max-w-5xl mx-auto relative">
-            {/* Horizontal Line for Desktop */}
-            <div className="hidden lg:block absolute top-[28px] left-[6%] right-[6%] h-0.5 border-t border-dashed border-slate-200" />
-            
-            <div className="grid gap-8 lg:grid-cols-6 relative z-10">
+          <div className="max-w-6xl mx-auto relative">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 relative z-10">
               {[
                 {
                   phase: "01",
@@ -255,7 +252,14 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   status: "Completed",
                   desc: "Drivers explore fatigue concepts and submit exposure evaluations.",
                   isActive: true,
-                  isCurrent: false
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-emerald-50/10 via-white to-emerald-50/5",
+                    border: "border-emerald-200/80 hover:border-emerald-400 hover:shadow-[0_12px_24px_rgba(16,185,129,0.08)]",
+                    topBar: "bg-emerald-500",
+                    numBadge: "bg-emerald-100/60 border-emerald-200 text-emerald-700",
+                    statusBadge: "bg-emerald-50 border-emerald-100 text-emerald-700"
+                  }
                 },
                 {
                   phase: "02",
@@ -263,7 +267,14 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   status: "We Are Here",
                   desc: "Analyzing regional demands and gathering early validation signups.",
                   isActive: true,
-                  isCurrent: true
+                  isCurrent: true,
+                  theme: {
+                    bg: "from-blue-50/40 via-white to-blue-50/15",
+                    border: "border-blue-300 hover:border-blue-500 shadow-md shadow-blue-500/5 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)] ring-2 ring-blue-500/5",
+                    topBar: "bg-blue-600",
+                    numBadge: "bg-blue-600 border-blue-600 text-white",
+                    statusBadge: "bg-blue-50 border-blue-200 text-blue-700"
+                  }
                 },
                 {
                   phase: "03",
@@ -271,7 +282,14 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   status: "Phase 3 Trigger",
                   desc: "Compiling optimized, 100% offline Edge-AI neural networks.",
                   isActive: false,
-                  isCurrent: false
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
                 },
                 {
                   phase: "04",
@@ -279,7 +297,14 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   status: "Canada Elite",
                   desc: "Releasing early test builds to registered founding contributors.",
                   isActive: false,
-                  isCurrent: false
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
                 },
                 {
                   phase: "05",
@@ -287,7 +312,14 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   status: "Production Ready",
                   desc: "Releasing the first complete hardware-free driver safety suite.",
                   isActive: false,
-                  isCurrent: false
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
                 },
                 {
                   phase: "06",
@@ -295,34 +327,55 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   status: "Smart Ecosystem",
                   desc: "Direct native dashboard support for automotive screens.",
                   isActive: false,
-                  isCurrent: false
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
                 }
               ].map((step, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4">
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-xl border font-mono text-sm font-black transition-all ${
-                    step.isCurrent 
-                      ? "bg-blue-600 border-blue-600 text-white shadow-[0_4px_15px_rgba(59,130,246,0.3)]" 
-                      : step.isActive 
-                        ? "bg-blue-50 border-blue-200 text-blue-600" 
-                        : "bg-white border-slate-200 text-slate-400"
-                  }`}>
-                    {step.phase}
-                  </div>
+                <div 
+                  key={idx} 
+                  className={`relative flex flex-col justify-between pt-10 pb-7 px-5 rounded-2xl border bg-gradient-to-br ${step.theme.bg} shadow-md transition-all duration-300 transform hover:-translate-y-1.5 overflow-hidden ${step.theme.border}`}
+                  id={`timeline-card-${idx}`}
+                >
+                  {/* Top Accent Color Bar */}
+                  <div className={`absolute top-0 left-0 right-0 h-1.5 ${step.theme.topBar}`} />
                   
-                  <div className="space-y-1">
-                    <div className="flex items-center justify-center lg:justify-start gap-1.5">
-                      <h4 className="text-xs font-extrabold uppercase tracking-wide text-slate-900 font-sans">{step.title}</h4>
+                  <div className="space-y-4">
+                    {/* Circle Indicator Header */}
+                    <div className="flex items-center justify-between">
+                      <div className={`flex h-9 w-9 items-center justify-center rounded-xl border font-mono text-xs font-black shadow-sm ${step.theme.numBadge}`}>
+                        {step.phase}
+                      </div>
+                      
+                      {/* Active Beacon Dot for Current step */}
+                      {step.isCurrent && (
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                      )}
                     </div>
-                    <span className={`inline-block text-[8px] font-bold uppercase tracking-widest font-mono ${
-                      step.isCurrent 
-                        ? "text-blue-600" 
-                        : step.isActive 
-                          ? "text-emerald-500" 
-                          : "text-slate-400"
-                    }`}>
-                      {step.status}
-                    </span>
-                    <p className="text-[11px] text-slate-700 leading-relaxed font-sans font-medium">{step.desc}</p>
+
+                    {/* Typography block */}
+                    <div className="space-y-1.5">
+                      <h4 className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-slate-900 font-sans leading-tight">
+                        {step.title}
+                      </h4>
+                      <div className="inline-block">
+                        <span className={`inline-flex items-center gap-1 text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded border font-mono ${step.theme.statusBadge}`}>
+                          {step.isCurrent && <span className="h-1 w-1 rounded-full bg-blue-600 animate-pulse" />}
+                          {step.status}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-600 leading-relaxed font-sans font-semibold pt-1">
+                        {step.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}

@@ -79,9 +79,9 @@ export default function Footer() {
             <p className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider">
               © {new Date().getFullYear()} ASTRATEQ. All rights reserved.
             </p>
-            <div className="mt-4 rounded-2xl bg-white border border-slate-100 p-5 max-w-4xl mx-auto shadow-sm">
-              <p className="text-[10px] uppercase tracking-wider leading-relaxed text-slate-400/90 font-mono">
-                This platform is a <strong className="text-slate-500 font-black">conceptual pre-launch validation and waitlist portal</strong> for evaluating interest in upcoming Astrateq Driver Awareness Intelligence offline software. All early registrations are 100% free with no deposit required. We do NOT sell auto insurance, track your GPS location, require OBD/OBD-II vehicle port integration, or sell hardware.
+            <div className="mt-5 rounded-2xl bg-slate-100/80 border border-slate-200 p-6 max-w-4xl mx-auto shadow-inner">
+              <p className="text-[11px] sm:text-xs uppercase tracking-wider leading-relaxed text-slate-600 font-mono font-bold">
+                This platform is a <span className="text-slate-900 font-black underline decoration-blue-500 decoration-2 underline-offset-2">conceptual pre-launch validation and waitlist portal</span> for evaluating interest in upcoming Astrateq Driver Awareness Intelligence offline software. All early registrations are 100% free with no deposit required. We do <span className="text-red-700 font-black">NOT</span> sell auto insurance, track your GPS location, require OBD/OBD-II vehicle port integration, or sell hardware.
               </p>
             </div>
           </div>
