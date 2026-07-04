@@ -203,31 +203,39 @@ export default function App() {
                       </span> platform.
                     </h1>
 
-                    <div className="space-y-4 text-xs sm:text-[13px] text-slate-500 leading-relaxed max-w-xl font-sans">
+                    <div className="space-y-5 text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl font-sans font-medium">
                       <p>
-                        Today's driving systems react <span className="text-slate-900 font-semibold">after</span> errors occur—alarming you when drifting out of lanes. We are testing an alternative: Can on-device software map your focus and fatigue trend <span className="text-slate-900 font-semibold">before</span> mistakes happen?
+                        Today's driving systems react <span className="text-slate-950 font-black border-b-2 border-blue-500/35 pb-0.5">after</span> errors occur—alarming you when drifting out of lanes. We are testing an alternative: Can on-device software map your focus and fatigue trend <span className="text-slate-950 font-black border-b-2 border-indigo-500/35 pb-0.5">before</span> mistakes happen?
                       </p>
                       <p>
-                        We are recruiting <span className="text-slate-900 font-semibold">founding Canadian drivers</span> and early contributors to help prove demand for a pure, zero-surveillance safety category that operates 100% locally in memory.
+                        We are recruiting <span className="text-slate-950 font-black border-b-2 border-cyan-500/35 pb-0.5">founding Canadian drivers</span> and early contributors to help prove demand for a pure, zero-surveillance safety category that operates 100% locally in memory.
                       </p>
                     </div>
 
                     {/* Features list (Improvement 11 & 12) */}
-                    <div className="grid grid-cols-2 gap-4 max-w-lg text-[9px] font-bold uppercase tracking-widest text-slate-600 font-mono">
-                      <div className="flex items-center gap-2.5">
-                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl text-[11px] font-black uppercase tracking-wider text-slate-800 font-mono pt-2">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                          <Check className="h-3 w-3 stroke-[3]" />
+                        </div>
                         <span>Sovereign Local Software</span>
                       </div>
-                      <div className="flex items-center gap-2.5">
-                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                          <Check className="h-3 w-3 stroke-[3]" />
+                        </div>
                         <span>Bypasses OBD Connections</span>
                       </div>
-                      <div className="flex items-center gap-2.5">
-                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                          <Check className="h-3 w-3 stroke-[3]" />
+                        </div>
                         <span>Isolated from Auto Insurers</span>
                       </div>
-                      <div className="flex items-center gap-2.5">
-                        <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                          <Check className="h-3 w-3 stroke-[3]" />
+                        </div>
                         <span>100% Temporary RAM Isolation</span>
                       </div>
                     </div>
@@ -672,27 +680,34 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="space-y-4.5">
+                <div className="space-y-4">
                   {faqItems.map((item, idx) => {
                     const isOpen = openFaqIdx === idx;
                     return (
                       <div 
                         key={idx} 
-                        className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                        className={`rounded-2xl border border-l-4 transition-all duration-300 overflow-hidden ${
                           isOpen 
-                            ? "border-blue-400 bg-white shadow-[0_12px_28px_rgba(59,130,246,0.08)] ring-1 ring-blue-500/10" 
-                            : "border-slate-200/60 bg-white/60 hover:bg-white hover:border-blue-300 hover:shadow-[0_8px_20px_rgba(59,130,246,0.04)]"
+                            ? "border-blue-300 border-l-blue-600 bg-white shadow-[0_12px_30px_rgba(59,130,246,0.06)]" 
+                            : "border-slate-200/80 border-l-slate-300 bg-white hover:bg-slate-50/30 hover:border-blue-200 hover:border-l-blue-400 hover:shadow-[0_8px_20px_rgba(0,0,0,0.02)]"
                         }`}
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
                           className="w-full flex items-center justify-between px-6 py-5 text-left transition-all cursor-pointer font-sans"
                         >
-                          <span className={`text-xs sm:text-sm font-bold uppercase tracking-wider font-mono transition-colors duration-250 ${isOpen ? 'text-blue-600' : 'text-slate-800'}`}>
-                            {item.q}
-                          </span>
-                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                            isOpen ? "bg-blue-50 text-blue-600 rotate-180" : "bg-slate-50 text-slate-400"
+                          <div className="flex items-center gap-4">
+                            <span className={`text-[10px] font-black font-mono px-2.5 py-1 rounded-md transition-all duration-250 shrink-0 ${
+                              isOpen ? "bg-blue-100 text-blue-700" : "bg-slate-100 text-slate-500"
+                            }`}>
+                              {(idx + 1).toString().padStart(2, "0")}
+                            </span>
+                            <span className={`text-xs sm:text-[13px] font-black uppercase tracking-wider font-mono transition-colors duration-250 ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>
+                              {item.q}
+                            </span>
+                          </div>
+                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                            isOpen ? "bg-blue-50 border-blue-200 text-blue-600 rotate-180 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-400"
                           }`}>
                             <ChevronDown className="h-4 w-4" />
                           </div>
@@ -707,7 +722,7 @@ export default function App() {
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                               className="overflow-hidden"
                             >
-                              <div className="px-6 pb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                              <div className="px-6 pb-6 pt-4 border-t border-slate-100 bg-gradient-to-b from-slate-50/50 to-white text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium pl-14 pr-10">
                                 {item.a}
                               </div>
                             </motion.div>

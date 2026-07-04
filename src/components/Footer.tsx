@@ -22,47 +22,68 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="mt-auto border-t border-slate-200 bg-white py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-xs text-slate-500">
-            {/* Left section: Canadian drivers */}
-            <div className="flex items-center gap-3">
-              <span className="text-xl px-2.5 py-1 bg-slate-100 rounded border border-slate-200" role="img" aria-label="Canada Flag">
-                🇨🇦
-              </span>
-              <div>
-                <p className="font-bold text-slate-800 tracking-tight text-sm uppercase">
-                  Canadian Safety Standards
-                </p>
-                <p className="text-[11px] text-slate-400 mt-0.5">
-                  Pre-launch validation platform designed specifically for Canadian road conditions.
+      <footer className="mt-auto bg-slate-50/40 border-t border-slate-200/80">
+        {/* Pre-footer Call to Action Panel */}
+        <div className="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 sm:p-10 shadow-xl shadow-slate-100/40">
+            {/* Background decorative glowing circles */}
+            <div className="absolute -right-20 -top-20 -z-10 h-60 w-60 rounded-full bg-blue-50/70 blur-3xl" />
+            <div className="absolute -left-20 -bottom-20 -z-10 h-60 w-60 rounded-full bg-cyan-50/70 blur-3xl" />
+            
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+              {/* Left Column: Safety Badge & Context */}
+              <div className="space-y-4 lg:col-span-5">
+                <div className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50/50 px-3.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-red-600 font-mono">
+                  <span className="text-sm">🇨🇦</span> Sovereign Driver AI
+                </div>
+                <div>
+                  <h3 className="text-lg font-black uppercase tracking-tight text-slate-900 font-sans sm:text-xl">
+                    Canadian Safety Standards
+                  </h3>
+                  <p className="mt-2 text-xs text-slate-500 leading-relaxed font-sans font-medium">
+                    Our pre-launch validation platform is architected specifically for Canadian driving variables, including sub-zero temperatures, black ice hazards, and long-range highway commutes.
+                  </p>
+                </div>
+              </div>
+
+              {/* Middle Column: Launch Coordinator Info */}
+              <div className="lg:col-span-4 lg:border-l lg:border-slate-100 lg:pl-8">
+                <span className="inline-block text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">
+                  PRE-LAUNCH STATUS
+                </span>
+                <h4 className="mt-1.5 text-sm font-bold uppercase tracking-wide text-slate-800">
+                  Direct Inquiries & Access
+                </h4>
+                <p className="mt-1 text-xs text-slate-500 leading-relaxed font-sans">
+                  The Astrateq coordination team answers questions regarding private early access slots, research parameters, and regional software rollouts.
                 </p>
               </div>
-            </div>
 
-            {/* Center section: Questions */}
-            <div className="flex flex-col gap-0.5 text-left md:text-right">
-              <span className="font-bold text-slate-800 uppercase tracking-wider text-[10px]">Launch Coordinator</span>
-              <span className="text-[11px] text-slate-400">Our coordination team answers questions regarding early access and prototype participation.</span>
-            </div>
-
-            {/* Right section: Contact Support Link */}
-            <div>
-              <button
-                onClick={() => setIsSupportOpen(true)}
-                className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-colors cursor-pointer animate-pulse"
-              >
-                <span>Contact Launch Coordinator</span>
-                <span className="text-blue-200 font-mono">→</span>
-              </button>
+              {/* Right Column: Dynamic Action Button */}
+              <div className="flex items-center lg:col-span-3 lg:justify-end">
+                <button
+                  onClick={() => setIsSupportOpen(true)}
+                  className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white shadow-lg shadow-blue-600/10 transition-all hover:bg-blue-500 hover:shadow-blue-600/25 active:scale-98 cursor-pointer font-sans"
+                >
+                  <span>Contact Launch Coordinator</span>
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-mono text-blue-200">
+                    →
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
-
-          <div className="mt-8 border-t border-slate-100 pt-6 text-center text-[10px] text-slate-400 font-mono">
-            <p>© {new Date().getFullYear()} ASTRATEQ. All rights reserved.</p>
-            <p className="mt-2 text-[9px] uppercase tracking-wider leading-relaxed text-slate-400 max-w-3xl mx-auto">
-              This platform is a <strong>conceptual pre-launch validation and waitlist portal</strong> for evaluating interest in upcoming Astrateq Driver Awareness Intelligence offline software. All early registrations are 100% free with no deposit required. We do NOT sell auto insurance, track your GPS location, require OBD/OBD-II vehicle port integration, or sell hardware.
+          
+          {/* Main Footer Disclaimer & Copyright */}
+          <div className="mt-12 border-t border-slate-200/60 pt-10 text-center">
+            <p className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+              © {new Date().getFullYear()} ASTRATEQ. All rights reserved.
             </p>
+            <div className="mt-4 rounded-2xl bg-white border border-slate-100 p-5 max-w-4xl mx-auto shadow-sm">
+              <p className="text-[10px] uppercase tracking-wider leading-relaxed text-slate-400/90 font-mono">
+                This platform is a <strong className="text-slate-500 font-black">conceptual pre-launch validation and waitlist portal</strong> for evaluating interest in upcoming Astrateq Driver Awareness Intelligence offline software. All early registrations are 100% free with no deposit required. We do NOT sell auto insurance, track your GPS location, require OBD/OBD-II vehicle port integration, or sell hardware.
+              </p>
+            </div>
           </div>
         </div>
       </footer>

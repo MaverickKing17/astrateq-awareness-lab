@@ -1148,26 +1148,43 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               return (
                 <div 
                   key={idx} 
-                  className="rounded-xl border border-slate-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.01)] overflow-hidden transition-all duration-300"
+                  className={`rounded-2xl border border-l-4 transition-all duration-300 overflow-hidden ${
+                    isOpen 
+                      ? "border-blue-300 border-l-blue-600 bg-white shadow-[0_12px_30px_rgba(59,130,246,0.06)]" 
+                      : "border-slate-200/80 border-l-slate-300 bg-white hover:bg-slate-50/30 hover:border-blue-200 hover:border-l-blue-400 hover:shadow-[0_8px_20px_rgba(0,0,0,0.02)]"
+                  }`}
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex items-center justify-between p-5 text-left text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-800 hover:bg-slate-50/50 transition-colors cursor-pointer font-mono"
+                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-all cursor-pointer font-sans"
                   >
-                    <span>{item.q}</span>
-                    <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                    <div className="flex items-center gap-4">
+                      <span className={`text-[10px] font-black font-mono px-2.5 py-1 rounded-md transition-all duration-250 shrink-0 ${
+                        isOpen ? "bg-blue-100 text-blue-700" : "bg-slate-100 text-slate-500"
+                      }`}>
+                        {(idx + 1).toString().padStart(2, "0")}
+                      </span>
+                      <span className={`text-xs sm:text-[13px] font-black uppercase tracking-wider font-mono transition-colors duration-250 ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>
+                        {item.q}
+                      </span>
+                    </div>
+                    <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                      isOpen ? "bg-blue-50 border-blue-200 text-blue-600 rotate-180 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-400"
+                    }`}>
+                      <ChevronDown className="h-4 w-4" />
+                    </div>
                   </button>
                   
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.2 }}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="p-5 pt-0 border-t border-slate-100 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans font-medium">
+                        <div className="px-6 pb-6 pt-4 border-t border-slate-100 bg-gradient-to-b from-slate-50/50 to-white text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium pl-14 pr-10">
                           {item.a}
                         </div>
                       </motion.div>
