@@ -44,6 +44,51 @@ export default function App() {
   // FAQ interactive state
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
 
+  // Live Dashboard simulator mockup states
+  const [dashboardScore, setDashboardScore] = useState(82);
+  const [activeLogIdx, setActiveLogIdx] = useState(0);
+  const [attentionLevel, setAttentionLevel] = useState(94);
+  const [blinkRate, setBlinkRate] = useState(12);
+
+  const mockLogs = [
+    "Analyzing saccadic alignment...",
+    "Calibrating local ambient glare...",
+    "Purging memory... 100% RAM isolation",
+    "Mapping fatigue baseline trend...",
+    "Driver focus state: STABLE & COHERENT",
+    "No remote leaks... offline mode locked"
+  ];
+
+  useEffect(() => {
+    if (activePage !== "landing") return;
+    const scoreInterval = setInterval(() => {
+      setDashboardScore(prev => {
+        const change = Math.random() > 0.5 ? 1 : -1;
+        const next = prev + change;
+        return next >= 81 && next <= 84 ? next : prev;
+      });
+      setAttentionLevel(prev => {
+        const change = Math.random() > 0.5 ? 1 : -1;
+        const next = prev + change;
+        return next >= 92 && next <= 96 ? next : prev;
+      });
+      setBlinkRate(prev => {
+        const change = Math.random() > 0.5 ? 1 : -1;
+        const next = prev + change;
+        return next >= 10 && next <= 14 ? next : prev;
+      });
+    }, 4500);
+
+    const logInterval = setInterval(() => {
+      setActiveLogIdx(prev => (prev + 1) % mockLogs.length);
+    }, 3500);
+
+    return () => {
+      clearInterval(scoreInterval);
+      clearInterval(logInterval);
+    };
+  }, [activePage]);
+
   const toggleFaq = (idx: number) => {
     setOpenFaqIdx(prev => (prev === idx ? null : idx));
   };
@@ -173,8 +218,8 @@ export default function App() {
         {/* LANDING PAGE VIEW */}
         {activePage === "landing" && (
           <div>
-            {/* Hero Section (Improvement 1, 8, 10, 11, 12) */}
-            <section className="relative overflow-hidden py-28 sm:py-36 border-b border-slate-200/60">
+            {/* Hero Section (Improvement 1, 2, 5, 6, 8, 10, 11, 12) */}
+            <section className="relative overflow-hidden py-20 sm:py-24 border-b border-slate-200/60">
               {/* Cinematic Hero Background Integration */}
               <div 
                 className="absolute inset-0 bg-cover bg-center -z-20"
@@ -189,31 +234,28 @@ export default function App() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   
                   {/* Left Column Text & CTAs */}
-                  <div className="lg:col-span-7 text-left space-y-7">
+                  <div className="lg:col-span-7 text-left space-y-6">
                     <span className="inline-flex items-center gap-1.5 border border-blue-200 bg-blue-50/50 px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blue-700 font-mono rounded-full">
                       <Sparkles className="h-3.5 w-3.5 text-blue-600 animate-pulse" />
-                      Active Concept Validation Study • No Hardware Required
+                      Active Category Validation Study • Zero Hardware Required
                     </span>
                     
                     <h1 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.05] font-sans">
-                      Validate Canada's <br className="hidden sm:inline" />
-                      first privacy-centric <br />
-                      <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">
-                        Driver Intelligence
-                      </span> platform.
+                      Driving is connected.<br className="hidden sm:inline" />
+                      But is it <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">intelligent</span>?
                     </h1>
 
-                    <div className="space-y-5 text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl font-sans font-medium">
+                    <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl font-sans font-medium">
                       <p>
-                        Today's driving systems react <span className="text-slate-950 font-black border-b-2 border-blue-500/35 pb-0.5">after</span> errors occur—alarming you when drifting out of lanes. We are testing an alternative: Can on-device software map your focus and fatigue trend <span className="text-slate-950 font-black border-b-2 border-indigo-500/35 pb-0.5">before</span> mistakes happen?
+                        Technology shouldn’t just collect driving data—it should help you understand yourself. We are validating a completely new technology category: <span className="text-slate-900 font-bold border-b-2 border-blue-500/25 pb-0.5">Privacy-First Driver Awareness Intelligence</span>.
                       </p>
                       <p>
-                        We are recruiting <span className="text-slate-950 font-black border-b-2 border-cyan-500/35 pb-0.5">founding Canadian drivers</span> and early contributors to help prove demand for a pure, zero-surveillance safety category that operates 100% locally in memory.
+                        Instead of loud, reactive alarms sounding <span className="text-slate-950 font-black border-b-2 border-indigo-500/35 pb-0.5">after</span> mistakes happen, Astrateq explores offline, local-first software that maps focus and fatigue trends <span className="text-slate-950 font-black border-b-2 border-cyan-500/35 pb-0.5">before</span> critical situations develop.
                       </p>
                     </div>
 
                     {/* Features list (Improvement 11 & 12) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl text-[11px] font-black uppercase tracking-wider text-slate-800 font-mono pt-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl text-[11px] font-black uppercase tracking-wider text-slate-800 font-mono pt-1">
                       <div className="flex items-center gap-3">
                         <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
                           <Check className="h-3 w-3 stroke-[3]" />
@@ -240,7 +282,7 @@ export default function App() {
                       </div>
                     </div>
                     
-                    <div className="flex flex-col sm:flex-row gap-4 pt-3">
+                    <div className="flex flex-col sm:flex-row gap-4 pt-2">
                       <button
                         onClick={handleStartSimulation}
                         className="group inline-flex items-center justify-center gap-2.5 rounded bg-blue-600 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_18px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer font-mono"
@@ -256,14 +298,14 @@ export default function App() {
                       </button>
                     </div>
 
-                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wider leading-relaxed pt-2">
+                    <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wider leading-relaxed pt-1">
                       *Takes under 60 seconds • Completely free of charge • Zero hardware adapters • Cancel at any time
                     </p>
                   </div>
 
-                  {/* Right Column: Redesigned Simulated Result Dashboard Mockup (Improvement 8) */}
+                  {/* Right Column: Redesigned Simulated Result Dashboard Mockup (Improvement 2, 8, 9) */}
                   <div className="lg:col-span-5 flex justify-center">
-                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-800 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.2)] hover:border-blue-500">
+                    <div className="relative w-full max-w-sm rounded-2xl border-2 border-slate-800 bg-[#0B1220] p-6 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-[0_30px_60px_rgba(59,130,246,0.25)] hover:border-blue-500">
                       
                       {/* Grid lines pattern overlay */}
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
@@ -274,57 +316,66 @@ export default function App() {
                         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                           <div className="flex items-center gap-1.5 text-[9px] font-bold font-mono text-slate-400 uppercase tracking-widest">
                             <Cpu className="h-4 w-4 text-blue-400 animate-pulse" />
-                            <span>ASTRATEQ CORE ENGINE</span>
+                            <span>ASTRATEQ ENGINE v1.2</span>
                           </div>
-                          <span className="inline-flex items-center gap-1.5 rounded bg-blue-500/10 border border-blue-500/30 px-2 py-0.5 text-[8px] font-bold font-mono text-blue-400 uppercase tracking-wider">
+                          <span className="inline-flex items-center gap-1.5 rounded bg-blue-500/10 border border-blue-500/30 px-2 py-0.5 text-[8px] font-bold font-mono text-blue-400 uppercase tracking-wider animate-pulse">
                             <span className="relative flex h-1 w-1">
-                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-1 w-1 bg-blue-400"></span>
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-1 w-1 bg-emerald-400"></span>
                             </span>
-                            SIMULATED DIAGNOSTIC RESULT
+                            LIVE SIMULATION COMPILING
                           </span>
                         </div>
 
                         {/* Interactive Telemetry Mock Display */}
-                        <div className="flex flex-col items-center py-5 bg-slate-900/60 rounded-xl border border-slate-800 shadow-inner space-y-3">
+                        <div className="flex flex-col items-center py-5 bg-slate-900/60 rounded-xl border border-slate-800 shadow-inner space-y-3 relative overflow-hidden group">
+                          {/* Pulsing glow background */}
+                          <div className="absolute inset-0 bg-cyan-500/[0.02] pointer-events-none animate-pulse" />
                           
                           {/* Radial Progress Ring representing awareness score */}
-                          <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-500/30 shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
-                            <div className="absolute inset-1 rounded-full border border-dashed border-cyan-500/20 animate-[spin_40s_linear_infinite]" />
+                          <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-500/40 shadow-[0_8px_20px_rgba(59,130,246,0.15)] transition-transform duration-500 group-hover:scale-105">
+                            <div className="absolute inset-1 rounded-full border border-dashed border-cyan-400/30 animate-[spin_30s_linear_infinite]" />
                             <div className="flex flex-col items-center">
-                              <span className="text-2xl font-black font-mono tracking-tight text-white">82</span>
-                              <span className="text-[7.5px] font-bold text-slate-400 uppercase tracking-widest font-mono">READY</span>
+                              <span className="text-2xl font-black font-mono tracking-tight text-white transition-all duration-300">
+                                {dashboardScore}
+                              </span>
+                              <span className="text-[7px] font-bold text-emerald-400 uppercase tracking-widest font-mono animate-pulse">
+                                STABLE
+                              </span>
                             </div>
                           </div>
 
-                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">DRIVER AWARENESS SCORE</span>
+                          <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest font-mono flex items-center gap-1.5">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+                            DRIVER AWARENESS SCORE
+                          </span>
                         </div>
 
                         {/* Detailed Diagnostic Context Information */}
                         <div className="bg-black/80 p-4 rounded-xl border border-slate-800 font-mono text-[9.5px] space-y-2.5 text-slate-300">
                           <div className="flex justify-between border-b border-slate-900 pb-1 text-slate-400 uppercase text-[8px] tracking-wider">
                             <span>METRIC CLASSIFICATION</span>
-                            <span className="text-blue-400 font-bold">ON-M702-SIM</span>
+                            <span className="text-blue-400 font-bold">ON-COGNITIVE-M702</span>
                           </div>
                           
                           <div className="space-y-1.5">
-                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">Fatigue Context:</p>
-                            <p className="text-white font-medium pl-1 bg-slate-900/40 py-1 rounded">
-                              Early Stage fatigue accumulation detected in late-evening commute.
+                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">System Live Logs:</p>
+                            <p className="text-emerald-400 font-medium pl-2 bg-emerald-950/20 py-1.5 rounded border border-emerald-900/30 font-mono text-[8.5px] leading-relaxed transition-all duration-300 h-7 flex items-center">
+                              &gt; {mockLogs[activeLogIdx]}
                             </p>
                           </div>
 
                           <div className="space-y-1.5">
-                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">Environmental Context:</p>
+                            <p className="text-slate-500 uppercase text-[8px] tracking-wider">Active Baseline Metric:</p>
                             <p className="text-white font-medium pl-1 bg-slate-900/40 py-1 rounded">
-                              Ambient low-light, high-contrast cabin glare.
+                              Cognitive tracking running at {attentionLevel}% focal alignment.
                             </p>
                           </div>
 
                           <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-900">
                             <div>
-                              <p className="text-slate-500 uppercase text-[8px] tracking-wider">Research Class:</p>
-                              <p className="text-cyan-400 font-bold mt-0.5">Class II: Cognitive Drift</p>
+                              <p className="text-slate-500 uppercase text-[8px] tracking-wider">Blink Frame Rate:</p>
+                              <p className="text-cyan-400 font-bold mt-0.5">{blinkRate} frames/sec</p>
                             </div>
                             <div>
                               <p className="text-slate-500 uppercase text-[8px] tracking-wider">Privacy Standard:</p>
@@ -334,27 +385,27 @@ export default function App() {
 
                           <div className="flex justify-between pt-1 border-t border-slate-900 text-slate-500 text-[8px]">
                             <span>CONFIDENCE RATING:</span>
-                            <span className="text-white font-bold">94% FOCAL ALIGNMENT</span>
+                            <span className="text-white font-bold">{attentionLevel}% ATTENTION DENSITY</span>
                           </div>
                         </div>
 
                         {/* Software Quick Spec Badges */}
                         <div className="grid grid-cols-3 gap-2 text-center text-[8px] font-mono uppercase tracking-wider">
-                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
+                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60 transition-all hover:border-slate-700">
                             <p className="text-blue-400 font-black">SOVEREIGN</p>
                             <p className="text-slate-500 mt-0.5">NO GPS TRACK</p>
                           </div>
-                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
+                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60 transition-all hover:border-slate-700">
                             <p className="text-emerald-400 font-black">HARDWARE FREE</p>
                             <p className="text-slate-500 mt-0.5">SOFTWARE ONLY</p>
                           </div>
-                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60">
+                          <div className="p-2 bg-slate-900/40 rounded border border-slate-800/60 transition-all hover:border-slate-700">
                             <p className="text-cyan-400 font-black">BIOMETRICS</p>
                             <p className="text-slate-500 mt-0.5">ZERO STORAGE</p>
                           </div>
                         </div>
 
-                        <p className="text-[7px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed">
+                        <p className="text-[7.5px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed">
                           Conceptual Driver Awareness Interface Dashboard Mockup
                         </p>
                       </div>
@@ -364,6 +415,33 @@ export default function App() {
                 </div>
               </div>
             </section>
+
+            {/* TRUST & QUALITATIVE SOCIAL PROOF BANNER (Improvement 5, 6) */}
+            <div className="bg-white border-b border-slate-200/50 py-6 relative z-20">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-wrap items-center justify-center lg:justify-between gap-6 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500 font-mono">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm">🇨🇦</span>
+                    <span>Built exclusively for Canadian drivers</span>
+                  </div>
+                  <div className="h-1 w-1 rounded-full bg-slate-300 hidden lg:block" />
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4 text-slate-400" />
+                    <span>Privacy-First By Design</span>
+                  </div>
+                  <div className="h-1 w-1 rounded-full bg-slate-300 hidden lg:block" />
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-slate-400" />
+                    <span>Active concept validation study</span>
+                  </div>
+                  <div className="h-1 w-1 rounded-full bg-slate-300 hidden lg:block" />
+                  <div className="flex items-center gap-2 text-blue-600 font-black">
+                    <Check className="h-4 w-4 text-blue-600" />
+                    <span>Every simulation shapes the platform</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* Core Value Props Cards & How It Works section */}
             <ValueProps onStartSimulation={handleStartSimulation} onNavigateToCohort={handleNavigateToCohort} />

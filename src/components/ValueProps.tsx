@@ -53,6 +53,53 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
         </div>
       </section>
 
+      {/* SECTION: FOUNDER VISION (Improvement 3, 6, 9) */}
+      <section className="py-20 sm:py-24 bg-slate-50 border-b border-slate-200/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02] pointer-events-none" />
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 space-y-5 text-left">
+              <span className="inline-flex items-center gap-1.5 border border-slate-200 bg-white px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-500 font-mono rounded-full">
+                Founder Vision
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-slate-900 font-sans leading-tight">
+                Why We Started Building Driver Awareness Intelligence
+              </h3>
+              <div className="space-y-4 text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
+                <p>
+                  Every year, modern vehicles ship with more cameras, radar hubs, and continuous cellular data channels. Yet almost 100% of this hardware innovation is routed toward convenience features or uploaded back to cloud servers for corporate profiling, monetization, and insurer tracking.
+                </p>
+                <p>
+                  We noticed that almost nothing is engineered to help <span className="text-slate-900 font-bold border-b border-blue-500/20 pb-0.5">drivers better understand themselves</span>. If your car has the technology to scan your surroundings, it should have the intelligence to help you recognize when your own attention is drifting before a hazardous situation develops.
+                </p>
+                <p className="font-bold text-slate-900">
+                  We started Astrateq because we believe intelligence should serve and belong to the driver—fully offline, fully sovereign, with zero external surveillance.
+                </p>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-200 p-8 shadow-xl shadow-slate-100/40 relative overflow-hidden text-left">
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl" />
+              <div className="space-y-6">
+                <span className="text-4xl font-serif text-blue-500/20 block leading-none select-none">“</span>
+                <p className="text-xs sm:text-[13px] italic text-slate-600 leading-relaxed font-sans font-semibold">
+                  “Our goal is to build a safety shield that works for you, not against you. We want to prove that driver safety can be elegant, highly precise, and completely disconnected from the cloud.”
+                </p>
+                <div className="border-t border-slate-100 pt-4 flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center font-mono font-black text-xs text-slate-700 border border-slate-200 uppercase">
+                    MK
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-black uppercase text-slate-900 tracking-wider">Marc-Olivier Kovacs</h5>
+                    <p className="text-[9px] font-extrabold uppercase text-slate-400 font-mono tracking-widest mt-0.5">Founder, Astrateq Technologies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION: REWRITTEN VALIDATION OBJECTIVES (Improvement 3 & 10) */}
       {/* Psychological Question: "What are you learning?" */}
       <section className="py-24 sm:py-32 bg-gradient-to-b from-white to-[#F8FAFC] border-b border-slate-200/50">
@@ -133,6 +180,149 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* SECTION: PRODUCT VISION (Improvement 6, 8, 9) */}
+      <section className="py-20 sm:py-24 bg-white border-b border-slate-200/50 relative overflow-hidden">
+        <div className="absolute top-[30%] left-[-10%] w-[35vw] h-[35vw] bg-indigo-400/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
+              Product Concept
+            </span>
+            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
+              Imagine Driver Awareness Intelligence
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto leading-relaxed font-sans font-medium">
+              A sovereign, hardware-free companion designed to translate complex micro-attentiveness behaviors into quiet, proactive safety feedback.
+            </p>
+          </div>
+
+          {/* Premium Apple/Linear-style Bento Grid Layout */}
+          <div className="grid gap-6 md:grid-cols-3 text-left">
+            
+            {/* Bento 1: Left double span */}
+            <div className="md:col-span-2 relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-lg overflow-hidden transition-all duration-300 hover:border-blue-400 hover:shadow-xl flex flex-col justify-between group">
+              <div className="absolute -right-12 -bottom-12 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/10 transition-all duration-500" />
+              <div className="space-y-4">
+                <div className="h-10 w-10 rounded-xl bg-blue-100/60 border border-blue-200 flex items-center justify-center text-blue-700">
+                  <Eye className="h-5 w-5 stroke-[2]" />
+                </div>
+                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
+                  Active Focal & Ocular Baselines
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium max-w-lg">
+                  Instead of tracking where you are on a map, the offline engine maps the density of your visual field—assessing blink durations and subtle eye movement saccades to identify the micro-moments when attention begins to fragment.
+                </p>
+              </div>
+              
+              {/* Micro-telemetry representation in bento */}
+              <div className="mt-8 p-4 bg-[#0B1220] rounded-xl border border-slate-800 font-mono text-[9px] text-slate-400 space-y-1.5 shadow-inner">
+                <div className="flex justify-between border-b border-slate-800 pb-1 text-[8px] font-black tracking-widest text-slate-500">
+                  <span>BASELINE CALIBRATION ENGINE</span>
+                  <span className="text-emerald-400">STATUS: CALIBRATED</span>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-center pt-1 text-[8px]">
+                  <div className="bg-slate-900/50 p-1.5 rounded border border-slate-800">
+                    <p className="text-slate-500">BLINK DURATION</p>
+                    <p className="text-white font-bold mt-0.5">140ms</p>
+                  </div>
+                  <div className="bg-slate-900/50 p-1.5 rounded border border-slate-800">
+                    <p className="text-slate-500">SACCADE RATE</p>
+                    <p className="text-white font-bold mt-0.5">3.4 Hz</p>
+                  </div>
+                  <div className="bg-slate-900/50 p-1.5 rounded border border-slate-800">
+                    <p className="text-slate-500">ATTENTIVE CONTOUR</p>
+                    <p className="text-cyan-400 font-bold mt-0.5">OPTIMAL</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bento 2: Right single span */}
+            <div className="relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-lg overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-xl flex flex-col justify-between group">
+              <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="space-y-4">
+                <div className="h-10 w-10 rounded-xl bg-cyan-100/60 border border-cyan-200 flex items-center justify-center text-cyan-700">
+                  <Brain className="h-5 w-5 stroke-[2]" />
+                </div>
+                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
+                  The Cognitive Attention Map
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
+                  A personalized local threshold model that learns your morning vs. evening alert patterns. It avoids generic rules, recognizing your specific baseline habits over time.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-2 text-[10px] text-cyan-700 font-bold font-mono uppercase tracking-widest bg-cyan-50 border border-cyan-100 rounded-lg px-3 py-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 animate-ping" />
+                <span>Local neural baseline active</span>
+              </div>
+            </div>
+
+            {/* Bento 3: Left single span */}
+            <div className="relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-lg overflow-hidden transition-all duration-300 hover:border-indigo-400 hover:shadow-xl flex flex-col justify-between group">
+              <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="space-y-4">
+                <div className="h-10 w-10 rounded-xl bg-indigo-100/60 border border-indigo-200 flex items-center justify-center text-indigo-700">
+                  <Compass className="h-5 w-5 stroke-[2]" />
+                </div>
+                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
+                  Historical Offline Trends
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
+                  Trace fatigue trends over days, weeks, and seasons. Pinpoint your exact cognitive drift points across recurrent commutes to restructure break times.
+                </p>
+              </div>
+              <span className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-widest pt-4">
+                Saved 100% locally in local memory
+              </span>
+            </div>
+
+            {/* Bento 4: Middle single span */}
+            <div className="relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-lg overflow-hidden transition-all duration-300 hover:border-emerald-400 hover:shadow-xl flex flex-col justify-between group">
+              <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="space-y-4">
+                <div className="h-10 w-10 rounded-xl bg-emerald-100/60 border border-emerald-200 flex items-center justify-center text-emerald-700">
+                  <Sparkles className="h-5 w-5 stroke-[2]" />
+                </div>
+                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
+                  Silent Guidance Warnings
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
+                  No sudden sirens or jarring bells that trigger adrenaline spikes. Astrateq relies on subtle audio tones or dashboard glimmers to softly prompt active awareness resets.
+                </p>
+              </div>
+              <span className="text-[10px] font-bold text-emerald-600 font-mono uppercase tracking-widest pt-4 flex items-center gap-1.5">
+                <Check className="h-4 w-4" /> Non-intrusive safety curves
+              </span>
+            </div>
+
+            {/* Bento 5: Right double span */}
+            <div className="md:col-span-2 relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-lg overflow-hidden transition-all duration-300 hover:border-purple-400 hover:shadow-xl flex flex-col justify-between group">
+              <div className="absolute -right-12 -bottom-12 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="space-y-4">
+                <div className="h-10 w-10 rounded-xl bg-purple-100/60 border border-purple-200 flex items-center justify-center text-purple-700">
+                  <Lock className="h-5 w-5 stroke-[2]" />
+                </div>
+                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
+                  Absolute Sovereignty
+                </h3>
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium max-w-lg">
+                  Our core philosophy is absolute: driver safety does not require cloud monetization or corporate risk profiling. Evaluated parameters run inside sandboxed volatile RAM and vanish the second the companion software closes.
+                </p>
+              </div>
+              
+              <div className="mt-6 flex flex-wrap gap-2 text-[9px] font-bold uppercase tracking-widest font-mono text-purple-700">
+                <span className="bg-purple-100/60 border border-purple-200 px-2.5 py-1 rounded">No insurance sharing</span>
+                <span className="bg-purple-100/60 border border-purple-200 px-2.5 py-1 rounded">No background tracking</span>
+                <span className="bg-purple-100/60 border border-purple-200 px-2.5 py-1 rounded">Zero cloud leaks</span>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
@@ -242,30 +432,15 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </p>
           </div>
 
-          {/* ROADMAP TIMELINE (Improvement 5) */}
+          {/* ROADMAP TIMELINE (Improvement 4, 6, 9) */}
           <div className="max-w-6xl mx-auto relative">
-            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 relative z-10">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
               {[
                 {
                   phase: "01",
-                  title: "Diagnostic Simulation",
-                  status: "Completed",
-                  desc: "Drivers explore fatigue concepts and submit exposure evaluations.",
-                  isActive: true,
-                  isCurrent: false,
-                  theme: {
-                    bg: "from-emerald-50/10 via-white to-emerald-50/5",
-                    border: "border-emerald-200/80 hover:border-emerald-400 hover:shadow-[0_12px_24px_rgba(16,185,129,0.08)]",
-                    topBar: "bg-emerald-500",
-                    numBadge: "bg-emerald-100/60 border-emerald-200 text-emerald-700",
-                    statusBadge: "bg-emerald-50 border-emerald-100 text-emerald-700"
-                  }
-                },
-                {
-                  phase: "02",
-                  title: "Market Validation",
-                  status: "We Are Here",
-                  desc: "Analyzing regional demands and gathering early validation signups.",
+                  title: "Current Validation",
+                  status: "Active Study",
+                  desc: "Collecting early simulation metrics and provincial safety demand to establish solid concept baselines.",
                   isActive: true,
                   isCurrent: true,
                   theme: {
@@ -277,10 +452,25 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   }
                 },
                 {
+                  phase: "02",
+                  title: "Research Platform",
+                  status: "Upcoming Phase",
+                  desc: "Releasing academic diagnostic tools to early validation community members across Canada.",
+                  isActive: false,
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
+                },
+                {
                   phase: "03",
-                  title: "Prototype Dev",
-                  status: "Phase 3 Trigger",
-                  desc: "Compiling optimized, 100% offline Edge-AI neural networks.",
+                  title: "Prototype",
+                  status: "Engineering",
+                  desc: "Developing lightweight, local-first machine learning models compiled for on-device processing.",
                   isActive: false,
                   isCurrent: false,
                   theme: {
@@ -293,9 +483,9 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 },
                 {
                   phase: "04",
-                  title: "Pilot Testing",
-                  status: "Canada Elite",
-                  desc: "Releasing early test builds to registered founding contributors.",
+                  title: "Canadian Pilot",
+                  status: "Cohort Stage",
+                  desc: "Launching a restricted field test with 1,000 registered drivers evaluating memory-isolated telemetry.",
                   isActive: false,
                   isCurrent: false,
                   theme: {
@@ -308,9 +498,9 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 },
                 {
                   phase: "05",
-                  title: "Sovereign Launch",
-                  status: "Production Ready",
-                  desc: "Releasing the first complete hardware-free driver safety suite.",
+                  title: "Driver Awareness Companion",
+                  status: "Sovereign Build",
+                  desc: "Public debut of the sovereign client application with zero remote logs or cloud dependency.",
                   isActive: false,
                   isCurrent: false,
                   theme: {
@@ -323,9 +513,39 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 },
                 {
                   phase: "06",
-                  title: "Future Integration",
-                  status: "Smart Ecosystem",
-                  desc: "Direct native dashboard support for automotive screens.",
+                  title: "Driver Intelligence Platform",
+                  status: "Platform Debut",
+                  desc: "Establishing the core, hardware-free category for localized driving safety metrics.",
+                  isActive: false,
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
+                },
+                {
+                  phase: "07",
+                  title: "Future HUD Integration",
+                  status: "Optics Phase",
+                  desc: "Projection layers for compatible head-up-displays to deliver real-time focal advice securely.",
+                  isActive: false,
+                  isCurrent: false,
+                  theme: {
+                    bg: "from-slate-50/50 via-white to-slate-50/10",
+                    border: "border-slate-200 hover:border-slate-350 hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]",
+                    topBar: "bg-slate-300",
+                    numBadge: "bg-slate-100 border-slate-250 text-slate-400",
+                    statusBadge: "bg-slate-50 border-slate-200 text-slate-500"
+                  }
+                },
+                {
+                  phase: "08",
+                  title: "Future Vehicle Integration",
+                  status: "Native Core",
+                  desc: "Exploring native, hardware-level partnerships to route local signals directly into vehicle interfaces.",
                   isActive: false,
                   isCurrent: false,
                   theme: {
@@ -397,7 +617,6 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
               </button>
             </div>
           </div>
-
         </div>
       </section>
 
