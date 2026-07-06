@@ -464,38 +464,38 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             <div className="lg:col-span-7 grid gap-6 sm:grid-cols-1 md:grid-cols-3">
               {[
                 {
-                  icon: <AlertTriangle className="h-5 w-5 text-amber-400" />,
+                  icon: <AlertTriangle className="h-5 w-5 text-amber-500" />,
                   title: "Fatigue builds in secret",
                   desc: "Your cognitive resources slip quietly during late night shifts or repetitive multi-hour highway travel.",
-                  border: "border-amber-500/80 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]",
-                  iconBg: "bg-amber-500/10 border-amber-500/30"
+                  border: "border-slate-200 hover:border-amber-400 hover:shadow-md",
+                  iconBg: "bg-amber-50 border-amber-200"
                 },
                 {
-                  icon: <ShieldAlert className="h-5 w-5 text-red-400" />,
+                  icon: <ShieldAlert className="h-5 w-5 text-red-500" />,
                   title: "Invasive tracking is wrong",
                   desc: "Standard safety programs require continuous GPS uploads, vehicle OBD connections, or insurance telemetry profiles.",
-                  border: "border-red-500/80 hover:border-red-400 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]",
-                  iconBg: "bg-red-500/10 border-red-500/30"
+                  border: "border-slate-200 hover:border-red-400 hover:shadow-md",
+                  iconBg: "bg-red-50 border-red-200"
                 },
                 {
-                  icon: <MapPin className="h-5 w-5 text-blue-400" />,
+                  icon: <MapPin className="h-5 w-5 text-blue-500" />,
                   title: "Calibrated for local terrain",
                   desc: "Models are calibrated to manage remote northern ranges, dense local bottlenecks, and snowy glare reflections.",
-                  border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]",
-                  iconBg: "bg-blue-500/10 border-blue-500/30"
+                  border: "border-slate-200 hover:border-blue-400 hover:shadow-md",
+                  iconBg: "bg-blue-50 border-blue-200"
                 }
               ].map((item, idx) => (
                 <div 
                   key={idx}
-                  className={`p-6 rounded-xl border-2 bg-slate-900 text-white transition-all duration-300 flex flex-col justify-between ${item.border}`}
+                  className={`p-6 rounded-xl border bg-white text-slate-900 transition-all duration-300 flex flex-col justify-between shadow-xs ${item.border}`}
                   id={`cohort-reality-card-${idx}`}
                 >
                   <div>
                     <div className={`h-10 w-10 rounded-lg border flex items-center justify-center mb-4 ${item.iconBg}`}>
                       {item.icon}
                     </div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-white font-mono mb-2">{item.title}</h3>
-                    <p className="text-[11px] text-slate-300 leading-relaxed font-sans font-medium">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono mb-2">{item.title}</h3>
+                    <p className="text-[11px] text-slate-600 leading-relaxed font-sans font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -527,38 +527,38 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           <div className="grid gap-6 sm:grid-cols-3">
             {[
               {
-                icon: <Brain className="h-5 w-5 text-blue-400" />,
+                icon: <Brain className="h-5 w-5 text-blue-600" />,
                 title: "Local Edge-AI Silicon",
                 desc: "Harnesses your smartphone or device's native Neural Engine / GPU core to execute gaze and fatigue-tracking algorithms with zero cloud data transmission.",
-                border: "border-blue-500/80 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]",
-                iconBg: "bg-blue-500/10 border-blue-500/30"
+                border: "border-slate-200 hover:border-blue-400 hover:shadow-md",
+                iconBg: "bg-blue-50 border-blue-250"
               },
               {
-                icon: <Eye className="h-5 w-5 text-cyan-400" />,
+                icon: <Eye className="h-5 w-5 text-cyan-600" />,
                 title: "Optic Focal Calibration",
                 desc: "High-contrast focal assessment compatible with standard device lenses, polarized sunglasses, night driving, and corrective eyewear.",
-                border: "border-cyan-500/80 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]",
-                iconBg: "bg-cyan-500/10 border-cyan-500/30"
+                border: "border-slate-200 hover:border-cyan-400 hover:shadow-md",
+                iconBg: "bg-cyan-50 border-cyan-250"
               },
               {
-                icon: <Lock className="h-5 w-5 text-indigo-400" />,
+                icon: <Lock className="h-5 w-5 text-indigo-600" />,
                 title: "Volatile Memory Standard",
                 desc: "No local or remote video database is ever saved. Eyelid speed coordinates are mapped temporarily in RAM, processed, and immediately purged.",
-                border: "border-indigo-500/80 hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.2)]",
-                iconBg: "bg-indigo-500/10 border-indigo-500/30"
+                border: "border-slate-200 hover:border-indigo-400 hover:shadow-md",
+                iconBg: "bg-indigo-50 border-indigo-250"
               }
             ].map((prob, idx) => (
               <div 
                 key={idx}
-                className={`p-6 rounded-xl border-2 bg-slate-900 text-white transition-all duration-200 flex flex-col justify-between ${prob.border}`}
+                className={`p-6 rounded-xl border bg-white text-slate-900 transition-all duration-200 flex flex-col justify-between shadow-xs ${prob.border}`}
                 id={`cohort-spec-card-${idx}`}
               >
                 <div>
                   <div className={`h-10 w-10 rounded-lg border flex items-center justify-center mb-5 shrink-0 ${prob.iconBg}`}>
                     {prob.icon}
                   </div>
-                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-white font-mono mb-2">{prob.title}</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-900 font-mono mb-2">{prob.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans font-medium">
                     {prob.desc}
                   </p>
                 </div>
@@ -722,20 +722,20 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       </section>
 
       {/* SECTION 7 — TRUST LAYER (Uncompromised Privacy Architecture) */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-[#071323] to-[#0B1E33] text-white border-b border-slate-950 relative overflow-hidden">
+      <section className="py-24 sm:py-32 bg-gradient-to-b from-blue-50/50 to-white text-zinc-950 border-b border-slate-200/60 relative overflow-hidden">
         {/* Glowing backdrop circle */}
-        <div className="absolute top-[20%] left-[30%] w-[500px] h-[500px] bg-cyan-500/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-[20%] left-[30%] w-[500px] h-[500px] bg-blue-500/5 blur-[150px] rounded-full pointer-events-none" />
         
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 font-mono">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
               Sovereign Privacy Architecture
             </span>
-            <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl font-sans">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-4xl font-sans">
               Built without tracking
             </h2>
-            <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto font-sans font-medium">
+            <p className="text-sm text-slate-600 leading-relaxed max-w-xl mx-auto font-sans font-medium">
               Engineered with 100% On-Device Edge Processing. Your telemetry never touches the cloud. What happens in the cabin, stays in the cabin.
             </p>
           </div>
@@ -743,36 +743,36 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: <Smartphone className="h-5 w-5 text-cyan-400" />,
+                icon: <Smartphone className="h-5 w-5 text-blue-600" />,
                 title: "OBD Bypassed",
                 desc: "No vehicle connection or engine logs. Completely independent of dashboard electronics."
               },
               {
-                icon: <Lock className="h-5 w-5 text-cyan-400" />,
+                icon: <Lock className="h-5 w-5 text-blue-600" />,
                 title: "Zero Insurance Logs",
                 desc: "Research cohort credentials are entirely isolated. We never share metrics or signups with insurance firms."
               },
               {
-                icon: <ShieldCheck className="h-5 w-5 text-cyan-400" />,
+                icon: <ShieldCheck className="h-5 w-5 text-blue-600" />,
                 title: "100% RAM Processing",
                 desc: "Biometric and optical vectors are calculated inside on-device memory and immediately purged. Zero tracking."
               },
               {
-                icon: <FileText className="h-5 w-5 text-cyan-400" />,
+                icon: <FileText className="h-5 w-5 text-blue-600" />,
                 title: "Cancel Any Time",
                 desc: "Early access reservations hold no penalties or binding conditions. You retain absolute control."
               }
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-md hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between shadow-lg"
+                className="p-6 rounded-xl border border-slate-200 bg-white hover:border-blue-400/50 transition-all duration-300 flex flex-col justify-between shadow-md"
               >
                 <div>
-                  <div className="h-10 w-10 rounded-lg bg-cyan-950 border border-cyan-800/40 text-cyan-400 flex items-center justify-center mb-5">
+                  <div className="h-10 w-10 rounded-lg bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mb-5">
                     {card.icon}
                   </div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-2.5 font-mono">{card.title}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5 font-mono">{card.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
                     {card.desc}
                   </p>
                 </div>

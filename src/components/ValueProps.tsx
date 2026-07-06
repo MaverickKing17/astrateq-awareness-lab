@@ -118,76 +118,76 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           <div className="grid gap-8 md:grid-cols-3 text-left">
             
             {/* Card 1: Visual Processing Edge */}
-            <div className="relative rounded-2xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+            <div className="relative rounded-2xl border-2 border-blue-200 bg-gradient-to-b from-blue-50/80 to-white p-8 sm:p-10 shadow-md shadow-blue-100/40 hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-900 shadow-xs">
-                  <Eye className="h-6 w-6 stroke-[1.8]" />
+                <div className="h-12 w-12 rounded-xl bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-blue-600 shadow-sm">
+                  <Eye className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-widest block">CORE SYSTEM 01</span>
-                  <h3 className="text-lg font-black uppercase tracking-wider text-zinc-950 font-sans">
+                  <span className="text-[10px] font-black text-blue-600 font-mono uppercase tracking-widest block">CORE SYSTEM 01</span>
+                  <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
                     Visual Processing Edge
                   </h3>
                 </div>
-                <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
                   On-device camera optics track ocular saccades, blink durations, and cognitive glance sweeps at 60 FPS. All calculations execute within local volatile RAM cache blocks, bypassing central server paths completely.
                 </p>
               </div>
-              <div className="mt-8 border-t border-zinc-100 pt-5 text-left font-mono">
-                <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Metrics Managed:</span>
+              <div className="mt-8 border-t border-blue-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-black text-blue-700 uppercase tracking-wider">Metrics Managed:</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">60FPS Ocular Track</span>
-                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Gaze Angle Sampling</span>
+                  <span className="bg-blue-100/60 border border-blue-200 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800">60FPS Ocular Track</span>
+                  <span className="bg-blue-100/60 border border-blue-200 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800">Gaze Angle Sampling</span>
                 </div>
               </div>
             </div>
 
             {/* Card 2: Telemetry Shielding */}
-            <div className="relative rounded-2xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+            <div className="relative rounded-2xl border-2 border-indigo-200 bg-gradient-to-b from-indigo-50/80 to-white p-8 sm:p-10 shadow-md shadow-indigo-100/40 hover:shadow-lg hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-900 shadow-xs">
-                  <Lock className="h-6 w-6 stroke-[1.8]" />
+                <div className="h-12 w-12 rounded-xl bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center text-indigo-600 shadow-sm">
+                  <Lock className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-widest block">CORE SYSTEM 02</span>
-                  <h3 className="text-lg font-black uppercase tracking-wider text-zinc-950 font-sans">
+                  <span className="text-[10px] font-black text-indigo-600 font-mono uppercase tracking-widest block">CORE SYSTEM 02</span>
+                  <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
                     Telemetry Shielding
                   </h3>
                 </div>
-                <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
                   Prevents corporate driver profile profiling. Astrateq fully sanitizes, filters, and isolates acceleration, routing, and braking speed variables, ensuring zero raw data leaks to insurance cloud networks.
                 </p>
               </div>
-              <div className="mt-8 border-t border-zinc-100 pt-5 text-left font-mono">
-                <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Security Protocols:</span>
+              <div className="mt-8 border-t border-indigo-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-black text-indigo-700 uppercase tracking-wider">Security Protocols:</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">OBD Port Bypass</span>
-                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Insurance Firewall</span>
+                  <span className="bg-indigo-100/60 border border-indigo-200 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800">OBD Port Bypass</span>
+                  <span className="bg-indigo-100/60 border border-indigo-200 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800">Insurance Firewall</span>
                 </div>
               </div>
             </div>
 
             {/* Card 3: Localized Awareness Analytics */}
-            <div className="relative rounded-2xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+            <div className="relative rounded-2xl border-2 border-emerald-200 bg-gradient-to-b from-emerald-50/80 to-white p-8 sm:p-10 shadow-md shadow-emerald-100/40 hover:shadow-lg hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-900 shadow-xs">
-                  <Brain className="h-6 w-6 stroke-[1.8]" />
+                <div className="h-12 w-12 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
+                  <Brain className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-widest block">CORE SYSTEM 03</span>
-                  <h3 className="text-lg font-black uppercase tracking-wider text-zinc-950 font-sans">
+                  <span className="text-[10px] font-black text-emerald-600 font-mono uppercase tracking-widest block">CORE SYSTEM 03</span>
+                  <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
                     Localized Awareness Analytics
                   </h3>
                 </div>
-                <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
                   Builds a sovereign model of your personal morning vs. evening alert patterns over time. Fatigue accumulation and attention drifts are processed exclusively locally, generating offline reports that are yours alone.
                 </p>
               </div>
-              <div className="mt-8 border-t border-zinc-100 pt-5 text-left font-mono">
-                <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Analysis Engines:</span>
+              <div className="mt-8 border-t border-emerald-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-black text-emerald-700 uppercase tracking-wider">Analysis Engines:</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Offline History DB</span>
-                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Personal alert curve</span>
+                  <span className="bg-emerald-100/60 border border-emerald-200 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800">Offline History DB</span>
+                  <span className="bg-emerald-100/60 border border-emerald-200 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800">Personal alert curve</span>
                 </div>
               </div>
             </div>

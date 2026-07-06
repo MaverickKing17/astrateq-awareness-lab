@@ -274,7 +274,7 @@ export default function App() {
                     <div className="flex flex-col sm:flex-row items-center gap-5 pt-3">
                       <button
                         onClick={handleStartSimulation}
-                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded bg-zinc-950 px-7 py-4.5 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all hover:bg-zinc-850 active:scale-95 cursor-pointer font-mono"
+                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded bg-blue-600 px-7 py-4.5 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all hover:bg-blue-500 active:scale-95 cursor-pointer font-mono"
                       >
                         <span>Start Driver Baseline Simulation</span>
                         <ArrowRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
@@ -505,37 +505,36 @@ export default function App() {
                       Sovereign Data Ownership
                     </span>
                   </div>
-
                 </div>
               </div>
             </div>
 
             {/* 3. Emotional Full-Width Lifestyle Breakdown */}
-            <section id="lifestyle-breakout" className="relative py-36 bg-zinc-950 text-white overflow-hidden border-b border-zinc-900">
+            <section id="lifestyle-breakout" className="relative py-36 bg-zinc-50 text-zinc-950 overflow-hidden border-b border-zinc-200/80">
               <div className="absolute inset-0 z-0">
                 <img 
                   src={HWY_404_POV_IMAGE} 
                   alt="POV Canadian Driving Commute" 
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover opacity-25 grayscale contrast-125"
+                  className="w-full h-full object-cover opacity-[0.06] grayscale contrast-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-zinc-950/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-zinc-50/90 to-zinc-50/70" />
               </div>
-
+ 
               <div className="relative z-10 mx-auto max-w-5xl px-4 text-center space-y-8">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-widest text-zinc-300 font-mono">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-200/80 border border-zinc-300/60 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
                   Sovereign Commute POV
                 </span>
-                <h2 className="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white leading-tight font-serif italic max-w-4xl mx-auto">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-zinc-950 leading-tight font-sans max-w-4xl mx-auto">
                   "Your driving data belongs to you. Safe technology shouldn't cost you your privacy."
                 </h2>
                 <div className="pt-4 flex justify-center">
                   <button
                     onClick={handleStartSimulation}
-                    className="group inline-flex items-center gap-2.5 rounded bg-white text-zinc-950 px-7 py-4 text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-zinc-100 active:scale-95 cursor-pointer font-mono transition-all"
+                    className="group inline-flex items-center gap-2.5 rounded bg-blue-600 text-white px-7 py-4 text-xs font-bold uppercase tracking-wider shadow-md hover:bg-blue-500 active:scale-95 cursor-pointer font-mono transition-all"
                   >
                     <span>Simulate Baseline Focus</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 text-zinc-950" />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 text-white" />
                   </button>
                 </div>
               </div>
@@ -721,44 +720,44 @@ export default function App() {
             </section>
 
             {/* 7. Direct Conversion Engine & Prefinery Gateway */}
-            <section id="prefinery-checkout" className="py-28 bg-zinc-950 text-white relative border-b border-zinc-900 overflow-hidden">
-              {/* High-end tech backdrop overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:20px_20px] opacity-40 pointer-events-none" />
-              <div className="absolute -left-24 top-12 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+            <section id="prefinery-checkout" className="py-28 bg-zinc-50 text-zinc-950 relative border-b border-zinc-200/80 overflow-hidden">
+              {/* High-end tech blueprint backdrop overlay */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:20px_20px] opacity-100 pointer-events-none" />
+              <div className="absolute -left-24 top-12 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
               <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10 text-center">
                 
                 <div className="mb-14 space-y-4">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-300 font-mono">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-200 border border-zinc-300/80 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
                     SECURITY PRE-REGISTRATION
                   </span>
-                  <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-5xl font-sans">
+                  <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-5xl font-sans">
                     Secure Your Priority Placement
                   </h2>
-                  <p className="text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 max-w-lg mx-auto leading-relaxed">
                     Reserve a priority alpha slot directly. Our initial validation filter ensures allocation goes strictly to dedicated, real early adopters.
                   </p>
                 </div>
 
-                <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl text-left max-w-xl mx-auto space-y-8">
+                <div className="bg-white border border-zinc-200 rounded-3xl p-8 sm:p-12 shadow-md text-left max-w-xl mx-auto space-y-8">
                   
                   {/* Explanation layer */}
-                  <div className="border-b border-zinc-800 pb-6 space-y-2">
+                  <div className="border-b border-zinc-100 pb-6 space-y-2">
                     <div className="flex justify-between items-center">
-                      <h4 className="text-xs font-black uppercase text-zinc-100 tracking-wider font-mono">Waitlist Filter Allocation</h4>
-                      <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase">Fully Refundable</span>
+                      <h4 className="text-xs font-black uppercase text-zinc-900 tracking-wider font-mono">Waitlist Filter Allocation</h4>
+                      <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase animate-pulse">Fully Refundable</span>
                     </div>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-sans font-medium">
+                    <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
                       The $5 reservation acts as an intent-validation layer. This guarantees our sandbox launcher allocations are committed to real, dedicated early adopters rather than scale-testing scripts, protecting developer bandwidth.
                     </p>
                   </div>
 
                   {/* PREFINERY EMBED CONTAINER WRAPPER */}
                   <div className="space-y-4">
-                    <label className="block text-[10px] font-black uppercase tracking-wider text-zinc-400 font-mono">
+                    <label className="block text-[10px] font-black uppercase tracking-wider text-zinc-500 font-mono">
                       Referral Gateway & Active Signup
                     </label>
-                    <div className="bg-zinc-950 border border-zinc-850 rounded-2xl p-5 min-h-[140px] flex flex-col justify-center">
+                    <div className="bg-zinc-50 border border-zinc-200/60 rounded-2xl p-5 min-h-[140px] flex flex-col justify-center">
                       
                       {/* Required Prefinery headless anchor */}
                       <div className="prefinery-form-embed"></div>
@@ -773,41 +772,41 @@ export default function App() {
                             type="email" 
                             required 
                             placeholder="driver@example.ca" 
-                            className="flex-grow rounded border border-zinc-800 bg-zinc-900 px-4 py-3 text-xs text-white placeholder-zinc-500 focus:border-zinc-500 focus:outline-none font-mono"
+                            className="flex-grow rounded border border-zinc-250 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 font-mono"
                           />
                           <button 
                             type="submit" 
-                            className="bg-white text-zinc-950 hover:bg-zinc-100 active:scale-98 transition-all px-6 py-3 rounded text-xs font-black uppercase tracking-wider cursor-pointer font-mono shadow-xs"
+                            className="bg-blue-600 text-white hover:bg-blue-500 active:scale-98 transition-all px-6 py-3 rounded text-xs font-black uppercase tracking-wider cursor-pointer font-mono shadow-xs"
                           >
                             Secure Priority Alpha Slot ($5 Fully Refundable)
                           </button>
                         </div>
                       </form>
 
-                      <p className="text-[10px] text-zinc-500 font-mono text-center uppercase tracking-wider mt-4">
+                      <p className="text-[10px] text-zinc-400 font-mono text-center uppercase tracking-wider mt-4">
                         * Referral waitlist engine active • fully secure connection
                       </p>
                     </div>
                   </div>
 
                   {/* Dual path instructions */}
-                  <div className="grid gap-4 sm:grid-cols-2 text-xs pt-6 border-t border-zinc-800 font-mono">
+                  <div className="grid gap-4 sm:grid-cols-2 text-xs pt-6 border-t border-zinc-100 font-mono">
                     <div>
-                      <p className="font-extrabold uppercase text-[9px] tracking-wider text-zinc-100 mb-1">Path A: Interactive Simulation</p>
-                      <p className="text-[10px] text-zinc-400 leading-normal font-sans font-medium">
+                      <p className="font-extrabold uppercase text-[9px] tracking-wider text-zinc-900 mb-1">Path A: Interactive Simulation</p>
+                      <p className="text-[10px] text-zinc-500 leading-normal font-sans font-medium">
                         Take the 10-Question simulation first to record your regional commute baseline.
                       </p>
                       <button
                         onClick={handleStartSimulation}
-                        className="mt-3 text-[10px] text-white font-black hover:underline tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
+                        className="mt-3 text-[10px] text-zinc-950 hover:text-zinc-700 font-black hover:underline tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
                       >
                         <span>Start Simulator</span>
                         <span>→</span>
                       </button>
                     </div>
-                    <div className="border-t sm:border-t-0 sm:border-l border-zinc-850 pt-4 sm:pt-0 sm:pl-4">
-                      <p className="font-extrabold uppercase text-[9px] tracking-wider text-zinc-100 mb-1">Path B: Instant Priority Reservation</p>
-                      <p className="text-[10px] text-zinc-400 leading-normal font-sans font-medium">
+                    <div className="border-t sm:border-t-0 sm:border-l border-zinc-200 pt-4 sm:pt-0 sm:pl-4">
+                      <p className="font-extrabold uppercase text-[9px] tracking-wider text-zinc-900 mb-1">Path B: Instant Priority Reservation</p>
+                      <p className="text-[10px] text-zinc-500 leading-normal font-sans font-medium">
                         Complete the gateway above to secure direct access to development sandbox builds and 50% discount codes.
                       </p>
                     </div>
@@ -926,11 +925,11 @@ export default function App() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-zinc-950 text-white shadow-md hover:bg-zinc-850 active:scale-95 transition-all cursor-pointer border border-zinc-800"
+            className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-blue-50 text-blue-600 border-2 border-blue-200 shadow-lg hover:bg-blue-100 hover:border-blue-300 active:scale-95 transition-all cursor-pointer"
             id="scroll-to-top-button"
             title="Scroll to top"
           >
-            <ArrowUp className="h-4.5 w-4.5 stroke-[2.5]" />
+            <ArrowUp className="h-4.5 w-4.5 stroke-[3] text-blue-600" />
           </motion.button>
         )}
       </AnimatePresence>

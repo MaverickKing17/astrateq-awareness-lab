@@ -71,7 +71,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => scrollToSection("prefinery-checkout")}
-            className="inline-flex items-center justify-center rounded bg-slate-950 px-4.5 py-2.5 text-[10px] font-bold text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-slate-950"
+            className="inline-flex items-center justify-center rounded bg-blue-600 px-4.5 py-2.5 text-[10px] font-bold text-white shadow-sm transition-all hover:bg-blue-500 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-blue-600 hover:border-blue-500"
           >
             Reserve Position
           </button>
@@ -117,7 +117,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           <div className="pt-2 px-3">
             <button
               onClick={() => handleMobileNavigate("simulation")}
-              className="w-full flex items-center justify-center gap-1.5 rounded bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:bg-blue-700 active:scale-95 transition-all cursor-pointer"
+              className="w-full flex items-center justify-center gap-1.5 rounded bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:bg-blue-500 active:scale-95 transition-all cursor-pointer"
             >
               <span>Baseline Simulation</span>
               <span className="text-blue-200">→</span>
