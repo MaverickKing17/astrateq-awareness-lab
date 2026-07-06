@@ -552,11 +552,11 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <div className="rounded-xl border-2 border-rose-500 bg-slate-950 p-6 shadow-xl relative flex flex-col justify-between overflow-hidden text-white ring-2 ring-rose-500/50 ring-offset-2 ring-offset-slate-950 hover:border-rose-400 hover:shadow-[0_0_30px_rgba(244,63,94,0.25)] transition-all duration-300">
           <div>
             <span className="inline-flex items-center gap-1 rounded border border-rose-500/30 bg-rose-500/15 px-2 py-0.5 text-[9px] font-bold text-rose-400 uppercase font-mono mb-3">
-              Research Study Signup
+              100% Sovereign Data Ownership
             </span>
             <h3 className="text-xs font-bold uppercase tracking-wider mb-2 text-white font-mono">Help Advance Road Safety</h3>
             <p className="text-xs text-slate-400 leading-relaxed mb-4 font-sans">
-              Join our Early Access Research Cohort and help shape the future of driver safety intelligence. Your insights contribute to smarter tools, safer roads, and stronger communities.
+              Join our Founding Alpha Cohort and help shape the future of driver safety intelligence. Your insights contribute to smarter tools, safer roads, and stronger communities.
             </p>
             <ul className="space-y-2 text-[11px] text-slate-300 font-mono mb-6">
               <li className="flex items-center gap-2">
@@ -565,7 +565,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               </li>
               <li className="flex items-center gap-2">
                 <Check className="h-3.5 w-3.5 text-emerald-400" />
-                <span>Contribute to safety research</span>
+                <span>Secure Alpha Allocation</span>
               </li>
               <li className="flex items-center gap-2">
                 <Check className="h-3.5 w-3.5 text-emerald-400" />

@@ -8,9 +8,7 @@ import CohortPage from "./components/CohortPage";
 import LoadingOverlay from "./components/LoadingOverlay";
 import HWY_404_POV_IMAGE from "./assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 import { DriverSimulationInputs, DriverInsights, ActivePage } from "./types";
-import { 
-  Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp, Smartphone, Camera, Eye, Activity, Compass
-} from "lucide-react";
+import { Sparkles, ShieldCheck, Heart, Info, ArrowRight, Circle as HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp, Smartphone, Camera, Eye, Activity, Compass } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
@@ -96,11 +94,11 @@ export default function App() {
   const faqItems = [
     {
       q: "How can this work without hardware accessories?",
-      a: "The Astrateq Driver Coach runs entirely as software on your existing smartphone. When mounted on your dashboard, it utilizes advanced local computer vision through your device's camera to safely analyze micro-expressions, blink rate, and gaze focus. There are no OBD plugins, no custom dashcams, and zero physical dependencies."
+      a: "The Astrateq Driver Coach runs entirely as software on your existing iOS or Android smartphone. When mounted on your dashboard, it utilizes advanced local computer vision through your device's camera to safely analyze micro-expressions, blink rate, and gaze focus. There are no OBD plugins, no custom dashcams, and zero physical dependencies."
     },
     {
-      q: "What happens to the $5 reservation fee?",
-      a: "The $5 reservation is 100% fully refundable at any time on request. It directly validates real human demand—securing your priority placement in our upcoming sandboxed alpha rollout, locking in a 50% lifetime subscription discount, and opening a direct communication line to our development team."
+      q: "Why is there a $5 reservation fee?",
+      a: "To protect the integrity of our early validation cohort against automated bot spam and script signups. Every allocation is 100% refundable at any moment if you choose to opt out. This ensures our alpha slots go to real, dedicated early adopters rather than automated systems."
     },
     {
       q: "How is my personal driving privacy protected?",
@@ -239,7 +237,7 @@ export default function App() {
                     </h1>
 
                     <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xl font-sans font-medium">
-                      Astrateq transforms your phone into a sovereign, edge-compute AI driver coach. No cloud upload. No data brokers. Take our 10-question baseline simulation to lock in an exclusive priority alpha allocation.
+                      Astrateq transforms your phone into a sovereign, edge-compute AI driver coach. No cloud uploads. No data brokers. Take the baseline simulation to secure a spot in our Founding Alpha Cohort.
                     </p>
 
                     {/* Quick validation bullets */}
@@ -566,9 +564,9 @@ export default function App() {
 
                 {/* Grid of the three premium high-contrast floating cards */}
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left">
-                  
+
                   {/* Card 1: Attention */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div className="space-y-6">
                       <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">COGNITIVE RATIO</span>
                       <div className="space-y-2">
@@ -580,7 +578,7 @@ export default function App() {
                       <div className="space-y-2 pt-2 border-t border-zinc-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
-                          Localized temporal tracking analyzes minute deviations in response timing safely.
+                          Localized temporal tracking analyzes minute deviations in response timing safely and directly on your smartphone engine.
                         </p>
                       </div>
                     </div>
@@ -593,7 +591,7 @@ export default function App() {
                   </div>
 
                   {/* Card 2: Privacy */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div className="space-y-6">
                       <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">TELEMETRY BYPASS</span>
                       <div className="space-y-2">
@@ -612,13 +610,13 @@ export default function App() {
                     <div className="mt-8 pt-5 border-t border-zinc-100">
                       <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
                       <p className="text-xs text-zinc-800 font-bold font-sans">
-                        Your profile remains 100% invisible to insurance algorithms and predictive pricing networks.
+                        Your profile remains 100% invisible to external corporate data brokers and insurance pricing networks.
                       </p>
                     </div>
                   </div>
 
                   {/* Card 3: Sovereignty */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div className="space-y-6">
                       <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">HARDWARE SECURITY</span>
                       <div className="space-y-2">

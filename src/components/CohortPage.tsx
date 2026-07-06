@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { 
-  Users, Award, ShieldCheck, Heart, Mail, Check, Sparkles, Loader2, Info, ArrowRight, ShieldAlert,
-  Brain, Eye, MapPin, Lock, HelpCircle, FileText, Smartphone, AlertTriangle, ChevronDown, Cpu
-} from "lucide-react";
+import { Users, Award, ShieldCheck, Heart, Mail, Check, Sparkles, Loader as Loader2, Info, ArrowRight, ShieldAlert, Brain, Eye, MapPin, Lock, Circle as HelpCircle, FileText, Smartphone, TriangleAlert as AlertTriangle, ChevronDown, Cpu } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import R_AND_D_LAB_IMAGE from "../assets/images/automotive_rd_lab_1783018331045.jpg";
@@ -102,8 +99,8 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       a: "Today's driver safety systems are almost entirely reactive—sounding loud alarms or applying automatic brakes only after an error occurs. Driver Awareness Intelligence explores whether on-device, offline-first software can help drivers recognize and understand their own fatigue curves before those critical situations develop."
     },
     {
-      q: "Why should I join the research cohort?",
-      a: "Joining the cohort lets you actively participate in validating this new product category. It costs nothing, requires no deposit, and carries zero commitment. It secures your priority queue placement for the upcoming software rollout, locks in a high early-bird launch discount (up to 50%), and ensures your feedback directs our prototype development priorities."
+      q: "Why should I join the Alpha Validation Cohort?",
+      a: "Joining the Founding Members cohort lets you actively participate in validating this new product category. It costs nothing, requires no deposit, and carries zero commitment. It secures your priority queue placement for the upcoming software rollout, locks in a high early-bird launch discount (up to 50%), and ensures your feedback directs our prototype development priorities."
     },
     {
       q: "How does my participation influence development?",
@@ -325,7 +322,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 font-semibold uppercase">COLLABORATION LEVEL:</span>
-                      <span className="text-slate-900 font-black">RESEARCH COHORT</span>
+                      <span className="text-slate-900 font-black">ALPHA VALIDATION COHORT</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 font-semibold uppercase">SECURED DISCOUNT:</span>
@@ -750,7 +747,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               {
                 icon: <Lock className="h-5 w-5 text-blue-600" />,
                 title: "Zero Insurance Logs",
-                desc: "Research cohort credentials are entirely isolated. We never share metrics or signups with insurance firms."
+                desc: "Alpha validation credentials are entirely isolated. We never share metrics or signups with insurance firms."
               },
               {
                 icon: <ShieldCheck className="h-5 w-5 text-blue-600" />,

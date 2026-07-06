@@ -98,11 +98,11 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
       </section>
 
       {/* SECTION: IMAGINE DRIVER AWARENESS INTELLIGENCE CENTERPIECE GRID */}
-      <section id="capabilities-grid" className="py-28 bg-white border-b border-zinc-200/80 relative overflow-hidden">
+      <section id="capabilities-grid" className="py-28 bg-zinc-50 border-b border-zinc-200/80 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.01] pointer-events-none" />
-        
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
               <Cpu className="h-3.5 w-3.5 text-zinc-900" /> ON-DEVICE PERFORMANCE ARCHITECTURE
@@ -116,9 +116,9 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           </div>
 
           <div className="grid gap-8 md:grid-cols-3 text-left">
-            
+
             {/* Card 1: Visual Processing Edge */}
-            <div className="relative rounded-2xl border-2 border-blue-200 bg-gradient-to-b from-blue-50/80 to-white p-8 sm:p-10 shadow-md shadow-blue-100/40 hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group">
+            <div className="relative rounded-2xl border border-zinc-200/60 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
                 <div className="h-12 w-12 rounded-xl bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-blue-600 shadow-sm">
                   <Eye className="h-6 w-6 stroke-[2]" />
@@ -143,7 +143,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Card 2: Telemetry Shielding */}
-            <div className="relative rounded-2xl border-2 border-indigo-200 bg-gradient-to-b from-indigo-50/80 to-white p-8 sm:p-10 shadow-md shadow-indigo-100/40 hover:shadow-lg hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between group">
+            <div className="relative rounded-2xl border border-zinc-200/60 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
                 <div className="h-12 w-12 rounded-xl bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center text-indigo-600 shadow-sm">
                   <Lock className="h-6 w-6 stroke-[2]" />
@@ -168,7 +168,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
             </div>
 
             {/* Card 3: Localized Awareness Analytics */}
-            <div className="relative rounded-2xl border-2 border-emerald-200 bg-gradient-to-b from-emerald-50/80 to-white p-8 sm:p-10 shadow-md shadow-emerald-100/40 hover:shadow-lg hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group">
+            <div className="relative rounded-2xl border border-zinc-200/60 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
                 <div className="h-12 w-12 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
                   <Brain className="h-6 w-6 stroke-[2]" />
