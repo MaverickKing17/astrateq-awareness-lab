@@ -301,7 +301,9 @@ export default function App() {
                     <p className="text-[10px] text-slate-400 font-mono uppercase tracking-wider leading-relaxed pt-1">
                       *Takes under 60 seconds • Completely free of charge • Zero hardware adapters • Cancel at any time
                     </p>
-                              {/* Right Column: High-Fidelity Smartphone Dashboard Simulator (Improvement 2, 8, 9, 13) */}
+                  </div>
+
+                  {/* Right Column: High-Fidelity Smartphone Dashboard Simulator (Improvement 2, 8, 9, 13) */}
                   <div className="lg:col-span-5 flex flex-col items-center">
                     
                     {/* 5-SECOND EXPLANATION POPULAR CALLOUT */}
@@ -463,7 +465,7 @@ export default function App() {
                     <p className="text-[10px] font-mono text-slate-500 text-center uppercase tracking-widest leading-relaxed mt-2.5 font-bold bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
                       📱 Interactive Smartphone Screen Mockup
                     </p>
-                  </div>             </div>
+                  </div>
 
                 </div>
               </div>
