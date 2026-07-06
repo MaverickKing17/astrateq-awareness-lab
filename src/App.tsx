@@ -565,76 +565,79 @@ export default function App() {
                 {/* Grid of the three premium high-contrast floating cards */}
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left">
 
-                  {/* Card 1: Attention */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                  {/* Card 1: Attention — Blue */}
+                  <div className="p-8 sm:p-10 rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white shadow-sm hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400" />
                     <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">COGNITIVE RATIO</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-blue-500 font-mono">COGNITIVE RATIO</span>
                       <div className="space-y-2">
-                        <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
+                        <p className="text-[10px] uppercase font-black text-red-500 tracking-wider">01 // THE QUESTION</p>
                         <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
                           Can daily commuting habits reveal cognitive fatigue patterns?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-zinc-100">
+                      <div className="space-y-2 pt-2 border-t border-blue-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                           Localized temporal tracking analyzes minute deviations in response timing safely and directly on your smartphone engine.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-zinc-100">
-                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-blue-100 bg-blue-50/60 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
+                      <p className="text-[10px] uppercase font-black text-blue-700 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-blue-900 font-bold font-sans">
                         You receive real-time, completely private awareness alerts before critical risk situations occur.
                       </p>
                     </div>
                   </div>
 
-                  {/* Card 2: Privacy */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                  {/* Card 2: Privacy — Amber */}
+                  <div className="p-8 sm:p-10 rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-white shadow-sm hover:shadow-lg hover:border-amber-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-400" />
                     <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">TELEMETRY BYPASS</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-amber-600 font-mono">TELEMETRY BYPASS</span>
                       <div className="space-y-2">
-                        <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
+                        <p className="text-[10px] uppercase font-black text-red-500 tracking-wider">01 // THE QUESTION</p>
                         <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
                           Why should automakers monetize your real-time speed profiles?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-zinc-100">
+                      <div className="space-y-2 pt-2 border-t border-amber-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                           Astrateq fully sanitizes and seals your telemetry data right on the physical device layer.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-zinc-100">
-                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-amber-100 bg-amber-50/60 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
+                      <p className="text-[10px] uppercase font-black text-amber-700 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-amber-900 font-bold font-sans">
                         Your profile remains 100% invisible to external corporate data brokers and insurance pricing networks.
                       </p>
                     </div>
                   </div>
 
-                  {/* Card 3: Sovereignty */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                  {/* Card 3: Sovereignty — Emerald */}
+                  <div className="p-8 sm:p-10 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white shadow-sm hover:shadow-lg hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-400" />
                     <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">HARDWARE SECURITY</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600 font-mono">HARDWARE SECURITY</span>
                       <div className="space-y-2">
-                        <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
+                        <p className="text-[10px] uppercase font-black text-red-500 tracking-wider">01 // THE QUESTION</p>
                         <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
                           Why should in-cabin camera streams travel to commercial servers?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-zinc-100">
+                      <div className="space-y-2 pt-2 border-t border-emerald-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                           Computations run purely inside standard sandbox volatile RAM and vanish instantly upon app termination.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-zinc-100">
-                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-emerald-100 bg-emerald-50/60 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
+                      <p className="text-[10px] uppercase font-black text-emerald-700 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-emerald-900 font-bold font-sans">
                         Your personal facial expressions, gaze traces, and cabin parameters remain your exclusive property.
                       </p>
                     </div>
@@ -663,50 +666,51 @@ export default function App() {
 
                 {/* Horizontal connected milestones timeline */}
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left relative">
-                  
-                  {/* Phase 01 */}
-                  <div className="p-8 rounded-2xl border border-zinc-200 bg-zinc-50/50 flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-950" />
+
+                  {/* Phase 01 — Blue (Active) */}
+                  <div className="p-8 rounded-2xl border-2 border-blue-300 bg-gradient-to-br from-blue-50 to-white flex flex-col justify-between relative overflow-hidden shadow-md shadow-blue-100/50">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500" />
                     <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-950 text-[8.5px] font-black text-white uppercase tracking-wider">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-blue-600 text-[8.5px] font-black text-white uppercase tracking-wider">
+                        <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span></span>
                         Phase 01 • Active
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
                         Core Funnel Architecture Validation
                       </h4>
-                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                         Capped at 500 Consumer Allocations with a refundable $5 cryptographic verification filter. Proving baseline market commitment without corporate fundraising.
                       </p>
                     </div>
                   </div>
 
-                  {/* Phase 02 */}
-                  <div className="p-8 rounded-2xl border border-zinc-200 bg-white flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-200" />
+                  {/* Phase 02 — Amber */}
+                  <div className="p-8 rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-white flex flex-col justify-between relative overflow-hidden shadow-md shadow-amber-100/50">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-400" />
                     <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-100 text-[8.5px] font-black text-zinc-500 uppercase tracking-wider">
+                      <span className="inline-block px-2.5 py-1 rounded bg-amber-100 border border-amber-300 text-[8.5px] font-black text-amber-700 uppercase tracking-wider">
                         Phase 02 • Closed Sandbox
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
                         Closed Local Sandbox Flight Test
                       </h4>
-                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                         Releasing sandboxed companion invitations to early waitlist reservation holders. Verifying local RAM isolation boundaries and ocular camera sampling frequencies on key handsets.
                       </p>
                     </div>
                   </div>
 
-                  {/* Phase 03 */}
-                  <div className="p-8 rounded-2xl border border-zinc-200 bg-white flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-200" />
+                  {/* Phase 03 — Emerald */}
+                  <div className="p-8 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white flex flex-col justify-between relative overflow-hidden shadow-md shadow-emerald-100/50">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-400" />
                     <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-100 text-[8.5px] font-black text-zinc-500 uppercase tracking-wider">
+                      <span className="inline-block px-2.5 py-1 rounded bg-emerald-100 border border-emerald-300 text-[8.5px] font-black text-emerald-700 uppercase tracking-wider">
                         Phase 03 • Deployment
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
                         Regional Canadian OS Deployment
                       </h4>
-                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                         Public general debut of the offline driver safety application, optimizing specific focus baselines for Canadian weather conditions and highway configurations.
                       </p>
                     </div>
@@ -737,79 +741,82 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="bg-white border border-zinc-200 rounded-3xl p-8 sm:p-12 shadow-md text-left max-w-xl mx-auto space-y-8">
-                  
-                  {/* Explanation layer */}
-                  <div className="border-b border-zinc-100 pb-6 space-y-2">
-                    <div className="flex justify-between items-center">
-                      <h4 className="text-xs font-black uppercase text-zinc-900 tracking-wider font-mono">Waitlist Filter Allocation</h4>
-                      <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase animate-pulse">Fully Refundable</span>
-                    </div>
-                    <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
-                      The $5 reservation acts as an intent-validation layer. This guarantees our sandbox launcher allocations are committed to real, dedicated early adopters rather than scale-testing scripts, protecting developer bandwidth.
-                    </p>
-                  </div>
+                <div className="bg-white border-2 border-blue-200 rounded-3xl shadow-lg shadow-blue-100/40 text-left max-w-xl mx-auto overflow-hidden">
+                  {/* Colorful top gradient accent */}
+                  <div className="h-1.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-500" />
 
-                  {/* PREFINERY EMBED CONTAINER WRAPPER */}
-                  <div className="space-y-4">
-                    <label className="block text-[10px] font-black uppercase tracking-wider text-zinc-500 font-mono">
-                      Referral Gateway & Active Signup
-                    </label>
-                    <div className="bg-zinc-50 border border-zinc-200/60 rounded-2xl p-5 min-h-[140px] flex flex-col justify-center">
-                      
-                      {/* Required Prefinery headless anchor */}
-                      <div className="prefinery-form-embed"></div>
-                      
-                      {/* High-Fidelity Interactive Conversion Form */}
-                      <form onSubmit={(e) => {
-                        e.preventDefault();
-                        handleNavigateToCohort("guardian");
-                      }} className="space-y-4 mt-1">
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <input 
-                            type="email" 
-                            required 
-                            placeholder="driver@example.ca" 
-                            className="flex-grow rounded border border-zinc-250 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 font-mono"
-                          />
-                          <button 
-                            type="submit" 
-                            className="bg-blue-600 text-white hover:bg-blue-500 active:scale-98 transition-all px-6 py-3 rounded text-xs font-black uppercase tracking-wider cursor-pointer font-mono shadow-xs"
-                          >
-                            Secure Priority Alpha Slot ($5 Fully Refundable)
-                          </button>
-                        </div>
-                      </form>
-
-                      <p className="text-[10px] text-zinc-400 font-mono text-center uppercase tracking-wider mt-4">
-                        * Referral waitlist engine active • fully secure connection
+                  <div className="p-8 sm:p-12 space-y-8">
+                    {/* Explanation layer */}
+                    <div className="border-b border-blue-100 pb-6 space-y-2">
+                      <div className="flex justify-between items-center">
+                        <h4 className="text-xs font-black uppercase text-zinc-900 tracking-wider font-mono">Waitlist Filter Allocation</h4>
+                        <span className="text-emerald-700 bg-emerald-100 border border-emerald-300 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase animate-pulse">Fully Refundable</span>
+                      </div>
+                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
+                        The $5 reservation acts as an intent-validation layer. This guarantees our sandbox launcher allocations are committed to real, dedicated early adopters rather than scale-testing scripts, protecting developer bandwidth.
                       </p>
                     </div>
-                  </div>
 
-                  {/* Dual path instructions */}
-                  <div className="grid gap-4 sm:grid-cols-2 text-xs pt-6 border-t border-zinc-100 font-mono">
-                    <div>
-                      <p className="font-extrabold uppercase text-[9px] tracking-wider text-zinc-900 mb-1">Path A: Interactive Simulation</p>
-                      <p className="text-[10px] text-zinc-500 leading-normal font-sans font-medium">
-                        Take the 10-Question simulation first to record your regional commute baseline.
-                      </p>
-                      <button
-                        onClick={handleStartSimulation}
-                        className="mt-3 text-[10px] text-zinc-950 hover:text-zinc-700 font-black hover:underline tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
-                      >
-                        <span>Start Simulator</span>
-                        <span>→</span>
-                      </button>
+                    {/* PREFINERY EMBED CONTAINER WRAPPER */}
+                    <div className="space-y-4">
+                      <label className="block text-[10px] font-black uppercase tracking-wider text-blue-600 font-mono">
+                        Referral Gateway & Active Signup
+                      </label>
+                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50/60 border border-blue-200 rounded-2xl p-5 min-h-[140px] flex flex-col justify-center">
+
+                        {/* Required Prefinery headless anchor */}
+                        <div className="prefinery-form-embed"></div>
+
+                        {/* High-Fidelity Interactive Conversion Form */}
+                        <form onSubmit={(e) => {
+                          e.preventDefault();
+                          handleNavigateToCohort("guardian");
+                        }} className="space-y-4 mt-1">
+                          <div className="flex flex-col sm:flex-row gap-3">
+                            <input
+                              type="email"
+                              required
+                              placeholder="driver@example.ca"
+                              className="flex-grow rounded-lg border-2 border-blue-200 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 font-mono"
+                            />
+                            <button
+                              type="submit"
+                              className="bg-blue-600 text-white hover:bg-blue-500 active:scale-98 transition-all px-6 py-3 rounded-lg text-xs font-black uppercase tracking-wider cursor-pointer font-mono shadow-md shadow-blue-200"
+                            >
+                              Secure Priority Alpha Slot ($5 Fully Refundable)
+                            </button>
+                          </div>
+                        </form>
+
+                        <p className="text-[10px] text-blue-500 font-mono text-center uppercase tracking-wider mt-4">
+                          * Referral waitlist engine active • fully secure connection
+                        </p>
+                      </div>
                     </div>
-                    <div className="border-t sm:border-t-0 sm:border-l border-zinc-200 pt-4 sm:pt-0 sm:pl-4">
-                      <p className="font-extrabold uppercase text-[9px] tracking-wider text-zinc-900 mb-1">Path B: Instant Priority Reservation</p>
-                      <p className="text-[10px] text-zinc-500 leading-normal font-sans font-medium">
-                        Complete the gateway above to secure direct access to development sandbox builds and 50% discount codes.
-                      </p>
+
+                    {/* Dual path instructions */}
+                    <div className="grid gap-4 sm:grid-cols-2 text-xs pt-2 font-mono">
+                      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-700 mb-1">Path A: Interactive Simulation</p>
+                        <p className="text-[10px] text-zinc-600 leading-normal font-sans font-medium">
+                          Take the 10-Question simulation first to record your regional commute baseline.
+                        </p>
+                        <button
+                          onClick={handleStartSimulation}
+                          className="mt-3 text-[10px] text-blue-700 hover:text-blue-900 font-black hover:underline tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
+                        >
+                          <span>Start Simulator</span>
+                          <span>→</span>
+                        </button>
+                      </div>
+                      <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-emerald-700 mb-1">Path B: Instant Priority Reservation</p>
+                        <p className="text-[10px] text-zinc-600 leading-normal font-sans font-medium">
+                          Complete the gateway above to secure direct access to development sandbox builds and 50% discount codes.
+                        </p>
+                      </div>
                     </div>
                   </div>
-
                 </div>
 
               </div>
@@ -831,34 +838,39 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* FAQ group with minimal border style */}
-                <div className="divide-y divide-zinc-200 border-y border-zinc-200">
+                {/* FAQ group with colorful bordered cards */}
+                <div className="space-y-4">
                   {faqItems.map((item, idx) => {
                     const isOpen = openFaqIdx === idx;
+                    const colors = [
+                      { border: "border-blue-300", leftBar: "border-l-blue-500", bg: isOpen ? "bg-blue-50/70" : "bg-white hover:bg-blue-50/30", numBg: isOpen ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-700", chevron: isOpen ? "bg-blue-600 border-blue-600 text-white" : "bg-blue-50 border-blue-200 text-blue-500", answer: "text-zinc-700" },
+                      { border: "border-amber-300", leftBar: "border-l-amber-500", bg: isOpen ? "bg-amber-50/70" : "bg-white hover:bg-amber-50/30", numBg: isOpen ? "bg-amber-500 text-white" : "bg-amber-100 text-amber-700", chevron: isOpen ? "bg-amber-500 border-amber-500 text-white" : "bg-amber-50 border-amber-200 text-amber-500", answer: "text-zinc-700" },
+                      { border: "border-emerald-300", leftBar: "border-l-emerald-500", bg: isOpen ? "bg-emerald-50/70" : "bg-white hover:bg-emerald-50/30", numBg: isOpen ? "bg-emerald-600 text-white" : "bg-emerald-100 text-emerald-700", chevron: isOpen ? "bg-emerald-600 border-emerald-600 text-white" : "bg-emerald-50 border-emerald-200 text-emerald-500", answer: "text-zinc-700" },
+                      { border: "border-rose-300", leftBar: "border-l-rose-500", bg: isOpen ? "bg-rose-50/70" : "bg-white hover:bg-rose-50/30", numBg: isOpen ? "bg-rose-600 text-white" : "bg-rose-100 text-rose-700", chevron: isOpen ? "bg-rose-600 border-rose-600 text-white" : "bg-rose-50 border-rose-200 text-rose-500", answer: "text-zinc-700" },
+                    ];
+                    const c = colors[idx % colors.length];
                     return (
-                      <div 
-                        key={idx} 
-                        className="py-1 transition-all duration-300 overflow-hidden text-left"
+                      <div
+                        key={idx}
+                        className={`rounded-2xl border-2 border-l-4 ${c.border} ${c.leftBar} ${c.bg} transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md`}
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
-                          className="w-full flex items-center justify-between py-6 text-left transition-all cursor-pointer font-sans"
+                          className="w-full flex items-center justify-between px-6 py-5 text-left transition-all cursor-pointer font-sans"
                         >
                           <div className="flex items-center gap-4">
-                            <span className="text-[10.5px] font-black font-mono text-zinc-400 shrink-0">
+                            <span className={`flex-shrink-0 h-7 w-7 rounded-full flex items-center justify-center text-[10px] font-black font-mono transition-all duration-200 ${c.numBg}`}>
                               {(idx + 1).toString().padStart(2, "0")}
                             </span>
                             <span className={`text-xs sm:text-[13px] font-black uppercase tracking-wider font-mono transition-colors duration-200 ${isOpen ? 'text-zinc-950' : 'text-zinc-700 hover:text-zinc-950'}`}>
                               {item.q}
                             </span>
                           </div>
-                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                            isOpen ? "bg-zinc-100 border-zinc-200 text-zinc-950 rotate-180" : "bg-zinc-50 border-zinc-200 text-zinc-400"
-                          }`}>
+                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-all duration-300 ${c.chevron} ${isOpen ? 'rotate-180' : ''}`}>
                             <ChevronDown className="h-4 w-4" />
                           </div>
                         </button>
-                        
+
                         <AnimatePresence initial={false}>
                           {isOpen && (
                             <motion.div
@@ -868,7 +880,7 @@ export default function App() {
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                               className="overflow-hidden"
                             >
-                              <div className="pb-7 pt-1 text-xs sm:text-[13px] text-zinc-650 leading-relaxed font-sans font-medium pl-10 pr-6">
+                              <div className={`pb-6 pt-1 text-xs sm:text-[13px] leading-relaxed font-sans font-medium pl-[4.5rem] pr-6 ${c.answer}`}>
                                 {item.a}
                               </div>
                             </motion.div>
