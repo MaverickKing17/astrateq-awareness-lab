@@ -218,26 +218,35 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 </p>
               </div>
               
-              {/* Micro-telemetry representation in bento */}
-              <div className="mt-8 p-4 bg-[#0B1220] rounded-xl border border-slate-800 font-mono text-[9px] text-slate-400 space-y-1.5 shadow-inner">
-                <div className="flex justify-between border-b border-slate-800 pb-1 text-[8px] font-black tracking-widest text-slate-500">
-                  <span>BASELINE CALIBRATION ENGINE</span>
-                  <span className="text-emerald-400">STATUS: CALIBRATED</span>
+              {/* Refined, high-contrast, clear metrics display (Improvement 12) */}
+              <div className="mt-6 rounded-xl border border-blue-100 bg-blue-50/50 p-4 font-sans text-xs space-y-3">
+                <div className="flex items-center justify-between border-b border-blue-100/80 pb-2 text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
+                  <span className="flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    On-Device Calibration Baseline
+                  </span>
+                  <span className="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-extrabold text-[9px]">Calibrated</span>
                 </div>
-                <div className="grid grid-cols-3 gap-2 text-center pt-1 text-[8px]">
-                  <div className="bg-slate-900/50 p-1.5 rounded border border-slate-800">
-                    <p className="text-slate-500">BLINK DURATION</p>
-                    <p className="text-white font-bold mt-0.5">140ms</p>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-white p-2.5 rounded-lg border border-blue-100 shadow-sm text-center">
+                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-wider font-mono">Blink Duration</p>
+                    <p className="text-sm sm:text-base font-black text-slate-900 mt-1">140ms</p>
+                    <span className="text-[8px] font-extrabold text-slate-500 font-mono">Safe baseline</span>
                   </div>
-                  <div className="bg-slate-900/50 p-1.5 rounded border border-slate-800">
-                    <p className="text-slate-500">SACCADE RATE</p>
-                    <p className="text-white font-bold mt-0.5">3.4 Hz</p>
+                  <div className="bg-white p-2.5 rounded-lg border border-blue-100 shadow-sm text-center">
+                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-wider font-mono">Saccade Rate</p>
+                    <p className="text-sm sm:text-base font-black text-slate-900 mt-1">3.4 Hz</p>
+                    <span className="text-[8px] font-extrabold text-slate-500 font-mono">Stable Focus</span>
                   </div>
-                  <div className="bg-slate-900/50 p-1.5 rounded border border-slate-800">
-                    <p className="text-slate-500">ATTENTIVE CONTOUR</p>
-                    <p className="text-cyan-400 font-bold mt-0.5">OPTIMAL</p>
+                  <div className="bg-white p-2.5 rounded-lg border border-blue-100 shadow-sm text-center flex flex-col justify-between">
+                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-wider font-mono">Attentive State</p>
+                    <p className="text-[11px] sm:text-xs font-black text-blue-700 mt-1.5 uppercase font-mono tracking-tight">Optimal</p>
+                    <span className="text-[8px] font-extrabold text-emerald-600 font-mono">100% Secure</span>
                   </div>
                 </div>
+                <p className="text-[10px] font-bold text-slate-500 italic text-center">
+                  💡 This metric loop runs safely inside your browser session, matching your direct ocular baselines.
+                </p>
               </div>
             </div>
 
