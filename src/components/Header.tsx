@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShieldCheck, Info, Menu, X } from "lucide-react";
+import { ShieldCheck, Menu, X } from "lucide-react";
 
 interface HeaderProps {
   onNavigate: (page: "landing" | "simulation" | "results" | "cohort") => void;
@@ -26,40 +26,38 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
+        
+        {/* Stark minimalist logo */}
         <button
           onClick={() => handleMobileNavigate("landing")}
-          className="flex items-center gap-3 transition-opacity hover:opacity-90 text-left cursor-pointer"
+          className="flex items-center transition-opacity hover:opacity-85 text-left cursor-pointer"
         >
-          <img
-            src="https://i.ibb.co/DfpC9vNt/Astrateq.png"
-            alt="Astrateq Gadgets Logo"
-            className="h-10 w-auto object-contain"
-            referrerPolicy="no-referrer"
-          />
+          <span className="text-sm font-black tracking-[0.25em] text-slate-900 font-sans">
+            ASTRATEQ
+          </span>
         </button>
 
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-500">
+        <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-wider text-slate-600">
           <button
             onClick={() => scrollToSection("value-props")}
             className="transition-colors hover:text-slate-900 cursor-pointer"
           >
-            Core Inquiries
+            Capabilities
           </button>
           <button
-            onClick={() => scrollToSection("how-it-works")}
+            onClick={() => scrollToSection("lifestyle-breakout")}
             className="transition-colors hover:text-slate-900 cursor-pointer"
           >
-            How It Works
+            Sovereign Commute
           </button>
           <button
-            onClick={() => scrollToSection("privacy-info")}
+            onClick={() => scrollToSection("timeline-roadmap")}
             className="transition-colors hover:text-slate-900 cursor-pointer"
           >
-            Privacy & Trust
+            System Architecture
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
@@ -67,30 +65,16 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           >
             FAQ
           </button>
-          <button
-            onClick={() => onNavigate("cohort")}
-            className={`transition-colors cursor-pointer ${
-              activePage === "cohort" ? "text-slate-900 font-bold" : "hover:text-slate-900"
-            }`}
-          >
-            Join Research Cohort
-          </button>
         </nav>
 
         {/* Right CTA */}
         <div className="flex items-center gap-2 sm:gap-4">
           <button
-            onClick={() => handleMobileNavigate("cohort")}
-            className="hidden sm:inline-flex items-center justify-center rounded bg-blue-600 px-4 py-2 text-[10px] font-bold text-white shadow-[0_2px_8px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_4px_12px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer uppercase tracking-wider font-mono"
+            onClick={() => scrollToSection("prefinery-checkout")}
+            className="inline-flex items-center justify-center rounded bg-slate-950 px-4.5 py-2.5 text-[10px] font-bold text-white shadow-sm transition-all hover:bg-slate-800 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-slate-950"
           >
-            Join Research Cohort
+            Reserve Position
           </button>
-
-          {/* Mobile indicator for study */}
-          <div className="flex items-center gap-1.5 rounded bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-slate-700 uppercase tracking-wider md:hidden border border-slate-200">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            AI ENGAGED
-          </div>
 
           {/* Hamburger Menu Button - Mobile */}
           <button
@@ -105,24 +89,24 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white/98 backdrop-blur-md px-4 pt-2 pb-6 space-y-3 shadow-lg animate-in fade-in slide-in-from-top-3 duration-200">
+        <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3 shadow-md animate-in fade-in slide-in-from-top-3 duration-200">
           <button
             onClick={() => scrollToSection("value-props")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
           >
-            Core Inquiries
+            Capabilities
           </button>
           <button
-            onClick={() => scrollToSection("how-it-works")}
+            onClick={() => scrollToSection("lifestyle-breakout")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
           >
-            How It Works
+            Sovereign Commute
           </button>
           <button
-            onClick={() => scrollToSection("privacy-info")}
+            onClick={() => scrollToSection("timeline-roadmap")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
           >
-            Privacy & Trust
+            System Architecture
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
@@ -130,22 +114,12 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           >
             FAQ
           </button>
-          <button
-            onClick={() => handleMobileNavigate("cohort")}
-            className={`block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider rounded transition-colors font-mono ${
-              activePage === "cohort" 
-                ? "bg-blue-600 text-white font-black" 
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-            }`}
-          >
-            Join Research Cohort
-          </button>
           <div className="pt-2 px-3">
             <button
               onClick={() => handleMobileNavigate("simulation")}
               className="w-full flex items-center justify-center gap-1.5 rounded bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:bg-blue-700 active:scale-95 transition-all cursor-pointer"
             >
-              <span>Start Awareness Simulation</span>
+              <span>Baseline Simulation</span>
               <span className="text-blue-200">→</span>
             </button>
           </div>

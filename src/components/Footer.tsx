@@ -22,26 +22,26 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="mt-auto bg-slate-50/40 border-t border-slate-200/80">
+      <footer className="mt-auto bg-slate-50 border-t border-slate-200">
         {/* Pre-footer Call to Action Panel */}
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 sm:p-10 shadow-xl shadow-slate-100/40">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
             {/* Background decorative glowing circles */}
-            <div className="absolute -right-20 -top-20 -z-10 h-60 w-60 rounded-full bg-blue-50/70 blur-3xl" />
-            <div className="absolute -left-20 -bottom-20 -z-10 h-60 w-60 rounded-full bg-cyan-50/70 blur-3xl" />
+            <div className="absolute -right-20 -top-20 -z-10 h-60 w-60 rounded-full bg-slate-50 blur-3xl" />
+            <div className="absolute -left-20 -bottom-20 -z-10 h-60 w-60 rounded-full bg-slate-50/50 blur-3xl" />
             
             <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
               {/* Left Column: Safety Badge & Context */}
               <div className="space-y-4 lg:col-span-5">
-                <div className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50/50 px-3.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-red-600 font-mono">
-                  <span className="text-sm">🇨🇦</span> Sovereign Driver AI
+                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-[10px] font-black uppercase tracking-wider text-slate-800 font-mono">
+                  <span className="text-sm">🇨🇦</span> Sovereign Driver Coach
                 </div>
                 <div>
                   <h3 className="text-lg font-black uppercase tracking-tight text-slate-900 font-sans sm:text-xl">
-                    Canadian Safety Standards
+                    Canadian Driving Dynamics
                   </h3>
                   <p className="mt-2 text-xs text-slate-500 leading-relaxed font-sans font-medium">
-                    Our pre-launch validation platform is architected specifically for Canadian driving variables, including sub-zero temperatures, black ice hazards, and long-range highway commutes.
+                    Designed explicitly for Canadian environmental hazards, long-range trans-provincial commutes, winter low-visibility states, and high-fatigue highway stretches.
                   </p>
                 </div>
               </div>
@@ -49,13 +49,13 @@ export default function Footer() {
               {/* Middle Column: Launch Coordinator Info */}
               <div className="lg:col-span-4 lg:border-l lg:border-slate-100 lg:pl-8">
                 <span className="inline-block text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">
-                  PRE-LAUNCH STATUS
+                  PRE-LAUNCH VERIFICATION
                 </span>
                 <h4 className="mt-1.5 text-sm font-bold uppercase tracking-wide text-slate-800">
-                  Direct Inquiries & Access
+                  Direct Inquiries & Priority Support
                 </h4>
                 <p className="mt-1 text-xs text-slate-500 leading-relaxed font-sans">
-                  The Astrateq coordination team answers questions regarding private early access slots, research parameters, and regional software rollouts.
+                  The Astrateq priority support team is available to assist with inquiries regarding the $5 refundable queue reservation, priority software keys, and rollout timelines.
                 </p>
               </div>
 
@@ -63,10 +63,10 @@ export default function Footer() {
               <div className="flex items-center lg:col-span-3 lg:justify-end">
                 <button
                   onClick={() => setIsSupportOpen(true)}
-                  className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white shadow-lg shadow-blue-600/10 transition-all hover:bg-blue-500 hover:shadow-blue-600/25 active:scale-98 cursor-pointer font-sans"
+                  className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-slate-950 px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white transition-all hover:bg-slate-800 active:scale-98 cursor-pointer font-sans"
                 >
-                  <span>Contact Launch Coordinator</span>
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-mono text-blue-200">
+                  <span>Contact Advisor</span>
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-mono text-slate-300">
                     →
                   </span>
                 </button>
@@ -75,13 +75,13 @@ export default function Footer() {
           </div>
           
           {/* Main Footer Disclaimer & Copyright */}
-          <div className="mt-12 border-t border-slate-200/60 pt-10 text-center">
+          <div className="mt-12 border-t border-slate-200 pt-10 text-center">
             <p className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider">
               © {new Date().getFullYear()} ASTRATEQ. All rights reserved.
             </p>
-            <div className="mt-5 rounded-2xl bg-slate-100/80 border border-slate-200 p-6 max-w-4xl mx-auto shadow-inner">
+            <div className="mt-5 rounded-xl bg-slate-100/50 border border-slate-200 p-6 max-w-4xl mx-auto">
               <p className="text-[11px] sm:text-xs uppercase tracking-wider leading-relaxed text-slate-600 font-mono font-bold">
-                This platform is a <span className="text-slate-900 font-black underline decoration-blue-500 decoration-2 underline-offset-2">conceptual pre-launch validation and waitlist portal</span> for evaluating interest in upcoming Astrateq Driver Awareness Intelligence offline software. All early registrations are 100% free with no deposit required. We do <span className="text-red-700 font-black">NOT</span> sell auto insurance, track your GPS location, require OBD/OBD-II vehicle port integration, or sell hardware.
+                This platform is an independent <span className="text-slate-900 font-black underline decoration-slate-400 decoration-2 underline-offset-2">pre-launch market validation portal</span> evaluating demand for the upcoming Astrateq Driver Coach software suite. All $5 priority reservation slots are fully refundable at any time on request. We do <span className="text-red-700 font-black">NOT</span> sell auto insurance, track or store persistent GPS routes on remote servers, or utilize physical electronic accessories.
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function Footer() {
             <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-6 py-4">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-800">
                 <Mail className="h-4 w-4 text-slate-900" />
-                <span>Contact Launch Coordinator</span>
+                <span>Contact Advisor</span>
               </div>
               <button
                 onClick={() => setIsSupportOpen(false)}
@@ -113,7 +113,7 @@ export default function Footer() {
                    </div>
                    <h3 className="mt-4 text-sm font-bold text-slate-900 uppercase tracking-wider">Inquiry Received</h3>
                    <p className="mt-2 text-xs text-slate-500 leading-relaxed max-w-xs">
-                     Your transmission was saved. A launch coordinator will respond at your registered email address.
+                     Your transmission was saved. An advisor will respond at your registered email address.
                    </p>
                 </div>
               ) : (
@@ -128,7 +128,7 @@ export default function Footer() {
                       value={supportEmail}
                       onChange={(e) => setSupportEmail(e.target.value)}
                       placeholder="driver@example.ca"
-                      className="w-full rounded border border-slate-200 p-2.5 text-xs focus:border-slate-400 focus:outline-none"
+                      className="w-full rounded border border-slate-200 p-2.5 text-xs focus:border-slate-400 focus:outline-none font-mono"
                     />
                   </div>
 
@@ -141,18 +141,18 @@ export default function Footer() {
                       rows={4}
                       value={supportMsg}
                       onChange={(e) => setSupportMsg(e.target.value)}
-                      placeholder="Ask a question about the Astrateq software concept or submit research feedback..."
+                      placeholder="Submit your inquiry about priority waitlist slots, refund requests, or rollout details..."
                       className="w-full rounded border border-slate-200 p-2.5 text-xs focus:border-slate-400 focus:outline-none"
                     />
                   </div>
 
-                  <p className="text-[10px] text-slate-400 leading-relaxed">
+                  <p className="text-[10px] text-slate-400 leading-relaxed font-sans">
                     By submitting, you agree to allow our team to contact you about your pre-launch reservation and priority waitlist status.
                   </p>
 
                   <button
                     type="submit"
-                    className="w-full rounded bg-blue-600 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-blue-700 shadow-[0_2px_8px_rgba(59,130,246,0.2)] cursor-pointer"
+                    className="w-full rounded bg-slate-950 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-slate-800 shadow-sm cursor-pointer font-mono"
                   >
                     Transmit Message
                   </button>

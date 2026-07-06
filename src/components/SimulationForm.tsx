@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { DriverSimulationInputs } from "../types";
 import { 
-  Car, Compass, Clock, AlertTriangle, Eye, ArrowRight, ArrowLeft, Sparkles, Check 
+  Car, Compass, Clock, AlertTriangle, Eye, ArrowRight, ArrowLeft, Sparkles, Check, Brain, Shield, Volume2
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -20,10 +20,13 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
     attentionHabits: "always_focused",
     hazardReaction: "scan_ahead",
     peripheralAwareness: "continuous_mirrors",
+    cognitiveLoad: "terminate_task",
+    microsleepRisk: "never_slipping",
+    coachingPreference: "haptic_audio",
   });
 
   const nextStep = () => {
-    if (step < 7) setStep(step + 1);
+    if (step < 10) setStep(step + 1);
     else handleSubmit();
   };
 
@@ -86,6 +89,24 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
     { value: "passive_reliance", label: "Rely on Passive Vehicle Sensors", desc: "Rely heavily on automatic blind-spot indicators or proximity warnings to manage adjacent lane awareness.", icon: Sparkles },
   ];
 
+  const cognitiveLoadOptions = [
+    { value: "terminate_task", label: "Prioritize Safe Lane Control", desc: "Immediately mute conversations, cancel screen interaction, and maximize physical visual scans.", icon: Brain },
+    { value: "handfree_call", label: "Sustained Dialogue (Hands-free)", desc: "Continue speaking on bluetooth/speakerphone while maintaining lane control, though attention feels split.", icon: Brain },
+    { value: "frequent_distraction", label: "Active Mobile Multitasking", desc: "Glance down repeatedly to verify maps, review message popups, or adjust complex menu layers.", icon: Brain },
+  ];
+
+  const microsleepOptions = [
+    { value: "never_slipping", label: "Zero Slips / Active Scanning", desc: "Never experience heavy eyelids or zoning out. Constant active eye-movement checks.", icon: Shield },
+    { value: "occasional_tunnel", label: "Occasional Highway Tunnel Vision", desc: "Catch myself blankly staring at the car ahead without checking mirrors on long highway commutes.", icon: Shield },
+    { value: "frequent_microsleeps", label: "Repeated Micro-sleep Triggers", desc: "Experience double-vision, head nods, or struggle to recall the last 2-3 km driven.", icon: AlertTriangle },
+  ];
+
+  const coachingOptions = [
+    { value: "haptic_audio", label: "Ambient Spatial Audio + Haptics", desc: "Subtle non-jarring acoustic hums and steering-aligned haptic vibrations on drift.", icon: Volume2 },
+    { value: "visual_only", label: "On-Device Visual Hud Indicator", desc: "Dashboard interface highlights attention indexes in peripheral field with zero noise.", icon: Volume2 },
+    { value: "reactive_alarms", label: "High-Intensity Auditory Alarms", desc: "Loud sounding audio cues strictly reserved for emergency focus failures.", icon: Volume2 },
+  ];
+
   return (
     <div id="simulation-section" className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm relative overflow-hidden">
@@ -100,21 +121,21 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
               Driver Awareness Simulation
             </span>
             <span className="text-xs font-bold uppercase tracking-wider text-slate-600 font-mono">
-              Step {step} of 7
+              Step {step} of 10
             </span>
           </div>
           <h2 className="mt-3 text-xl font-bold uppercase tracking-tight text-slate-900">
             Cognitive Driving Profile Assessment
           </h2>
           <p className="mt-1 text-[11px] text-slate-600 font-mono font-medium">
-            SECURE PORT • SUBJECT: DS-2901-DELTA • HARDWARE-FREE VALIDATION
+            SECURE PORT • MODEL: ASTRATEQ-M702-COGNITIVE • HARDWARE-FREE VALIDATION
           </p>
 
           {/* Progress bar */}
           <div className="mt-4 h-1 w-full rounded-full bg-slate-100">
             <div 
               className="h-1 rounded-full bg-blue-600 transition-all duration-300"
-              style={{ width: `${(step / 7) * 100}%` }}
+              style={{ width: `${(step / 10) * 100}%` }}
             />
           </div>
         </div>
@@ -443,6 +464,144 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 </div>
               </motion.div>
             )}
+
+            {step === 8 && (
+              <motion.div
+                key="step8"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.15 }}
+              >
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Brain className="h-4 w-4" />
+                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">08. Cognitive Load Response</h3>
+                </div>
+                <p className="text-xs text-slate-700 mb-6 font-medium">
+                  When a complex task emerges (e.g., navigating tight work zones while on an active phone call), how do you react?
+                </p>
+                <div className="grid gap-3">
+                  {cognitiveLoadOptions.map(opt => {
+                    const isSelected = inputs.cognitiveLoad === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => selectOption("cognitiveLoad", opt.value)}
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
+                          isSelected 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
+                        }`}
+                      >
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        }`}>
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+
+            {step === 9 && (
+              <motion.div
+                key="step9"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.15 }}
+              >
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Shield className="h-4 w-4" />
+                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">09. Gaze & Microsleep Vulnerability</h3>
+                </div>
+                <p className="text-xs text-slate-700 mb-6 font-medium">
+                  Have you ever experienced zoning out on long highways, missing exits, or fighting heavy eyes behind the wheel?
+                </p>
+                <div className="grid gap-3">
+                  {microsleepOptions.map(opt => {
+                    const isSelected = inputs.microsleepRisk === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => selectOption("microsleepRisk", opt.value)}
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
+                          isSelected 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
+                        }`}
+                      >
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        }`}>
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+
+            {step === 10 && (
+              <motion.div
+                key="step10"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.15 }}
+              >
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Volume2 className="h-4 w-4" />
+                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">10. Audio & Haptic Sensory Match</h3>
+                </div>
+                <p className="text-xs text-slate-700 mb-6 font-medium">
+                  What style of live, on-device coaching alerts would you trust and prefer in your cockpit environment?
+                </p>
+                <div className="grid gap-3">
+                  {coachingOptions.map(opt => {
+                    const isSelected = inputs.coachingPreference === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => selectOption("coachingPreference", opt.value)}
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
+                          isSelected 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
+                        }`}
+                      >
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        }`}>
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
 
@@ -468,8 +627,8 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             disabled={isSubmitting}
             className="inline-flex items-center gap-2 rounded bg-blue-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_2px_10px_rgba(59,130,246,0.2)] hover:bg-blue-700 hover:shadow-[0_4px_14px_rgba(59,130,246,0.3)] active:scale-95 cursor-pointer transition-all"
           >
-            <span>{step === 7 ? "Transmit Profile" : "Continue"}</span>
-            {step === 7 ? <Sparkles className="h-4 w-4 animate-pulse" /> : <ArrowRight className="h-4 w-4" />}
+            <span>{step === 10 ? "Transmit Profile" : "Continue"}</span>
+            {step === 10 ? <Sparkles className="h-4 w-4 animate-pulse" /> : <ArrowRight className="h-4 w-4" />}
           </button>
         </div>
       </div>

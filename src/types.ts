@@ -6,6 +6,9 @@ export interface DriverSimulationInputs {
   attentionHabits: string;
   hazardReaction: string;
   peripheralAwareness: string;
+  cognitiveLoad: string;
+  microsleepRisk: string;
+  coachingPreference: string;
 }
 
 export interface DriverInsights {

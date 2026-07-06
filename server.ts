@@ -65,47 +65,65 @@ app.post("/api/generate-insights", async (req, res) => {
       attentionHabits,
       hazardReaction,
       peripheralAwareness,
+      cognitiveLoad,
+      microsleepRisk,
+      coachingPreference,
     } = req.body;
 
     // Calculate base score deterministically based on user responses
-    let score = 70;
+    let score = 50;
 
-    // Frequency factor
+    // 1. Frequency factor
     if (drivingFrequency === "daily") score += 5;
     else if (drivingFrequency === "weekly") score += 2;
     else score -= 3;
 
-    // Commute complexity factor
+    // 2. Commute complexity factor
     if (commuteType === "highway") score -= 2; // high concentration needed
     else if (commuteType === "city") score -= 5; // heavy stop-and-go stress
     else if (commuteType === "rural") score += 3; // lower density but high speed
 
-    // Time-of-day driving
+    // 3. Time-of-day driving
     if (timeOfDay === "night") score -= 10;
     else if (timeOfDay === "evening") score -= 4;
     else if (timeOfDay === "morning") score += 3;
 
-    // Fatigue self-assessment
+    // 4. Fatigue self-assessment
     if (fatigueAssessment === "rarely_tired") score += 10;
-    else if (fatigueAssessment === "sometimes_tired") score += 0;
+    else if (fatigueAssessment === "sometimes_tired") score += 2;
     else if (fatigueAssessment === "frequently_tired") score -= 12;
     else if (fatigueAssessment === "always_tired") score -= 20;
 
-    // Attention habits
+    // 5. Attention habits
     if (attentionHabits === "always_focused") score += 10;
     else if (attentionHabits === "occasional_phone_check") score -= 12;
     else if (attentionHabits === "frequent_radio_adjust") score -= 6;
     else if (attentionHabits === "mind_wanders") score -= 10;
 
-    // Hazard Reaction Time factor (New Question 6)
+    // 6. Hazard Scanning Habits
     if (hazardReaction === "scan_ahead") score += 10;
     else if (hazardReaction === "bumper_focus") score -= 5;
     else if (hazardReaction === "delayed") score -= 15;
 
-    // Peripheral Awareness factor (New Question 7)
+    // 7. Mirror Checking & Peripheral Awareness
     if (peripheralAwareness === "continuous_mirrors") score += 10;
     else if (peripheralAwareness === "transition_only") score -= 5;
     else if (peripheralAwareness === "passive_reliance") score -= 10;
+
+    // 8. Cognitive Load Response
+    if (cognitiveLoad === "terminate_task") score += 10;
+    else if (cognitiveLoad === "handfree_call") score -= 4;
+    else if (cognitiveLoad === "frequent_distraction") score -= 12;
+
+    // 9. Blink & Microsleep Susceptibility
+    if (microsleepRisk === "never_slipping") score += 10;
+    else if (microsleepRisk === "occasional_tunnel") score -= 5;
+    else if (microsleepRisk === "frequent_microsleeps") score -= 15;
+
+    // 10. Real-time Coaching Interface Preference
+    if (coachingPreference === "haptic_audio") score += 5;
+    else if (coachingPreference === "visual_only") score += 2;
+    else if (coachingPreference === "reactive_alarms") score -= 3;
 
     // Constrain score between 20 and 98
     score = Math.max(20, Math.min(98, score));
@@ -113,8 +131,8 @@ app.post("/api/generate-insights", async (req, res) => {
     const ai = getGeminiClient();
 
     if (ai) {
-      // Build prompt using APPROVED LANGUAGE and avoiding FORBIDDEN LANGUAGE
-      const prompt = `Analyze this simulated Canadian driver's behavioral characteristics and provide professional research-oriented feedback.
+      // Build prompt using premium, privacy-first consumer AI Coach terminology
+      const prompt = `Analyze this simulated driver's cognitive and behavioral awareness profile to generate high-end, premium personalized safety intelligence.
       
       User Profile Inputs:
       - Driving Frequency: ${drivingFrequency}
@@ -124,18 +142,21 @@ app.post("/api/generate-insights", async (req, res) => {
       - Attention Habits: ${attentionHabits}
       - Hazard Scanning Habits: ${hazardReaction}
       - Mirror Checking & Peripheral Awareness: ${peripheralAwareness}
+      - Cognitive Multi-tasking Load: ${cognitiveLoad}
+      - Microsleep & Blink Pattern Risk: ${microsleepRisk}
+      - Real-time Coaching Preference: ${coachingPreference}
       
       CRITICAL INSTRUCTIONS:
-      1. You are generating content for the "Astrateq Gadgets Driver Awareness Platform", which is a software-based behavioral intelligence research system and validation funnel.
-      2. You MUST use approved terminology: "Driver Awareness Intelligence", "Simulation Model", "Behavioral Safety Insights", "Fatigue Risk Awareness", "Attention Readiness Profile", "Market Validation Study", "Research Cohort", "Awareness Score".
-      3. Do NOT use or imply forbidden hardware terms: "OBD", "dashcam", "CAN bus", "vehicle diagnostics", "insurance tracking", "telematics", "hardware device", "fleet monitoring", "automotive scanner". This is a purely software-based, behavioral assessment.
-      4. Your tone must be premium, professional, calm, research-validated, and supportive. Emphasize behavioral science, fatigue mitigation, and attention management in Canada (mentioning Canadian weather/road contexts like winter preparedness or long Trans-Canada distances where relevant).
+      1. You are generating personalized insights for "Astrateq AI Driver Coach" — a premium, edge-compute, offline-first smartphone application that runs biometrics on-device.
+      2. Keep the tone sophisticated, exclusive, premium, helpful, and scientific. Focus on cognitive response times, peripheral mapping, blink rate patterns, and telemetry-shielding benefits.
+      3. Do NOT mention academic terms like "research cohort", "study study", "academic initiative", or "subjects". Position it as an exclusive priority customer validation profile.
+      4. Do NOT mention vehicle diagnostics OBD adapters, dashcams, cloud telemetry trackers, or fleet monitoring.
       
       Provide:
-      - fatigueRiskProfile: An evaluation of their fatigue vulnerability based on when they drive and how often they feel tired, including a practical fatigue-management insight.
-      - attentionReadiness: An analysis of their attention habits and distraction risks, highlighting behavioral focus patterns.
-      - safetyIntelligenceReadiness: Direct behavioral recommendations and actionable tips for safer driving decisions based on hazard reaction times and peripheral awareness.
-      - overallEvaluation: A cohesive summary of what their score represents (strong patterns, moderate exposure, or substantial improvement opportunity).
+      - fatigueRiskProfile: Evaluation of their fatigue vulnerability and micro-sleep indicators based on commute windows, self-reported fatigue levels, and blink behaviors.
+      - attentionReadiness: Evaluation of attention mapping, visual focus patterns, and cognitive multi-tasking load under stress.
+      - safetyIntelligenceReadiness: Actionable on-device tips for managing scanning fields and mirror cycles to optimize their awareness index.
+      - overallEvaluation: A cohesive, high-end summary of what their score represents (strong cognitive habits, moderate vulnerability, or substantial attention optimization opportunities).
       - scoreModifier: A small integer adjustment between -5 and +5 based on your qualitative evaluation.`;
 
       try {
@@ -143,26 +164,26 @@ app.post("/api/generate-insights", async (req, res) => {
           model: "gemini-3.5-flash",
           contents: prompt,
           config: {
-            systemInstruction: "You are a senior cognitive scientist specializing in driver attention, fatigue risk assessment, and behavioral safety insights for Canadian road safety research.",
+            systemInstruction: "You are a senior behavioral scientist and cognitive AI designer for premium on-device consumer driving safety applications.",
             responseMimeType: "application/json",
             responseSchema: {
               type: Type.OBJECT,
               properties: {
                 fatigueRiskProfile: {
                   type: Type.STRING,
-                  description: "A professional, Canadian-context review of fatigue exposure. No hardware references."
+                  description: "Professional consumer-focused evaluation of fatigue exposure and blink risk parameters. Zero hardware/OBD references."
                 },
                 attentionReadiness: {
                   type: Type.STRING,
-                  description: "A professional evaluation of distraction risk and focus patterns. No hardware references."
+                  description: "Sophisticated review of multitasking load and focal visual attention. Zero hardware/OBD references."
                 },
                 safetyIntelligenceReadiness: {
                   type: Type.STRING,
-                  description: "Key behavioral safety recommendations for cognitive readiness. No hardware references."
+                  description: "Actionable, premium safety tips on visual cycles and mirror scanning. Zero hardware/OBD references."
                 },
                 overallEvaluation: {
                   type: Type.STRING,
-                  description: "An evaluation summary reflecting whether they have strong awareness, moderate fatigue, or improvement opportunities."
+                  description: "High-end cohesive evaluation of the driver's current cognitive state and potential. Zero hardware/OBD references."
                 },
                 scoreModifier: {
                   type: Type.INTEGER,
@@ -206,31 +227,31 @@ app.post("/api/generate-insights", async (req, res) => {
     let evaluationText = "";
 
     // Generate custom text deterministically so it matches user inputs beautifully
-    if (fatigueAssessment === "rarely_tired") {
-      fatigueRiskText = "You maintain an excellent fatigue risk awareness profile. Driving primarily during daylight hours or maintaining a consistent sleep hygiene schedule keeps cognitive fatigue indicators low. Keep utilizing rest stops on long Canadian journeys.";
-    } else if (fatigueAssessment === "sometimes_tired") {
-      fatigueRiskText = "You show moderate fatigue exposure. Long commutes or repetitive routes across Canadian highways can induce highway hypnosis. Consider scheduling routine cognitive breaks every 2 hours of driving.";
+    if (fatigueAssessment === "rarely_tired" && microsleepRisk === "never_slipping") {
+      fatigueRiskText = "You maintain an exceptional fatigue-resilience profile. Your circadian rhythm is highly stable, and your eye-movement cycles indicate high physical readiness. The Astrateq edge-compute coach will continuously monitor blink speed to preserve this state.";
+    } else if (fatigueAssessment === "sometimes_tired" || microsleepRisk === "occasional_tunnel") {
+      fatigueRiskText = "You show moderate fatigue exposure during long commutes. High speeds can induce highway hypnosis, leading to occasional visual focal lock. We recommend activating Astrateq's subtle haptic/audio pulse reminders to break repetitive gaze states.";
     } else {
-      fatigueRiskText = "Your profile shows high fatigue exposure. Operating during high-fatigue hours or regular tired driving significantly increases cognitive delay. Incorporating deliberate active monitoring and scheduling travel around natural sleep windows is highly recommended.";
+      fatigueRiskText = "Your profile shows significant fatigue and micro-sleep risk. Driving during circadian dips creates severe cognitive delay. Astrateq's real-time optical blink sensor is highly recommended to provide proactive warning patterns before critical drift occurs.";
     }
 
-    if (attentionHabits === "always_focused" && hazardReaction === "scan_ahead") {
-      attentionText = "Your attention readiness is exemplary. You actively manage your visual and cognitive field, maintaining a zero-tolerance policy for micro-distractions. This keeps your situational awareness levels highly protective.";
-    } else if (attentionHabits === "mind_wanders" || hazardReaction === "bumper_focus") {
-      attentionText = "You show moderate distraction risk from cognitive drift or narrow focal concentration. While physical distractions are managed, focusing solely on the immediate bumper or passive mind-wandering reduces micro-reaction speeds.";
+    if (attentionHabits === "always_focused" && cognitiveLoad === "terminate_task") {
+      attentionText = "Your focus mapping is exemplary. You maintain absolute visual field isolation and immediately terminate secondary tasks to navigate heavy traffic. This keeps your cognitive reaction time optimal.";
+    } else if (attentionHabits === "mind_wanders" || cognitiveLoad === "handfree_call") {
+      attentionText = "You show moderate distraction risk from split-attention multitasking or autopilot drift. While physical devices are mounted, processing conversational dialogue while scanning road vectors reduces hazard reactions.";
     } else {
-      attentionText = "You exhibit behavioral distraction risks from split attention. Checking communication channels, making manual adjustments during driving, or waiting to scan surroundings increases cognitive workload, delaying hazard recognition times.";
+      attentionText = "You exhibit behavioral distraction risks from high multitasking loads. Checking maps, manual cabin adjustments, or holding phone conversations delays eye transition times by up to 1.8 seconds.";
     }
 
     if (score >= 82) {
-      evaluationText = "You show strong awareness patterns and excellent behavioral safety habits. Your readiness is highly suited for complex driving environments, establishing a benchmark for road safety.";
-      safetyText = "To maintain your outstanding profile, we recommend acting as an active research contributor. Continue practicing early hazard prediction and share safety-first mental models with peers.";
+      evaluationText = "You demonstrate highly stable, proactive driving habits. Your baseline index represents the upper percentile of cognitive focus, indicating outstanding spatial awareness and defense readiness.";
+      safetyText = "To lock in your optimal profile, practice deliberate mirror-sweep cycles every 5-8 seconds, and configure Astrateq to silent ambient alert mode for maximum sensory calm.";
     } else if (score >= 62) {
-      evaluationText = "You demonstrate moderate fatigue exposure and average attention levels. There are clear opportunities to reinforce focus habits and build stronger defenses against fatigue.";
-      safetyText = "Focus on eliminating secondary visual tasks. Incorporate proactive scanning sequences and establish clear trip-planning routines prior to starting your commute.";
+      evaluationText = "You demonstrate moderate spatial awareness with notable exposure to fatigue and multitasking drift. Your cognitive safety margin can be heightened with systematic habits.";
+      safetyText = "Incorporate proactive far-horizon scanning (3-4 vehicles ahead) to extend your visual reaction buffer. Establish a zero-second device adjustment rule prior to starting your commute.";
     } else {
-      evaluationText = "Your results indicate substantial improvement opportunities in fatigue management and attention locking. Your current risk exposure can be significantly lowered through active behavioral changes.";
-      safetyText = "Prioritize strict sleep-readiness audits before trips. Transition your workspace or in-cabin atmosphere into a high-engagement focus zone, eliminating any secondary smartphone triggers entirely.";
+      evaluationText = "Your profile indicates major opportunities for focus optimization. Elevated multitasking load, frequent fatigue, and delayed scanning habits substantially reduce reaction times.";
+      safetyText = "Focus on strict physical device isolation. We recommend using Astrateq's real-time, on-device audio alerts to rebuild consistent scanning patterns and protect your lateral lanes.";
     }
 
     return res.json({
