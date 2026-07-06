@@ -9,7 +9,7 @@ import LoadingOverlay from "./components/LoadingOverlay";
 import HWY_404_POV_IMAGE from "./assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 import { DriverSimulationInputs, DriverInsights, ActivePage } from "./types";
 import { 
-  Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp, Smartphone, Camera, Eye, Activity
+  Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp, Smartphone, Camera, Eye, Activity, Compass
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -241,20 +241,20 @@ export default function App() {
                     </span>
                     
                     <h1 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.05] font-sans">
-                      Driving is connected.<br className="hidden sm:inline" />
-                      But is it <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">intelligent</span>?
+                      We already measure vehicles.<br />
+                      Now we are researching how to better understand <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">drivers</span>.
                     </h1>
 
                     <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl font-sans font-medium">
                       <p>
-                        Technology shouldn’t just collect driving data—it should help you understand yourself. We are validating a completely new technology category: <span className="text-slate-900 font-bold border-b-2 border-blue-500/25 pb-0.5">Privacy-First Driver Awareness Intelligence</span>.
+                        Current safety suites monitor speeds and brakes—actions taken after a lapse occurs. Astrateq is validating a completely new technology category: <span className="text-slate-900 font-bold border-b-2 border-blue-500/25 pb-0.5">Privacy-First Driver Awareness Intelligence</span>.
                       </p>
                       <p>
-                        Instead of loud, reactive alarms sounding <span className="text-slate-950 font-black border-b-2 border-indigo-500/35 pb-0.5">after</span> mistakes happen, Astrateq explores offline, local-first software that maps focus and fatigue trends <span className="text-slate-950 font-black border-b-2 border-cyan-500/35 pb-0.5">before</span> critical situations develop.
+                        We test if lightweight, on-device software can anticipate focus drops and cognitive fatigue in real-time, operating with absolute offline confidentiality.
                       </p>
                     </div>
 
-                    {/* Features list (Improvement 11 & 12) */}
+                    {/* Features list */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl text-[11px] font-black uppercase tracking-wider text-slate-800 font-mono pt-1">
                       <div className="flex items-center gap-3">
                         <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
@@ -287,7 +287,7 @@ export default function App() {
                         onClick={handleStartSimulation}
                         className="group inline-flex items-center justify-center gap-2.5 rounded bg-blue-600 px-6 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_18px_rgba(59,130,246,0.25)] transition-all hover:bg-blue-700 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:scale-95 cursor-pointer font-mono"
                       >
-                        <span>Start 60s Diagnostic</span>
+                        <span>Start Driver Awareness Simulation</span>
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </button>
                       <button
@@ -303,10 +303,10 @@ export default function App() {
                     </p>
                   </div>
 
-                  {/* Right Column: High-Fidelity Smartphone Dashboard Simulator (Improvement 2, 8, 9, 13) */}
+                  {/* Right Column: Redesigned Smartphone Dashboard Simulator */}
                   <div className="lg:col-span-5 flex flex-col items-center">
                     
-                    {/* 5-SECOND EXPLANATION POPULAR CALLOUT */}
+                    {/* 5-SECOND EXPLANATION CALLOUT */}
                     <div className="w-full max-w-sm mb-4 bg-blue-50 border border-blue-200/80 rounded-2xl p-4 shadow-sm text-left">
                       <div className="flex gap-2.5">
                         <Smartphone className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
@@ -330,11 +330,11 @@ export default function App() {
                       
                       {/* Phone Dynamic Notch & Front Camera Feed simulation */}
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-950 rounded-b-xl flex items-center justify-center gap-1.5 px-3 z-30">
-                        <div className="h-2 w-2 rounded-full bg-slate-800" /> {/* Speaker bar */}
+                        <div className="h-2 w-2 rounded-full bg-slate-800" />
                         <div className="relative flex h-2 w-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                        </div> {/* Glowing camera indicator */}
+                        </div>
                         <span className="text-[7.5px] font-black text-emerald-400 uppercase tracking-widest font-mono">RAM SCAN</span>
                       </div>
 
@@ -360,101 +360,91 @@ export default function App() {
                           </span>
                         </div>
 
-                        {/* HIGH-CONTRAST CONCEPT EXPLANATION BANNER */}
-                        <div className="bg-blue-950/60 border border-blue-500/40 rounded-xl p-3 text-xs text-blue-100 leading-relaxed shadow-md">
-                          <p className="font-extrabold uppercase tracking-wider text-blue-300 mb-1 flex items-center gap-1.5 text-[11px]">
-                            <Info className="h-4 w-4 text-blue-300 shrink-0" />
-                            Live App Simulator
-                          </p>
-                          This mockup represents the mobile app's core processing loop, simulating how driver attention and blinks are analyzed locally.
-                        </div>
-
-                        {/* Camera focus / target simulator circle */}
-                        <div className="relative flex flex-col items-center py-5 bg-slate-900/90 rounded-2xl border border-slate-800 shadow-inner space-y-3 overflow-hidden group">
-                          {/* Pulsing focal radar lines */}
-                          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_70%)] pointer-events-none animate-pulse" />
+                        {/* 5 SPECIFIC DATA VIZ WIDGETS */}
+                        <div className="space-y-3">
                           
-                          {/* Camera viewfinder corners overlay */}
-                          <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-slate-700" />
-                          <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-slate-700" />
-                          <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-slate-700" />
-                          <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-slate-700" />
-
-                          {/* Radial Progress Ring representing awareness score */}
-                          <div className="relative flex items-center justify-center h-28 w-28 rounded-full bg-gradient-to-b from-slate-950 to-slate-900 border-4 border-blue-400/60 shadow-[0_10px_25px_rgba(59,130,246,0.3)] transition-transform duration-500 group-hover:scale-105">
-                            <div className="absolute inset-1.5 rounded-full border border-dashed border-cyan-400/50 animate-[spin_30s_linear_infinite]" />
-                            <div className="flex flex-col items-center">
-                              <span className="text-3xl font-black font-mono tracking-tight text-white transition-all duration-300">
-                                {dashboardScore}
-                              </span>
-                              <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest font-mono animate-pulse">
-                                STABLE
-                              </span>
-                            </div>
-                          </div>
-
-                          <span className="text-[10px] font-black text-slate-100 uppercase tracking-widest font-mono flex items-center gap-2">
-                            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-                            DRIVER ATTENTION SCORE
-                          </span>
-                        </div>
-
-                        {/* Detailed Diagnostic Context Information */}
-                        <div className="bg-black/90 p-4 rounded-xl border border-slate-800 font-mono text-xs space-y-3.5 text-slate-100 shadow-lg">
-                          <div className="flex justify-between border-b border-slate-800 pb-2 text-slate-200 uppercase text-[9px] tracking-wider font-extrabold">
-                            <span>METRIC STATUS</span>
-                            <span className="text-blue-400 font-black flex items-center gap-1">
-                              <Activity className="h-3 w-3" /> ON-COGNITIVE-M702
+                          {/* Widget 1: Driver Awareness Index (Primary Focal Score) */}
+                          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col items-center space-y-2 text-center relative overflow-hidden">
+                            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-slate-700" />
+                            <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-slate-700" />
+                            <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-slate-700" />
+                            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-slate-700" />
+                            
+                            <span className="text-[9px] font-bold tracking-widest text-slate-400 font-mono uppercase">
+                              Driver Awareness Index
                             </span>
-                          </div>
-                          
-                          <div className="space-y-1">
-                            <p className="text-slate-300 uppercase text-[9px] tracking-wider font-black flex items-center gap-1">
-                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Live Logs (Processed Offline):
-                            </p>
-                            <p className="text-emerald-300 font-bold pl-2.5 bg-emerald-950/40 py-2 rounded border border-emerald-900/50 font-mono text-[10px] leading-relaxed transition-all duration-300 h-8 flex items-center">
-                              &gt; {mockLogs[activeLogIdx]}
-                            </p>
-                          </div>
-
-                          <div className="space-y-1">
-                            <p className="text-slate-300 uppercase text-[9px] tracking-wider font-black">Local Baseline:</p>
-                            <p className="text-slate-100 font-bold pl-2 bg-slate-900/70 py-1.5 rounded border border-slate-800 text-[10.5px]">
-                              Cognitive focus running at <span className="text-cyan-300 font-black">{attentionLevel}%</span>.
-                            </p>
-                          </div>
-
-                          <div className="grid grid-cols-2 gap-3 pt-2 border-t border-slate-850">
-                            <div>
-                              <p className="text-slate-300 uppercase text-[9px] tracking-wider font-black">Blink Frame Rate:</p>
-                              <p className="text-cyan-300 font-black mt-0.5 text-xs">{blinkRate} frames/sec</p>
-                            </div>
-                            <div>
-                              <p className="text-slate-300 uppercase text-[9px] tracking-wider font-black">Local Privacy Level:</p>
-                              <p className="text-emerald-300 font-black mt-0.5 text-xs">100% Offline RAM</p>
+                            
+                            {/* Circular gauge representing score */}
+                            <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-slate-950 border-4 border-blue-500/80 shadow-[0_4px_15px_rgba(59,130,246,0.2)]">
+                              <div className="absolute inset-1.5 rounded-full border border-dashed border-cyan-400/30 animate-[spin_40s_linear_infinite]" />
+                              <div className="flex flex-col items-center">
+                                <span className="text-3xl font-black font-mono text-white">84</span>
+                                <span className="text-[8px] font-extrabold text-emerald-400 tracking-wider uppercase font-mono mt-0.5 animate-pulse">
+                                  OPTIMAL Focus
+                                </span>
+                              </div>
                             </div>
                           </div>
 
-                          <div className="flex justify-between pt-2 border-t border-slate-850 text-slate-200 text-[9.5px] font-extrabold">
-                            <span>SCANNER CONFIDENCE:</span>
-                            <span className="text-white font-black">{attentionLevel}% ATTENTION</span>
+                          {/* Widget 2: Attention Stability & Cognitive Load Trend */}
+                          <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 space-y-2">
+                            <div className="flex justify-between items-center text-[10px] font-mono font-bold text-slate-300">
+                              <span>ATTENTION STABILITY</span>
+                              <span className="text-cyan-400">96% STABLE</span>
+                            </div>
+                            {/* Segmented bar indicator representing Cognitive Load */}
+                            <div className="grid grid-cols-10 gap-1 h-2">
+                              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((bar) => (
+                                <div 
+                                  key={bar} 
+                                  className={`h-full rounded-sm ${
+                                    bar <= 9 
+                                      ? "bg-cyan-500/80 shadow-[0_0_8px_rgba(6,182,212,0.6)]" 
+                                      : "bg-slate-800"
+                                  }`} 
+                                />
+                              ))}
+                            </div>
+                            <div className="flex justify-between text-[8px] font-mono text-slate-400">
+                              <span>COGNITIVE LOAD: LOW</span>
+                              <span>SAMPLING: 60FPS</span>
+                            </div>
                           </div>
-                        </div>
 
-                        {/* Software Quick Spec Badges */}
-                        <div className="grid grid-cols-3 gap-2 text-center text-[9px] font-mono uppercase tracking-wider">
-                          <div className="p-2.5 bg-slate-900/80 rounded-xl border border-slate-800 transition-all hover:border-slate-700">
-                            <p className="text-blue-400 font-black">SOVEREIGN</p>
-                            <p className="text-slate-200 mt-0.5 font-bold">NO GPS TRACK</p>
+                          {/* Widget 3: Fatigue Pattern & Situational Awareness Interval */}
+                          <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 grid grid-cols-2 gap-4 text-left font-mono">
+                            <div>
+                              <span className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Fatigue Level</span>
+                              <div className="flex items-center gap-1.5 mt-1">
+                                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+                                <span className="text-xs font-black text-emerald-400">LOW</span>
+                              </div>
+                            </div>
+                            <div className="border-l border-slate-800 pl-3">
+                              <span className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Blink Scan Interval</span>
+                              <div className="text-xs font-black text-cyan-400 mt-1">
+                                140ms blinks
+                              </div>
+                            </div>
                           </div>
-                          <div className="p-2.5 bg-slate-900/80 rounded-xl border border-slate-800 transition-all hover:border-slate-700">
-                            <p className="text-emerald-400 font-black">HARDWARE FREE</p>
-                            <p className="text-slate-200 mt-0.5 font-bold">SOFTWARE ONLY</p>
+
+                          {/* Widget 4: Environmental Complexity & Research Classification */}
+                          <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-left font-mono space-y-1">
+                            <div className="flex justify-between items-center border-b border-slate-800/60 pb-1.5">
+                              <span className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Classification</span>
+                              <span className="text-[8px] text-blue-400 font-bold bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20">CLASS 1</span>
+                            </div>
+                            <p className="text-xs font-black text-slate-100">High-Exposure Commute</p>
+                            <p className="text-[9px] text-slate-400 font-medium">Sub-zero Winter Calibration: <strong className="text-emerald-400">ACTIVE</strong></p>
                           </div>
-                          <div className="p-2.5 bg-slate-900/80 rounded-xl border border-slate-800 transition-all hover:border-slate-700">
-                            <p className="text-cyan-400 font-black">BIOMETRICS</p>
-                            <p className="text-slate-200 mt-0.5 font-bold">ZERO STORAGE</p>
+
+                          {/* Widget 5: Driving Context Summary */}
+                          <div className="bg-slate-950 p-2.5 rounded-xl border border-slate-800/80 text-center font-mono">
+                            <p className="text-[8px] text-slate-400 leading-normal font-semibold">
+                              Sovereign local analysis • zero telemetry leakage • 100% offline RAM protection
+                            </p>
                           </div>
+
                         </div>
 
                         {/* Real-time indicator bar representation at bottom of phone */}
@@ -471,32 +461,61 @@ export default function App() {
               </div>
             </section>
 
-            {/* TRUST & QUALITATIVE SOCIAL PROOF BANNER (Improvement 5, 6) */}
-            <div className="bg-white border-b border-slate-200/50 py-6 relative z-20">
+            {/* Redesigned 6-column Trust Banner */}
+            <div className="bg-white border-y border-slate-200/60 py-10 relative z-20">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-wrap items-center justify-center lg:justify-between gap-6 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500 font-mono">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">🇨🇦</span>
-                    <span>Built exclusively for Canadian drivers</span>
-                  </div>
-                  <div className="h-1 w-1 rounded-full bg-slate-300 hidden lg:block" />
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="h-4 w-4 text-slate-400" />
-                    <span>Privacy-First By Design</span>
-                  </div>
-                  <div className="h-1 w-1 rounded-full bg-slate-300 hidden lg:block" />
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="h-4 w-4 text-slate-400" />
-                    <span>Active concept validation study</span>
-                  </div>
-                  <div className="h-1 w-1 rounded-full bg-slate-300 hidden lg:block" />
-                  <div className="flex items-center gap-2 text-blue-600 font-black">
-                    <Check className="h-4 w-4 text-blue-600" />
-                    <span>Every simulation shapes the platform</span>
-                  </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+                  {[
+                    { title: "Designed for Canadian Roads", desc: "Optimized for winter and rural corridors", icon: Compass },
+                    { title: "Privacy-First Architecture", desc: "Local sandboxed execution standard", icon: ShieldCheck },
+                    { title: "Anonymous Participation", desc: "Zero trace research credentials", icon: Lock },
+                    { title: "No Vehicle Connection", desc: "100% independent of vehicle electronics", icon: Cpu },
+                    { title: "No Insurance Integration", desc: "Fully isolated from underwriters", icon: ShieldCheck },
+                    { title: "Research Validation Only", desc: "Pure cognitive behavioral baseline", icon: Sparkles },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex flex-col items-center space-y-2 group">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50/80 border border-blue-100 text-blue-600 transition-colors group-hover:bg-blue-100/60">
+                        <item.icon className="h-5 w-5" />
+                      </div>
+                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-900 font-mono leading-tight">{item.title}</h4>
+                      <p className="text-[10px] text-slate-500 font-medium font-sans leading-normal">{item.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+
+            {/* Redesigned Human Editorial Lifestyle Block */}
+            <section className="relative py-28 bg-slate-950 text-white overflow-hidden border-b border-slate-900">
+              {/* Image background POV of driving on Canadian roads */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={HWY_404_POV_IMAGE} 
+                  alt="POV Canadian Driving" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover opacity-35"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/45" />
+              </div>
+
+              <div className="relative z-10 mx-auto max-w-4xl px-4 text-center space-y-6">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-widest text-blue-300 font-mono">
+                  Sovereign Human Safety
+                </span>
+                <p className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight font-sans max-w-3xl mx-auto">
+                  "Every safer technology begins by understanding real drivers."
+                </p>
+                <div className="pt-4 flex justify-center">
+                  <button
+                    onClick={handleStartSimulation}
+                    className="group inline-flex items-center gap-2 rounded bg-blue-600 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg hover:bg-blue-700 active:scale-95 cursor-pointer font-mono transition-all"
+                  >
+                    <span>Contribute to Validation</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+                </div>
+              </div>
+            </section>
 
             {/* Core Value Props Cards & How It Works section */}
             <ValueProps onStartSimulation={handleStartSimulation} onNavigateToCohort={handleNavigateToCohort} />

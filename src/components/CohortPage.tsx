@@ -967,6 +967,9 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   </p>
                 </div>
 
+                {/* Headless Prefinery pre-order embed */}
+                <div className="prefinery-form-embed rounded-xl border border-dashed border-blue-200 bg-blue-50/20 p-1 mb-4"></div>
+
                 <div className="grid gap-6 sm:grid-cols-2">
                   {/* First Name Input */}
                   <div>

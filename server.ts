@@ -63,10 +63,12 @@ app.post("/api/generate-insights", async (req, res) => {
       timeOfDay,
       fatigueAssessment,
       attentionHabits,
+      hazardReaction,
+      peripheralAwareness,
     } = req.body;
 
     // Calculate base score deterministically based on user responses
-    let score = 75;
+    let score = 70;
 
     // Frequency factor
     if (drivingFrequency === "daily") score += 5;
@@ -86,14 +88,24 @@ app.post("/api/generate-insights", async (req, res) => {
     // Fatigue self-assessment
     if (fatigueAssessment === "rarely_tired") score += 10;
     else if (fatigueAssessment === "sometimes_tired") score += 0;
-    else if (fatigueAssessment === "frequently_tired") score -= 15;
-    else if (fatigueAssessment === "always_tired") score -= 25;
+    else if (fatigueAssessment === "frequently_tired") score -= 12;
+    else if (fatigueAssessment === "always_tired") score -= 20;
 
     // Attention habits
-    if (attentionHabits === "always_focused") score += 15;
-    else if (attentionHabits === "occasional_phone_check") score -= 15;
-    else if (attentionHabits === "frequent_radio_adjust") score -= 8;
-    else if (attentionHabits === "mind_wanders") score -= 12;
+    if (attentionHabits === "always_focused") score += 10;
+    else if (attentionHabits === "occasional_phone_check") score -= 12;
+    else if (attentionHabits === "frequent_radio_adjust") score -= 6;
+    else if (attentionHabits === "mind_wanders") score -= 10;
+
+    // Hazard Reaction Time factor (New Question 6)
+    if (hazardReaction === "scan_ahead") score += 10;
+    else if (hazardReaction === "bumper_focus") score -= 5;
+    else if (hazardReaction === "delayed") score -= 15;
+
+    // Peripheral Awareness factor (New Question 7)
+    if (peripheralAwareness === "continuous_mirrors") score += 10;
+    else if (peripheralAwareness === "transition_only") score -= 5;
+    else if (peripheralAwareness === "passive_reliance") score -= 10;
 
     // Constrain score between 20 and 98
     score = Math.max(20, Math.min(98, score));
@@ -110,6 +122,8 @@ app.post("/api/generate-insights", async (req, res) => {
       - Time-of-Day Driving: ${timeOfDay}
       - Fatigue Self-Assessment: ${fatigueAssessment}
       - Attention Habits: ${attentionHabits}
+      - Hazard Scanning Habits: ${hazardReaction}
+      - Mirror Checking & Peripheral Awareness: ${peripheralAwareness}
       
       CRITICAL INSTRUCTIONS:
       1. You are generating content for the "Astrateq Gadgets Driver Awareness Platform", which is a software-based behavioral intelligence research system and validation funnel.
@@ -120,7 +134,7 @@ app.post("/api/generate-insights", async (req, res) => {
       Provide:
       - fatigueRiskProfile: An evaluation of their fatigue vulnerability based on when they drive and how often they feel tired, including a practical fatigue-management insight.
       - attentionReadiness: An analysis of their attention habits and distraction risks, highlighting behavioral focus patterns.
-      - safetyIntelligenceReadiness: Direct behavioral recommendations and actionable tips for safer driving decisions.
+      - safetyIntelligenceReadiness: Direct behavioral recommendations and actionable tips for safer driving decisions based on hazard reaction times and peripheral awareness.
       - overallEvaluation: A cohesive summary of what their score represents (strong patterns, moderate exposure, or substantial improvement opportunity).
       - scoreModifier: A small integer adjustment between -5 and +5 based on your qualitative evaluation.`;
 
@@ -200,18 +214,18 @@ app.post("/api/generate-insights", async (req, res) => {
       fatigueRiskText = "Your profile shows high fatigue exposure. Operating during high-fatigue hours or regular tired driving significantly increases cognitive delay. Incorporating deliberate active monitoring and scheduling travel around natural sleep windows is highly recommended.";
     }
 
-    if (attentionHabits === "always_focused") {
+    if (attentionHabits === "always_focused" && hazardReaction === "scan_ahead") {
       attentionText = "Your attention readiness is exemplary. You actively manage your visual and cognitive field, maintaining a zero-tolerance policy for micro-distractions. This keeps your situational awareness levels highly protective.";
-    } else if (attentionHabits === "mind_wanders") {
-      attentionText = "You show moderate distraction risk from cognitive drift. While physical distractions are managed, passive mind-wandering reduces micro-reaction speeds. Active hazard scanning techniques can keep your focus locked.";
+    } else if (attentionHabits === "mind_wanders" || hazardReaction === "bumper_focus") {
+      attentionText = "You show moderate distraction risk from cognitive drift or narrow focal concentration. While physical distractions are managed, focusing solely on the immediate bumper or passive mind-wandering reduces micro-reaction speeds.";
     } else {
-      attentionText = "You exhibit behavioral distraction risks from split attention. Checking communication channels or making manual adjustments during driving increases cognitive workload, delaying hazard recognition times.";
+      attentionText = "You exhibit behavioral distraction risks from split attention. Checking communication channels, making manual adjustments during driving, or waiting to scan surroundings increases cognitive workload, delaying hazard recognition times.";
     }
 
-    if (score >= 80) {
+    if (score >= 82) {
       evaluationText = "You show strong awareness patterns and excellent behavioral safety habits. Your readiness is highly suited for complex driving environments, establishing a benchmark for road safety.";
       safetyText = "To maintain your outstanding profile, we recommend acting as an active research contributor. Continue practicing early hazard prediction and share safety-first mental models with peers.";
-    } else if (score >= 60) {
+    } else if (score >= 62) {
       evaluationText = "You demonstrate moderate fatigue exposure and average attention levels. There are clear opportunities to reinforce focus habits and build stronger defenses against fatigue.";
       safetyText = "Focus on eliminating secondary visual tasks. Incorporate proactive scanning sequences and establish clear trip-planning routines prior to starting your commute.";
     } else {

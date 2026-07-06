@@ -4,6 +4,8 @@ export interface DriverSimulationInputs {
   timeOfDay: string;
   fatigueAssessment: string;
   attentionHabits: string;
+  hazardReaction: string;
+  peripheralAwareness: string;
 }
 
 export interface DriverInsights {

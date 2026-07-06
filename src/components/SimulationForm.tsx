@@ -18,10 +18,12 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
     timeOfDay: "morning",
     fatigueAssessment: "sometimes_tired",
     attentionHabits: "always_focused",
+    hazardReaction: "scan_ahead",
+    peripheralAwareness: "continuous_mirrors",
   });
 
   const nextStep = () => {
-    if (step < 5) setStep(step + 1);
+    if (step < 7) setStep(step + 1);
     else handleSubmit();
   };
 
@@ -72,6 +74,18 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
     { value: "mind_wanders", label: "Mind Wanders / Autopilot", desc: "Often driving on mechanical auto-pilot. Lose recollection of the last few kilometers.", icon: Eye },
   ];
 
+  const hazardOptions = [
+    { value: "scan_ahead", label: "Scan 3-4 Vehicles Ahead", desc: "Keep eyes moving far down the roadway, identifying brake lights or swerves before the car in front reacts.", icon: Eye },
+    { value: "bumper_focus", label: "Focus on Immediate Bumper", desc: "Tend to lock onto the vehicle directly ahead, relying primarily on their brake lights to alert you.", icon: AlertTriangle },
+    { value: "delayed", label: "Delayed Scanning (Cabin Tasks)", desc: "Visual cycles are frequently interrupted by GPS, audio selectors, or conversational gaze shifts.", icon: Clock },
+  ];
+
+  const peripheralOptions = [
+    { value: "continuous_mirrors", label: "Continuous Mirror Sweep (5-8s)", desc: "Maintain a persistent active sweep of rear and side mirrors to map adjacent lane positions in memory.", icon: Compass },
+    { value: "transition_only", label: "Transition Checks Only", desc: "Only verify mirror states when preparing to execute a lane transition or exiting highways.", icon: Compass },
+    { value: "passive_reliance", label: "Rely on Passive Vehicle Sensors", desc: "Rely heavily on automatic blind-spot indicators or proximity warnings to manage adjacent lane awareness.", icon: Sparkles },
+  ];
+
   return (
     <div id="simulation-section" className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <div className="rounded-xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm relative overflow-hidden">
@@ -86,7 +100,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
               Driver Awareness Simulation
             </span>
             <span className="text-xs font-bold uppercase tracking-wider text-slate-600 font-mono">
-              Step {step} of 5
+              Step {step} of 7
             </span>
           </div>
           <h2 className="mt-3 text-xl font-bold uppercase tracking-tight text-slate-900">
@@ -100,7 +114,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
           <div className="mt-4 h-1 w-full rounded-full bg-slate-100">
             <div 
               className="h-1 rounded-full bg-blue-600 transition-all duration-300"
-              style={{ width: `${(step / 5) * 100}%` }}
+              style={{ width: `${(step / 7) * 100}%` }}
             />
           </div>
         </div>
@@ -337,6 +351,98 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
                 </div>
               </motion.div>
             )}
+
+            {step === 6 && (
+              <motion.div
+                key="step6"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.15 }}
+              >
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Eye className="h-4 w-4" />
+                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">06. Hazard Scanning</h3>
+                </div>
+                <p className="text-xs text-slate-700 mb-6 font-medium">
+                  Where do you direct your visual scanning attention during continuous highway or urban driving?
+                </p>
+                <div className="grid gap-3">
+                  {hazardOptions.map(opt => {
+                    const isSelected = inputs.hazardReaction === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => selectOption("hazardReaction", opt.value)}
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
+                          isSelected 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
+                        }`}
+                      >
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        }`}>
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+
+            {step === 7 && (
+              <motion.div
+                key="step7"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.15 }}
+              >
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="p-1.5 rounded bg-slate-100 border border-slate-200 text-slate-900">
+                    <Compass className="h-4 w-4" />
+                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 font-mono">07. Peripheral & Mirror Awareness</h3>
+                </div>
+                <p className="text-xs text-slate-700 mb-6 font-medium">
+                  What strategy best represents your mirror usage and surrounding spatial awareness routines?
+                </p>
+                <div className="grid gap-3">
+                  {peripheralOptions.map(opt => {
+                    const isSelected = inputs.peripheralAwareness === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => selectOption("peripheralAwareness", opt.value)}
+                        className={`flex items-start text-left p-4 rounded border transition-all cursor-pointer ${
+                          isSelected 
+                            ? "border-blue-400 bg-blue-50/40 shadow-[0_0_12px_rgba(59,130,246,0.06)]" 
+                            : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/30"
+                        }`}
+                      >
+                        <div className={`mt-0.5 mr-4 flex h-4 w-4 items-center justify-center rounded border ${
+                          isSelected ? "border-blue-600 bg-blue-600 text-white" : "border-slate-300 bg-white"
+                        }`}>
+                          {isSelected && <Check className="h-2.5 w-2.5" />}
+                        </div>
+                        <div>
+                          <div className="font-bold text-slate-900 text-xs uppercase tracking-wider">{opt.label}</div>
+                          <div className="text-[11px] text-slate-700 mt-1 font-medium">{opt.desc}</div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
 
@@ -362,8 +468,8 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             disabled={isSubmitting}
             className="inline-flex items-center gap-2 rounded bg-blue-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-[0_2px_10px_rgba(59,130,246,0.2)] hover:bg-blue-700 hover:shadow-[0_4px_14px_rgba(59,130,246,0.3)] active:scale-95 cursor-pointer transition-all"
           >
-            <span>{step === 5 ? "Transmit Profile" : "Continue"}</span>
-            {step === 5 ? <Sparkles className="h-4 w-4 animate-pulse" /> : <ArrowRight className="h-4 w-4" />}
+            <span>{step === 7 ? "Transmit Profile" : "Continue"}</span>
+            {step === 7 ? <Sparkles className="h-4 w-4 animate-pulse" /> : <ArrowRight className="h-4 w-4" />}
           </button>
         </div>
       </div>
