@@ -22,39 +22,39 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="mt-auto bg-slate-50 border-t border-slate-200">
+      <footer className="mt-auto bg-zinc-950 border-t border-zinc-900 text-zinc-400">
         {/* Pre-footer Call to Action Panel */}
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
-            {/* Background decorative glowing circles */}
-            <div className="absolute -right-20 -top-20 -z-10 h-60 w-60 rounded-full bg-slate-50 blur-3xl" />
-            <div className="absolute -left-20 -bottom-20 -z-10 h-60 w-60 rounded-full bg-slate-50/50 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 p-8 sm:p-10 shadow-lg">
+            {/* Background decorative subtle gradients */}
+            <div className="absolute -right-20 -top-20 -z-10 h-60 w-60 rounded-full bg-zinc-800/20 blur-3xl" />
+            <div className="absolute -left-20 -bottom-20 -z-10 h-60 w-60 rounded-full bg-zinc-800/10 blur-3xl" />
             
             <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
               {/* Left Column: Safety Badge & Context */}
               <div className="space-y-4 lg:col-span-5">
-                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-[10px] font-black uppercase tracking-wider text-slate-800 font-mono">
+                <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950 px-3.5 py-1 text-[10px] font-black uppercase tracking-wider text-zinc-300 font-mono">
                   <span className="text-sm">🇨🇦</span> Sovereign Driver Coach
                 </div>
                 <div>
-                  <h3 className="text-lg font-black uppercase tracking-tight text-slate-900 font-sans sm:text-xl">
+                  <h3 className="text-lg font-black uppercase tracking-tight text-white font-sans sm:text-xl">
                     Canadian Driving Dynamics
                   </h3>
-                  <p className="mt-2 text-xs text-slate-500 leading-relaxed font-sans font-medium">
+                  <p className="mt-2 text-xs text-zinc-400 leading-relaxed font-sans font-medium">
                     Designed explicitly for Canadian environmental hazards, long-range trans-provincial commutes, winter low-visibility states, and high-fatigue highway stretches.
                   </p>
                 </div>
               </div>
 
               {/* Middle Column: Launch Coordinator Info */}
-              <div className="lg:col-span-4 lg:border-l lg:border-slate-100 lg:pl-8">
-                <span className="inline-block text-[9px] font-bold uppercase tracking-widest text-slate-400 font-mono">
+              <div className="lg:col-span-4 lg:border-l lg:border-zinc-800 lg:pl-8">
+                <span className="inline-block text-[9px] font-bold uppercase tracking-widest text-zinc-500 font-mono">
                   PRE-LAUNCH VERIFICATION
                 </span>
-                <h4 className="mt-1.5 text-sm font-bold uppercase tracking-wide text-slate-800">
+                <h4 className="mt-1.5 text-sm font-bold uppercase tracking-wide text-zinc-200">
                   Direct Inquiries & Priority Support
                 </h4>
-                <p className="mt-1 text-xs text-slate-500 leading-relaxed font-sans">
+                <p className="mt-1 text-xs text-zinc-400 leading-relaxed font-sans">
                   The Astrateq priority support team is available to assist with inquiries regarding the $5 refundable queue reservation, priority software keys, and rollout timelines.
                 </p>
               </div>
@@ -63,27 +63,70 @@ export default function Footer() {
               <div className="flex items-center lg:col-span-3 lg:justify-end">
                 <button
                   onClick={() => setIsSupportOpen(true)}
-                  className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-slate-950 px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white transition-all hover:bg-slate-800 active:scale-98 cursor-pointer font-sans"
+                  className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded bg-white px-6 py-3.5 text-xs font-black uppercase tracking-wider text-zinc-950 transition-all hover:bg-zinc-100 active:scale-98 cursor-pointer font-sans"
                 >
                   <span>Contact Advisor</span>
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-mono text-slate-300">
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-mono">
                     →
                   </span>
                 </button>
               </div>
             </div>
           </div>
+
+          {/* Structured Multi-Column Navigation Links */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-zinc-900 text-left">
+            <div className="space-y-3">
+              <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Sovereign Products</h5>
+              <ul className="space-y-2 text-xs text-zinc-400">
+                <li><a href="#value-props" className="hover:text-white transition-colors">On-Device AI Coach</a></li>
+                <li><a href="#timeline-roadmap" className="hover:text-white transition-colors">Sovereign OS Sandbox</a></li>
+                <li><a href="#prefinery-checkout" className="hover:text-white transition-colors">Priority Alpha Cohorts</a></li>
+                <li><a href="#faq-section" className="hover:text-white transition-colors">Verification Queue</a></li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Core Architecture</h5>
+              <ul className="space-y-2 text-xs text-zinc-400">
+                <li><span className="text-zinc-500 cursor-not-allowed">Visual Processing Edge</span></li>
+                <li><span className="text-zinc-500 cursor-not-allowed">Telemetry Shielding</span></li>
+                <li><span className="text-zinc-500 cursor-not-allowed">Localized Analytics</span></li>
+                <li><span className="text-zinc-500 cursor-not-allowed">100% Volatile RAM Execution</span></li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Consumer Rights</h5>
+              <ul className="space-y-2 text-xs text-zinc-400">
+                <li><span className="text-zinc-400">Absolute Data Sovereignty</span></li>
+                <li><span className="text-zinc-400">Zero Cloud Analytics</span></li>
+                <li><span className="text-zinc-400">Telemetry Bypass Protocol</span></li>
+                <li><span className="text-zinc-400">Refundable Intent Filter</span></li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Canadian Compliance</h5>
+              <ul className="space-y-2 text-xs text-zinc-400">
+                <li><span className="text-zinc-400">Ontario Highway Act Alignment</span></li>
+                <li><span className="text-zinc-400">No OBD Integration Limits</span></li>
+                <li><span className="text-zinc-400">Consumer Privacy Standard</span></li>
+                <li><span className="text-zinc-400">Trans-Canada Commute Safe</span></li>
+              </ul>
+            </div>
+          </div>
           
           {/* Main Footer Disclaimer & Copyright */}
-          <div className="mt-12 border-t border-slate-200 pt-10 text-center">
-            <p className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+          <div className="mt-12 text-center space-y-6">
+            <p className="text-[10px] font-bold text-zinc-500 font-mono uppercase tracking-wider">
               © {new Date().getFullYear()} ASTRATEQ. All rights reserved.
             </p>
-            <div className="mt-5 rounded-xl bg-slate-100/50 border border-slate-200 p-6 max-w-4xl mx-auto">
-              <p className="text-[11px] sm:text-xs uppercase tracking-wider leading-relaxed text-slate-600 font-mono font-bold">
-                This platform is an independent <span className="text-slate-900 font-black underline decoration-slate-400 decoration-2 underline-offset-2">pre-launch market validation portal</span> evaluating demand for the upcoming Astrateq Driver Coach software suite. All $5 priority reservation slots are fully refundable at any time on request. We do <span className="text-red-700 font-black">NOT</span> sell auto insurance, track or store persistent GPS routes on remote servers, or utilize physical electronic accessories.
+            <div className="rounded-xl bg-zinc-900/50 border border-zinc-800/80 p-6 max-w-4xl mx-auto">
+              <p className="text-[11px] uppercase tracking-wider leading-relaxed text-zinc-400 font-mono font-bold">
+                This platform is an independent <span className="text-white font-black underline decoration-zinc-500 decoration-2 underline-offset-2">pre-launch market validation portal</span> evaluating demand for the upcoming Astrateq Driver Coach software suite. All $5 priority reservation slots are fully refundable at any time on request. We do <span className="text-red-500 font-black">NOT</span> sell auto insurance, track or store persistent GPS routes on remote servers, or utilize physical electronic accessories.
               </p>
             </div>
+            <p className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest font-black pt-2">
+              Astrateq Consumer Safety Initiative. Managed, engineered, and deployed in Ontario, Canada.
+            </p>
           </div>
         </div>
       </footer>

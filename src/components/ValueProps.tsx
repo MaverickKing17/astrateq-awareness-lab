@@ -97,143 +97,98 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
         </div>
       </section>
 
-      {/* SECTION: PRODUCT VISION / BENTO */}
-      <section className="py-20 bg-white border-b border-slate-200/80 relative overflow-hidden">
+      {/* SECTION: IMAGINE DRIVER AWARENESS INTELLIGENCE CENTERPIECE GRID */}
+      <section id="capabilities-grid" className="py-28 bg-white border-b border-zinc-200/80 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.01] pointer-events-none" />
+        
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-[10px] font-extrabold uppercase tracking-widest text-slate-800 font-mono">
-              Product Concept
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
+              <Cpu className="h-3.5 w-3.5 text-zinc-900" /> ON-DEVICE PERFORMANCE ARCHITECTURE
             </span>
-            <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 sm:text-4xl font-sans">
-              Designed for Sovereign Performance
+            <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-5xl font-sans">
+              Imagine Driver Awareness Intelligence
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto leading-relaxed font-sans font-medium">
-              A sovereign, hardware-free companion designed to translate complex micro-attentiveness behaviors into quiet, proactive safety feedback.
+            <p className="text-xs sm:text-sm text-zinc-500 max-w-xl mx-auto leading-relaxed font-sans font-medium">
+              Astrateq executes fully offline visual models directly on your hardware layer, converting complex raw behavioral parameters into real-time, high-fidelity security insights.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3 text-left">
+          <div className="grid gap-8 md:grid-cols-3 text-left">
             
-            {/* Bento 1: Left double span */}
-            <div className="md:col-span-2 relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900">
-                  <Eye className="h-5 w-5 stroke-[2]" />
+            {/* Card 1: Visual Processing Edge */}
+            <div className="relative rounded-2xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div className="space-y-6">
+                <div className="h-12 w-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-900 shadow-xs">
+                  <Eye className="h-6 w-6 stroke-[1.8]" />
                 </div>
-                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
-                  Active Focal & Ocular Baselines
-                </h3>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium max-w-lg">
-                  Instead of tracking where you are on a map, the offline engine maps the density of your visual field—assessing blink durations and subtle eye movement patterns to identify the micro-moments when attention begins to fragment.
+                <div className="space-y-2">
+                  <span className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-widest block">CORE SYSTEM 01</span>
+                  <h3 className="text-lg font-black uppercase tracking-wider text-zinc-950 font-sans">
+                    Visual Processing Edge
+                  </h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                  On-device camera optics track ocular saccades, blink durations, and cognitive glance sweeps at 60 FPS. All calculations execute within local volatile RAM cache blocks, bypassing central server paths completely.
                 </p>
               </div>
-              
-              {/* Refined, high-contrast, clear metrics display */}
-              <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4 font-sans text-xs space-y-3 shadow-xs">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-2 text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    On-Device Calibration Baseline
-                  </span>
-                  <span className="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-extrabold text-[9px]">Calibrated</span>
+              <div className="mt-8 border-t border-zinc-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Metrics Managed:</span>
+                <div className="flex gap-2.5 mt-2.5 flex-wrap">
+                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">60FPS Ocular Track</span>
+                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Gaze Angle Sampling</span>
                 </div>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100 text-center">
-                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-wider font-mono">Blink Duration</p>
-                    <p className="text-sm sm:text-base font-black text-slate-900 mt-1">140ms</p>
-                    <span className="text-[8px] font-extrabold text-slate-500 font-mono">Safe baseline</span>
-                  </div>
-                  <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100 text-center">
-                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-wider font-mono">Scanning Rate</p>
-                    <p className="text-sm sm:text-base font-black text-slate-900 mt-1">3.4 Hz</p>
-                    <span className="text-[8px] font-extrabold text-slate-500 font-mono">Stable Focus</span>
-                  </div>
-                  <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100 text-center flex flex-col justify-between">
-                    <p className="text-[9px] font-black uppercase text-slate-400 tracking-wider font-mono">Attentive State</p>
-                    <p className="text-[11px] sm:text-xs font-black text-slate-900 mt-1.5 uppercase font-mono tracking-tight">Optimal</p>
-                    <span className="text-[8px] font-extrabold text-emerald-600 font-mono">100% Secure</span>
-                  </div>
-                </div>
-                <p className="text-[10px] font-bold text-slate-500 italic text-center">
-                  💡 This metric loop runs safely inside your browser session, matching your direct focus baselines.
-                </p>
               </div>
             </div>
 
-            {/* Bento 2: Right single span */}
-            <div className="relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900">
-                  <Brain className="h-5 w-5 stroke-[2]" />
+            {/* Card 2: Telemetry Shielding */}
+            <div className="relative rounded-2xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div className="space-y-6">
+                <div className="h-12 w-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-900 shadow-xs">
+                  <Lock className="h-6 w-6 stroke-[1.8]" />
                 </div>
-                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
-                  The Cognitive Attention Map
-                </h3>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
-                  A personalized local threshold model that learns your morning vs. evening alert patterns. It avoids generic rules, recognizing your specific baseline habits over time.
+                <div className="space-y-2">
+                  <span className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-widest block">CORE SYSTEM 02</span>
+                  <h3 className="text-lg font-black uppercase tracking-wider text-zinc-950 font-sans">
+                    Telemetry Shielding
+                  </h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                  Prevents corporate driver profile profiling. Astrateq fully sanitizes, filters, and isolates acceleration, routing, and braking speed variables, ensuring zero raw data leaks to insurance cloud networks.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[10px] text-slate-700 font-bold font-mono uppercase tracking-widest bg-slate-100 border border-slate-200 rounded-lg px-3 py-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-slate-500 animate-ping" />
-                <span>Local neural baseline active</span>
+              <div className="mt-8 border-t border-zinc-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Security Protocols:</span>
+                <div className="flex gap-2.5 mt-2.5 flex-wrap">
+                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">OBD Port Bypass</span>
+                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Insurance Firewall</span>
+                </div>
               </div>
             </div>
 
-            {/* Bento 3: Left single span */}
-            <div className="relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900">
-                  <Compass className="h-5 w-5 stroke-[2]" />
+            {/* Card 3: Localized Awareness Analytics */}
+            <div className="relative rounded-2xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div className="space-y-6">
+                <div className="h-12 w-12 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-900 shadow-xs">
+                  <Brain className="h-6 w-6 stroke-[1.8]" />
                 </div>
-                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
-                  Historical Offline Trends
-                </h3>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
-                  Trace fatigue trends over days, weeks, and seasons. Pinpoint your exact cognitive drift points across recurrent commutes to restructure break times.
+                <div className="space-y-2">
+                  <span className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-widest block">CORE SYSTEM 03</span>
+                  <h3 className="text-lg font-black uppercase tracking-wider text-zinc-950 font-sans">
+                    Localized Awareness Analytics
+                  </h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium">
+                  Builds a sovereign model of your personal morning vs. evening alert patterns over time. Fatigue accumulation and attention drifts are processed exclusively locally, generating offline reports that are yours alone.
                 </p>
               </div>
-              <span className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-widest pt-4">
-                Saved 100% locally in local memory
-              </span>
-            </div>
-
-            {/* Bento 4: Middle single span */}
-            <div className="relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900">
-                  <Sparkles className="h-5 w-5 stroke-[2]" />
+              <div className="mt-8 border-t border-zinc-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-wider">Analysis Engines:</span>
+                <div className="flex gap-2.5 mt-2.5 flex-wrap">
+                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Offline History DB</span>
+                  <span className="bg-zinc-50 border border-zinc-200 px-2.5 py-1 rounded text-[9px] font-bold text-zinc-700">Personal alert curve</span>
                 </div>
-                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
-                  Silent Guidance Warnings
-                </h3>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium">
-                  No sudden sirens or jarring bells that trigger adrenaline spikes. Astrateq relies on subtle audio tones or dashboard glimmers to softly prompt active awareness resets.
-                </p>
-              </div>
-              <span className="text-[10px] font-bold text-slate-600 font-mono uppercase tracking-widest pt-4 flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-emerald-500" /> Non-intrusive safety curves
-              </span>
-            </div>
-
-            {/* Bento 5: Right double span */}
-            <div className="md:col-span-2 relative rounded-2xl border border-slate-200 bg-slate-50/20 p-8 shadow-sm flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="h-10 w-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900">
-                  <Lock className="h-5 w-5 stroke-[2]" />
-                </div>
-                <h3 className="text-base font-extrabold uppercase tracking-wide text-slate-900 font-sans">
-                  Absolute Sovereignty
-                </h3>
-                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium max-w-lg">
-                  Our core philosophy is absolute: driver safety does not require cloud monetization or corporate risk profiling. Evaluated parameters run inside sandboxed volatile RAM and vanish the second the companion software closes.
-                </p>
-              </div>
-              
-              <div className="mt-6 flex flex-wrap gap-2 text-[9px] font-bold uppercase tracking-widest font-mono text-slate-700">
-                <span className="bg-slate-100 border border-slate-250 px-2.5 py-1 rounded">No insurance sharing</span>
-                <span className="bg-slate-100 border border-slate-250 px-2.5 py-1 rounded">No background tracking</span>
-                <span className="bg-slate-100 border border-slate-250 px-2.5 py-1 rounded">Zero cloud leaks</span>
               </div>
             </div>
 
