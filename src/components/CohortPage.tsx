@@ -1076,7 +1076,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     </>
                   ) : (
                     <>
-                      <span>{selectedTier === 'founding' ? 'Claim Founding Allocation' : 'Secure Priority Access'}</span>
+                      <span>Reserve Founding Access</span>
                       <ArrowRight className="h-4 w-4" />
                     </>
                   )}
@@ -1118,7 +1118,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   onClick={activeOnStartSimulation}
                   className="inline-flex items-center justify-center gap-2 rounded border border-slate-200 bg-white hover:bg-slate-50 px-8 py-4.5 text-xs font-bold uppercase tracking-wider text-slate-700 active:scale-95 transition-all cursor-pointer font-mono"
                 >
-                  <span>Try Diagnostic Simulator First</span>
+                  <span>Start Driver Awareness Simulation</span>
                 </button>
               </div>
 

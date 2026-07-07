@@ -579,7 +579,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               onClick={() => onNavigateToCohort(cohort.id)}
               className="w-full inline-flex items-center justify-center rounded bg-blue-600 border border-blue-500 hover:bg-blue-700 hover:border-blue-600 px-5 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(59,130,246,0.3)] transition-all active:scale-[0.98] cursor-pointer font-mono"
             >
-              {cohort.id === 'founding' ? 'Claim Founding Allocation' : 'Secure Priority Access'}
+              Unlock Full Report
             </button>
             <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-1 leading-normal">
               Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
@@ -649,7 +649,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             onClick={() => onNavigateToCohort(cohort.id)}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all active:scale-[0.98] cursor-pointer font-mono"
           >
-            {cohort.id === 'founding' ? 'Claim Founding Allocation' : 'Secure Priority Access'}
+            Unlock Full Report
           </button>
           
           <button

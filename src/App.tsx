@@ -48,11 +48,51 @@ export default function App() {
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
 
   // Inline Mini-Quiz gating states (Fix 1)
-  const [quizStep, setQuizStep] = useState(0); // 0 = not started, 1-4 = questions, 5 = complete/score revealed
-  const [quizAnswers, setQuizAnswers] = useState<Record<number, string>>({});
-  const [quizScore, setQuizScore] = useState(0);
-  const [quizComplete, setQuizComplete] = useState(false);
-  const [reservationUnlocked, setReservationUnlocked] = useState(false);
+  const [quizStep, setQuizStep] = useState<number>(() => {
+    const savedComplete = typeof window !== "undefined" && localStorage.getItem("astrateq_quiz_complete") === "true";
+    if (savedComplete) return 5;
+    return typeof window !== "undefined" ? Number(localStorage.getItem("astrateq_quiz_step") || "0") : 0;
+  });
+  const [quizAnswers, setQuizAnswers] = useState<Record<number, string>>(() => {
+    try {
+      return typeof window !== "undefined" ? JSON.parse(localStorage.getItem("astrateq_quiz_answers") || "{}") : {};
+    } catch {
+      return {};
+    }
+  });
+  const [quizScore, setQuizScore] = useState<number>(() => {
+    return typeof window !== "undefined" ? Number(localStorage.getItem("astrateq_quiz_score") || "0") : 0;
+  });
+  const [quizComplete, setQuizComplete] = useState<boolean>(() => {
+    return typeof window !== "undefined" && localStorage.getItem("astrateq_quiz_complete") === "true";
+  });
+  const [reservationUnlocked, setReservationUnlocked] = useState<boolean>(() => {
+    return typeof window !== "undefined" && localStorage.getItem("astrateq_reservation_unlocked") === "true";
+  });
+
+  // Keep localStorage updated when states change
+  useEffect(() => {
+    localStorage.setItem("astrateq_quiz_complete", String(quizComplete));
+    if (quizComplete && quizStep < 5) {
+      setQuizStep(5);
+    }
+  }, [quizComplete]);
+
+  useEffect(() => {
+    localStorage.setItem("astrateq_reservation_unlocked", String(reservationUnlocked));
+  }, [reservationUnlocked]);
+
+  useEffect(() => {
+    localStorage.setItem("astrateq_quiz_score", String(quizScore));
+  }, [quizScore]);
+
+  useEffect(() => {
+    localStorage.setItem("astrateq_quiz_step", String(quizStep));
+  }, [quizStep]);
+
+  useEffect(() => {
+    localStorage.setItem("astrateq_quiz_answers", JSON.stringify(quizAnswers));
+  }, [quizAnswers]);
   
   // Reservation form fields (Fix 1 / Fix 4 / Fix 3)
   const [resName, setResName] = useState("");
@@ -181,7 +221,7 @@ export default function App() {
           // Graceful simulated safety fallback if API errors out
           setInsights({
             success: true,
-            score: 75,
+            score: 82,
             fatigueRiskProfile: "Your fatigue risk awareness profile reflects moderate exposure. Standard travel breaks are advised.",
             attentionReadiness: "You demonstrate standard micro-scanning behaviors with average distraction mitigations.",
             safetyIntelligenceReadiness: "Ensure in-cabin settings are stabilized prior to commencing commutes.",
@@ -199,7 +239,7 @@ export default function App() {
       setTimeout(() => {
         setInsights({
           success: true,
-          score: 80,
+          score: 82,
           fatigueRiskProfile: "A highly resilient fatigue risk awareness profile is identified based on standard daylight driving schedules.",
           attentionReadiness: "Excellent visual field attention is noted. Minimal split-attention tendencies are reported.",
           safetyIntelligenceReadiness: "Continue leveraging pre-planned rest stop regimes during continuous long commutes.",
@@ -483,7 +523,7 @@ export default function App() {
                         onClick={() => setQuizStep(1)}
                         className="inline-flex items-center justify-center rounded bg-[#0E7C9E] px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white hover:bg-[#0E7C9E]/90 active:scale-98 transition-all cursor-pointer font-mono shadow-xs"
                       >
-                        Start Baseline Simulator
+                        Start Driver Awareness Simulation
                       </button>
                     </div>
                   )}
@@ -700,6 +740,24 @@ export default function App() {
             </section>
 
             {/* 8. Reservation Section (Fix 1, gated behind simulationComplete) */}
+            {/*
+             * AUDIT REPORT: Founding Research Cohort Placement Panel & "Jump to Baseline Simulation" Button Behavior
+             * Date: 2026-07-07
+             * Previous Behavior:
+             * - The "Founding Research Cohort Placement" panel was located under Section 8 in App.tsx.
+             * - When the page loaded, the panel was in a locked/greyed state because reservationUnlocked was false.
+             * - However, there was a visible, enabled button with the text "Jump to Baseline Simulation".
+             * - This button had an onClick handler that scrolled the user to the "simulation-gate" section and, 
+             *   if quizStep was 0, changed quizStep to 1 to begin the quiz.
+             * - While this button did not directly submit the reservation form, it was identified as an undesirable
+             *   skip path/shortcut for first-time visitors that cluttered the gated visual state.
+             * New Behavior:
+             * - The button has been completely removed for first-time visitors to prevent any bypass or skip confusion.
+             * - The panel is now completely non-interactive and locked for first-time visitors who have not finished the simulation.
+             * - For returning visitors, we utilize localStorage session flags (astrateq_quiz_complete, astrateq_reservation_unlocked).
+             * - If a returning visitor has completed the driver awareness quiz (saved in localStorage), they are presented with 
+             *   the standardized "Unlock Full Report" transition CTA to gracefully restore their unlocked reservation form state.
+             */}
             <section id="reservation-form-section" className="py-24 bg-white border-b border-zinc-200/80 relative overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000002_1px,transparent_1px),linear-gradient(to_bottom,#00000002_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
               
@@ -722,18 +780,25 @@ export default function App() {
                         To protect network allocation buffers, the priority reservation portal is gated behind the driver simulation. Please complete the baseline survey above to unlock your secure slot.
                       </p>
                     </div>
-                    <div className="pt-4">
-                      <button
-                        onClick={() => {
-                          document.getElementById("simulation-gate")?.scrollIntoView({ behavior: "smooth" });
-                          if (quizStep === 0) setQuizStep(1);
-                        }}
-                        className="inline-flex items-center gap-2 rounded bg-zinc-200 hover:bg-zinc-300 text-zinc-800 px-6 py-3 text-xs font-bold uppercase tracking-wider cursor-pointer font-mono transition-colors"
-                      >
-                        <span>Jump to Baseline Simulation</span>
-                        <span>↓</span>
-                      </button>
-                    </div>
+                    {quizComplete ? (
+                      <div className="pt-4">
+                        <button
+                          onClick={() => {
+                            setReservationUnlocked(true);
+                            setTimeout(() => {
+                              document.getElementById("reservation-form-section")?.scrollIntoView({ behavior: "smooth", block: "center" });
+                            }, 150);
+                          }}
+                          className="w-full inline-flex items-center justify-center rounded bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 text-xs font-black uppercase tracking-widest active:scale-98 transition-all cursor-pointer font-mono shadow-md"
+                        >
+                          Unlock Full Report
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="text-[10px] text-zinc-400 font-mono font-bold uppercase tracking-wider mt-2">
+                        Locked — Complete Driver Simulation Above to Unlock Form
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div className="max-w-2xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-500">
