@@ -48,19 +48,19 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => scrollToSection("value-props")}
             className="transition-colors hover:text-white cursor-pointer"
           >
-            Capabilities
+            Features
           </button>
           <button
             onClick={() => scrollToSection("lifestyle-breakout")}
             className="transition-colors hover:text-white cursor-pointer"
           >
-            Sovereign Commute
+            Driving Commute
           </button>
           <button
             onClick={() => scrollToSection("timeline-roadmap")}
             className="transition-colors hover:text-white cursor-pointer"
           >
-            System Architecture
+            Technology
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
@@ -97,23 +97,23 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
             onClick={() => scrollToSection("value-props")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
-            Capabilities
+            Features
           </button>
           <button
             onClick={() => scrollToSection("lifestyle-breakout")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
-            Sovereign Commute
+            Driving Commute
           </button>
           <button
             onClick={() => scrollToSection("timeline-roadmap")}
             className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
-            System Architecture
+            Technology
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
-            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
+            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
             FAQ
           </button>

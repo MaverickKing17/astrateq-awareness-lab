@@ -52,51 +52,6 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
         </div>
       </section>
 
-      {/* SECTION: VISION */}
-      <section className="py-20 bg-slate-900 border-b border-slate-850 relative overflow-hidden">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-5 text-left">
-              <span className="inline-flex items-center gap-1.5 border border-slate-800 bg-slate-950 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-400 font-mono rounded-full">
-                Founder Vision
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white font-sans leading-tight">
-                Why We Started Building the Driver Coach
-              </h3>
-              <div className="space-y-4 text-xs sm:text-[13px] text-slate-400 leading-relaxed font-sans font-medium">
-                <p>
-                  Every year, modern smartphones ship with faster processors, local neural engines, and sophisticated ambient optics. Yet almost none of this immense power is routed to help you protect yourself during long commutes.
-                </p>
-                <p>
-                  We noticed that standard driving software is designed to feed advertisements or trace routes. It is not designed to help <span className="text-white font-bold border-b border-slate-800 pb-0.5">you better understand your own focus</span>.
-                </p>
-                <p className="font-bold text-slate-200">
-                  We started Astrateq Gadgets because we believe intelligence should serve and belong to the driver—fully offline, fully sovereign, with zero external surveillance.
-                </p>
-              </div>
-            </div>
-            
-            <div className="lg:col-span-5 bg-slate-950 rounded-2xl border border-slate-800 p-8 shadow-sm text-left">
-              <div className="space-y-6">
-                <span className="text-4xl font-serif text-slate-700 block leading-none select-none">“</span>
-                <p className="text-xs sm:text-[13px] italic text-slate-300 leading-relaxed font-sans font-semibold">
-                  “Our goal is to build a safety companion that works for you, not against you. We want to prove that driver safety can be elegant, highly precise, and completely disconnected from the cloud.”
-                </p>
-                <div className="border-t border-slate-900 pt-4 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center font-mono font-black text-xs text-slate-300 border border-slate-850 uppercase">
-                    MK
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-black uppercase text-white tracking-wider">Marc-Olivier Kovacs</h5>
-                    <p className="text-[9px] font-extrabold uppercase text-slate-500 font-mono tracking-widest mt-0.5">Founder, Astrateq Gadgets Technologies</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION: IMAGINE DRIVER AWARENESS INTELLIGENCE CENTERPIECE GRID */}
       <section id="capabilities-grid" className="py-28 bg-slate-950 border-b border-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.015] pointer-events-none" />

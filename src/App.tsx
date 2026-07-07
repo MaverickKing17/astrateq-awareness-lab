@@ -1085,18 +1085,18 @@ export default function App() {
             </section>
 
             {/* 8. Consumer Friction FAQ Accordion */}
-            <section id="faq-section" className="py-28 bg-gradient-to-b from-white to-slate-50/80 border-b border-zinc-200/80 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none" />
+            <section id="faq-section" className="py-28 bg-slate-950 border-b border-slate-900 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none" />
               <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
                 
                 <div className="text-center mb-20">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-black uppercase tracking-widest text-blue-800 font-mono mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/40 border border-blue-900/50 text-[10px] font-black uppercase tracking-widest text-blue-400 font-mono mb-4">
                     SUPPORT & SOVEREIGNTY TRANSPARENCY
                   </span>
-                  <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-4xl">
+                  <h2 className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl">
                     Frequently Asked Questions
                   </h2>
-                  <p className="text-xs text-zinc-500 mt-3 max-w-lg mx-auto leading-relaxed">
+                  <p className="text-xs text-slate-400 mt-3 max-w-lg mx-auto leading-relaxed">
                     Clear, detailed answers regarding our smartphone resource parameters, intent deposits, and absolute data privacy isolation.
                   </p>
                 </div>
@@ -1113,38 +1113,38 @@ export default function App() {
                         key={idx} 
                         className={`rounded-2xl border-2 transition-all duration-300 overflow-hidden text-left transform ${
                           isOpen 
-                            ? "border-blue-200 border-l-4 border-l-blue-600 bg-white shadow-[0_15px_30px_rgba(59,130,246,0.06)] scale-[1.01]" 
-                            : "border-slate-200/70 border-l-4 border-l-slate-400 bg-white/70 hover:bg-white hover:border-slate-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:-translate-y-0.5"
+                            ? "border-[#0E7C9E] border-l-4 border-l-[#0E7C9E] bg-slate-900 shadow-2xl scale-[1.01]" 
+                            : "border-slate-850 bg-slate-900/50 hover:bg-slate-900/85 hover:border-slate-750 hover:shadow-[0_8px_20px_rgba(0,0,0,0.2)] hover:-translate-y-0.5"
                         }`}
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
-                          className="w-full flex items-center justify-between px-6 py-5.5 text-left transition-all cursor-pointer font-sans"
+                          className="w-full flex items-center justify-between px-6 py-5.5 text-left transition-all cursor-pointer font-sans animate-none"
                         >
                           <div className="flex items-center gap-4 mr-4">
                             {/* Icon Wrapper */}
                             <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${
                               isOpen 
-                                ? "bg-blue-50 text-blue-600 border-blue-200 shadow-sm" 
-                                : "bg-slate-50 text-slate-500 border-slate-200"
+                                ? "bg-[#0E7C9E]/10 text-[#0E7C9E] border-[#0E7C9E]/20 shadow-inner" 
+                                : "bg-slate-950 text-slate-400 border-slate-800"
                             }`}>
                               <IconComponent className="h-5 w-5" />
                             </div>
                             
                             <div className="space-y-1">
                               <span className={`text-[9px] font-black font-mono uppercase tracking-widest ${
-                                isOpen ? "text-blue-600" : "text-slate-400"
+                                isOpen ? "text-[#0E7C9E]" : "text-slate-500"
                               }`}>
                                 QUESTION {(idx + 1).toString().padStart(2, "0")}
                               </span>
-                              <h3 className={`text-xs sm:text-[13.5px] font-black uppercase tracking-wider font-mono transition-colors duration-200 leading-snug ${isOpen ? 'text-blue-950' : 'text-zinc-800'}`}>
+                              <h3 className="text-xs sm:text-[13.5px] font-black uppercase tracking-wider font-mono text-white leading-snug">
                                 {item.q}
                               </h3>
                             </div>
                           </div>
                           
                           <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                            isOpen ? "bg-blue-100 border-blue-200 text-blue-600 rotate-180" : "bg-slate-50 border-slate-200 text-slate-400"
+                            isOpen ? "bg-[#0E7C9E]/10 border-[#0E7C9E]/20 text-[#0E7C9E] rotate-180" : "bg-slate-950 border-slate-800 text-slate-400"
                           }`}>
                             <ChevronDown className="h-4 w-4" />
                           </div>
@@ -1159,7 +1159,7 @@ export default function App() {
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                               className="overflow-hidden"
                             >
-                              <div className="px-6 pb-6 pt-1 text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-sans font-medium pl-20 pr-8 border-t border-slate-100 bg-gradient-to-b from-slate-50/50 to-white">
+                              <div className="px-6 pb-6 pt-4 text-xs sm:text-[13px] text-slate-300 leading-relaxed font-sans font-medium pl-20 pr-8 border-t border-slate-800 bg-slate-950">
                                 {item.a}
                               </div>
                             </motion.div>

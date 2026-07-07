@@ -1,11 +1,138 @@
 import React, { useState } from "react";
-import { Mail, Shield, Check, X } from "lucide-react";
+import { 
+  Mail, Shield, Check, X, Cpu, Info, FileText, 
+  Smartphone, Lock, UserCheck, Compass, EyeOff, Coins, Layers 
+} from "lucide-react";
+
+interface DocItem {
+  title: string;
+  category: string;
+  icon: string;
+  description: string;
+  impact: string;
+}
+
+const DOC_ITEMS: Record<string, DocItem> = {
+  "on-device-ai-coach": {
+    title: "On-Device AI Coach",
+    category: "Sovereign Products",
+    icon: "Smartphone",
+    description: "Our real-time driving assistant operates 100% on your local smartphone. It uses advanced spatial algorithms and device sensors to detect driver fatigue and road risks. Best of all, it performs all processing locally without requiring any cellular data.",
+    impact: "Provides instant feedback to help keep you safe on long journeys, without ever streaming your driving feed to external servers."
+  },
+  "sovereign-os-sandbox": {
+    title: "Sovereign OS Sandbox",
+    category: "Sovereign Products",
+    icon: "Lock",
+    description: "A custom-designed, secure software container on your smartphone. This container isolates the Driver Coach program from other apps, ensuring that third-party trackers or malicious software cannot spy on your driving feeds.",
+    impact: "Keeps your security analysis sealed in a private space that other smartphone apps cannot peek into."
+  },
+  "priority-alpha-cohorts": {
+    title: "Priority Alpha Cohorts",
+    category: "Sovereign Products",
+    icon: "UserCheck",
+    description: "An exclusive group of early adopters and safety enthusiasts on Canadian roads. Members of this cohort get first-hand access to early software versions, direct lines to the engineering team, and help refine our hazard models.",
+    impact: "You get early access to life-saving driving assistance before it goes public, with dedicated support from our team."
+  },
+  "verification-queue": {
+    title: "Verification Queue",
+    category: "Sovereign Products",
+    icon: "Check",
+    description: "Our structured rollout system that manages access and priority based on your reservation number. This system ensures every participant is validated and assigned a spot safely as regional cohorts go live.",
+    impact: "Guarantees a fair, first-come, first-served allocation of early software keys as space becomes available."
+  },
+  "visual-processing-edge": {
+    title: "Visual Processing Edge",
+    category: "Core Architecture",
+    icon: "Cpu",
+    description: "All visual hazard modeling is handled directly by your smartphone's dedicated neural hardware. No video feeds or images are ever transmitted to a cloud server to be analyzed or stored.",
+    impact: "Zero cellular data usage, zero network lag, and absolute visual privacy during your drive."
+  },
+  "telemetry-shielding": {
+    title: "Telemetry Shielding",
+    category: "Core Architecture",
+    icon: "Shield",
+    description: "A protective cryptographic layer that instantly scrambles and isolates internal sensor signals. Raw accelerometer, gyroscope, and GPS indicators are encrypted to prevent unauthorized hardware sniffing.",
+    impact: "Guarantees that your vehicle's physical movement patterns cannot be compiled or intercepted by trackers."
+  },
+  "localized-analytics": {
+    title: "Localized Analytics",
+    category: "Core Architecture",
+    icon: "Info",
+    description: "Your safe-driving scores, weekly metrics, and commute summaries are generated and saved purely in local storage. We have designed the system without any remote logging of your routes or history.",
+    impact: "You get beautiful, personalized insights and progress charts that remain completely invisible to the outside world."
+  },
+  "volatile-ram-execution": {
+    title: "100% Volatile RAM Execution",
+    category: "Core Architecture",
+    icon: "Layers",
+    description: "The application processes driving frames and camera telemetry entirely within your phone's transient memory (RAM). Absolutely no temporary photos or raw sensor logs are written to permanent storage.",
+    impact: "As soon as you turn off the app, every single frame processed is permanently erased from existence, leaving no digital footprint."
+  },
+  "absolute-data-sovereignty": {
+    title: "Absolute Data Sovereignty",
+    category: "Consumer Rights",
+    icon: "Lock",
+    description: "The fundamental human right to own your personal movement data. We build safety technology with the strict policy that you own 100% of your records. We will never buy, sell, or trade your telemetry.",
+    impact: "No insurance companies, tech giants, or government agencies will ever have access to your private driving profile."
+  },
+  "zero-cloud-analytics": {
+    title: "Zero Cloud Analytics",
+    category: "Consumer Rights",
+    icon: "EyeOff",
+    description: "A complete bypass of central cloud reporting. Unlike standard driving companions that continuously send telemetry to corporate servers, Astrateq operates as a fully self-contained software suite.",
+    impact: "No tracking cookies, no central user profiles, and no risk of database leaks exposing your driving habits."
+  },
+  "telemetry-bypass-protocol": {
+    title: "Telemetry Bypass Protocol",
+    category: "Consumer Rights",
+    icon: "Compass",
+    description: "An instant-toggle privacy shield. If you want to use the Driver Coach purely as a passive, visual dashboard helper without logging any trips or habits, you can activate this protocol with one tap.",
+    impact: "Allows you to enjoy all real-time safety assistance while leaving absolutely zero historical logs on your phone."
+  },
+  "refundable-intent-filter": {
+    title: "Refundable Intent Filter",
+    category: "Consumer Rights",
+    icon: "Coins",
+    description: "Our policy for high-trust user reservations. The $5 CAD priority reservation fee is used purely to filter spam and verify real drivers, and it is 100% refundable at any time on request.",
+    impact: "Zero financial commitment or risk. If you change your mind, we return your deposit immediately with zero questions asked."
+  },
+  "ontario-highway-act": {
+    title: "Ontario Highway Act Alignment",
+    category: "Canadian Compliance",
+    icon: "FileText",
+    description: "We design our interfaces to fully align with Ontario's strict distracted driving laws and the Highway Traffic Act. The interface uses passive alerts and operates hands-free to ensure perfect safety.",
+    impact: "You can drive with confidence knowing your safety assistant fully respects Canadian road regulations and guidelines."
+  },
+  "no-obd-integration": {
+    title: "No OBD Integration Limits",
+    category: "Canadian Compliance",
+    icon: "Shield",
+    description: "Astrateq does not connect to your car's On-Board Diagnostics (OBD-II) port. Standard trackers plug in there, which can void warranties and create electrical faults or remote hacking vulnerabilities.",
+    impact: "Protects your vehicle's factory warranty and onboard computers from unauthorized software interference."
+  },
+  "consumer-privacy-standard": {
+    title: "Consumer Privacy Standard",
+    category: "Canadian Compliance",
+    icon: "UserCheck",
+    description: "We adhere strictly to PIPEDA (Personal Information Protection and Electronic Documents Act) standards, going even further by completely eliminating remote data aggregation.",
+    impact: "Guarantees that your biometric focus mapping and route histories are treated with the highest level of legal confidentiality."
+  },
+  "trans-canada-commute": {
+    title: "Trans-Canada Commute Safe",
+    category: "Canadian Compliance",
+    icon: "Compass",
+    description: "Engineered specifically for Canadian roads. Our algorithms are optimized for remote routes, dense winter low-visibility states, and long-range highway fatigue where internet connections may fail completely.",
+    impact: "Works flawlessly in the deep Canadian wilderness or underground parking structures, with zero reliance on cell towers."
+  }
+};
 
 export default function Footer() {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const [supportEmail, setSupportEmail] = useState("");
   const [supportMsg, setSupportMsg] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedDocKey, setSelectedDocKey] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +146,26 @@ export default function Footer() {
       }, 2500);
     }
   };
+
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case "Smartphone": return <Smartphone className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Lock": return <Lock className="h-6 w-6 text-[#0E7C9E]" />;
+      case "UserCheck": return <UserCheck className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Check": return <Check className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Cpu": return <Cpu className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Shield": return <Shield className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Info": return <Info className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Layers": return <Layers className="h-6 w-6 text-[#0E7C9E]" />;
+      case "EyeOff": return <EyeOff className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Compass": return <Compass className="h-6 w-6 text-[#0E7C9E]" />;
+      case "Coins": return <Coins className="h-6 w-6 text-[#0E7C9E]" />;
+      case "FileText": return <FileText className="h-6 w-6 text-[#0E7C9E]" />;
+      default: return <Info className="h-6 w-6 text-[#0E7C9E]" />;
+    }
+  };
+
+  const selectedDoc = selectedDocKey ? DOC_ITEMS[selectedDocKey] : null;
 
   return (
     <>
@@ -78,38 +225,153 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-slate-900 text-left">
             <div className="space-y-3">
               <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Sovereign Products</h5>
-              <ul className="space-y-2 text-xs text-slate-400">
-                <li><a href="#value-props" className="hover:text-white transition-colors">On-Device AI Coach</a></li>
-                <li><a href="#timeline-roadmap" className="hover:text-white transition-colors">Sovereign OS Sandbox</a></li>
-                <li><a href="#prefinery-checkout" className="hover:text-white transition-colors">Priority Alpha Cohorts</a></li>
-                <li><a href="#faq-section" className="hover:text-white transition-colors">Verification Queue</a></li>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("on-device-ai-coach")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] opacity-40">●</span> On-Device AI Coach
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("sovereign-os-sandbox")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] opacity-40">●</span> Sovereign OS Sandbox
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("priority-alpha-cohorts")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] opacity-40">●</span> Priority Alpha Cohorts
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("verification-queue")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] opacity-40">●</span> Verification Queue
+                  </button>
+                </li>
               </ul>
             </div>
+            
             <div className="space-y-3">
               <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Core Architecture</h5>
-              <ul className="space-y-2 text-xs text-slate-550">
-                <li><span className="text-slate-500 cursor-not-allowed">Visual Processing Edge</span></li>
-                <li><span className="text-slate-500 cursor-not-allowed">Telemetry Shielding</span></li>
-                <li><span className="text-slate-500 cursor-not-allowed">Localized Analytics</span></li>
-                <li><span className="text-slate-500 cursor-not-allowed">100% Volatile RAM Execution</span></li>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("visual-processing-edge")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Visual Processing Edge
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("telemetry-shielding")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Telemetry Shielding
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("localized-analytics")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Localized Analytics
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("volatile-ram-execution")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> 100% Volatile RAM Execution
+                  </button>
+                </li>
               </ul>
             </div>
+
             <div className="space-y-3">
               <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Consumer Rights</h5>
-              <ul className="space-y-2 text-xs text-slate-400">
-                <li><span className="text-slate-400">Absolute Data Sovereignty</span></li>
-                <li><span className="text-slate-400">Zero Cloud Analytics</span></li>
-                <li><span className="text-slate-400">Telemetry Bypass Protocol</span></li>
-                <li><span className="text-slate-400">Refundable Intent Filter</span></li>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("absolute-data-sovereignty")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Absolute Data Sovereignty
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("zero-cloud-analytics")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Zero Cloud Analytics
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("telemetry-bypass-protocol")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Telemetry Bypass Protocol
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("refundable-intent-filter")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Refundable Intent Filter
+                  </button>
+                </li>
               </ul>
             </div>
+
             <div className="space-y-3">
               <h5 className="text-[10px] font-black uppercase tracking-wider text-white font-mono">Canadian Compliance</h5>
-              <ul className="space-y-2 text-xs text-slate-400">
-                <li><span className="text-slate-400">Ontario Highway Act Alignment</span></li>
-                <li><span className="text-slate-400">No OBD Integration Limits</span></li>
-                <li><span className="text-slate-400">Consumer Privacy Standard</span></li>
-                <li><span className="text-slate-400">Trans-Canada Commute Safe</span></li>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("ontario-highway-act")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Ontario Highway Act Alignment
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("no-obd-integration")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> No OBD Integration Limits
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("consumer-privacy-standard")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Consumer Privacy Standard
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setSelectedDocKey("trans-canada-commute")}
+                    className="text-left text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 hover:underline"
+                  >
+                    <span className="text-[9px] text-[#0E7C9E]">●</span> Trans-Canada Commute Safe
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -130,6 +392,70 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+
+      {/* Detailed Document Modal */}
+      {selectedDoc && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-lg overflow-hidden rounded-2xl bg-slate-900 shadow-2xl border border-slate-800 animate-in fade-in zoom-in-95 duration-150 text-left">
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950 px-6 py-4.5">
+              <div className="flex flex-col">
+                <span className="text-[9px] font-bold font-mono uppercase tracking-widest text-slate-500">
+                  {selectedDoc.category} Specifications
+                </span>
+                <h3 className="text-sm font-black uppercase tracking-wider text-white font-sans mt-0.5">
+                  {selectedDoc.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => setSelectedDocKey(null)}
+                className="rounded-full p-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors"
+                aria-label="Close details"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Content Body */}
+            <div className="p-6 space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0E7C9E]/10 border border-[#0E7C9E]/20 text-[#0E7C9E]">
+                  {getIcon(selectedDoc.icon)}
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono mb-1.5">
+                      What this means
+                    </h4>
+                    <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed font-sans font-medium">
+                      {selectedDoc.description}
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl bg-slate-950/50 border border-slate-850 p-4 space-y-1.5">
+                    <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-[#0E7C9E] font-mono">
+                      Your Direct Benefit
+                    </h4>
+                    <p className="text-xs text-slate-300 leading-relaxed font-sans font-medium">
+                      {selectedDoc.impact}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="border-t border-slate-800 bg-slate-950 px-6 py-4 flex justify-end gap-3">
+              <button
+                onClick={() => setSelectedDocKey(null)}
+                className="rounded bg-blue-600 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-blue-500 transition-all cursor-pointer font-mono shadow-md"
+              >
+                Close Explainer
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Support Modal */}
       {isSupportOpen && (
