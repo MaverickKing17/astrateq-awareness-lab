@@ -26,7 +26,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Stark minimalist logo */}
@@ -37,34 +37,34 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           <img 
             src="https://i.ibb.co/kVx4pbMs/Astrateq.png" 
             alt="Astrateq Gadgets" 
-            className="h-10 w-auto" 
+            className="h-10 w-auto brightness-110" 
             referrerPolicy="no-referrer" 
           />
         </button>
 
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-wider text-slate-600">
+        <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-wider text-slate-400">
           <button
             onClick={() => scrollToSection("value-props")}
-            className="transition-colors hover:text-slate-900 cursor-pointer"
+            className="transition-colors hover:text-white cursor-pointer"
           >
             Capabilities
           </button>
           <button
             onClick={() => scrollToSection("lifestyle-breakout")}
-            className="transition-colors hover:text-slate-900 cursor-pointer"
+            className="transition-colors hover:text-white cursor-pointer"
           >
             Sovereign Commute
           </button>
           <button
             onClick={() => scrollToSection("timeline-roadmap")}
-            className="transition-colors hover:text-slate-900 cursor-pointer"
+            className="transition-colors hover:text-white cursor-pointer"
           >
             System Architecture
           </button>
           <button
             onClick={() => scrollToSection("faq-section")}
-            className="transition-colors hover:text-slate-900 cursor-pointer"
+            className="transition-colors hover:text-white cursor-pointer"
           >
             FAQ
           </button>
@@ -74,7 +74,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => handleMobileNavigate("simulation")}
-            className="inline-flex items-center justify-center rounded bg-[#0E7C9E] px-4.5 py-2.5 text-[10px] font-black text-white shadow-sm transition-all hover:bg-[#0E7C9E]/90 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-[#0E7C9E] hover:border-[#0E7C9E]/90"
+            className="inline-flex items-center justify-center rounded bg-blue-600 px-4.5 py-2.5 text-[10px] font-black text-white shadow-sm transition-all hover:bg-blue-500 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-blue-600 hover:border-blue-500"
           >
             Start Driver Awareness Simulation
           </button>
@@ -82,7 +82,7 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           {/* Hamburger Menu Button - Mobile */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="inline-flex items-center justify-center p-2 rounded text-slate-500 hover:text-slate-900 hover:bg-slate-100 focus:outline-none md:hidden transition-all duration-150 cursor-pointer"
+            className="inline-flex items-center justify-center p-2 rounded text-slate-400 hover:text-white hover:bg-slate-900 focus:outline-none md:hidden transition-all duration-150 cursor-pointer"
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -92,22 +92,22 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3 shadow-md animate-in fade-in slide-in-from-top-3 duration-200">
+        <div className="md:hidden border-b border-slate-800 bg-slate-950 px-4 pt-2 pb-6 space-y-3 shadow-md animate-in fade-in slide-in-from-top-3 duration-200">
           <button
             onClick={() => scrollToSection("value-props")}
-            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
+            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
             Capabilities
           </button>
           <button
             onClick={() => scrollToSection("lifestyle-breakout")}
-            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
+            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
             Sovereign Commute
           </button>
           <button
             onClick={() => scrollToSection("timeline-roadmap")}
-            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors font-mono"
+            className="block w-full text-left px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white hover:bg-slate-900 rounded transition-colors font-mono"
           >
             System Architecture
           </button>

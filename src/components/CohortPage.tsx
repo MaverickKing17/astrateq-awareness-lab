@@ -1157,11 +1157,12 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       </section>
 
       {/* SECTION 9 — FAQ */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC] relative overflow-hidden border-b border-slate-200/50">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden border-b border-slate-200/50">
+        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none" />
         <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-extrabold uppercase tracking-widest text-blue-700 font-mono mb-4">
-              Cohort FAQ
+              COHORT FAQ
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-slate-900 font-sans">
               Frequently Asked Questions
@@ -1174,31 +1175,46 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           <div className="space-y-4">
             {faqItems.map((item, idx) => {
               const isOpen = openFaqIdx === idx;
+              const faqIcons = [Brain, Users, ShieldCheck, Smartphone, Sparkles];
+              const IconComponent = faqIcons[idx] || HelpCircle;
+              
               return (
                 <div 
                   key={idx} 
-                  className={`rounded-2xl border border-l-4 transition-all duration-300 overflow-hidden ${
+                  className={`rounded-2xl border-2 transition-all duration-300 overflow-hidden text-left transform ${
                     isOpen 
-                      ? "border-blue-300 border-l-blue-600 bg-white shadow-[0_12px_30px_rgba(59,130,246,0.06)]" 
-                      : "border-slate-200/80 border-l-slate-300 bg-white hover:bg-slate-50/30 hover:border-blue-200 hover:border-l-blue-400 hover:shadow-[0_8px_20px_rgba(0,0,0,0.02)]"
+                      ? "border-blue-200 border-l-4 border-l-blue-600 bg-white shadow-[0_15px_30px_rgba(59,130,246,0.06)] scale-[1.01]" 
+                      : "border-slate-200/70 border-l-4 border-l-slate-400 bg-white/70 hover:bg-white hover:border-slate-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:-translate-y-0.5"
                   }`}
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-all cursor-pointer font-sans"
+                    className="w-full flex items-center justify-between px-6 py-5.5 text-left transition-all cursor-pointer font-sans"
                   >
-                    <div className="flex items-center gap-4">
-                      <span className={`text-[10px] font-black font-mono px-2.5 py-1 rounded-md transition-all duration-250 shrink-0 ${
-                        isOpen ? "bg-blue-100 text-blue-700" : "bg-slate-100 text-slate-500"
+                    <div className="flex items-center gap-4 mr-4">
+                      {/* Icon Wrapper */}
+                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${
+                        isOpen 
+                          ? "bg-blue-50 text-blue-700 border-blue-200 shadow-sm" 
+                          : "bg-slate-100 text-slate-500 border-slate-200/60"
                       }`}>
-                        {(idx + 1).toString().padStart(2, "0")}
-                      </span>
-                      <span className={`text-xs sm:text-[13px] font-black uppercase tracking-wider font-mono transition-colors duration-250 ${isOpen ? 'text-blue-700' : 'text-slate-800'}`}>
-                        {item.q}
-                      </span>
+                        <IconComponent className="h-5 w-5" />
+                      </div>
+                      
+                      <div className="space-y-1">
+                        <span className={`text-[9px] font-black font-mono uppercase tracking-widest ${
+                          isOpen ? "text-blue-600" : "text-slate-400"
+                        }`}>
+                          RESEARCH FAQ {(idx + 1).toString().padStart(2, "0")}
+                        </span>
+                        <h3 className={`text-xs sm:text-[13.5px] font-black uppercase tracking-wider font-mono transition-colors duration-200 leading-snug ${isOpen ? 'text-blue-700' : 'text-slate-850'}`}>
+                          {item.q}
+                        </h3>
+                      </div>
                     </div>
-                    <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                      isOpen ? "bg-blue-50 border-blue-200 text-blue-600 rotate-180 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-400"
+                    
+                    <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                      isOpen ? "bg-blue-100 border-blue-200 text-blue-600 rotate-180" : "bg-slate-50 border-slate-200 text-slate-400"
                     }`}>
                       <ChevronDown className="h-4 w-4" />
                     </div>
@@ -1213,7 +1229,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 pt-4 border-t border-slate-100 bg-gradient-to-b from-slate-50/50 to-white text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium pl-14 pr-10">
+                        <div className="px-6 pb-6 pt-1 text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans font-medium pl-20 pr-8 border-t border-slate-100 bg-gradient-to-b from-slate-50/50 to-white">
                           {item.a}
                         </div>
                       </motion.div>
