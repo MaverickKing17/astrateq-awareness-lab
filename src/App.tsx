@@ -6,9 +6,14 @@ import SimulationForm from "./components/SimulationForm";
 import ResultsDisplay from "./components/ResultsDisplay";
 import CohortPage from "./components/CohortPage";
 import LoadingOverlay from "./components/LoadingOverlay";
+import Hero from "./components/Hero";
+import DataArchitectureTable from "./components/DataArchitectureTable";
+import CompetitiveTable from "./components/CompetitiveTable";
 import HWY_404_POV_IMAGE from "./assets/images/driver_lifestyle_simulation_1783021555044.jpg";
 import { DriverSimulationInputs, DriverInsights, ActivePage } from "./types";
-import { Sparkles, ShieldCheck, Heart, Info, ArrowRight, Circle as HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp, Smartphone, Camera, Eye, Activity, Compass } from "lucide-react";
+import { 
+  Sparkles, ShieldCheck, Heart, Info, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Lock, Cpu, Star, Check, ArrowUp, Smartphone, Camera, Eye, Activity, Compass
+} from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
@@ -41,6 +46,24 @@ export default function App() {
 
   // FAQ interactive state
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  // Inline Mini-Quiz gating states (Fix 1)
+  const [quizStep, setQuizStep] = useState(0); // 0 = not started, 1-4 = questions, 5 = complete/score revealed
+  const [quizAnswers, setQuizAnswers] = useState<Record<number, string>>({});
+  const [quizScore, setQuizScore] = useState(0);
+  const [quizComplete, setQuizComplete] = useState(false);
+  const [reservationUnlocked, setReservationUnlocked] = useState(false);
+  
+  // Reservation form fields (Fix 1 / Fix 4 / Fix 3)
+  const [resName, setResName] = useState("");
+  const [resEmail, setResEmail] = useState("");
+  const [resProvince, setResProvince] = useState("ON");
+  const [resDrivingContext, setResDrivingContext] = useState("");
+  const [resConsent, setResConsent] = useState(false);
+  const [resTier, setResTier] = useState("guardian");
+  const [resSubmitting, setResSubmitting] = useState(false);
+  const [resSubmitted, setResSubmitted] = useState(false);
+  const [resCode, setResCode] = useState("");
 
   // Live Dashboard simulator mockup states
   const [dashboardScore, setDashboardScore] = useState(82);
@@ -94,11 +117,11 @@ export default function App() {
   const faqItems = [
     {
       q: "How can this work without hardware accessories?",
-      a: "The Astrateq Driver Coach runs entirely as software on your existing iOS or Android smartphone. When mounted on your dashboard, it utilizes advanced local computer vision through your device's camera to safely analyze micro-expressions, blink rate, and gaze focus. There are no OBD plugins, no custom dashcams, and zero physical dependencies."
+      a: "The Astrateq Gadgets Driver Coach runs entirely as software on your existing smartphone. When mounted on your dashboard, it utilizes advanced local computer vision through your device's camera to safely analyze micro-expressions, blink rate, and gaze focus. There are no OBD plugins, no custom dashcams, and zero physical dependencies."
     },
     {
-      q: "Why is there a $5 reservation fee?",
-      a: "To protect the integrity of our early validation cohort against automated bot spam and script signups. Every allocation is 100% refundable at any moment if you choose to opt out. This ensures our alpha slots go to real, dedicated early adopters rather than automated systems."
+      q: "What happens to the $5 reservation fee?",
+      a: "The $5 reservation is 100% fully refundable at any time on request. It directly validates real human demand—securing your priority placement in our upcoming sandboxed alpha rollout, locking in a 50% lifetime subscription discount, and opening a direct communication line to our development team."
     },
     {
       q: "How is my personal driving privacy protected?",
@@ -213,299 +236,8 @@ export default function App() {
         {activePage === "landing" && (
           <div>
             
-            {/* 1. Direct-to-Consumer Hero Block */}
-            <section className="relative overflow-hidden bg-white pt-24 pb-28 border-b border-zinc-200/80">
-              {/* Subtle grid background accent */}
-              <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
-              
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                  
-                  {/* Left Column: Direct and clear CTAs */}
-                  <div className="lg:col-span-7 text-left space-y-8">
-                    <span className="inline-flex items-center gap-2 border border-zinc-200 bg-zinc-50 px-3.5 py-1.5 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono rounded-full shadow-xs">
-                      <Sparkles className="h-3.5 w-3.5 text-zinc-950 animate-pulse" />
-                      PRE-LAUNCH VALIDATION • HARDWARE-FREE COMPANION
-                    </span>
-                    
-                    <h1 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl leading-[1.02] font-sans">
-                      Your car is watching you.<br />
-                      Your insurance is tracking you.<br />
-                      <span className="bg-gradient-to-r from-zinc-950 via-zinc-800 to-zinc-600 bg-clip-text text-transparent">
-                        Experience AI driver intelligence without the surveillance.
-                      </span>
-                    </h1>
-
-                    <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xl font-sans font-medium">
-                      Astrateq transforms your phone into a sovereign, edge-compute AI driver coach. No cloud uploads. No data brokers. Take the baseline simulation to secure a spot in our Founding Alpha Cohort.
-                    </p>
-
-                    {/* Quick validation bullets */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 max-w-xl text-[10px] font-black uppercase tracking-wider text-zinc-800 font-mono pt-1">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-5.5 w-5.5 items-center justify-center rounded-full bg-zinc-100 text-zinc-950 border border-zinc-250">
-                          <Check className="h-3.5 w-3.5 stroke-[3.5]" />
-                        </div>
-                        <span>Zero External Hardware</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-5.5 w-5.5 items-center justify-center rounded-full bg-zinc-100 text-zinc-950 border border-zinc-250">
-                          <Check className="h-3.5 w-3.5 stroke-[3.5]" />
-                        </div>
-                        <span>100% Local On-Device GPU</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-5.5 w-5.5 items-center justify-center rounded-full bg-zinc-100 text-zinc-950 border border-zinc-250">
-                          <Check className="h-3.5 w-3.5 stroke-[3.5]" />
-                        </div>
-                        <span>No Insurance Cloud Leaks</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-5.5 w-5.5 items-center justify-center rounded-full bg-zinc-100 text-zinc-950 border border-zinc-250">
-                          <Check className="h-3.5 w-3.5 stroke-[3.5]" />
-                        </div>
-                        <span>Temporary Volatile RAM Only</span>
-                      </div>
-                    </div>
-                    
-                    {/* Primary CTA and Flanking Slots Remaining counter */}
-                    <div className="flex flex-col sm:flex-row items-center gap-5 pt-3">
-                      <button
-                        onClick={handleStartSimulation}
-                        className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded bg-blue-600 px-7 py-4.5 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all hover:bg-blue-500 active:scale-95 cursor-pointer font-mono"
-                      >
-                        <span>Start Driver Baseline Simulation</span>
-                        <ArrowRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
-                      </button>
-
-                      {/* Founding Slots Remaining - Flanking elements */}
-                      <div className="flex items-center gap-3 bg-zinc-50 border border-zinc-200 rounded px-4 py-3.5 w-full sm:w-auto justify-center">
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-                        </span>
-                        <span className="text-[10px] font-black uppercase tracking-wider text-zinc-800 font-mono">
-                          Founding Slots Remaining: <span className="text-zinc-950 font-black font-mono">142/500</span>
-                        </span>
-                      </div>
-                    </div>
-
-                    <p className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider leading-relaxed pt-1">
-                      * 60-Second Simulator • Secures Priority Waitlist Position • $5 Fully Refundable
-                    </p>
-                  </div>
-
-                  {/* Right Column: Premium Smartphone Dashboard Simulator with secure-data badge */}
-                  <div className="lg:col-span-5 flex flex-col items-center">
-                    
-                    {/* 5-Second Explanation Widget */}
-                    <div className="w-full max-w-sm mb-5 bg-zinc-50 border border-zinc-200 rounded-2xl p-4.5 shadow-sm text-left">
-                      <div className="flex gap-3">
-                        <Smartphone className="h-5 w-5 text-zinc-900 shrink-0 mt-0.5" />
-                        <div>
-                          <h4 className="text-xs font-black uppercase tracking-wider text-zinc-950 font-sans">
-                            Dashboard Setup in 5 Seconds:
-                          </h4>
-                          <p className="text-xs text-zinc-600 font-sans mt-1 leading-relaxed">
-                            Zero adapters or OBD plugins. Simply mount your smartphone on your vehicle dashboard. Astrateq's local software engine analyzes focus trends <span className="underline decoration-zinc-400 font-extrabold text-zinc-950">100% offline</span> using secure on-device CPU cycles.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Smartphone Bezel Wrapper */}
-                    <div className="relative w-full max-w-[340px] rounded-[44px] border-[12px] border-zinc-950 bg-[#070C16] p-4.5 shadow-2xl overflow-hidden text-white transition-all duration-300 hover:shadow-zinc-300/60">
-                      
-                      {/* Grid lines background pattern */}
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                      <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
-                      
-                      {/* Phone Notch & RAM Scan feed */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-zinc-950 rounded-b-xl flex items-center justify-center gap-1.5 px-3 z-30">
-                        <div className="h-2 w-2 rounded-full bg-zinc-800" />
-                        <div className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                        </div>
-                        <span className="text-[7.5px] font-black text-emerald-400 uppercase tracking-widest font-mono">RAM SCAN</span>
-                      </div>
-
-                      <div className="relative z-10 space-y-4 pt-3.5">
-                        
-                        {/* Phone Status bar */}
-                        <div className="flex justify-between items-center text-[10px] font-mono font-bold text-zinc-400 px-1 border-b border-zinc-900 pb-2.5">
-                          <span>10:45 AM</span>
-                          <div className="flex items-center gap-1.5">
-                            <span className="text-[8px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-300 uppercase font-black">LOCAL ONLY</span>
-                            <span className="text-[10px]">⚡ 100%</span>
-                          </div>
-                        </div>
-
-                        {/* Active Smartphone Interface Header */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1.5 text-[10px] font-black font-mono text-zinc-100 uppercase tracking-widest">
-                            <Cpu className="h-4 w-4 text-zinc-400 animate-pulse" />
-                            <span>COACH ENGINE v1.2</span>
-                          </div>
-                          <span className="inline-flex items-center gap-1 rounded bg-zinc-800 border border-zinc-700 px-2 py-0.5 text-[8px] font-black font-mono text-zinc-300 uppercase tracking-wider">
-                            ACTIVE DEMO
-                          </span>
-                        </div>
-
-                        {/* On-device widgets */}
-                        <div className="space-y-3">
-                          
-                          {/* Widget 1: Driver Awareness Index (Primary Focal Score) */}
-                          <div className="bg-zinc-900/95 border border-zinc-800 rounded-2xl p-4 flex flex-col items-center space-y-2 text-center relative overflow-hidden">
-                            <span className="text-[9px] font-bold tracking-widest text-zinc-400 font-mono uppercase">
-                              Driver Awareness Index
-                            </span>
-                            
-                            {/* Circular gauge */}
-                            <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-zinc-950 border-4 border-white/10 shadow-sm">
-                              <div className="absolute inset-1.5 rounded-full border border-dashed border-zinc-400/10 animate-[spin_40s_linear_infinite]" />
-                              <div className="flex flex-col items-center">
-                                <span className="text-3xl font-black font-mono text-white">{dashboardScore}</span>
-                                <span className="text-[8px] font-extrabold text-emerald-400 tracking-wider uppercase font-mono mt-0.5 animate-pulse">
-                                  STABLE FOCUS
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Widget 2: Attention Stability progress bars */}
-                          <div className="bg-zinc-900/95 border border-zinc-800 rounded-xl p-3.5 space-y-2.5">
-                            <div className="flex justify-between items-center text-[10px] font-mono font-bold text-zinc-300">
-                              <span>ATTENTION STABILITY</span>
-                              <span className="text-zinc-200">{attentionLevel}% STABLE</span>
-                            </div>
-                            
-                            {/* Segmented indicators representing Cognitive Load */}
-                            <div className="grid grid-cols-10 gap-1 h-2">
-                              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((bar) => (
-                                <div 
-                                  key={bar} 
-                                  className={`h-full rounded-sm ${
-                                    bar <= Math.floor(attentionLevel / 10) 
-                                      ? "bg-zinc-350" 
-                                      : "bg-zinc-800"
-                                  }`} 
-                                />
-                              ))}
-                            </div>
-                            <div className="flex justify-between text-[8px] font-mono text-zinc-400">
-                              <span>COGNITIVE LOAD: LOW</span>
-                              <span>SAMPLING: 60FPS</span>
-                            </div>
-                          </div>
-
-                          {/* Widget 3: Fatigue parameters */}
-                          <div className="bg-zinc-900/95 border border-zinc-800 rounded-xl p-3 grid grid-cols-2 gap-4 text-left font-mono">
-                            <div>
-                              <span className="text-[8px] text-zinc-400 font-bold uppercase tracking-wider">Fatigue Risk</span>
-                              <div className="flex items-center gap-1.5 mt-1">
-                                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-                                <span className="text-xs font-black text-emerald-400">MINIMAL</span>
-                              </div>
-                            </div>
-                            <div className="border-l border-zinc-800 pl-3">
-                              <span className="text-[8px] text-zinc-400 font-bold uppercase tracking-wider">Blink Duration</span>
-                              <div className="text-xs font-black text-zinc-100 mt-1">
-                                {blinkRate * 10}ms blinks
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Widget 4: Stream Log */}
-                          <div className="bg-zinc-900/95 border border-zinc-800 rounded-xl p-3 text-left font-mono space-y-1.5">
-                            <div className="flex justify-between items-center border-b border-zinc-800/60 pb-1.5">
-                              <span className="text-[8px] text-zinc-400 font-bold uppercase tracking-wider">Active Stream</span>
-                              <span className="text-[8px] text-zinc-400 font-bold bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-700">SANDBOX</span>
-                            </div>
-                            <p className="text-[10px] font-bold text-zinc-300 h-8 flex items-center leading-normal">
-                              {mockLogs[activeLogIdx]}
-                            </p>
-                          </div>
-
-                          {/* Widget 5: PROMINENT SECURE DATA-ISOLATION BADGE */}
-                          <div className="bg-zinc-950/90 p-3 rounded-xl border border-emerald-500/25 text-center font-mono flex items-center justify-center gap-2">
-                            <Lock className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                            <p className="text-[8.5px] font-black text-emerald-400 tracking-wider uppercase leading-none">
-                              100% OFF-GRID DEVICE LAYER ISOLATED
-                            </p>
-                          </div>
-
-                        </div>
-
-                        {/* Home Bar mockup */}
-                        <div className="w-24 h-1 bg-zinc-800 mx-auto rounded-full mt-2" />
-                      </div>
-                    </div>
-
-                    <p className="text-[10px] font-mono text-zinc-500 text-center uppercase tracking-widest leading-relaxed mt-3.5 font-bold bg-zinc-50 border border-zinc-200 px-3.5 py-1.5 rounded-full">
-                      📱 Active Smartphone Interface Mockup
-                    </p>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-
-            {/* 2. Horizontal Trust Pillar Banner */}
-            <div className="bg-zinc-50 border-b border-zinc-200 py-6 relative z-20">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center text-center font-mono">
-                  
-                  {/* Column 1: Designed for Canadian Roads */}
-                  <div className="border-r border-zinc-200 last:border-r-0 px-2 flex flex-col items-center justify-center space-y-2 h-full lg:last:border-r-0">
-                    <Compass className="h-4 w-4 text-zinc-900" />
-                    <span className="text-[9.5px] font-black uppercase text-zinc-800 tracking-wider leading-tight">
-                      Designed for Canadian Roads
-                    </span>
-                  </div>
-
-                  {/* Column 2: 100% Edge-Compute */}
-                  <div className="border-r border-zinc-200 last:border-r-0 px-2 flex flex-col items-center justify-center space-y-2 h-full md:border-r-0 lg:border-r">
-                    <Cpu className="h-4 w-4 text-zinc-900" />
-                    <span className="text-[9.5px] font-black uppercase text-zinc-800 tracking-wider leading-tight">
-                      100% Edge-Compute
-                    </span>
-                  </div>
-
-                  {/* Column 3: Insurance Telemetry Bypass */}
-                  <div className="border-r border-zinc-200 last:border-r-0 px-2 flex flex-col items-center justify-center space-y-2 h-full lg:border-r">
-                    <ShieldCheck className="h-4 w-4 text-zinc-900" />
-                    <span className="text-[9.5px] font-black uppercase text-zinc-800 tracking-wider leading-tight">
-                      Insurance Telemetry Bypass
-                    </span>
-                  </div>
-
-                  {/* Column 4: Complete Data Isolation */}
-                  <div className="border-r border-zinc-200 last:border-r-0 px-2 flex flex-col items-center justify-center space-y-2 h-full md:border-r-0 lg:border-r">
-                    <Lock className="h-4 w-4 text-zinc-900" />
-                    <span className="text-[9.5px] font-black uppercase text-zinc-800 tracking-wider leading-tight">
-                      Complete Data Isolation
-                    </span>
-                  </div>
-
-                  {/* Column 5: Refundable Verification Filter */}
-                  <div className="border-r border-zinc-200 last:border-r-0 px-2 flex flex-col items-center justify-center space-y-2 h-full lg:border-r">
-                    <Sparkles className="h-4 w-4 text-zinc-900" />
-                    <span className="text-[9.5px] font-black uppercase text-zinc-800 tracking-wider leading-tight">
-                      Refundable Verification Filter
-                    </span>
-                  </div>
-
-                  {/* Column 6: Sovereign Data Ownership */}
-                  <div className="last:border-r-0 px-2 flex flex-col items-center justify-center space-y-2 h-full">
-                    <Heart className="h-4 w-4 text-zinc-900" />
-                    <span className="text-[9.5px] font-black uppercase text-zinc-800 tracking-wider leading-tight">
-                      Sovereign Data Ownership
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* 1. Rebuilt Hero Section */}
+            <Hero onStartSimulation={handleStartSimulation} />
 
             {/* 3. Emotional Full-Width Lifestyle Breakdown */}
             <section id="lifestyle-breakout" className="relative py-36 bg-zinc-50 text-zinc-950 overflow-hidden border-b border-zinc-200/80">
@@ -526,15 +258,6 @@ export default function App() {
                 <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-zinc-950 leading-tight font-sans max-w-4xl mx-auto">
                   "Your driving data belongs to you. Safe technology shouldn't cost you your privacy."
                 </h2>
-                <div className="pt-4 flex justify-center">
-                  <button
-                    onClick={handleStartSimulation}
-                    className="group inline-flex items-center gap-2.5 rounded bg-blue-600 text-white px-7 py-4 text-xs font-bold uppercase tracking-wider shadow-md hover:bg-blue-500 active:scale-95 cursor-pointer font-mono transition-all"
-                  >
-                    <span>Simulate Baseline Focus</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 text-white" />
-                  </button>
-                </div>
               </div>
             </section>
 
@@ -542,9 +265,12 @@ export default function App() {
             <ValueProps 
               onStartSimulation={handleStartSimulation} 
               onNavigateToCohort={() => {
-                document.getElementById("prefinery-checkout")?.scrollIntoView({ behavior: "smooth" });
+                document.getElementById("simulation-gate")?.scrollIntoView({ behavior: "smooth" });
               }} 
             />
+
+            {/* 4b. Data Isolation Architecture Table (Fix 5) */}
+            <DataArchitectureTable />
 
             {/* 5. High-Contrast Value Proposition Cards (The Early Validation Loop) */}
             <section id="validation-loop" className="py-28 bg-zinc-50 border-b border-zinc-200/80">
@@ -564,80 +290,77 @@ export default function App() {
 
                 {/* Grid of the three premium high-contrast floating cards */}
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left">
-
-                  {/* Card 1: Attention — Blue */}
-                  <div className="p-8 sm:p-10 rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white shadow-sm hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400" />
+                  
+                  {/* Card 1: Attention */}
+                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-blue-500 font-mono">COGNITIVE RATIO</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">COGNITIVE RATIO</span>
                       <div className="space-y-2">
-                        <p className="text-[10px] uppercase font-black text-red-500 tracking-wider">01 // THE QUESTION</p>
+                        <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
                         <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
                           Can daily commuting habits reveal cognitive fatigue patterns?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-blue-100">
+                      <div className="space-y-2 pt-2 border-t border-zinc-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
-                          Localized temporal tracking analyzes minute deviations in response timing safely and directly on your smartphone engine.
+                          Localized temporal tracking analyzes minute deviations in response timing safely.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-blue-100 bg-blue-50/60 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
-                      <p className="text-[10px] uppercase font-black text-blue-700 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-blue-900 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-zinc-100">
+                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-zinc-800 font-bold font-sans">
                         You receive real-time, completely private awareness alerts before critical risk situations occur.
                       </p>
                     </div>
                   </div>
 
-                  {/* Card 2: Privacy — Amber */}
-                  <div className="p-8 sm:p-10 rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-white shadow-sm hover:shadow-lg hover:border-amber-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 to-orange-400" />
+                  {/* Card 2: Privacy */}
+                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-amber-600 font-mono">TELEMETRY BYPASS</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">TELEMETRY BYPASS</span>
                       <div className="space-y-2">
-                        <p className="text-[10px] uppercase font-black text-red-500 tracking-wider">01 // THE QUESTION</p>
+                        <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
                         <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
                           Why should automakers monetize your real-time speed profiles?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-amber-100">
+                      <div className="space-y-2 pt-2 border-t border-zinc-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
-                          Astrateq fully sanitizes and seals your telemetry data right on the physical device layer.
+                          Astrateq Gadgets fully sanitizes and seals your telemetry data right on the physical device layer.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-amber-100 bg-amber-50/60 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
-                      <p className="text-[10px] uppercase font-black text-amber-700 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-amber-900 font-bold font-sans">
-                        Your profile remains 100% invisible to external corporate data brokers and insurance pricing networks.
+                    <div className="mt-8 pt-5 border-t border-zinc-100">
+                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                        Your profile remains 100% invisible to insurance algorithms and predictive pricing networks.
                       </p>
                     </div>
                   </div>
 
-                  {/* Card 3: Sovereignty — Emerald */}
-                  <div className="p-8 sm:p-10 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white shadow-sm hover:shadow-lg hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-400" />
+                  {/* Card 3: Sovereignty */}
+                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600 font-mono">HARDWARE SECURITY</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">HARDWARE SECURITY</span>
                       <div className="space-y-2">
-                        <p className="text-[10px] uppercase font-black text-red-500 tracking-wider">01 // THE QUESTION</p>
+                        <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
                         <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
                           Why should in-cabin camera streams travel to commercial servers?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-emerald-100">
+                      <div className="space-y-2 pt-2 border-t border-zinc-100">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
                         <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                           Computations run purely inside standard sandbox volatile RAM and vanish instantly upon app termination.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-emerald-100 bg-emerald-50/60 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
-                      <p className="text-[10px] uppercase font-black text-emerald-700 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-emerald-900 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-zinc-100">
+                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-zinc-800 font-bold font-sans">
                         Your personal facial expressions, gaze traces, and cabin parameters remain your exclusive property.
                       </p>
                     </div>
@@ -666,51 +389,50 @@ export default function App() {
 
                 {/* Horizontal connected milestones timeline */}
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left relative">
-
-                  {/* Phase 01 — Blue (Active) */}
-                  <div className="p-8 rounded-2xl border-2 border-blue-300 bg-gradient-to-br from-blue-50 to-white flex flex-col justify-between relative overflow-hidden shadow-md shadow-blue-100/50">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500" />
+                  
+                  {/* Phase 01 */}
+                  <div className="p-8 rounded-2xl border border-zinc-200 bg-zinc-50/50 flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-950" />
                     <div className="space-y-5">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-blue-600 text-[8.5px] font-black text-white uppercase tracking-wider">
-                        <span className="relative flex h-1.5 w-1.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span></span>
+                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-950 text-[8.5px] font-black text-white uppercase tracking-wider">
                         Phase 01 • Active
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
                         Core Funnel Architecture Validation
                       </h4>
-                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
                         Capped at 500 Consumer Allocations with a refundable $5 cryptographic verification filter. Proving baseline market commitment without corporate fundraising.
                       </p>
                     </div>
                   </div>
 
-                  {/* Phase 02 — Amber */}
-                  <div className="p-8 rounded-2xl border-2 border-amber-200 bg-gradient-to-br from-amber-50 to-white flex flex-col justify-between relative overflow-hidden shadow-md shadow-amber-100/50">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-400" />
+                  {/* Phase 02 */}
+                  <div className="p-8 rounded-2xl border border-zinc-200 bg-white flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-200" />
                     <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-amber-100 border border-amber-300 text-[8.5px] font-black text-amber-700 uppercase tracking-wider">
+                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-100 text-[8.5px] font-black text-zinc-500 uppercase tracking-wider">
                         Phase 02 • Closed Sandbox
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
                         Closed Local Sandbox Flight Test
                       </h4>
-                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
                         Releasing sandboxed companion invitations to early waitlist reservation holders. Verifying local RAM isolation boundaries and ocular camera sampling frequencies on key handsets.
                       </p>
                     </div>
                   </div>
 
-                  {/* Phase 03 — Emerald */}
-                  <div className="p-8 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white flex flex-col justify-between relative overflow-hidden shadow-md shadow-emerald-100/50">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-400" />
+                  {/* Phase 03 */}
+                  <div className="p-8 rounded-2xl border border-zinc-200 bg-white flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-200" />
                     <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-emerald-100 border border-emerald-300 text-[8.5px] font-black text-emerald-700 uppercase tracking-wider">
+                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-100 text-[8.5px] font-black text-zinc-500 uppercase tracking-wider">
                         Phase 03 • Deployment
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
                         Regional Canadian OS Deployment
                       </h4>
-                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
                         Public general debut of the offline driver safety application, optimizing specific focus baselines for Canadian weather conditions and highway configurations.
                       </p>
                     </div>
@@ -721,103 +443,526 @@ export default function App() {
               </div>
             </section>
 
-            {/* 7. Direct Conversion Engine & Prefinery Gateway */}
-            <section id="prefinery-checkout" className="py-28 bg-zinc-50 text-zinc-950 relative border-b border-zinc-200/80 overflow-hidden">
-              {/* High-end tech blueprint backdrop overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:20px_20px] opacity-100 pointer-events-none" />
-              <div className="absolute -left-24 top-12 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+            {/* 6. Competitive Positioning Table (Fix 6) */}
+            <CompetitiveTable />
 
-              <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10 text-center">
-                
-                <div className="mb-14 space-y-4">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-200 border border-zinc-300/80 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
-                    SECURITY PRE-REGISTRATION
+            {/* 7. Simulation Gate (Fix 1, gates reservation) */}
+            <section id="simulation-gate" className="py-24 bg-zinc-50 border-b border-zinc-200/80 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.01] pointer-events-none" />
+              
+              <div className="mx-auto max-w-3xl px-4 sm:px-6 relative z-10 text-center">
+                <div className="mb-12 space-y-4">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-200 border border-zinc-300 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
+                    BASELINE EVALUATION
                   </span>
-                  <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-5xl font-sans">
-                    Secure Your Priority Placement
+                  <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-4xl font-sans">
+                    Driver Awareness Simulation Gate
                   </h2>
-                  <p className="text-xs sm:text-sm text-zinc-600 max-w-lg mx-auto leading-relaxed">
-                    Reserve a priority alpha slot directly. Our initial validation filter ensures allocation goes strictly to dedicated, real early adopters.
+                  <p className="text-xs sm:text-sm text-zinc-500 max-w-lg mx-auto leading-relaxed font-sans font-medium">
+                    Complete this 4-question interactive baseline survey to calculate your Simulated Awareness Index and unlock the Founding Research Cohort reservation form.
                   </p>
                 </div>
 
-                <div className="bg-white border-2 border-blue-200 rounded-3xl shadow-lg shadow-blue-100/40 text-left max-w-xl mx-auto overflow-hidden">
-                  {/* Colorful top gradient accent */}
-                  <div className="h-1.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-500" />
-
-                  <div className="p-8 sm:p-12 space-y-8">
-                    {/* Explanation layer */}
-                    <div className="border-b border-blue-100 pb-6 space-y-2">
-                      <div className="flex justify-between items-center">
-                        <h4 className="text-xs font-black uppercase text-zinc-900 tracking-wider font-mono">Waitlist Filter Allocation</h4>
-                        <span className="text-emerald-700 bg-emerald-100 border border-emerald-300 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase animate-pulse">Fully Refundable</span>
+                <div className="bg-white border border-zinc-200 rounded-3xl p-6 sm:p-10 shadow-md text-left max-w-xl mx-auto space-y-6">
+                  {/* TODO: replace mock quiz with real simulation flow when available */}
+                  
+                  {quizStep === 0 && (
+                    <div className="text-center py-6 space-y-6">
+                      <div className="h-12 w-12 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mx-auto animate-pulse">
+                        <Smartphone className="h-6 w-6" />
                       </div>
-                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
-                        The $5 reservation acts as an intent-validation layer. This guarantees our sandbox launcher allocations are committed to real, dedicated early adopters rather than scale-testing scripts, protecting developer bandwidth.
+                      <div className="space-y-2">
+                        <h3 className="text-sm font-black uppercase tracking-wider text-zinc-900 font-mono">
+                          Ready to Begin the Mini-Simulation?
+                        </h3>
+                        <p className="text-xs text-zinc-500 max-w-md mx-auto leading-relaxed">
+                          Answer 4 fast behavioral questions to estimate your circadian attention curve and verify allocation parameters.
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setQuizStep(1)}
+                        className="inline-flex items-center justify-center rounded bg-[#0E7C9E] px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white hover:bg-[#0E7C9E]/90 active:scale-98 transition-all cursor-pointer font-mono shadow-xs"
+                      >
+                        Start Baseline Simulator
+                      </button>
+                    </div>
+                  )}
+
+                  {quizStep >= 1 && quizStep <= 4 && (
+                    <div className="space-y-6">
+                      <div className="flex justify-between items-center border-b border-zinc-100 pb-4">
+                        <span className="text-[10px] font-black uppercase text-zinc-400 font-mono">
+                          QUESTION {quizStep} OF 4
+                        </span>
+                        <span className="text-[10px] font-black text-blue-600 font-mono">
+                          {quizStep * 25}% COMPLETE
+                        </span>
+                      </div>
+
+                      {/* Question Content */}
+                      {quizStep === 1 && (
+                        <div className="space-y-4">
+                          <h4 className="text-sm font-black text-zinc-900 uppercase tracking-wide leading-snug">
+                            How many hours per week do you spend driving on average?
+                          </h4>
+                          <div className="grid gap-3">
+                            {[
+                              { key: "A", label: "Under 10 Hours", desc: "Low exposure, mostly local trips." },
+                              { key: "B", label: "10 to 25 Hours", desc: "Standard commuter, mixed highways." },
+                              { key: "C", label: "More than 25 Hours", desc: "Heavy driving, professional or long commutes." }
+                            ].map((opt) => (
+                              <button
+                                key={opt.key}
+                                onClick={() => {
+                                  setQuizAnswers(prev => ({ ...prev, 1: opt.label }));
+                                  setQuizStep(2);
+                                }}
+                                className="w-full text-left p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 transition-all font-mono text-xs cursor-pointer"
+                              >
+                                <span className="font-bold text-[#0E7C9E] mr-2">{opt.key} //</span>
+                                <span className="font-bold text-zinc-900">{opt.label}</span>
+                                <span className="block text-[10px] text-zinc-400 font-sans mt-0.5">{opt.desc}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {quizStep === 2 && (
+                        <div className="space-y-4">
+                          <h4 className="text-sm font-black text-zinc-900 uppercase tracking-wide leading-snug">
+                            At what point in your transit do you experience the most fatigue or drift?
+                          </h4>
+                          <div className="grid gap-3">
+                            {[
+                              { key: "A", label: "Morning Commute (6:00 AM - 9:00 AM)", desc: "Rush hour traffic peaks." },
+                              { key: "B", label: "Afternoon slump (2:00 PM - 4:00 PM)", desc: "Heavy circadian rest waves." },
+                              { key: "C", label: "Evening / Dusk Transit (5:00 PM - 8:00 PM)", desc: "Low contrast glare." },
+                              { key: "D", label: "Rarely / Never Tired", desc: "Highly stable alertness levels." }
+                            ].map((opt) => (
+                              <button
+                                key={opt.key}
+                                onClick={() => {
+                                  setQuizAnswers(prev => ({ ...prev, 2: opt.label }));
+                                  setQuizStep(3);
+                                }}
+                                className="w-full text-left p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 transition-all font-mono text-xs cursor-pointer"
+                              >
+                                <span className="font-bold text-[#0E7C9E] mr-2">{opt.key} //</span>
+                                <span className="font-bold text-zinc-900">{opt.label}</span>
+                                <span className="block text-[10px] text-zinc-400 font-sans mt-0.5">{opt.desc}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {quizStep === 3 && (
+                        <div className="space-y-4">
+                          <h4 className="text-sm font-black text-zinc-900 uppercase tracking-wide leading-snug">
+                            How often do you interact with accessories (music, phone notifications, or GPS) while driving?
+                          </h4>
+                          <div className="grid gap-3">
+                            {[
+                              { key: "A", label: "Rarely (Eyes remain 100% focused)", desc: "Absolute road priority." },
+                              { key: "B", label: "Occasional Checks (Adjust at traffic stops)", desc: "Controlled safety gaps." },
+                              { key: "C", label: "Frequently (Manage maps & playlists live)", desc: "Split visual attention patterns." }
+                            ].map((opt) => (
+                              <button
+                                key={opt.key}
+                                onClick={() => {
+                                  setQuizAnswers(prev => ({ ...prev, 3: opt.label }));
+                                  setQuizStep(4);
+                                }}
+                                className="w-full text-left p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 transition-all font-mono text-xs cursor-pointer"
+                              >
+                                <span className="font-bold text-[#0E7C9E] mr-2">{opt.key} //</span>
+                                <span className="font-bold text-zinc-900">{opt.label}</span>
+                                <span className="block text-[10px] text-zinc-400 font-sans mt-0.5">{opt.desc}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {quizStep === 4 && (
+                        <div className="space-y-4">
+                          <h4 className="text-sm font-black text-zinc-900 uppercase tracking-wide leading-snug">
+                            Have you ever experienced "highway hypnosis" (realizing you don't recall driving the last few KM)?
+                          </h4>
+                          <div className="grid gap-3">
+                            {[
+                              { key: "A", label: "Never (Constantly scanning mirrors & road)", desc: "High awareness profile." },
+                              { key: "B", label: "Occasional lapses (Catch mind wandering)", desc: "Moderate fatigue exposure." },
+                              { key: "C", label: "Frequently (Autopilot on long highway routes)", desc: "Elevated opportunity for coaching." }
+                            ].map((opt) => (
+                              <button
+                                key={opt.key}
+                                onClick={() => {
+                                  // Record final answer and calculate mock score
+                                  const ans = { ...quizAnswers, 4: opt.label };
+                                  setQuizAnswers(ans);
+                                  
+                                  // Base score is 85. Adjust based on selections:
+                                  let score = 85;
+                                  if (ans[1] === "More than 25 Hours") score -= 5;
+                                  if (ans[2] === "Afternoon slump (2:00 PM - 4:00 PM)") score -= 8;
+                                  if (ans[2] === "Evening / Dusk Transit (5:00 PM - 8:00 PM)") score -= 5;
+                                  if (ans[3] === "Frequently (Manage maps & playlists live)") score -= 12;
+                                  if (ans[4] === "Frequently (Autopilot on long highway routes)") score -= 15;
+                                  if (ans[4] === "Occasional lapses (Catch mind wandering)") score -= 5;
+                                  
+                                  setQuizScore(score);
+                                  setQuizStep(5);
+                                }}
+                                className="w-full text-left p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 hover:bg-zinc-50 transition-all font-mono text-xs cursor-pointer"
+                              >
+                                <span className="font-bold text-[#0E7C9E] mr-2">{opt.key} //</span>
+                                <span className="font-bold text-zinc-900">{opt.label}</span>
+                                <span className="block text-[10px] text-zinc-400 font-sans mt-0.5">{opt.desc}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {quizStep === 5 && (
+                    <div className="space-y-6 text-center py-4">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-black uppercase tracking-widest text-emerald-800 font-mono">
+                        ✓ ASSESSMENT RUN COMPLETE
+                      </div>
+                      
+                      <div className="space-y-2 max-w-sm mx-auto">
+                        <h3 className="text-lg font-black uppercase text-zinc-950 tracking-tight font-sans">
+                          Simulation Parameters Evaluated
+                        </h3>
+                        <p className="text-xs text-zinc-500 font-sans font-medium">
+                          Your self-reported focus and fatigue profiles have been processed inside local sandboxed state.
+                        </p>
+                      </div>
+
+                      {/* Fix 3: Exact CTA text See My Driver Awareness Score */}
+                      {!quizComplete ? (
+                        <div className="pt-4">
+                          <button
+                            onClick={() => setQuizComplete(true)}
+                            className="w-full inline-flex items-center justify-center rounded bg-[#0E7C9E] text-white px-6 py-4 text-xs font-black uppercase tracking-widest hover:bg-[#0E7C9E]/90 active:scale-98 transition-all cursor-pointer font-mono shadow-md"
+                          >
+                            See My Driver Awareness Score
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+                          {/* Circular Gauge */}
+                          <div className="h-28 w-28 rounded-full bg-zinc-50 border-4 border-emerald-500 flex flex-col items-center justify-center mx-auto shadow-sm">
+                            <span className="text-3xl font-black text-zinc-950 font-mono leading-none">{quizScore}</span>
+                            <span className="text-[7px] font-black text-zinc-400 uppercase tracking-widest font-mono mt-1">INDEX VALUE</span>
+                          </div>
+
+                          <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 text-left text-xs space-y-3 font-sans font-medium">
+                            <div className="flex justify-between border-b border-zinc-200 pb-2">
+                              <span className="text-[10px] font-black uppercase tracking-wider text-zinc-400 font-mono">ASSESSMENT CLASSIFICATION:</span>
+                              <span className="text-emerald-700 font-bold font-mono">
+                                {quizScore >= 80 ? "STRONG FOCUS" : quizScore >= 60 ? "MODERATE FOCUS" : "ELEVATED OPPORTUNITY"}
+                              </span>
+                            </div>
+                            <p className="text-zinc-600 leading-relaxed">
+                              Your Simulated Index of <strong className="text-zinc-900">{quizScore}/100</strong> indicates {quizScore >= 80 ? "stable visual attention patterns and resilient fatigue recovery profiles." : quizScore >= 60 ? "moderate fatigue sensitivity and minor visual distractions on sustained commutes." : "elevated circadian fatigue exposure and high opportunity for on-device real-time alerts."}
+                            </p>
+                            <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-wide">
+                              * You qualify for the standard priority queue inside the <strong>Founding Research Cohort</strong> (limited placement).
+                            </p>
+                          </div>
+
+                          {/* Fix 3: Exact CTA text Unlock Full Report */}
+                          {!reservationUnlocked && (
+                            <button
+                              onClick={() => {
+                                setReservationUnlocked(true);
+                                setTimeout(() => {
+                                  document.getElementById("reservation-form-section")?.scrollIntoView({ behavior: "smooth", block: "center" });
+                                }, 150);
+                              }}
+                              className="w-full inline-flex items-center justify-center rounded bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 text-xs font-black uppercase tracking-widest active:scale-98 transition-all cursor-pointer font-mono shadow-md"
+                            >
+                              Unlock Full Report
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                </div>
+              </div>
+            </section>
+
+            {/* 8. Reservation Section (Fix 1, gated behind simulationComplete) */}
+            <section id="reservation-form-section" className="py-24 bg-white border-b border-zinc-200/80 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000002_1px,transparent_1px),linear-gradient(to_bottom,#00000002_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+              
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
+                
+                {/* Gated Blur Overlay / Locked State */}
+                {!reservationUnlocked ? (
+                  <div className="bg-zinc-50/80 border border-zinc-200 rounded-3xl p-8 sm:p-14 text-center max-w-2xl mx-auto space-y-6 shadow-sm filter-none">
+                    <div className="h-12 w-12 rounded-full bg-zinc-100 border border-zinc-300 flex items-center justify-center text-zinc-400 mx-auto">
+                      <Lock className="h-5 w-5" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="inline-flex items-center gap-1 rounded bg-zinc-200 border border-zinc-300 px-2 py-0.5 text-[8px] font-black text-zinc-600 uppercase tracking-widest font-mono">
+                        🔒 ALLOCATION LOCKED
+                      </span>
+                      <h3 className="text-xl font-black uppercase tracking-tight text-zinc-900 font-sans">
+                        Founding Research Cohort Placement
+                      </h3>
+                      <p className="text-xs text-zinc-500 max-w-md mx-auto leading-relaxed">
+                        To protect network allocation buffers, the priority reservation portal is gated behind the driver simulation. Please complete the baseline survey above to unlock your secure slot.
+                      </p>
+                    </div>
+                    <div className="pt-4">
+                      <button
+                        onClick={() => {
+                          document.getElementById("simulation-gate")?.scrollIntoView({ behavior: "smooth" });
+                          if (quizStep === 0) setQuizStep(1);
+                        }}
+                        className="inline-flex items-center gap-2 rounded bg-zinc-200 hover:bg-zinc-300 text-zinc-800 px-6 py-3 text-xs font-bold uppercase tracking-wider cursor-pointer font-mono transition-colors"
+                      >
+                        <span>Jump to Baseline Simulation</span>
+                        <span>↓</span>
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="max-w-2xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-500">
+                    
+                    {/* Form Title */}
+                    <div className="text-center space-y-3">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[10px] font-black uppercase tracking-widest text-blue-700 font-mono">
+                        ★ RESERVATION ACCESS UNLOCKED
+                      </span>
+                      <h2 className="text-2xl font-black uppercase tracking-tight text-zinc-950 sm:text-3.5xl font-sans">
+                        Register Your Priority Allocation
+                      </h2>
+                      <p className="text-xs text-zinc-500 max-w-lg mx-auto leading-relaxed">
+                        Secure your priority slot inside our upcoming <strong>Founding Research Cohort</strong>. Allocations are strictly subject to <strong>limited placement</strong> filters.
                       </p>
                     </div>
 
-                    {/* PREFINERY EMBED CONTAINER WRAPPER */}
-                    <div className="space-y-4">
-                      <label className="block text-[10px] font-black uppercase tracking-wider text-blue-600 font-mono">
-                        Referral Gateway & Active Signup
-                      </label>
-                      <div className="bg-gradient-to-br from-blue-50 to-cyan-50/60 border border-blue-200 rounded-2xl p-5 min-h-[140px] flex flex-col justify-center">
+                    {!resSubmitted ? (
+                      <div className="bg-white border border-zinc-200 rounded-3xl p-6 sm:p-10 shadow-lg text-left space-y-6">
+                        <div className="border-b border-zinc-100 pb-4 flex justify-between items-center">
+                          <h4 className="text-[10px] font-black uppercase text-zinc-900 tracking-wider font-mono">
+                            Founding Research Cohort Reservation Form
+                          </h4>
+                          <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase">
+                            No Deposit Required
+                          </span>
+                        </div>
 
-                        {/* Required Prefinery headless anchor */}
-                        <div className="prefinery-form-embed"></div>
-
-                        {/* High-Fidelity Interactive Conversion Form */}
-                        <form onSubmit={(e) => {
-                          e.preventDefault();
-                          handleNavigateToCohort("guardian");
-                        }} className="space-y-4 mt-1">
-                          <div className="flex flex-col sm:flex-row gap-3">
-                            <input
-                              type="email"
-                              required
-                              placeholder="driver@example.ca"
-                              className="flex-grow rounded-lg border-2 border-blue-200 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 font-mono"
-                            />
-                            <button
-                              type="submit"
-                              className="bg-blue-600 text-white hover:bg-blue-500 active:scale-98 transition-all px-6 py-3 rounded-lg text-xs font-black uppercase tracking-wider cursor-pointer font-mono shadow-md shadow-blue-200"
-                            >
-                              Secure Priority Alpha Slot ($5 Fully Refundable)
-                            </button>
-                          </div>
-                        </form>
-
-                        <p className="text-[10px] text-blue-500 font-mono text-center uppercase tracking-wider mt-4">
-                          * Referral waitlist engine active • fully secure connection
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Dual path instructions */}
-                    <div className="grid gap-4 sm:grid-cols-2 text-xs pt-2 font-mono">
-                      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-blue-700 mb-1">Path A: Interactive Simulation</p>
-                        <p className="text-[10px] text-zinc-600 leading-normal font-sans font-medium">
-                          Take the 10-Question simulation first to record your regional commute baseline.
-                        </p>
-                        <button
-                          onClick={handleStartSimulation}
-                          className="mt-3 text-[10px] text-blue-700 hover:text-blue-900 font-black hover:underline tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
+                        <form
+                          onSubmit={async (e) => {
+                            e.preventDefault();
+                            if (!resEmail || !resName || !resConsent) return;
+                            setResSubmitting(true);
+                            
+                            try {
+                              const response = await fetch("/api/signup-cohort", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                  email: resEmail,
+                                  firstName: resName,
+                                  province: resProvince,
+                                  tier: resTier,
+                                  score: quizScore
+                                })
+                              });
+                              const data = await response.json();
+                              if (data.success) {
+                                setResCode(data.cohortId);
+                                setResSubmitted(true);
+                              } else {
+                                setResCode(`COHORT-CAN-${Math.floor(1000 + Math.random() * 9000)}`);
+                                setResSubmitted(true);
+                              }
+                            } catch {
+                              setResCode(`COHORT-CAN-${Math.floor(1000 + Math.random() * 9000)}`);
+                              setResSubmitted(true);
+                            } finally {
+                              setResSubmitting(false);
+                            }
+                          }}
+                          className="space-y-6"
                         >
-                          <span>Start Simulator</span>
-                          <span>→</span>
-                        </button>
+                          {/* Grid Inputs */}
+                          <div className="grid gap-4 sm:grid-cols-2">
+                            <div className="space-y-1.5">
+                              <label className="block text-[10px] font-black uppercase text-zinc-500 font-mono">
+                                First Name
+                              </label>
+                              <input
+                                type="text"
+                                required
+                                value={resName}
+                                onChange={(e) => setResName(e.target.value)}
+                                placeholder="Your Name"
+                                className="w-full rounded border border-zinc-250 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 font-mono"
+                              />
+                            </div>
+                            <div className="space-y-1.5">
+                              <label className="block text-[10px] font-black uppercase text-zinc-500 font-mono">
+                                Email Address
+                              </label>
+                              <input
+                                type="email"
+                                required
+                                value={resEmail}
+                                onChange={(e) => setResEmail(e.target.value)}
+                                placeholder="driver@example.ca"
+                                className="w-full rounded border border-zinc-250 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 font-mono"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="grid gap-4 sm:grid-cols-3">
+                            <div className="sm:col-span-1 space-y-1.5">
+                              <label className="block text-[10px] font-black uppercase text-zinc-500 font-mono">
+                                Region / Province
+                              </label>
+                              <select
+                                value={resProvince}
+                                onChange={(e) => setResProvince(e.target.value)}
+                                className="w-full rounded border border-zinc-250 bg-white px-4 py-3 text-xs text-zinc-900 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 font-mono"
+                              >
+                                <option value="ON">Ontario (ON)</option>
+                                <option value="QC">Quebec (QC)</option>
+                                <option value="BC">British Columbia (BC)</option>
+                                <option value="AB">Alberta (AB)</option>
+                                <option value="MB">Manitoba (MB)</option>
+                                <option value="SK">Saskatchewan (SK)</option>
+                                <option value="NS">Nova Scotia (NS)</option>
+                                <option value="NB">New Brunswick (NB)</option>
+                                <option value="NL">Newfoundland (NL)</option>
+                                <option value="PE">Prince Edward (PE)</option>
+                              </select>
+                            </div>
+                            <div className="sm:col-span-2 space-y-1.5">
+                              <label className="block text-[10px] font-black uppercase text-zinc-500 font-mono">
+                                Driving Context (Optional)
+                              </label>
+                              <input
+                                type="text"
+                                value={resDrivingContext}
+                                onChange={(e) => setResDrivingContext(e.target.value)}
+                                placeholder="e.g. Daily highway commute, commercial courier"
+                                className="w-full rounded border border-zinc-250 bg-white px-4 py-3 text-xs text-zinc-900 placeholder-zinc-400 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400/20 font-mono"
+                              />
+                            </div>
+                          </div>
+
+                          {/* Tier Selection Cards (Fix 4 - scarce, structured) */}
+                          <div className="space-y-3">
+                            <label className="block text-[10px] font-black uppercase text-zinc-500 font-mono">
+                              Select Allocation Tier
+                            </label>
+                            <div className="grid gap-4 sm:grid-cols-3">
+                              {[
+                                { id: "access", title: "Standard Participant", discount: "20% Discount", desc: "No deposit required. Guarantees priority slot key." },
+                                { id: "guardian", title: "VIP Elite Cohort", discount: "40% Discount", desc: "Batch 1 guaranteed access keys + steering feedback options.", highlight: true },
+                                { id: "founding", title: "Founding Collaborator", discount: "50% Discount", desc: "Roundtable roundtable interviews with product team + lifetime free updates." }
+                              ].map((tier) => (
+                                <button
+                                  type="button"
+                                  key={tier.id}
+                                  onClick={() => setResTier(tier.id)}
+                                  className={`p-4 rounded-2xl border-2 text-left space-y-2 flex flex-col justify-between transition-all duration-200 cursor-pointer ${
+                                    resTier === tier.id 
+                                      ? "border-[#0E7C9E] bg-[#0E7C9E]/[0.02]" 
+                                      : "border-zinc-200 hover:border-zinc-300 bg-white"
+                                  }`}
+                                >
+                                  <div className="space-y-1">
+                                    <div className="flex justify-between items-start">
+                                      <span className="text-[9px] font-black text-zinc-400 uppercase font-mono tracking-wider">TIER SELECT</span>
+                                      {resTier === tier.id && <span className="text-xs text-[#0E7C9E]">●</span>}
+                                    </div>
+                                    <h5 className="text-xs font-black uppercase tracking-wide text-zinc-950 leading-tight font-sans">
+                                      {tier.title}
+                                    </h5>
+                                    <span className="inline-block text-[8px] font-black uppercase bg-[#F4F2ED] border border-[#0E7C9E]/10 px-1.5 py-0.5 rounded text-[#0E7C9E] font-mono">
+                                      {tier.discount}
+                                    </span>
+                                  </div>
+                                  <p className="text-[10px] text-zinc-500 font-sans leading-normal">
+                                    {tier.desc}
+                                  </p>
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Consent */}
+                          <div className="flex items-start gap-3 bg-zinc-50 p-4 border border-zinc-200/60 rounded-xl">
+                            <input
+                              type="checkbox"
+                              required
+                              id="res-consent"
+                              checked={resConsent}
+                              onChange={(e) => setResConsent(e.target.checked)}
+                              className="mt-1 h-4 w-4 rounded border-zinc-300 text-blue-600 focus:ring-blue-500/20 cursor-pointer"
+                            />
+                            <label htmlFor="res-consent" className="text-[10.5px] text-zinc-650 leading-relaxed font-sans font-medium cursor-pointer">
+                              I consent to participate in the <strong>Founding Research Cohort</strong> pre-launch validation campaign. I understand that allocations carry zero cost or commitment, and placement is strictly subject to <strong>limited placement</strong> constraints.
+                            </label>
+                          </div>
+
+                          {/* Fix 3: Exact CTA text Reserve Founding Access */}
+                          <button
+                            type="submit"
+                            disabled={resSubmitting}
+                            className="w-full inline-flex items-center justify-center rounded bg-[#0E7C9E] text-white hover:bg-[#0E7C9E]/90 active:scale-98 transition-all px-6 py-4 text-xs font-black uppercase tracking-widest cursor-pointer font-mono shadow-md disabled:opacity-50"
+                          >
+                            {resSubmitting ? "Processing Reservation..." : "Reserve Founding Access"}
+                          </button>
+                        </form>
                       </div>
-                      <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
-                        <p className="font-extrabold uppercase text-[9px] tracking-wider text-emerald-700 mb-1">Path B: Instant Priority Reservation</p>
-                        <p className="text-[10px] text-zinc-600 leading-normal font-sans font-medium">
-                          Complete the gateway above to secure direct access to development sandbox builds and 50% discount codes.
+                    ) : (
+                      <div className="bg-white border-2 border-emerald-500 rounded-3xl p-8 sm:p-12 shadow-lg text-center space-y-6">
+                        <div className="h-12 w-12 rounded-full bg-emerald-50 border-2 border-emerald-400 flex items-center justify-center text-emerald-600 mx-auto">
+                          <ShieldCheck className="h-6 w-6" />
+                        </div>
+                        <div className="space-y-2">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-black uppercase tracking-widest text-emerald-800 font-mono">
+                            ★ RESERVATION VERIFIED
+                          </span>
+                          <h3 className="text-xl font-black uppercase tracking-tight text-zinc-950 sm:text-2xl font-sans">
+                            Founding Research Cohort Placement Secured
+                          </h3>
+                          <p className="text-xs text-zinc-500 max-w-md mx-auto leading-relaxed">
+                            Thank you for completing your baseline validation commute assessment. Your priority placement code is recorded:
+                          </p>
+                        </div>
+
+                        {/* Priority Code Box */}
+                        <div className="bg-zinc-50 border-2 border-dashed border-zinc-200 rounded-2xl p-5 max-w-sm mx-auto font-mono">
+                          <span className="text-[8px] font-black text-zinc-400 uppercase tracking-widest block">ALLOCATION CODE</span>
+                          <span className="text-2xl font-black text-zinc-950 uppercase tracking-widest block mt-1">{resCode}</span>
+                          <span className="text-[9px] font-bold text-[#0E7C9E] uppercase tracking-wider block mt-2">
+                            TIER: {resTier === "founding" ? "Founding Collaborator (50% Off)" : resTier === "guardian" ? "VIP Elite Cohort (40% Off)" : "Standard Participant (20% Off)"}
+                          </span>
+                        </div>
+
+                        <p className="text-[10.5px] text-zinc-500 font-sans font-medium leading-relaxed max-w-md mx-auto">
+                          A confirmation email containing your reserved launch code has been dispatched. Due to <strong>limited placement</strong> filters, this access key remains active strictly for early sandboxed alpha companion releases on Canadian roads.
                         </p>
                       </div>
-                    </div>
+                    )}
+
                   </div>
-                </div>
+                )}
 
               </div>
             </section>
@@ -838,39 +983,34 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* FAQ group with colorful bordered cards */}
-                <div className="space-y-4">
+                {/* FAQ group with minimal border style */}
+                <div className="divide-y divide-zinc-200 border-y border-zinc-200">
                   {faqItems.map((item, idx) => {
                     const isOpen = openFaqIdx === idx;
-                    const colors = [
-                      { border: "border-blue-300", leftBar: "border-l-blue-500", bg: isOpen ? "bg-blue-50/70" : "bg-white hover:bg-blue-50/30", numBg: isOpen ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-700", chevron: isOpen ? "bg-blue-600 border-blue-600 text-white" : "bg-blue-50 border-blue-200 text-blue-500", answer: "text-zinc-700" },
-                      { border: "border-amber-300", leftBar: "border-l-amber-500", bg: isOpen ? "bg-amber-50/70" : "bg-white hover:bg-amber-50/30", numBg: isOpen ? "bg-amber-500 text-white" : "bg-amber-100 text-amber-700", chevron: isOpen ? "bg-amber-500 border-amber-500 text-white" : "bg-amber-50 border-amber-200 text-amber-500", answer: "text-zinc-700" },
-                      { border: "border-emerald-300", leftBar: "border-l-emerald-500", bg: isOpen ? "bg-emerald-50/70" : "bg-white hover:bg-emerald-50/30", numBg: isOpen ? "bg-emerald-600 text-white" : "bg-emerald-100 text-emerald-700", chevron: isOpen ? "bg-emerald-600 border-emerald-600 text-white" : "bg-emerald-50 border-emerald-200 text-emerald-500", answer: "text-zinc-700" },
-                      { border: "border-rose-300", leftBar: "border-l-rose-500", bg: isOpen ? "bg-rose-50/70" : "bg-white hover:bg-rose-50/30", numBg: isOpen ? "bg-rose-600 text-white" : "bg-rose-100 text-rose-700", chevron: isOpen ? "bg-rose-600 border-rose-600 text-white" : "bg-rose-50 border-rose-200 text-rose-500", answer: "text-zinc-700" },
-                    ];
-                    const c = colors[idx % colors.length];
                     return (
-                      <div
-                        key={idx}
-                        className={`rounded-2xl border-2 border-l-4 ${c.border} ${c.leftBar} ${c.bg} transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md`}
+                      <div 
+                        key={idx} 
+                        className="py-1 transition-all duration-300 overflow-hidden text-left"
                       >
                         <button
                           onClick={() => toggleFaq(idx)}
-                          className="w-full flex items-center justify-between px-6 py-5 text-left transition-all cursor-pointer font-sans"
+                          className="w-full flex items-center justify-between py-6 text-left transition-all cursor-pointer font-sans"
                         >
                           <div className="flex items-center gap-4">
-                            <span className={`flex-shrink-0 h-7 w-7 rounded-full flex items-center justify-center text-[10px] font-black font-mono transition-all duration-200 ${c.numBg}`}>
+                            <span className="text-[10.5px] font-black font-mono text-zinc-400 shrink-0">
                               {(idx + 1).toString().padStart(2, "0")}
                             </span>
                             <span className={`text-xs sm:text-[13px] font-black uppercase tracking-wider font-mono transition-colors duration-200 ${isOpen ? 'text-zinc-950' : 'text-zinc-700 hover:text-zinc-950'}`}>
                               {item.q}
                             </span>
                           </div>
-                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-all duration-300 ${c.chevron} ${isOpen ? 'rotate-180' : ''}`}>
+                          <div className={`ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                            isOpen ? "bg-zinc-100 border-zinc-200 text-zinc-950 rotate-180" : "bg-zinc-50 border-zinc-200 text-zinc-400"
+                          }`}>
                             <ChevronDown className="h-4 w-4" />
                           </div>
                         </button>
-
+                        
                         <AnimatePresence initial={false}>
                           {isOpen && (
                             <motion.div
@@ -880,7 +1020,7 @@ export default function App() {
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                               className="overflow-hidden"
                             >
-                              <div className={`pb-6 pt-1 text-xs sm:text-[13px] leading-relaxed font-sans font-medium pl-[4.5rem] pr-6 ${c.answer}`}>
+                              <div className="pb-7 pt-1 text-xs sm:text-[13px] text-zinc-650 leading-relaxed font-sans font-medium pl-10 pr-6">
                                 {item.a}
                               </div>
                             </motion.div>

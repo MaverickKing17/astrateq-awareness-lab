@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Users, Award, ShieldCheck, Heart, Mail, Check, Sparkles, Loader as Loader2, Info, ArrowRight, ShieldAlert, Brain, Eye, MapPin, Lock, Circle as HelpCircle, FileText, Smartphone, TriangleAlert as AlertTriangle, ChevronDown, Cpu } from "lucide-react";
+import { 
+  Users, Award, ShieldCheck, Heart, Mail, Check, Sparkles, Loader2, Info, ArrowRight, ShieldAlert,
+  Brain, Eye, MapPin, Lock, HelpCircle, FileText, Smartphone, AlertTriangle, ChevronDown, Cpu
+} from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import R_AND_D_LAB_IMAGE from "../assets/images/automotive_rd_lab_1783018331045.jpg";
@@ -79,7 +82,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       id: "founding",
       title: "Founding Collaborator",
       levelLabel: "Batch 1 Executive",
-      desc: "For ultimate safety advocates wishing to collaborate closely with the Astrateq product design team.",
+      desc: "For ultimate safety advocates wishing to collaborate closely with the Astrateq Gadgets product design team.",
       requirement: "Free collaborator slot with zero commitment",
       features: [
          "50% Custom Founding Launch Discount",
@@ -99,8 +102,8 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
       a: "Today's driver safety systems are almost entirely reactive—sounding loud alarms or applying automatic brakes only after an error occurs. Driver Awareness Intelligence explores whether on-device, offline-first software can help drivers recognize and understand their own fatigue curves before those critical situations develop."
     },
     {
-      q: "Why should I join the Alpha Validation Cohort?",
-      a: "Joining the Founding Members cohort lets you actively participate in validating this new product category. It costs nothing, requires no deposit, and carries zero commitment. It secures your priority queue placement for the upcoming software rollout, locks in a high early-bird launch discount (up to 50%), and ensures your feedback directs our prototype development priorities."
+      q: "Why should I join the research cohort?",
+      a: "Joining the cohort lets you actively participate in validating this new product category. It costs nothing, requires no deposit, and carries zero commitment. It secures your priority queue placement for the upcoming software rollout, locks in a high early-bird launch discount (up to 50%), and ensures your feedback directs our prototype development priorities."
     },
     {
       q: "How does my participation influence development?",
@@ -197,7 +200,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 className="inline-flex items-center gap-2 border border-blue-200/60 bg-blue-50/70 px-4 py-1.5 text-[9px] font-extrabold uppercase tracking-widest text-blue-700 font-mono rounded-full shadow-xs"
               >
                 <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-                🇨🇦 Astrateq Canada Early Access Validation Campaign
+                🇨🇦 Astrateq Gadgets Canada Early Access Validation Campaign
               </motion.div>
               
               <motion.h1 
@@ -240,7 +243,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   <div className="absolute bottom-3.5 left-4 right-4 text-white flex justify-between items-end">
                     <div>
                       <span className="text-[8px] font-extrabold uppercase tracking-widest text-cyan-400 font-mono">LABORATORY SPECIFICATION</span>
-                      <h4 className="text-xs font-black uppercase tracking-wide">ASTRATEQ COGNITIVE R&D LAB</h4>
+                      <h4 className="text-xs font-black uppercase tracking-wide">ASTRATEQ GADGETS COGNITIVE R&D LAB</h4>
                     </div>
                     <span className="text-[8px] font-mono uppercase bg-blue-600/90 backdrop-blur-md border border-blue-400/30 px-2 py-0.5 rounded text-white tracking-widest font-bold">ACTIVE TEST RUN</span>
                   </div>
@@ -309,7 +312,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 <div className="relative z-10 space-y-5">
                   <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                     <div className="flex flex-col">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-500 font-mono">ASTRATEQ REGISTRY</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-slate-500 font-mono">ASTRATEQ GADGETS REGISTRY</span>
                       <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-600 font-mono mt-0.5">Priority Early Access Key</span>
                     </div>
                     <span className="inline-flex items-center rounded bg-blue-50 border border-blue-200 px-2.5 py-0.5 text-[8px] font-bold text-blue-700 uppercase tracking-wide font-mono">VALIDATION STAGE</span>
@@ -322,7 +325,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 font-semibold uppercase">COLLABORATION LEVEL:</span>
-                      <span className="text-slate-900 font-black">ALPHA VALIDATION COHORT</span>
+                      <span className="text-slate-900 font-black">RESEARCH COHORT</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 font-semibold uppercase">SECURED DISCOUNT:</span>
@@ -454,7 +457,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 Designed for Canadian road realities.
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans font-medium">
-                Canadian drivers handle sudden blizzards, desolately long highways, extreme winter commute times, and invasive tracking models from standard auto insurers. Astrateq represents an alternative: fully localized, offline software running directly on your personal device to support focus and prevent fatigue accidents—with zero remote servers.
+                Canadian drivers handle sudden blizzards, desolately long highways, extreme winter commute times, and invasive tracking models from standard auto insurers. Astrateq Gadgets represents an alternative: fully localized, offline software running directly on your personal device to support focus and prevent fatigue accidents—with zero remote servers.
               </p>
             </div>
 
@@ -668,7 +671,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               Awareness intelligence without surveillance.
             </h2>
             <p className="text-sm text-slate-700 leading-relaxed max-w-xl mx-auto font-sans font-medium">
-              Astrateq software is engineered to prioritize personal driver empowerment over remote corporate monitoring.
+              Astrateq Gadgets software is engineered to prioritize personal driver empowerment over remote corporate monitoring.
             </p>
           </div>
 
@@ -677,7 +680,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             <div className="grid grid-cols-1 sm:grid-cols-2 bg-slate-900 text-white p-4.5 font-mono text-[10px] font-black uppercase tracking-widest">
               <div className="px-2">Traditional Fleet/Insurance Approach</div>
               <div className="border-t sm:border-t-0 sm:border-l border-slate-700 mt-2 pt-2 sm:mt-0 sm:pt-0 sm:pl-6">
-                Astrateq Offline Software Approach
+                Astrateq Gadgets Offline Software Approach
               </div>
             </div>
             
@@ -747,7 +750,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               {
                 icon: <Lock className="h-5 w-5 text-blue-600" />,
                 title: "Zero Insurance Logs",
-                desc: "Alpha validation credentials are entirely isolated. We never share metrics or signups with insurance firms."
+                desc: "Research cohort credentials are entirely isolated. We never share metrics or signups with insurance firms."
               },
               {
                 icon: <ShieldCheck className="h-5 w-5 text-blue-600" />,
@@ -903,7 +906,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
             
             <div className="text-center mb-8 space-y-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[9px] font-extrabold uppercase tracking-widest text-blue-700 font-mono">
-                Astrateq Priority Registry
+                Astrateq Gadgets Priority Registry
               </span>
               <h3 className="text-2xl font-black uppercase tracking-tight text-slate-900 font-sans">
                 Join the Driver Intelligence Cohort
@@ -923,7 +926,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   Collaboration Tier: {signupResult.tierLabel}
                 </p>
                 <p className="text-xs text-slate-700 mt-3 max-w-sm leading-relaxed font-sans font-medium">
-                  Success! Your Astrateq early access reservation has been securely logged. We will notify you with direct development updates, survey check-ins, and coordinate your prototype key when testing begins.
+                  Success! Your Astrateq Gadgets early access reservation has been securely logged. We will notify you with direct development updates, survey check-ins, and coordinate your prototype key when testing begins.
                 </p>
 
                 <div className="mt-6 w-full rounded border border-slate-200 bg-slate-50 p-4 font-mono text-center shadow-xs">

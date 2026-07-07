@@ -34,9 +34,12 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           onClick={() => handleMobileNavigate("landing")}
           className="flex items-center transition-opacity hover:opacity-85 text-left cursor-pointer"
         >
-          <span className="text-sm font-black tracking-[0.25em] text-slate-900 font-sans">
-            ASTRATEQ
-          </span>
+          <img 
+            src="https://i.ibb.co/kVx4pbMs/Astrateq.png" 
+            alt="Astrateq Gadgets" 
+            className="h-10 w-auto" 
+            referrerPolicy="no-referrer" 
+          />
         </button>
 
         {/* Navigation - Desktop */}
@@ -70,10 +73,10 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
         {/* Right CTA */}
         <div className="flex items-center gap-2 sm:gap-4">
           <button
-            onClick={() => scrollToSection("prefinery-checkout")}
-            className="inline-flex items-center justify-center rounded bg-blue-600 px-4.5 py-2.5 text-[10px] font-bold text-white shadow-sm transition-all hover:bg-blue-500 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-blue-600 hover:border-blue-500"
+            onClick={() => handleMobileNavigate("simulation")}
+            className="inline-flex items-center justify-center rounded bg-[#0E7C9E] px-4.5 py-2.5 text-[10px] font-black text-white shadow-sm transition-all hover:bg-[#0E7C9E]/90 active:scale-95 cursor-pointer uppercase tracking-wider font-mono border border-[#0E7C9E] hover:border-[#0E7C9E]/90"
           >
-            Reserve Position
+            Start Driver Awareness Simulation
           </button>
 
           {/* Hamburger Menu Button - Mobile */}
@@ -117,10 +120,10 @@ export default function Header({ onNavigate, activePage }: HeaderProps) {
           <div className="pt-2 px-3">
             <button
               onClick={() => handleMobileNavigate("simulation")}
-              className="w-full flex items-center justify-center gap-1.5 rounded bg-blue-600 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-[0_4px_12px_rgba(59,130,246,0.25)] hover:bg-blue-500 active:scale-95 transition-all cursor-pointer"
+              className="w-full flex items-center justify-center gap-1.5 rounded bg-[#0E7C9E] text-white font-mono text-xs font-bold uppercase tracking-wider py-3 shadow-[0_4px_12px_rgba(14,124,158,0.25)] hover:bg-[#0E7C9E]/90 active:scale-95 transition-all cursor-pointer"
             >
-              <span>Baseline Simulation</span>
-              <span className="text-blue-200">→</span>
+              <span>Start Driver Awareness Simulation</span>
+              <span className="text-white/80">→</span>
             </button>
           </div>
         </div>

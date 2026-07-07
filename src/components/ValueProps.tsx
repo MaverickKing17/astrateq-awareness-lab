@@ -39,7 +39,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                 </p>
               </div>
               <p>
-                Astrateq represents a shift away from cloud tracking. By exploring lightweight, offline-first awareness intelligence, we seek to empower drivers with personal insights—retaining absolute data sovereignty with zero remote tracking.
+                Astrateq Gadgets represents a shift away from cloud tracking. By exploring lightweight, offline-first awareness intelligence, we seek to empower drivers with personal insights—retaining absolute data sovereignty with zero remote tracking.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   We noticed that standard driving software is designed to feed advertisements or trace routes. It is not designed to help <span className="text-slate-900 font-bold border-b border-slate-200 pb-0.5">you better understand your own focus</span>.
                 </p>
                 <p className="font-bold text-slate-900">
-                  We started Astrateq because we believe intelligence should serve and belong to the driver—fully offline, fully sovereign, with zero external surveillance.
+                  We started Astrateq Gadgets because we believe intelligence should serve and belong to the driver—fully offline, fully sovereign, with zero external surveillance.
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   </div>
                   <div>
                     <h5 className="text-xs font-black uppercase text-slate-900 tracking-wider">Marc-Olivier Kovacs</h5>
-                    <p className="text-[9px] font-extrabold uppercase text-slate-400 font-mono tracking-widest mt-0.5">Founder, Astrateq Technologies</p>
+                    <p className="text-[9px] font-extrabold uppercase text-slate-400 font-mono tracking-widest mt-0.5">Founder, Astrateq Gadgets Technologies</p>
                   </div>
                 </div>
               </div>
@@ -98,11 +98,11 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
       </section>
 
       {/* SECTION: IMAGINE DRIVER AWARENESS INTELLIGENCE CENTERPIECE GRID */}
-      <section id="capabilities-grid" className="py-28 bg-zinc-50 border-b border-zinc-200/80 relative overflow-hidden">
+      <section id="capabilities-grid" className="py-28 bg-white border-b border-zinc-200/80 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.01] pointer-events-none" />
-
+        
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-
+          
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
               <Cpu className="h-3.5 w-3.5 text-zinc-900" /> ON-DEVICE PERFORMANCE ARCHITECTURE
@@ -111,17 +111,16 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
               Imagine Driver Awareness Intelligence
             </h2>
             <p className="text-xs sm:text-sm text-zinc-500 max-w-xl mx-auto leading-relaxed font-sans font-medium">
-              Astrateq executes fully offline visual models directly on your hardware layer, converting complex raw behavioral parameters into real-time, high-fidelity security insights.
+              Astrateq Gadgets executes fully offline visual models directly on your hardware layer, converting complex raw behavioral parameters into real-time, high-fidelity security insights.
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3 text-left">
-
-            {/* Card 1: Visual Processing Edge — Blue */}
-            <div className="relative rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 via-white to-cyan-50/40 p-8 sm:p-10 shadow-md hover:shadow-xl hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400" />
+            
+            {/* Card 1: Visual Processing Edge */}
+            <div className="relative rounded-2xl border-2 border-blue-200 bg-gradient-to-b from-blue-50/80 to-white p-8 sm:p-10 shadow-md shadow-blue-100/40 hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-blue-600 border-2 border-blue-700 flex items-center justify-center text-white shadow-md shadow-blue-200">
+                <div className="h-12 w-12 rounded-xl bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-blue-600 shadow-sm">
                   <Eye className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
@@ -134,46 +133,44 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   On-device camera optics track ocular saccades, blink durations, and cognitive glance sweeps at 60 FPS. All calculations execute within local volatile RAM cache blocks, bypassing central server paths completely.
                 </p>
               </div>
-              <div className="mt-8 border-t border-blue-200 pt-5 text-left font-mono bg-blue-50/80 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
+              <div className="mt-8 border-t border-blue-100 pt-5 text-left font-mono">
                 <span className="text-[9px] font-black text-blue-700 uppercase tracking-wider">Metrics Managed:</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-blue-600 border border-blue-700 px-2.5 py-1 rounded text-[9px] font-bold text-white">60FPS Ocular Track</span>
-                  <span className="bg-blue-600 border border-blue-700 px-2.5 py-1 rounded text-[9px] font-bold text-white">Gaze Angle Sampling</span>
+                  <span className="bg-blue-100/60 border border-blue-200 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800">60FPS Ocular Track</span>
+                  <span className="bg-blue-100/60 border border-blue-200 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800">Gaze Angle Sampling</span>
                 </div>
               </div>
             </div>
 
-            {/* Card 2: Telemetry Shielding — Violet/Indigo */}
-            <div className="relative rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 via-white to-indigo-50/40 p-8 sm:p-10 shadow-md hover:shadow-xl hover:border-violet-400 transition-all duration-300 flex flex-col justify-between group overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 to-indigo-500" />
+            {/* Card 2: Telemetry Shielding */}
+            <div className="relative rounded-2xl border-2 border-indigo-200 bg-gradient-to-b from-indigo-50/80 to-white p-8 sm:p-10 shadow-md shadow-indigo-100/40 hover:shadow-lg hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-violet-600 border-2 border-violet-700 flex items-center justify-center text-white shadow-md shadow-violet-200">
+                <div className="h-12 w-12 rounded-xl bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center text-indigo-600 shadow-sm">
                   <Lock className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
-                  <span className="text-[10px] font-black text-violet-600 font-mono uppercase tracking-widest block">CORE SYSTEM 02</span>
+                  <span className="text-[10px] font-black text-indigo-600 font-mono uppercase tracking-widest block">CORE SYSTEM 02</span>
                   <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
                     Telemetry Shielding
                   </h3>
                 </div>
                 <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
-                  Prevents corporate driver profile profiling. Astrateq fully sanitizes, filters, and isolates acceleration, routing, and braking speed variables, ensuring zero raw data leaks to insurance cloud networks.
+                  Prevents corporate driver profile profiling. Astrateq Gadgets fully sanitizes, filters, and isolates acceleration, routing, and braking speed variables, ensuring zero raw data leaks to insurance cloud networks.
                 </p>
               </div>
-              <div className="mt-8 border-t border-violet-200 pt-5 text-left font-mono bg-violet-50/80 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
-                <span className="text-[9px] font-black text-violet-700 uppercase tracking-wider">Security Protocols:</span>
+              <div className="mt-8 border-t border-indigo-100 pt-5 text-left font-mono">
+                <span className="text-[9px] font-black text-indigo-700 uppercase tracking-wider">Security Protocols:</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-violet-600 border border-violet-700 px-2.5 py-1 rounded text-[9px] font-bold text-white">OBD Port Bypass</span>
-                  <span className="bg-violet-600 border border-violet-700 px-2.5 py-1 rounded text-[9px] font-bold text-white">Insurance Firewall</span>
+                  <span className="bg-indigo-100/60 border border-indigo-200 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800">OBD Port Bypass</span>
+                  <span className="bg-indigo-100/60 border border-indigo-200 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800">Insurance Firewall</span>
                 </div>
               </div>
             </div>
 
-            {/* Card 3: Localized Awareness Analytics — Emerald */}
-            <div className="relative rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-teal-50/40 p-8 sm:p-10 shadow-md hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-400" />
+            {/* Card 3: Localized Awareness Analytics */}
+            <div className="relative rounded-2xl border-2 border-emerald-200 bg-gradient-to-b from-emerald-50/80 to-white p-8 sm:p-10 shadow-md shadow-emerald-100/40 hover:shadow-lg hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-emerald-600 border-2 border-emerald-700 flex items-center justify-center text-white shadow-md shadow-emerald-200">
+                <div className="h-12 w-12 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
                   <Brain className="h-6 w-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
@@ -186,11 +183,11 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
                   Builds a sovereign model of your personal morning vs. evening alert patterns over time. Fatigue accumulation and attention drifts are processed exclusively locally, generating offline reports that are yours alone.
                 </p>
               </div>
-              <div className="mt-8 border-t border-emerald-200 pt-5 text-left font-mono bg-emerald-50/80 -mx-8 sm:-mx-10 px-8 sm:px-10 -mb-8 sm:-mb-10 pb-8 sm:pb-10 rounded-b-2xl">
+              <div className="mt-8 border-t border-emerald-100 pt-5 text-left font-mono">
                 <span className="text-[9px] font-black text-emerald-700 uppercase tracking-wider">Analysis Engines:</span>
                 <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-emerald-600 border border-emerald-700 px-2.5 py-1 rounded text-[9px] font-bold text-white">Offline History DB</span>
-                  <span className="bg-emerald-600 border border-emerald-700 px-2.5 py-1 rounded text-[9px] font-bold text-white">Personal Alert Curve</span>
+                  <span className="bg-emerald-100/60 border border-emerald-200 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800">Offline History DB</span>
+                  <span className="bg-emerald-100/60 border border-emerald-200 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800">Personal alert curve</span>
                 </div>
               </div>
             </div>

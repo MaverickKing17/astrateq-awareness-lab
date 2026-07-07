@@ -55,7 +55,7 @@ export default function Footer() {
                   Direct Inquiries & Priority Support
                 </h4>
                 <p className="mt-1 text-xs text-zinc-500 leading-relaxed font-sans">
-                  The Astrateq priority support team is available to assist with inquiries regarding the $5 refundable queue reservation, priority software keys, and rollout timelines.
+                  The Astrateq Gadgets priority support team is available to assist with inquiries regarding the $5 refundable queue reservation, priority software keys, and rollout timelines.
                 </p>
               </div>
 
@@ -117,15 +117,15 @@ export default function Footer() {
           {/* Main Footer Disclaimer & Copyright */}
           <div className="mt-12 text-center space-y-6">
             <p className="text-[10px] font-bold text-zinc-400 font-mono uppercase tracking-wider">
-              © {new Date().getFullYear()} ASTRATEQ. All rights reserved.
+              © {new Date().getFullYear()} ASTRATEQ GADGETS. All rights reserved.
             </p>
             <div className="rounded-xl bg-white border border-zinc-200 p-6 max-w-4xl mx-auto shadow-xs">
               <p className="text-[11px] uppercase tracking-wider leading-relaxed text-zinc-500 font-mono font-bold">
-                This platform is an independent <span className="text-zinc-900 font-black underline decoration-zinc-300 decoration-2 underline-offset-2">pre-launch market validation portal</span> evaluating demand for the upcoming Astrateq Driver Coach software suite. All $5 priority reservation slots are fully refundable at any time on request. We do <span className="text-red-600 font-black">NOT</span> sell auto insurance, track or store persistent GPS routes on remote servers, or utilize physical electronic accessories.
+                This platform is an independent <span className="text-zinc-900 font-black underline decoration-zinc-300 decoration-2 underline-offset-2">pre-launch market validation portal</span> evaluating demand for the upcoming Astrateq Gadgets Driver Coach software suite. All $5 priority reservation slots are fully refundable at any time on request. We do <span className="text-red-600 font-black">NOT</span> sell auto insurance, track or store persistent GPS routes on remote servers, or utilize physical electronic accessories.
               </p>
             </div>
             <p className="text-[11px] font-mono text-zinc-400 uppercase tracking-widest font-black pt-2">
-              Astrateq Consumer Safety Initiative. Managed, engineered, and deployed in Ontario, Canada.
+              Astrateq Gadgets Consumer Safety Initiative. Managed, engineered, and deployed in Ontario, Canada.
             </p>
           </div>
         </div>

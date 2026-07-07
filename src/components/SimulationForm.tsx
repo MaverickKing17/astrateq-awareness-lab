@@ -128,7 +128,7 @@ export default function SimulationForm({ onSubmit, isSubmitting }: SimulationFor
             Cognitive Driving Profile Assessment
           </h2>
           <p className="mt-1 text-[11px] text-slate-600 font-mono font-medium">
-            SECURE PORT • MODEL: ASTRATEQ-M702-COGNITIVE • HARDWARE-FREE VALIDATION
+            SECURE PORT • MODEL: ASTRATEQ-GADGETS-M702-COGNITIVE • HARDWARE-FREE VALIDATION
           </p>
 
           {/* Progress bar */}
