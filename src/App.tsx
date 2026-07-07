@@ -7,6 +7,7 @@ import ResultsDisplay from "./components/ResultsDisplay";
 import CohortPage from "./components/CohortPage";
 import LoadingOverlay from "./components/LoadingOverlay";
 import Hero from "./components/Hero";
+import ReferralDashboard from "./components/ReferralDashboard";
 import DataArchitectureTable from "./components/DataArchitectureTable";
 import CompetitiveTable from "./components/CompetitiveTable";
 import HWY_404_POV_IMAGE from "./assets/images/driver_lifestyle_simulation_1783021555044.jpg";
@@ -104,6 +105,22 @@ export default function App() {
   const [resSubmitting, setResSubmitting] = useState(false);
   const [resSubmitted, setResSubmitted] = useState(false);
   const [resCode, setResCode] = useState("");
+  const [referralCode, setReferralCode] = useState<string>(() => {
+    return typeof window !== "undefined" ? localStorage.getItem("astrateq_referral_code") || "" : "";
+  });
+  const [capturedReferral, setCapturedReferral] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("astrateq_captured_referral");
+      if (saved) return saved;
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref");
+      if (ref) {
+        localStorage.setItem("astrateq_captured_referral", ref);
+        return ref;
+      }
+    }
+    return "";
+  });
 
   // Live Dashboard simulator mockup states
   const [dashboardScore, setDashboardScore] = useState(82);
@@ -313,11 +330,12 @@ export default function App() {
             <DataArchitectureTable />
 
             {/* 5. High-Contrast Value Proposition Cards (The Early Validation Loop) */}
-            <section id="validation-loop" className="py-28 bg-zinc-50 border-b border-zinc-200/80">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <section id="validation-loop" className="py-28 bg-slate-50/80 border-b border-zinc-200/80 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.015] pointer-events-none" />
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-200 border border-zinc-300 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-black uppercase tracking-widest text-blue-800 font-mono">
                     CONSUMER DECISION MATRIX
                   </span>
                   <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-4xl font-sans">
@@ -332,75 +350,93 @@ export default function App() {
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left">
                   
                   {/* Card 1: Attention */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
-                    <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">COGNITIVE RATIO</span>
+                  <div className="relative p-8 sm:p-10 rounded-2xl border-2 border-amber-200/80 bg-gradient-to-br from-amber-50 via-orange-50/20 to-rose-100/10 shadow-[0_12px_30px_rgba(245,158,11,0.04)] hover:shadow-[0_20px_45px_rgba(245,158,11,0.12)] hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+                    {/* Top Accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-orange-500" />
+                    
+                    {/* Ambient Orb */}
+                    <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-amber-500/10 blur-2xl pointer-events-none group-hover:scale-125 transition-all duration-500" />
+                    
+                    <div className="space-y-6 relative z-10">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-amber-700 font-mono">COGNITIVE RATIO</span>
                       <div className="space-y-2">
                         <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
-                        <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
+                        <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans group-hover:text-amber-800 transition-colors">
                           Can daily commuting habits reveal cognitive fatigue patterns?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-zinc-100">
+                      <div className="space-y-2 pt-2 border-t border-amber-200/40">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
-                        <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
                           Localized temporal tracking analyzes minute deviations in response timing safely.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-zinc-100">
-                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-amber-200/40 relative z-10">
+                      <p className="text-[10px] uppercase font-black text-amber-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-amber-950 font-bold font-sans">
                         You receive real-time, completely private awareness alerts before critical risk situations occur.
                       </p>
                     </div>
                   </div>
 
                   {/* Card 2: Privacy */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
-                    <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">TELEMETRY BYPASS</span>
+                  <div className="relative p-8 sm:p-10 rounded-2xl border-2 border-indigo-200/80 bg-gradient-to-br from-indigo-50 via-sky-50/20 to-blue-100/10 shadow-[0_12px_30px_rgba(99,102,241,0.04)] hover:shadow-[0_20px_45px_rgba(99,102,241,0.12)] hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+                    {/* Top Accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-500 to-sky-500" />
+                    
+                    {/* Ambient Orb */}
+                    <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-indigo-500/10 blur-2xl pointer-events-none group-hover:scale-125 transition-all duration-500" />
+
+                    <div className="space-y-6 relative z-10">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-indigo-700 font-mono">TELEMETRY BYPASS</span>
                       <div className="space-y-2">
                         <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
-                        <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
+                        <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans group-hover:text-indigo-800 transition-colors">
                           Why should automakers monetize your real-time speed profiles?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-zinc-100">
+                      <div className="space-y-2 pt-2 border-t border-indigo-200/40">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
-                        <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
                           Astrateq Gadgets fully sanitizes and seals your telemetry data right on the physical device layer.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-zinc-100">
-                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-indigo-200/40 relative z-10">
+                      <p className="text-[10px] uppercase font-black text-indigo-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-indigo-950 font-bold font-sans">
                         Your profile remains 100% invisible to insurance algorithms and predictive pricing networks.
                       </p>
                     </div>
                   </div>
 
                   {/* Card 3: Sovereignty */}
-                  <div className="p-8 sm:p-10 rounded-2xl border border-zinc-200/60 bg-white shadow-xs hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
-                    <div className="space-y-6">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 font-mono">HARDWARE SECURITY</span>
+                  <div className="relative p-8 sm:p-10 rounded-2xl border-2 border-teal-200/80 bg-gradient-to-br from-teal-50 via-emerald-50/20 to-green-100/10 shadow-[0_12px_30px_rgba(20,184,166,0.04)] hover:shadow-[0_20px_45px_rgba(20,184,166,0.12)] hover:border-teal-400 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+                    {/* Top Accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500" />
+                    
+                    {/* Ambient Orb */}
+                    <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-teal-500/10 blur-2xl pointer-events-none group-hover:scale-125 transition-all duration-500" />
+
+                    <div className="space-y-6 relative z-10">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-teal-700 font-mono">HARDWARE SECURITY</span>
                       <div className="space-y-2">
                         <p className="text-[10px] uppercase font-black text-red-600 tracking-wider">01 // THE QUESTION</p>
-                        <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans">
+                        <h3 className="text-base font-black uppercase tracking-wider text-zinc-950 leading-snug font-sans group-hover:text-teal-800 transition-colors">
                           Why should in-cabin camera streams travel to commercial servers?
                         </h3>
                       </div>
-                      <div className="space-y-2 pt-2 border-t border-zinc-100">
+                      <div className="space-y-2 pt-2 border-t border-teal-200/40">
                         <p className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">02 // THE TECHNOLOGY</p>
-                        <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
+                        <p className="text-xs text-zinc-700 leading-relaxed font-sans font-medium">
                           Computations run purely inside standard sandbox volatile RAM and vanish instantly upon app termination.
                         </p>
                       </div>
                     </div>
-                    <div className="mt-8 pt-5 border-t border-zinc-100">
-                      <p className="text-[10px] uppercase font-black text-zinc-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
-                      <p className="text-xs text-zinc-800 font-bold font-sans">
+                    <div className="mt-8 pt-5 border-t border-teal-200/40 relative z-10">
+                      <p className="text-[10px] uppercase font-black text-teal-900 tracking-wider mb-1">03 // SOVEREIGN BENEFIT</p>
+                      <p className="text-xs text-teal-950 font-bold font-sans">
                         Your personal facial expressions, gaze traces, and cabin parameters remain your exclusive property.
                       </p>
                     </div>
@@ -431,26 +467,33 @@ export default function App() {
                 <div className="grid gap-8 md:grid-cols-3 font-mono text-left relative">
                   
                   {/* Phase 01 */}
-                  <div className="p-8 rounded-2xl border border-zinc-200 bg-zinc-50/50 flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-950" />
-                    <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-950 text-[8.5px] font-black text-white uppercase tracking-wider">
+                  <div className="relative p-8 rounded-2xl border-2 border-indigo-200/80 bg-gradient-to-br from-indigo-50/90 via-blue-50/40 to-sky-100/20 shadow-[0_12px_30px_rgba(99,102,241,0.04)] hover:shadow-[0_20px_45px_rgba(99,102,241,0.12)] hover:border-indigo-500 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+                    {/* Top Accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-600 to-blue-500" />
+                    
+                    {/* Ambient Orb */}
+                    <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-indigo-500/10 blur-2xl pointer-events-none group-hover:scale-125 transition-all duration-500" />
+
+                    <div className="space-y-5 relative z-10">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-indigo-600 text-[8.5px] font-black text-white uppercase tracking-wider shadow-xs">
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 border border-white animate-pulse" />
                         Phase 01 • Active
                       </span>
-                      <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
+                      <h4 className="text-sm font-black uppercase tracking-wider text-indigo-950 leading-tight group-hover:text-indigo-800 transition-colors">
                         Core Funnel Architecture Validation
                       </h4>
-                      <p className="text-xs text-zinc-500 leading-relaxed font-sans font-medium">
+                      <p className="text-xs text-zinc-600 leading-relaxed font-sans font-medium">
                         Capped at 500 Consumer Allocations with a refundable $5 cryptographic verification filter. Proving baseline market commitment without corporate fundraising.
                       </p>
                     </div>
                   </div>
 
                   {/* Phase 02 */}
-                  <div className="p-8 rounded-2xl border border-zinc-200 bg-white flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-200" />
-                    <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-100 text-[8.5px] font-black text-zinc-500 uppercase tracking-wider">
+                  <div className="relative p-8 rounded-2xl border border-zinc-200 bg-gradient-to-br from-slate-50 to-zinc-100/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.02)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                    {/* Top Accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-300" />
+                    <div className="space-y-5 relative z-10">
+                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-200/80 border border-zinc-300/60 text-[8.5px] font-black text-zinc-600 uppercase tracking-wider">
                         Phase 02 • Closed Sandbox
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
@@ -463,10 +506,11 @@ export default function App() {
                   </div>
 
                   {/* Phase 03 */}
-                  <div className="p-8 rounded-2xl border border-zinc-200 bg-white flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-200" />
-                    <div className="space-y-5">
-                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-100 text-[8.5px] font-black text-zinc-500 uppercase tracking-wider">
+                  <div className="relative p-8 rounded-2xl border border-zinc-200 bg-gradient-to-br from-slate-50 to-zinc-100/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.02)] transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                    {/* Top Accent bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-zinc-300" />
+                    <div className="space-y-5 relative z-10">
+                      <span className="inline-block px-2.5 py-1 rounded bg-zinc-200/80 border border-zinc-300/60 text-[8.5px] font-black text-zinc-600 uppercase tracking-wider">
                         Phase 03 • Deployment
                       </span>
                       <h4 className="text-sm font-black uppercase tracking-wider text-zinc-950 leading-tight">
@@ -822,8 +866,8 @@ export default function App() {
                           <h4 className="text-[10px] font-black uppercase text-zinc-900 tracking-wider font-mono">
                             Founding Research Cohort Reservation Form
                           </h4>
-                          <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase">
-                            No Deposit Required
+                          <span className="text-emerald-700 bg-emerald-50 border border-[#0E7C9E]/20 font-mono text-[9px] font-black px-2 py-0.5 rounded uppercase">
+                            Refundable $5 CAD Deposit
                           </span>
                         </div>
 
@@ -833,6 +877,10 @@ export default function App() {
                             if (!resEmail || !resName || !resConsent) return;
                             setResSubmitting(true);
                             
+                            const newRefCode = `ASTQ-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+                            setReferralCode(newRefCode);
+                            localStorage.setItem("astrateq_referral_code", newRefCode);
+
                             try {
                               const response = await fetch("/api/signup-cohort", {
                                 method: "POST",
@@ -842,7 +890,8 @@ export default function App() {
                                   firstName: resName,
                                   province: resProvince,
                                   tier: resTier,
-                                  score: quizScore
+                                  score: quizScore,
+                                  referredBy: capturedReferral
                                 })
                               });
                               const data = await response.json();
@@ -935,7 +984,7 @@ export default function App() {
                             </label>
                             <div className="grid gap-4 sm:grid-cols-3">
                               {[
-                                { id: "access", title: "Standard Participant", discount: "20% Discount", desc: "No deposit required. Guarantees priority slot key." },
+                                { id: "access", title: "Standard Participant", discount: "20% Discount", desc: "A refundable $5 CAD deposit secures priority reservation. Guarantees priority slot key." },
                                 { id: "guardian", title: "VIP Elite Cohort", discount: "40% Discount", desc: "Batch 1 guaranteed access keys + steering feedback options.", highlight: true },
                                 { id: "founding", title: "Founding Collaborator", discount: "50% Discount", desc: "Roundtable roundtable interviews with product team + lifetime free updates." }
                               ].map((tier) => (
@@ -1019,6 +1068,9 @@ export default function App() {
                             TIER: {resTier === "founding" ? "Founding Collaborator (50% Off)" : resTier === "guardian" ? "VIP Elite Cohort (40% Off)" : "Standard Participant (20% Off)"}
                           </span>
                         </div>
+
+                        {/* PART B - Referral Dashboard integration */}
+                        <ReferralDashboard referralCode={referralCode || "ASTQ-98213A"} />
 
                         <p className="text-[10.5px] text-zinc-500 font-sans font-medium leading-relaxed max-w-md mx-auto">
                           A confirmation email containing your reserved launch code has been dispatched. Due to <strong>limited placement</strong> filters, this access key remains active strictly for early sandboxed alpha companion releases on Canadian roads.

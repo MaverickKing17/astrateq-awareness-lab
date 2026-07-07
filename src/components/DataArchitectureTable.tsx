@@ -71,14 +71,17 @@ export default function DataArchitectureTable() {
         <div className="grid gap-10 lg:grid-cols-2">
           
           {/* Column A: Processed On-Device */}
-          <div className="bg-white rounded-3xl border border-zinc-200/80 p-8 sm:p-10 shadow-xs flex flex-col justify-between">
+          <div className="relative bg-gradient-to-br from-emerald-50 via-teal-50/20 to-white rounded-3xl border-2 border-emerald-200/80 p-8 sm:p-10 shadow-[0_15px_30px_rgba(16,185,129,0.03)] hover:shadow-[0_25px_50px_rgba(16,185,129,0.12)] hover:border-emerald-500 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 overflow-hidden group">
+            {/* Ambient top glowing bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-400" />
+            
             <div>
-              <div className="flex items-center gap-3 pb-6 border-b border-zinc-100 mb-8">
-                <div className="h-9 w-9 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
-                  <ShieldCheck className="h-5 w-5" />
+              <div className="flex items-center gap-3.5 pb-6 border-b border-emerald-100/50 mb-8">
+                <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white border border-emerald-400 shadow-md flex items-center justify-center">
+                  <ShieldCheck className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-base font-black uppercase tracking-wider text-zinc-900 font-sans">
+                  <h3 className="text-base font-black uppercase tracking-wider text-emerald-950 font-sans group-hover:text-emerald-800 transition-colors">
                     Processed 100% On-Device
                   </h3>
                   <p className="text-[10px] font-bold text-emerald-600 font-mono uppercase tracking-wide">
@@ -91,15 +94,15 @@ export default function DataArchitectureTable() {
                 {collectedItems.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <div key={idx} className="flex gap-4">
-                      <div className="h-8 w-8 rounded bg-zinc-50 border border-zinc-200/60 flex items-center justify-center text-zinc-650 shrink-0 mt-0.5">
-                        <Icon className="h-4 w-4" />
+                    <div key={idx} className="flex gap-4 group/item">
+                      <div className="h-9 w-9 rounded-lg bg-emerald-100/50 border border-emerald-200/50 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5 group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:border-emerald-400 transition-all">
+                        <Icon className="h-4.5 w-4.5" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-xs font-black uppercase text-zinc-900 tracking-wider font-mono">
+                        <h4 className="text-xs font-black uppercase text-emerald-900 tracking-wider font-mono group-hover/item:text-emerald-700 transition-colors">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-zinc-500 font-sans font-medium leading-relaxed">
+                        <p className="text-xs text-zinc-600 font-sans font-medium leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -109,22 +112,25 @@ export default function DataArchitectureTable() {
               </div>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-zinc-100">
-              <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest text-center leading-normal">
+            <div className="mt-10 pt-6 border-t border-emerald-100/50">
+              <p className="text-[10px] font-mono text-emerald-600/70 uppercase tracking-widest text-center leading-normal font-bold">
                 * All active indicators vanish instantly upon app termination
               </p>
             </div>
           </div>
 
           {/* Column B: Never Collected */}
-          <div className="bg-white rounded-3xl border border-zinc-200/80 p-8 sm:p-10 shadow-xs flex flex-col justify-between">
+          <div className="relative bg-gradient-to-br from-rose-50 via-orange-50/15 to-white rounded-3xl border-2 border-rose-200/80 p-8 sm:p-10 shadow-[0_15px_30px_rgba(244,63,94,0.03)] hover:shadow-[0_25px_50px_rgba(244,63,94,0.12)] hover:border-rose-500 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 overflow-hidden group">
+            {/* Ambient top glowing bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 to-orange-400" />
+            
             <div>
-              <div className="flex items-center gap-3 pb-6 border-b border-zinc-100 mb-8">
-                <div className="h-9 w-9 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600">
-                  <ShieldAlert className="h-5 w-5" />
+              <div className="flex items-center gap-3.5 pb-6 border-b border-rose-100/50 mb-8">
+                <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-rose-500 to-orange-500 text-white border border-rose-400 shadow-md flex items-center justify-center">
+                  <ShieldAlert className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-base font-black uppercase tracking-wider text-zinc-900 font-sans">
+                  <h3 className="text-base font-black uppercase tracking-wider text-rose-950 font-sans group-hover:text-rose-800 transition-colors">
                     Never Collected or Shared
                   </h3>
                   <p className="text-[10px] font-bold text-rose-600 font-mono uppercase tracking-wide">
@@ -137,15 +143,15 @@ export default function DataArchitectureTable() {
                 {prohibitedItems.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <div key={idx} className="flex gap-4">
-                      <div className="h-8 w-8 rounded bg-zinc-50 border border-zinc-200/60 flex items-center justify-center text-zinc-650 shrink-0 mt-0.5">
-                        <Icon className="h-4 w-4" />
+                    <div key={idx} className="flex gap-4 group/item">
+                      <div className="h-9 w-9 rounded-lg bg-rose-100/50 border border-rose-200/50 flex items-center justify-center text-rose-700 shrink-0 mt-0.5 group-hover/item:bg-rose-500 group-hover/item:text-white group-hover/item:border-rose-400 transition-all">
+                        <Icon className="h-4.5 w-4.5" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-xs font-black uppercase text-zinc-900 tracking-wider font-mono">
+                        <h4 className="text-xs font-black uppercase text-rose-900 tracking-wider font-mono group-hover/item:text-rose-700 transition-colors">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-zinc-500 font-sans font-medium leading-relaxed">
+                        <p className="text-xs text-zinc-600 font-sans font-medium leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -155,8 +161,8 @@ export default function DataArchitectureTable() {
               </div>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-zinc-100">
-              <p className="text-[10px] font-mono text-rose-600/70 font-bold uppercase tracking-widest text-center leading-normal">
+            <div className="mt-10 pt-6 border-t border-rose-100/50">
+              <p className="text-[10px] font-mono text-rose-600/80 font-bold uppercase tracking-widest text-center leading-normal">
                 🛡️ Locked & Safe • Insurance Industry Firewall Enabled
               </p>
             </div>

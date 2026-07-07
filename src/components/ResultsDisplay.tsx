@@ -57,7 +57,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
     if (scoreValue >= 80) {
       return {
         id: "access",
-        name: "Standard Priority Reservation",
+        name: "Priority Reservation — Fast-Track Queue",
         desc: "Guarantees a production slot in our initial Canada shipping queue with a 20% early-bird discount.",
         colorClass: "border-blue-200 bg-blue-50/30 text-blue-800",
         badgeColor: "bg-blue-600 text-white",
@@ -68,7 +68,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
     if (scoreValue >= 40) {
       return {
         id: "guardian",
-        name: "VIP Elite Reservation",
+        name: "Standard Priority Reservation",
         desc: "Secures Batch 1 priority shipping, Slate Silver chassis, and a locked-in 40% VIP launch discount.",
         colorClass: "border-amber-200 bg-amber-50/30 text-amber-800",
         badgeColor: "bg-amber-500 text-white",
@@ -78,7 +78,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
     }
     return {
       id: "founding",
-      name: "Founding Backer Allocation",
+      name: "Standard Reservation",
       desc: "For ultimate driver advocates wishing to collaborate with builders. Secures a 50% launch discount and custom laser-engraved name plate.",
       colorClass: "border-rose-200 bg-rose-50/30 text-rose-800",
       badgeColor: "bg-rose-600 text-white",
@@ -288,8 +288,8 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
             </div>
 
             <div className="mt-5 border-t border-blue-100/60 pt-4">
-              <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider text-center sm:text-left font-semibold">
-                *IMPORTANT LABEL: Qualified pre-order tier is calculated based on simulated behavioral modeling inputs. No cash deposit is required.
+              <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider text-center sm:text-left font-semibold font-sans">
+                *IMPORTANT LABEL: Qualified pre-order tier is calculated based on simulated behavioral modeling inputs. A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment.
               </p>
             </div>
           </div>
@@ -582,7 +582,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
               Unlock Full Report
             </button>
             <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-1 leading-normal">
-              Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
+              A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment.
             </p>
           </div>
         </div>
@@ -661,7 +661,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         </div>
 
         <p className="mt-4 text-[11px] text-slate-700 font-sans font-bold">
-          Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
+          A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment.
         </p>
       </div>
 

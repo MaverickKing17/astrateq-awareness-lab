@@ -98,14 +98,14 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
       </section>
 
       {/* SECTION: IMAGINE DRIVER AWARENESS INTELLIGENCE CENTERPIECE GRID */}
-      <section id="capabilities-grid" className="py-28 bg-white border-b border-zinc-200/80 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.01] pointer-events-none" />
+      <section id="capabilities-grid" className="py-28 bg-slate-50/90 border-b border-zinc-200/80 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#000000_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.02] pointer-events-none" />
         
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-800 font-mono">
-              <Cpu className="h-3.5 w-3.5 text-zinc-900" /> ON-DEVICE PERFORMANCE ARCHITECTURE
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-[10px] font-black uppercase tracking-widest text-blue-800 font-mono">
+              <Cpu className="h-3.5 w-3.5 text-blue-600 animate-pulse" /> ON-DEVICE PERFORMANCE ARCHITECTURE
             </span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-zinc-950 sm:text-5xl font-sans">
               Imagine Driver Awareness Intelligence
@@ -118,76 +118,103 @@ export default function ValueProps({ onStartSimulation, onNavigateToCohort }: Va
           <div className="grid gap-8 md:grid-cols-3 text-left">
             
             {/* Card 1: Visual Processing Edge */}
-            <div className="relative rounded-2xl border-2 border-blue-200 bg-gradient-to-b from-blue-50/80 to-white p-8 sm:p-10 shadow-md shadow-blue-100/40 hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group">
-              <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-blue-600 shadow-sm">
+            <div className="relative rounded-2xl border-2 border-blue-200/80 bg-gradient-to-br from-blue-50 via-sky-50/40 to-cyan-100/30 p-8 sm:p-10 shadow-[0_12px_30px_rgba(59,130,246,0.06)] hover:shadow-[0_20px_45px_rgba(59,130,246,0.16)] hover:border-blue-500 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+              {/* Highlight bar */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500" />
+              
+              {/* Ambient Orb */}
+              <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-blue-500/20 blur-2xl pointer-events-none group-hover:bg-cyan-500/30 group-hover:scale-125 transition-all duration-500" />
+              
+              <div className="space-y-6 relative z-10">
+                <div className="h-12 w-12 rounded-xl bg-blue-600 text-white border-2 border-blue-400/50 flex items-center justify-center shadow-md group-hover:bg-cyan-600 group-hover:border-cyan-400 group-hover:rotate-6 transition-all duration-300">
                   <Eye className="h-6 w-6 stroke-[2]" />
                 </div>
+                
                 <div className="space-y-2">
                   <span className="text-[10px] font-black text-blue-600 font-mono uppercase tracking-widest block">CORE SYSTEM 01</span>
-                  <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
+                  <h3 className="text-lg font-black uppercase tracking-wider text-blue-950 font-sans group-hover:text-blue-700 transition-colors">
                     Visual Processing Edge
                   </h3>
                 </div>
-                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
+                
+                <p className="text-xs sm:text-[13px] text-blue-900/80 leading-relaxed font-sans font-medium">
                   On-device camera optics track ocular saccades, blink durations, and cognitive glance sweeps at 60 FPS. All calculations execute within local volatile RAM cache blocks, bypassing central server paths completely.
                 </p>
               </div>
-              <div className="mt-8 border-t border-blue-100 pt-5 text-left font-mono">
-                <span className="text-[9px] font-black text-blue-700 uppercase tracking-wider">Metrics Managed:</span>
-                <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-blue-100/60 border border-blue-200 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800">60FPS Ocular Track</span>
-                  <span className="bg-blue-100/60 border border-blue-200 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800">Gaze Angle Sampling</span>
+              
+              <div className="mt-8 border-t border-blue-200/60 pt-5 text-left font-mono relative z-10">
+                <span className="text-[9px] font-black text-blue-600 uppercase tracking-wider">Metrics Managed:</span>
+                <div className="flex gap-2 mt-2.5 flex-wrap">
+                  <span className="bg-blue-100/60 border border-blue-300/40 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800 font-mono hover:bg-blue-200/50 transition-colors">60FPS Ocular Track</span>
+                  <span className="bg-blue-100/60 border border-blue-300/40 px-2.5 py-1 rounded text-[9px] font-bold text-blue-800 font-mono hover:bg-blue-200/50 transition-colors">Gaze Angle Sampling</span>
                 </div>
               </div>
             </div>
 
             {/* Card 2: Telemetry Shielding */}
-            <div className="relative rounded-2xl border-2 border-indigo-200 bg-gradient-to-b from-indigo-50/80 to-white p-8 sm:p-10 shadow-md shadow-indigo-100/40 hover:shadow-lg hover:border-indigo-400 transition-all duration-300 flex flex-col justify-between group">
-              <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center text-indigo-600 shadow-sm">
+            <div className="relative rounded-2xl border-2 border-indigo-200/80 bg-gradient-to-br from-indigo-50 via-purple-50/40 to-violet-100/30 p-8 sm:p-10 shadow-[0_12px_30px_rgba(99,102,241,0.06)] hover:shadow-[0_20px_45px_rgba(99,102,241,0.16)] hover:border-indigo-500 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+              {/* Highlight bar */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-600 to-purple-500" />
+              
+              {/* Ambient Orb */}
+              <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-indigo-500/20 blur-2xl pointer-events-none group-hover:bg-purple-500/30 group-hover:scale-125 transition-all duration-500" />
+              
+              <div className="space-y-6 relative z-10">
+                <div className="h-12 w-12 rounded-xl bg-indigo-600 text-white border-2 border-indigo-400/50 flex items-center justify-center shadow-md group-hover:bg-purple-600 group-hover:border-purple-400 group-hover:rotate-6 transition-all duration-300">
                   <Lock className="h-6 w-6 stroke-[2]" />
                 </div>
+                
                 <div className="space-y-2">
                   <span className="text-[10px] font-black text-indigo-600 font-mono uppercase tracking-widest block">CORE SYSTEM 02</span>
-                  <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
+                  <h3 className="text-lg font-black uppercase tracking-wider text-indigo-950 font-sans group-hover:text-indigo-700 transition-colors">
                     Telemetry Shielding
                   </h3>
                 </div>
-                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
+                
+                <p className="text-xs sm:text-[13px] text-indigo-900/80 leading-relaxed font-sans font-medium">
                   Prevents corporate driver profile profiling. Astrateq Gadgets fully sanitizes, filters, and isolates acceleration, routing, and braking speed variables, ensuring zero raw data leaks to insurance cloud networks.
                 </p>
               </div>
-              <div className="mt-8 border-t border-indigo-100 pt-5 text-left font-mono">
-                <span className="text-[9px] font-black text-indigo-700 uppercase tracking-wider">Security Protocols:</span>
-                <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-indigo-100/60 border border-indigo-200 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800">OBD Port Bypass</span>
-                  <span className="bg-indigo-100/60 border border-indigo-200 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800">Insurance Firewall</span>
+              
+              <div className="mt-8 border-t border-indigo-200/60 pt-5 text-left font-mono relative z-10">
+                <span className="text-[9px] font-black text-indigo-600 uppercase tracking-wider">Security Protocols:</span>
+                <div className="flex gap-2 mt-2.5 flex-wrap">
+                  <span className="bg-indigo-100/60 border border-indigo-300/40 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800 font-mono hover:bg-indigo-200/50 transition-colors">OBD Port Bypass</span>
+                  <span className="bg-indigo-100/60 border border-indigo-300/40 px-2.5 py-1 rounded text-[9px] font-bold text-indigo-800 font-mono hover:bg-indigo-200/50 transition-colors">Insurance Firewall</span>
                 </div>
               </div>
             </div>
 
             {/* Card 3: Localized Awareness Analytics */}
-            <div className="relative rounded-2xl border-2 border-emerald-200 bg-gradient-to-b from-emerald-50/80 to-white p-8 sm:p-10 shadow-md shadow-emerald-100/40 hover:shadow-lg hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group">
-              <div className="space-y-6">
-                <div className="h-12 w-12 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 shadow-sm">
+            <div className="relative rounded-2xl border-2 border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-teal-50/40 to-green-100/30 p-8 sm:p-10 shadow-[0_12px_30px_rgba(16,185,129,0.06)] hover:shadow-[0_20px_45px_rgba(16,185,129,0.16)] hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between group transform hover:-translate-y-1.5 overflow-hidden">
+              {/* Highlight bar */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-500" />
+              
+              {/* Ambient Orb */}
+              <div className="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-emerald-500/20 blur-2xl pointer-events-none group-hover:bg-teal-500/30 group-hover:scale-125 transition-all duration-500" />
+              
+              <div className="space-y-6 relative z-10">
+                <div className="h-12 w-12 rounded-xl bg-emerald-600 text-white border-2 border-emerald-400/50 flex items-center justify-center shadow-md group-hover:bg-teal-600 group-hover:border-teal-400 group-hover:rotate-6 transition-all duration-300">
                   <Brain className="h-6 w-6 stroke-[2]" />
                 </div>
+                
                 <div className="space-y-2">
                   <span className="text-[10px] font-black text-emerald-600 font-mono uppercase tracking-widest block">CORE SYSTEM 03</span>
-                  <h3 className="text-lg font-black uppercase tracking-wider text-slate-900 font-sans">
+                  <h3 className="text-lg font-black uppercase tracking-wider text-emerald-950 font-sans group-hover:text-emerald-700 transition-colors">
                     Localized Awareness Analytics
                   </h3>
                 </div>
-                <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-sans font-medium">
+                
+                <p className="text-xs sm:text-[13px] text-emerald-900/80 leading-relaxed font-sans font-medium">
                   Builds a sovereign model of your personal morning vs. evening alert patterns over time. Fatigue accumulation and attention drifts are processed exclusively locally, generating offline reports that are yours alone.
                 </p>
               </div>
-              <div className="mt-8 border-t border-emerald-100 pt-5 text-left font-mono">
-                <span className="text-[9px] font-black text-emerald-700 uppercase tracking-wider">Analysis Engines:</span>
-                <div className="flex gap-2.5 mt-2.5 flex-wrap">
-                  <span className="bg-emerald-100/60 border border-emerald-200 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800">Offline History DB</span>
-                  <span className="bg-emerald-100/60 border border-emerald-200 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800">Personal alert curve</span>
+              
+              <div className="mt-8 border-t border-emerald-200/60 pt-5 text-left font-mono relative z-10">
+                <span className="text-[9px] font-black text-emerald-600 uppercase tracking-wider">Analysis Engines:</span>
+                <div className="flex gap-2 mt-2.5 flex-wrap">
+                  <span className="bg-emerald-100/60 border border-emerald-300/40 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800 font-mono hover:bg-emerald-200/50 transition-colors">Offline History DB</span>
+                  <span className="bg-emerald-100/60 border border-emerald-300/40 px-2.5 py-1 rounded text-[9px] font-bold text-emerald-800 font-mono hover:bg-emerald-200/50 transition-colors">Personal alert curve</span>
                 </div>
               </div>
             </div>

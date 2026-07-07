@@ -4,6 +4,7 @@ import {
   Brain, Eye, MapPin, Lock, HelpCircle, FileText, Smartphone, AlertTriangle, ChevronDown, Cpu
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import ReferralDashboard from "./ReferralDashboard";
 
 import R_AND_D_LAB_IMAGE from "../assets/images/automotive_rd_lab_1783018331045.jpg";
 
@@ -22,6 +23,22 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
   const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [signupResult, setSignupResult] = useState<{ cohortId: string; tierLabel: string } | null>(null);
+  const [referralCode, setReferralCode] = useState<string>(() => {
+    return typeof window !== "undefined" ? localStorage.getItem("astrateq_referral_code") || "" : "";
+  });
+  const [capturedReferral, setCapturedReferral] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("astrateq_captured_referral");
+      if (saved) return saved;
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref");
+      if (ref) {
+        localStorage.setItem("astrateq_captured_referral", ref);
+        return ref;
+      }
+    }
+    return "";
+  });
   
   // First FAQ item open by default
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
@@ -103,7 +120,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
     },
     {
       q: "Why should I join the research cohort?",
-      a: "Joining the cohort lets you actively participate in validating this new product category. It costs nothing, requires no deposit, and carries zero commitment. It secures your priority queue placement for the upcoming software rollout, locks in a high early-bird launch discount (up to 50%), and ensures your feedback directs our prototype development priorities."
+      a: "Joining the cohort lets you actively participate in validating this new product category. A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment. It secures your priority queue placement for the upcoming software rollout, locks in a high early-bird launch discount (up to 50%), and ensures your feedback directs our prototype development priorities."
     },
     {
       q: "How does my participation influence development?",
@@ -141,6 +158,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
 
     setIsSubmitting(true);
     
+    const newRefCode = `ASTQ-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+    setReferralCode(newRefCode);
+    localStorage.setItem("astrateq_referral_code", newRefCode);
+
     try {
       const response = await fetch("/api/signup-cohort", {
         method: "POST",
@@ -148,7 +169,8 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
         body: JSON.stringify({
           email,
           tier: selectedTier,
-          score: score
+          score: score,
+          referredBy: capturedReferral
         })
       });
       const data = await response.json();
@@ -282,11 +304,11 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               >
                 <div className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-emerald-500" />
-                  <span>No Financial Obligation</span>
+                  <span>Fully Refundable Deposit</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-emerald-500" />
-                  <span>No Deposit Required</span>
+                  <span>$5 CAD Priority Reservation</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-emerald-500" />
@@ -934,6 +956,10 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                   <p className="text-sm font-extrabold text-slate-800 mt-1 select-all">{signupResult.cohortId}</p>
                 </div>
 
+                <div className="w-full">
+                  <ReferralDashboard referralCode={referralCode || "ASTQ-11823B"} />
+                </div>
+
                 <div className="mt-6 flex flex-col gap-1.5 text-[10px] font-mono uppercase text-slate-400">
                   <span>• Registrant Name: <strong className="text-slate-600">{firstName}</strong></span>
                   <span>• Active Route Region: <strong className="text-slate-600">{province}</strong></span>
@@ -1083,7 +1109,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 </button>
                 
                 <p className="text-center text-[9px] text-slate-400 font-mono uppercase tracking-wider mt-3 leading-normal">
-                  Your priority allocation deposit is 100% fully refundable at any time prior to alpha software deployment.
+                  A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment.
                 </p>
 
               </form>
