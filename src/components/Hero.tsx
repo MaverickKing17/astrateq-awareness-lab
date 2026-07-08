@@ -43,11 +43,11 @@ export default function Hero({ onStartSimulation }: HeroProps) {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 pt-16 pb-24 md:pt-24 md:pb-32 border-b border-slate-900">
+    <section className="relative overflow-hidden bg-[#F4F2ED] pt-16 pb-24 md:pt-24 md:pb-32 border-b border-[#0E7C9E]/10">
       {/* Subtle deep-tinted background elements */}
-      <div className="absolute inset-0 bg-slate-950 pointer-events-none" />
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-[30%] -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#F4F2ED] pointer-events-none" />
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#0E7C9E]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[30%] -right-40 w-96 h-96 bg-[#B8860B]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -60,23 +60,23 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             className="lg:col-span-7 text-left space-y-8"
           >
             {/* Header / Sub-tag */}
-            <span className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-950/40 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-blue-400 font-sans rounded-full shadow-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 border border-[#0E7C9E]/20 bg-[#0E7C9E]/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#0E7C9E] font-sans rounded-full shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0E7C9E] animate-pulse" />
               Sovereign Driver Intelligence
             </span>
 
             {/* Headline Block (H1) */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6.5xl font-bold tracking-tight text-white leading-[1.08] font-sans">
+              <h1 className="text-4xl sm:text-5xl lg:text-6.5xl font-bold tracking-tight text-[#12233F] leading-[1.08] font-sans">
                 Sustained attention guides every Canadian road.
-                <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl text-blue-400 font-normal tracking-tight">
+                <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl text-[#0E7C9E] font-normal tracking-tight">
                   Privacy-first Driver Awareness Intelligence for Canadian roads.
                 </span>
               </h1>
             </div>
 
             {/* Subheadline */}
-            <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-xl font-sans font-normal">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-sans font-normal">
               Astrateq Gadgets operates as a completely local edge-compute driver coach that processes safety metrics inside your device's volatile RAM. By analyzing attention patterns 100% on-device, your driving insights remain private and never touch the cloud or insurance networks.
             </p>
 
@@ -86,7 +86,7 @@ export default function Hero({ onStartSimulation }: HeroProps) {
                 onClick={() => {
                   onStartSimulation();
                 }}
-                className="group inline-flex items-center justify-center gap-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white px-8 py-4.5 text-xs font-black uppercase tracking-widest transition-all duration-200 active:scale-98 cursor-pointer font-mono shadow-lg shadow-blue-500/25"
+                className="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#0E7C9E] hover:bg-[#0E7C9E]/90 text-white px-8 py-4.5 text-xs font-black uppercase tracking-widest transition-all duration-200 active:scale-98 cursor-pointer font-mono shadow-md"
               >
                 <span>Start Driver Awareness Simulation</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -94,21 +94,21 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             </div>
 
             {/* Inline Trust Row */}
-            <div className="border-t border-slate-900 pt-6 grid grid-cols-3 gap-4 max-w-xl text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-slate-300 font-sans">
+            <div className="border-t border-slate-200 pt-6 grid grid-cols-3 gap-4 max-w-xl text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-[#12233F] font-sans">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-blue-400 shrink-0 border border-slate-800">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0E7C9E] shrink-0 border border-[#0E7C9E]/20">
                   <Cpu className="h-3 w-3 stroke-[2.5]" />
                 </div>
                 <span>Zero External Hardware</span>
               </div>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-blue-400 shrink-0 border border-slate-800">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0E7C9E] shrink-0 border border-[#0E7C9E]/20">
                   <Lock className="h-3 w-3 stroke-[2.5]" />
                 </div>
                 <span>100% On-Device Processing</span>
               </div>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-blue-400 shrink-0 border border-slate-800">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0E7C9E] shrink-0 border border-[#0E7C9E]/20">
                   <ShieldCheck className="h-3 w-3 stroke-[2.5]" />
                 </div>
                 <span>No Insurance Data Sharing</span>
@@ -116,8 +116,8 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             </div>
 
             {/* Scarcity / Cohort Line */}
-            <div className="pt-2 text-[11px] text-slate-500 font-sans flex items-center gap-2">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-500" />
+            <div className="pt-2 text-[11px] text-[#B8860B] font-sans flex items-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#B8860B]" />
               <span>Founding Research Cohort — limited placement</span>
             </div>
           </motion.div>
@@ -130,14 +130,14 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             className="lg:col-span-5 flex flex-col items-center"
           >
             {/* Quick Calibration Indicator */}
-            <div className="w-full max-w-sm mb-6 bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm text-left">
+            <div className="w-full max-w-sm mb-6 bg-white border border-[#0E7C9E]/20 rounded-2xl p-5 shadow-xs text-left">
               <div className="flex gap-4">
-                <Smartphone className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                <Smartphone className="h-5 w-5 text-[#0E7C9E] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 font-sans">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#12233F] font-sans">
                     Calibration complete in seconds:
                   </h4>
-                  <p className="text-xs text-slate-400 font-sans mt-1.5 leading-relaxed">
+                  <p className="text-xs text-slate-600 font-sans mt-1.5 leading-relaxed">
                     Simply secure your phone in your vehicle mount. Astrateq Gadgets maps facial indicators locally and runs fully offline inside RAM. No custom plugins or wires required.
                   </p>
                 </div>
@@ -277,7 +277,7 @@ export default function Hero({ onStartSimulation }: HeroProps) {
             </div>
 
             {/* Sub-note */}
-            <p className="text-[9px] font-mono text-slate-400 text-center uppercase tracking-widest mt-4 font-bold bg-slate-900 border border-slate-800 px-3.5 py-1.5 rounded-full">
+            <p className="text-[9px] font-mono text-slate-500 text-center uppercase tracking-widest mt-4 font-bold bg-white border border-[#0E7C9E]/15 px-3.5 py-1.5 rounded-full">
               📱 Local Telemetry Mockup (Status: Optimal)
             </p>
           </motion.div>

@@ -244,7 +244,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl font-sans font-medium"
               >
-                Reserve your early software priority slot today. No payment, deposit, or binding commitment is required. Joining the validation effort registers your queue placement and guarantees up to a <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-2">50% discount</span> once the offline platform is production-ready.
+                A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment. Joining the validation effort registers your queue placement and guarantees up to a <span className="text-slate-900 font-bold underline decoration-blue-500 decoration-2">50% discount</span> once the offline platform is production-ready.
               </motion.p>
               
               {/* Premium Advanced R&D Lab Visual Embedding */}
@@ -616,7 +616,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               {
                 step: "01",
                 title: "Select Priority Level",
-                desc: "Choose from Standard, VIP Elite, or Founding Collaborator with zero payment or deposit required.",
+                desc: "Choose from Standard, VIP Elite, or Founding Collaborator. A refundable $5 CAD deposit secures priority reservation.",
                 border: "border-blue-200 hover:border-blue-400 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)]",
                 bg: "from-blue-50/60 to-white",
                 topColor: "border-t-blue-500",
@@ -817,7 +817,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
               Select Your Collaboration Level
             </h2>
             <p className="text-sm text-slate-700 leading-relaxed max-w-lg mx-auto font-sans font-medium">
-              Choose the queue depth that matches your pre-launch interest. Every tier secures priority early access with absolutely no financial deposit required.
+              Choose the queue depth that matches your pre-launch interest. A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment.
             </p>
           </div>
 
@@ -914,7 +914,7 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
           </div>
 
           <p className="text-center text-[10px] font-mono uppercase tracking-wider text-slate-600 mt-10 font-bold">
-            *No deposit required • No payment obligation • Cancel anytime • 100% offline edge AI
+            *Refundable $5 CAD deposit secures priority reservation • It is fully refundable at any time prior to Alpha software deployment • Cancel anytime • 100% offline edge AI
           </p>
 
         </div>

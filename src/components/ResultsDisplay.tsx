@@ -59,10 +59,10 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         id: "access",
         name: "Priority Reservation — Fast-Track Queue",
         desc: "Guarantees a production slot in our initial Canada shipping queue with a 20% early-bird discount.",
-        colorClass: "border-blue-200 bg-blue-50/30 text-blue-800",
-        badgeColor: "bg-blue-600 text-white",
-        textColor: "text-blue-900",
-        bulletColor: "bg-blue-500"
+        colorClass: "border-[#0E7C9E]/20 bg-[#0E7C9E]/5 text-[#12233F]",
+        badgeColor: "bg-[#0E7C9E] text-white",
+        textColor: "text-[#12233F]",
+        bulletColor: "bg-[#0E7C9E]"
       };
     }
     if (scoreValue >= 40) {
@@ -70,20 +70,20 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         id: "guardian",
         name: "Standard Priority Reservation",
         desc: "Secures Batch 1 priority shipping, Slate Silver chassis, and a locked-in 40% VIP launch discount.",
-        colorClass: "border-amber-200 bg-amber-50/30 text-amber-800",
-        badgeColor: "bg-amber-500 text-white",
-        textColor: "text-amber-900",
-        bulletColor: "bg-amber-500"
+        colorClass: "border-[#B8860B]/20 bg-[#B8860B]/5 text-[#12233F]",
+        badgeColor: "bg-[#B8860B] text-white",
+        textColor: "text-[#12233F]",
+        bulletColor: "bg-[#B8860B]"
       };
     }
     return {
       id: "founding",
       name: "Standard Reservation",
       desc: "For ultimate driver advocates wishing to collaborate with builders. Secures a 50% launch discount and custom laser-engraved name plate.",
-      colorClass: "border-rose-200 bg-rose-50/30 text-rose-800",
-      badgeColor: "bg-rose-600 text-white",
-      textColor: "text-rose-900",
-      bulletColor: "bg-rose-500"
+      colorClass: "border-slate-300 bg-slate-50 text-[#12233F]",
+      badgeColor: "bg-slate-600 text-white",
+      textColor: "text-[#12233F]",
+      bulletColor: "bg-slate-550"
     };
   };
 
@@ -259,12 +259,12 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
         <div className="lg:col-span-8 flex flex-col gap-6">
           
           {/* COHORT CLASSIFICATION BLOCK (CRITICAL FOR CONVERSION - SECOND MOST IMPORTANT) */}
-          <div className="rounded-xl border-2 border-blue-500/20 bg-gradient-to-br from-white to-blue-50/20 p-6 sm:p-8 shadow-[0_10px_30px_rgba(59,130,246,0.04)] relative overflow-hidden">
-            <div className="absolute top-0 right-0 rounded-bl bg-blue-600 px-3 py-1 text-[9px] font-bold text-white uppercase tracking-widest font-mono">
-              Qualified Tier
+          <div className={`rounded-xl border-2 p-6 sm:p-8 shadow-xs relative overflow-hidden bg-white ${score >= 80 ? 'border-[#0E7C9E]/30' : score >= 40 ? 'border-[#B8860B]/30' : 'border-slate-300'}`}>
+            <div className={`absolute top-0 right-0 rounded-bl px-3.5 py-1 text-[9px] font-bold text-white uppercase tracking-widest font-mono ${cohort.badgeColor}`}>
+              {cohort.id === "access" ? "Fast-Track Tier" : cohort.id === "guardian" ? "Priority Tier" : "Standard Tier"} Qualified
             </div>
             
-            <h3 className="text-[10px] font-extrabold uppercase tracking-widest text-blue-600 font-mono mb-2">
+            <h3 className="text-[10px] font-extrabold uppercase tracking-widest text-[#12233F]/70 font-mono mb-2">
               Your Qualified Priority Pre-Order Tier
             </h3>
             
