@@ -699,9 +699,9 @@ export default function CohortPage({ score, initialSelectedTier, onStartSimulati
 
           <div className="max-w-4xl mx-auto overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
             {/* Table Header */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 bg-slate-900 text-white p-4.5 font-mono text-[10px] font-black uppercase tracking-widest">
-              <div className="px-2">Traditional Fleet/Insurance Approach</div>
-              <div className="border-t sm:border-t-0 sm:border-l border-slate-700 mt-2 pt-2 sm:mt-0 sm:pt-0 sm:pl-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 bg-slate-900 text-white px-6 py-4 font-mono text-[10px] font-black uppercase tracking-widest gap-4 sm:gap-0">
+              <div>Traditional Fleet/Insurance Approach</div>
+              <div className="border-t sm:border-t-0 sm:border-l border-slate-700 pt-3 sm:pt-0 sm:pl-6">
                 Astrateq Gadgets Offline Software Approach
               </div>
             </div>

@@ -101,7 +101,7 @@ export default function LoadingOverlay() {
         <div className="grid gap-6 md:grid-cols-2 mb-6">
           
           {/* Left Sub-Panel: Score Dial (Value locking to 82) */}
-          <div className="rounded-xl bg-slate-950/95 p-5 border border-slate-700/80 flex flex-col items-center justify-center space-y-4">
+          <div className="rounded-xl bg-slate-950/95 px-6 py-5 border border-slate-700/80 flex flex-col items-center justify-center space-y-4">
             <span className="text-[8px] font-extrabold uppercase tracking-widest text-slate-300 font-mono">DRIVER AWARENESS SCORE</span>
             
             {/* Cyber Ring */}
@@ -128,7 +128,7 @@ export default function LoadingOverlay() {
           </div>
 
           {/* Right Sub-Panel: Telemetry & Confidence Ratings */}
-          <div className="rounded-xl bg-slate-950/95 p-5 border border-slate-700/80 flex flex-col justify-between space-y-4 font-mono text-xs">
+          <div className="rounded-xl bg-slate-950/95 px-6 py-5 border border-slate-700/80 flex flex-col justify-between space-y-4 font-mono text-xs">
             
             {/* Telemetry Indicator 1: Confidence Rating */}
             <div className="space-y-1.5">
@@ -168,7 +168,7 @@ export default function LoadingOverlay() {
         </div>
 
         {/* Lower Terminal: Diagnostic Steps Progress List */}
-        <div className="rounded-xl border border-slate-700 bg-slate-950/90 p-5 space-y-3.5 font-mono text-[10px]">
+        <div className="rounded-xl border border-slate-700 bg-slate-950/90 px-6 py-5 space-y-3.5 font-mono text-[10px]">
           <div className="flex items-center gap-1.5 border-b border-slate-800 pb-2 text-[8px] font-extrabold uppercase text-slate-300 tracking-widest">
             <Terminal className="h-3.5 w-3.5 text-slate-400" />
             <span>Telemetry Pipeline Diagnostics</span>

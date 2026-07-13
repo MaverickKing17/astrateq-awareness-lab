@@ -341,7 +341,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </button>
                 
                 {activeTab === "fatigue" && (
-                  <div className="mt-3 bg-slate-950 p-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono font-medium">
+                  <div className="mt-3 bg-slate-950 px-6 py-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono font-medium">
                     <p className="font-bold text-blue-400 uppercase tracking-wider text-[10px] mb-1">Fatigue Exposure Metrics:</p>
                     Your self-reported frequency of driving (especially during <strong className="text-white">{inputs.timeOfDay}</strong> hours) directly models standard biological fatigue waves. This behavioral simulation evaluates these indicators against established pre-launch Canadian safety baselines.
                   </div>
@@ -383,7 +383,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </button>
                 
                 {activeTab === "attention" && (
-                  <div className="mt-3 bg-slate-950 p-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono">
+                  <div className="mt-3 bg-slate-950 px-6 py-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono">
                     <p className="font-bold text-cyan-400 uppercase tracking-wider text-[10px] mb-1">Attention Allocation Dynamics:</p>
                     By indicating your habit of <strong className="text-white">{inputs.attentionHabits.replace(/_/g, " ")}</strong>, our simulated focus matrix estimates visual locking stability rates over typical commutes to help you reflect on micro-distractions.
                   </div>
@@ -425,7 +425,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
                 </button>
                 
                 {activeTab === "safety" && (
-                  <div className="mt-3 bg-slate-950 p-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono">
+                  <div className="mt-3 bg-slate-950 px-6 py-4 rounded text-xs text-slate-300 leading-relaxed border border-slate-800 font-mono">
                     <p className="font-bold text-indigo-400 uppercase tracking-wider text-[10px] mb-1">Contextual Response Factors:</p>
                     Commutes structured as <strong className="text-white">{inputs.commuteType.replace(/_/g, " ")}</strong> across various provincial routes introduce external cognitive strains. Pre-planning rest frequencies acts as a powerful offset.
                   </div>
@@ -436,7 +436,7 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           </div>
 
           {/* Qualitative Overall Evaluation Panel */}
-          <div className="rounded-xl bg-slate-950 p-6 text-white shadow-[0_0_25px_rgba(59,130,246,0.15)] relative overflow-hidden border-2 border-slate-800">
+          <div className="rounded-xl bg-slate-950 px-6 py-5 text-white shadow-[0_0_25px_rgba(59,130,246,0.15)] relative overflow-hidden border-2 border-slate-800">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono mb-2">Simulated Driver Assessment Summary</h4>
             <p className="text-[10px] font-mono text-slate-400 italic mb-2">Simulated Output — Conceptual Behavioral Model (Not Real-World Measurement)</p>
             <p className="text-xs text-slate-300 leading-relaxed font-sans">
@@ -639,12 +639,16 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
       </div>
 
       {/* PRIMARY CTA SECTION (CRITICAL CONVERSION POINT) */}
-      <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto my-12">
-        <h3 className="text-lg font-bold uppercase tracking-wider text-slate-950 mb-3 font-sans">
+      <div className="bg-slate-950 border-2 border-slate-800 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto my-12 text-white shadow-[0_0_30px_rgba(59,130,246,0.15)] relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute -top-24 -left-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <h3 className="text-lg font-bold uppercase tracking-wider text-white mb-3 font-sans relative z-10">
           Ready to Secure Your Aware-1 Priority Slot?
         </h3>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 relative z-10">
           <button
             onClick={() => onNavigateToCohort(cohort.id)}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all active:scale-[0.98] cursor-pointer font-mono"
@@ -654,14 +658,18 @@ export default function ResultsDisplay({ insights, inputs, onNavigateToCohort, o
           
           <button
             onClick={onReset}
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-slate-300 hover:border-slate-400 bg-white px-8 py-4 text-xs font-bold uppercase tracking-wider text-slate-700 transition-all active:scale-[0.98] cursor-pointer font-mono"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-transparent border border-white/20 text-slate-400 hover:text-white hover:border-white/40 px-8 py-4 text-xs font-bold uppercase tracking-wider transition-all active:scale-[0.98] cursor-pointer font-mono"
           >
-            Retake Diagnostic Questionnaire
+            RESET QUESTIONNAIRE
           </button>
         </div>
 
-        <p className="mt-4 text-[11px] text-slate-700 font-sans font-bold">
+        <p className="mt-4 text-[11px] text-slate-300 font-sans font-bold relative z-10">
           A refundable $5 CAD deposit secures priority reservation. It is fully refundable at any time prior to Alpha software deployment.
+        </p>
+
+        <p className="text-xs text-slate-400 mt-5 text-center leading-relaxed max-w-2xl mx-auto relative z-10">
+          *Validation data is aggregated completely anonymously under local Canadian privacy guidelines. No active vehicular telemetry, GPS coordinates, or biometric profiles are captured, cached, or transmitted during this software-demand study.
         </p>
       </div>
 
